@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Brand Here</title>
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="approach.html">Approach</a>
+        <a href="work.html">Work</a>
+        <a href="insights.html">Insights</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Start a Conversation</a>
+      <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h1>Let's talk about where you actually are — not where a deck says you should be.</h1>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="wrap">
+
+    <p class="contact-info">
+      Prefer email? Reach out directly at
+      <strong>tuan.nguyen@brandhere.vn</strong>
+    </p>
+
+    <!--
+      LƯU Ý CHO NGƯỜI TRIỂN KHAI (Alton):
+      Form dưới đây hiện CHƯA gửi được email thật. Để form hoạt động miễn phí, không cần code backend:
+      1. Đăng ký tài khoản miễn phí tại https://formspree.io
+      2. Tạo một "Form", Formspree sẽ cho một endpoint dạng https://formspree.io/f/xxxxxxx
+      3. Thay giá trị "action" của thẻ <form> bên dưới bằng endpoint đó
+      Sau bước này, mỗi khi có người gửi form, bạn sẽ nhận được email thông báo.
+    -->
+    <form class="contact-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">What are you looking to solve?</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn-gold">Send message</button>
+    </form>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 Brand Here. Ho Chi Minh City, Vietnam.</div>
+    <div style="margin-top:8px;">
+      <a href="about.html">About</a>·<a href="what-we-do.html">What We Do</a>·<a href="work.html">Work</a>·<a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/reveal.js" defer></script>
+</body>
+</html>

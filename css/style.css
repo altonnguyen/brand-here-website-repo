@@ -175,6 +175,10 @@ footer.site-footer {
   font-size: 13px; color: var(--gray);
 }
 footer.site-footer a { text-decoration: none; color: var(--gray); margin: 0 8px; }
+.footer-slogan {
+  font-family: var(--serif); font-style: italic; color: var(--gray);
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+}
 
 /* CLIENT STRIP */
 .client-strip { padding: 50px 0; border-bottom: 1px solid var(--gray-light); }

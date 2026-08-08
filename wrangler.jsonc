@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "brand-here-website-repo",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-08",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  }
+}

@@ -1,0 +1,13 @@
+.git
+.git/**
+.DS_Store
+.assetsignore
+src
+src/**
+scripts
+scripts/**
+wrangler.jsonc
+package.json
+package-lock.json
+node_modules
+node_modules/**

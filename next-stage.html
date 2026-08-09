@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Next Stage — RSVP | Brand Here</title>
+<meta name="description" content="Executive conversation dành cho founder, CEO và senior decision-maker — 29.08.2026 tại Usofa Hub.">
+<meta property="og:title" content="The Next Stage — Executive Conversations by Brand Here">
+<meta property="og:description" content="7 quyết định founder cần làm rõ trước khi tăng trưởng trở thành sự phức tạp.">
+<meta property="og:image" content="https://brandhere.co/images/next-stage-og.png">
+<meta property="og:url" content="https://brandhere.co/next-stage.html">
+<link rel="icon" href="favicon.ico"><link rel="stylesheet" href="css/style.css?v=6">
+<style>
+  .event-page{background:#08182b;color:#f6f1e6;min-height:100vh}.event-page .site-header{background:#08182b;border-color:rgba(246,241,230,.12)}
+  .event-page .logo .brand-word,.event-page .nav-links a{color:#f6f1e6}.event-page main{overflow:hidden}
+  .event-hero{position:relative;min-height:760px;display:grid;align-items:center;background:#08182b url('images/next-stage-growth-rings.png') center/cover no-repeat}
+  .event-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,20,38,.96) 0%,rgba(6,20,38,.72) 47%,rgba(6,20,38,.18) 100%)}
+  .event-hero .wrap{position:relative;z-index:1}.event-copy{max-width:780px;padding:110px 0}.event-copy .eyebrow{color:#d4a72c;letter-spacing:.24em}
+  .event-copy h1{font-size:clamp(62px,8vw,112px);line-height:.86;color:#f6f1e6;max-width:820px}.event-copy h1 em{display:block;color:#d4a72c;font-weight:400}
+  .event-deck{font-size:20px;max-width:620px;margin:32px 0;color:#f6f1e6}.event-meta{display:flex;gap:24px;flex-wrap:wrap;font-weight:600;color:#f6f1e6}
+  .rsvp-section{background:#fcfaf5;color:#0c2340;padding:96px 0}.rsvp-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+  .rsvp-intro h2{font:500 54px/1 'Cormorant Garamond',Georgia,serif;margin-bottom:24px}.rsvp-intro p{color:#536174}.partner-lockup{margin-top:42px;padding-top:28px;border-top:1px solid rgba(12,35,64,.16)}
+  .partner-lockup img{max-width:180px;margin-top:12px}.rsvp-form{display:grid;grid-template-columns:1fr 1fr;gap:20px}.rsvp-form .full{grid-column:1/-1}
+  .rsvp-form label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}.rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;padding:14px 15px;border:1px solid rgba(12,35,64,.22);background:#fff;color:#0c2340;font:inherit;border-radius:2px}.rsvp-form textarea{min-height:112px;resize:vertical}
+  .rsvp-form .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#536174}.rsvp-form .consent input{width:auto;margin-top:5px}.form-note{font-size:13px;color:#536174}.form-error{display:none;color:#a52720;font-size:14px}
+  @media(max-width:800px){.event-copy{padding:90px 0}.event-hero{min-height:650px}.rsvp-layout{grid-template-columns:1fr;gap:48px}.rsvp-form{grid-template-columns:1fr}.rsvp-form .full{grid-column:auto}}
+</style>
+</head>
+<body class="event-page">
+<header class="site-header"><div class="wrap"><nav><a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><a href="#rsvp" class="nav-cta">Request a Seat</a></nav></div></header>
+<main>
+  <section class="event-hero"><div class="wrap"><div class="event-copy">
+    <div class="eyebrow">The Next Stage · Executive Conversations</div>
+    <h1>Your next stage <em>demands different decisions.</em></h1>
+    <p class="event-deck">7 quyết định founder cần làm rõ trước khi tăng trưởng trở thành sự phức tạp.</p>
+    <div class="event-meta"><span>29.08.2026 · 08:30–11:30</span><span>Usofa Hub · Phú Nhuận, TP.HCM</span></div>
+    <p style="margin-top:34px"><a href="#rsvp" class="btn-gold">Request a Seat</a></p>
+  </div></div></section>
+  <section class="rsvp-section" id="rsvp"><div class="wrap rsvp-layout">
+    <div class="rsvp-intro"><div class="eyebrow">Invitation-only</div><h2>Đăng ký tham dự</h2><p>Phiên đối thoại giới hạn dành cho founder, CEO và senior decision-maker. Brand Here sẽ xác nhận hồ sơ qua email trước khi giữ chỗ.</p>
+      <div class="partner-lockup"><div class="eyebrow">Venue Partner</div><img src="images/usofa-logo-light-bg.png" alt="Usofa Hub"></div>
+    </div>
+    <form class="rsvp-form" id="rsvpForm" action="/api/rsvp" method="POST">
+      <div><label for="name">Họ và tên *</label><input id="name" name="name" required maxlength="120" autocomplete="name"></div>
+      <div><label for="title">Chức danh *</label><input id="title" name="title" required maxlength="120"></div>
+      <div><label for="company">Công ty *</label><input id="company" name="company" required maxlength="160" autocomplete="organization"></div>
+      <div><label for="email">Email công việc *</label><input id="email" name="email" type="email" required maxlength="254" autocomplete="email"></div>
+      <div><label for="phone">Điện thoại *</label><input id="phone" name="phone" type="tel" required maxlength="40" autocomplete="tel"></div>
+      <div><label for="size">Quy mô doanh nghiệp *</label><select id="size" name="size" required><option value="">Chọn quy mô</option><option>Dưới 10 nhân sự</option><option>10–49 nhân sự</option><option>50–199 nhân sự</option><option>200+ nhân sự</option></select></div>
+      <div class="full"><label for="priority">Ưu tiên kinh doanh lớn nhất trong 12 tháng tới *</label><textarea id="priority" name="priority" required maxlength="1200"></textarea></div>
+      <div class="full"><label for="decision">Quyết định khó nhất anh/chị đang đối mặt *</label><textarea id="decision" name="decision" required maxlength="1200"></textarea></div>
+      <div class="full"><label for="connections">Anh/chị muốn kết nối với kiểu đối tác hoặc chuyên gia nào?</label><textarea id="connections" name="connections" maxlength="1200"></textarea></div>
+      <div aria-hidden="true" style="position:absolute;left:-9999px"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="consent full"><input type="checkbox" name="consent" required><span>Tôi đồng ý để Brand Here liên hệ nhằm xác nhận RSVP và gửi thông tin liên quan đến chương trình.</span></label>
+      <input type="hidden" name="source" id="source" value="direct">
+      <div class="full"><button type="submit" class="btn-gold" id="submitBtn">Gửi RSVP</button><p class="form-note">Gửi form không đồng nghĩa chỗ đã được xác nhận.</p><p class="form-error" id="formError">Chưa thể gửi RSVP. Vui lòng thử lại hoặc email hello@brandhere.co.</p></div>
+    </form>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-slogan">Insight to Impact</div><div>© 2026 Brand Here · Ho Chi Minh City, Vietnam.</div></div></footer>
+<script>
+const params=new URLSearchParams(location.search);document.getElementById('source').value=[params.get('utm_source'),params.get('utm_medium'),params.get('utm_campaign')].filter(Boolean).join(' / ')||'direct';
+const form=document.getElementById('rsvpForm'),button=document.getElementById('submitBtn'),error=document.getElementById('formError');
+form.addEventListener('submit',async e=>{e.preventDefault();error.style.display='none';button.disabled=true;button.textContent='Đang gửi…';const data=Object.fromEntries(new FormData(form).entries());try{const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(!response.ok)throw new Error();location.href='next-stage-confirmation.html';}catch(_){error.style.display='block';button.disabled=false;button.textContent='Gửi RSVP';}});
+</script>
+</body></html>

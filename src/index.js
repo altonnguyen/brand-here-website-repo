@@ -111,6 +111,34 @@ async function handleContact(request, env) {
   return json({ ok: true });
 }
 
+async function handleRsvp(request, env) {
+  const origin = request.headers.get("Origin");
+  if (origin && !ALLOWED_ORIGINS.has(origin)) return json({ ok: false, error: "Origin not allowed" }, 403);
+  if (!env.MS_TENANT_ID || !env.MS_CLIENT_ID || !env.MS_CLIENT_SECRET) return json({ ok: false, error: "RSVP service is not configured" }, 503);
+
+  let data;
+  try { data = await request.json(); } catch { return json({ ok: false, error: "Invalid request" }, 400); }
+  const fields = ["name", "title", "company", "email", "phone", "size", "priority", "decision", "connections", "source"];
+  const values = Object.fromEntries(fields.map((key) => [key, String(data[key] || "").trim()]));
+  if (String(data.website || "").trim()) return json({ ok: true });
+  if (!values.name || !values.title || !values.company || !values.email || !values.phone || !values.size || !values.priority || !values.decision || !data.consent) return json({ ok: false, error: "Please complete all required fields" }, 400);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) return json({ ok: false, error: "Invalid email" }, 400);
+  if (values.priority.length > 1200 || values.decision.length > 1200 || values.connections.length > 1200) return json({ ok: false, error: "Submission is too long" }, 400);
+
+  const safe = Object.fromEntries(Object.entries(values).map(([key, value]) => [key, escapeHtml(value || "Not provided").replaceAll("\n", "<br>")]));
+  const token = await getGraphToken(env);
+  const response = await fetch("https://graph.microsoft.com/v1.0/users/alton@brandhere.co/sendMail", {
+    method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ message: {
+      subject: `The Next Stage RSVP — ${values.name}, ${values.company}`,
+      body: { contentType: "HTML", content: `<h2>New RSVP — The Next Stage</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Title:</strong> ${safe.title}</p><p><strong>Company:</strong> ${safe.company}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Phone:</strong> ${safe.phone}</p><p><strong>Company size:</strong> ${safe.size}</p><p><strong>12-month priority:</strong><br>${safe.priority}</p><p><strong>Hardest decision:</strong><br>${safe.decision}</p><p><strong>Desired connections:</strong><br>${safe.connections}</p><p><strong>Acquisition source:</strong> ${safe.source}</p>` },
+      toRecipients: [{ emailAddress: { address: "hello@brandhere.co" } }], replyTo: [{ emailAddress: { address: values.email, name: values.name } }]
+    }, saveToSentItems: true })
+  });
+  if (!response.ok) throw new Error("Microsoft Graph rejected the RSVP");
+  return json({ ok: true });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -126,6 +154,11 @@ export default {
         console.error("Contact form error", error);
         return json({ ok: false, error: "Unable to send message" }, 500);
       }
+    }
+
+    if (url.pathname === "/api/rsvp") {
+      if (request.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405);
+      try { return await handleRsvp(request, env); } catch (error) { console.error("RSVP form error", error); return json({ ok: false, error: "Unable to submit RSVP" }, 500); }
     }
 
     return env.ASSETS.fetch(request);

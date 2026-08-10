@@ -2,10 +2,10 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Next Stage — RSVP | Brand Here</title>
-<meta name="description" content="Executive conversation dành cho founder, CEO và senior decision-maker — 29.08.2026 tại Usofa Hub.">
-<meta property="og:title" content="The Next Stage — Executive Conversations by Brand Here">
-<meta property="og:description" content="7 quyết định founder cần làm rõ trước khi tăng trưởng trở thành sự phức tạp.">
+<title>From AI Ambition to Team Adoption — RSVP | Brand Here</title>
+<meta name="description" content="Làm sao để AI thực sự đi vào vận hành — từ mong muốn của founder đến năng lực của đội ngũ.">
+<meta property="og:title" content="From AI Ambition to Team Adoption — Brand Here">
+<meta property="og:description" content="Giúp từng cấp hiểu vì sao nên dùng AI, AI giúp việc gì, nên dùng công cụ nào và áp dụng theo cách nào.">
 <meta property="og:image" content="https://brandhere.co/images/next-stage-og.png">
 <meta property="og:url" content="https://brandhere.co/next-stage.html">
 <link rel="icon" href="favicon.ico"><link rel="stylesheet" href="css/style.css?v=6">
@@ -29,14 +29,14 @@
 <header class="site-header"><div class="wrap"><nav><a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><a href="#rsvp" class="nav-cta">Request a Seat</a></nav></div></header>
 <main>
   <section class="event-hero"><div class="wrap"><div class="event-copy">
-    <div class="eyebrow">The Next Stage · Executive Conversations</div>
-    <h1>Your next stage <em>demands different decisions.</em></h1>
-    <p class="event-deck">7 quyết định founder cần làm rõ trước khi tăng trưởng trở thành sự phức tạp.</p>
+    <div class="eyebrow">The Next Stage · AI Adoption</div>
+    <h1>From AI ambition <em>to team adoption.</em></h1>
+    <p class="event-deck">Từ mong muốn của founder đến năng lực của đội ngũ — làm sao để AI thực sự đi vào vận hành?</p>
     <div class="event-meta"><span>29.08.2026 · 08:30–11:30</span><span>Usofa Hub · Phú Nhuận, TP.HCM</span></div>
     <p style="margin-top:34px"><a href="#rsvp" class="btn-gold">Request a Seat</a></p>
   </div></div></section>
   <section class="rsvp-section" id="rsvp"><div class="wrap rsvp-layout">
-    <div class="rsvp-intro"><div class="eyebrow">Invitation-only</div><h2>Đăng ký tham dự</h2><p>Phiên đối thoại giới hạn dành cho founder, CEO và senior decision-maker. Brand Here sẽ xác nhận hồ sơ qua email trước khi giữ chỗ.</p>
+    <div class="rsvp-intro"><div class="eyebrow">Invitation-only</div><h2>Đăng ký tham dự</h2><p>Phiên đối thoại dành cho founder và lãnh đạo muốn thu hẹp khoảng cách giữa tham vọng AI và khả năng áp dụng của đội ngũ. Brand Here sẽ xác nhận hồ sơ qua email trước khi giữ chỗ.</p>
       <div class="partner-lockup"><div class="eyebrow">Venue Partner</div><img src="images/usofa-logo-light-bg.png" alt="Usofa Hub"></div>
     </div>
     <form class="rsvp-form" id="rsvpForm" action="/api/rsvp" method="POST">
@@ -46,8 +46,9 @@
       <div><label for="email">Email công việc *</label><input id="email" name="email" type="email" required maxlength="254" autocomplete="email"></div>
       <div><label for="phone">Điện thoại *</label><input id="phone" name="phone" type="tel" required maxlength="40" autocomplete="tel"></div>
       <div><label for="size">Quy mô doanh nghiệp *</label><select id="size" name="size" required><option value="">Chọn quy mô</option><option>Dưới 10 nhân sự</option><option>10–49 nhân sự</option><option>50–199 nhân sự</option><option>200+ nhân sự</option></select></div>
-      <div class="full"><label for="priority">Ưu tiên kinh doanh lớn nhất trong 12 tháng tới *</label><textarea id="priority" name="priority" required maxlength="1200"></textarea></div>
-      <div class="full"><label for="decision">Quyết định khó nhất anh/chị đang đối mặt *</label><textarea id="decision" name="decision" required maxlength="1200"></textarea></div>
+      <div><label for="adoption">Mức độ ứng dụng AI hiện tại *</label><select id="adoption" name="adoption" required><option value="">Chọn mức độ</option><option>Chưa bắt đầu</option><option>Cá nhân tự thử nghiệm</option><option>Một số phòng ban đang dùng</option><option>Đã có use case và quy định chung</option><option>Đã tích hợp vào vận hành</option></select></div>
+      <div class="full"><label for="priority">Workflow hoặc công việc nào anh/chị muốn AI cải thiện trước tiên? *</label><textarea id="priority" name="priority" required maxlength="1200"></textarea></div>
+      <div class="full"><label for="decision">Rào cản lớn nhất khiến đội ngũ chưa áp dụng AI là gì? *</label><textarea id="decision" name="decision" required maxlength="1200"></textarea></div>
       <div class="full"><label for="connections">Anh/chị muốn kết nối với kiểu đối tác hoặc chuyên gia nào?</label><textarea id="connections" name="connections" maxlength="1200"></textarea></div>
       <div aria-hidden="true" style="position:absolute;left:-9999px"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
       <label class="consent full"><input type="checkbox" name="consent" required><span>Tôi đồng ý để Brand Here liên hệ nhằm xác nhận RSVP và gửi thông tin liên quan đến chương trình.</span></label>

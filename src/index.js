@@ -118,10 +118,10 @@ async function handleRsvp(request, env) {
 
   let data;
   try { data = await request.json(); } catch { return json({ ok: false, error: "Invalid request" }, 400); }
-  const fields = ["name", "title", "company", "email", "phone", "size", "priority", "decision", "connections", "source"];
+  const fields = ["name", "title", "company", "email", "phone", "size", "adoption", "priority", "decision", "connections", "source"];
   const values = Object.fromEntries(fields.map((key) => [key, String(data[key] || "").trim()]));
   if (String(data.website || "").trim()) return json({ ok: true });
-  if (!values.name || !values.title || !values.company || !values.email || !values.phone || !values.size || !values.priority || !values.decision || !data.consent) return json({ ok: false, error: "Please complete all required fields" }, 400);
+  if (!values.name || !values.title || !values.company || !values.email || !values.phone || !values.size || !values.adoption || !values.priority || !values.decision || !data.consent) return json({ ok: false, error: "Please complete all required fields" }, 400);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) return json({ ok: false, error: "Invalid email" }, 400);
   if (values.priority.length > 1200 || values.decision.length > 1200 || values.connections.length > 1200) return json({ ok: false, error: "Submission is too long" }, 400);
 
@@ -130,8 +130,8 @@ async function handleRsvp(request, env) {
   const response = await fetch("https://graph.microsoft.com/v1.0/users/alton@brandhere.co/sendMail", {
     method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({ message: {
-      subject: `The Next Stage RSVP — ${values.name}, ${values.company}`,
-      body: { contentType: "HTML", content: `<h2>New RSVP — The Next Stage</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Title:</strong> ${safe.title}</p><p><strong>Company:</strong> ${safe.company}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Phone:</strong> ${safe.phone}</p><p><strong>Company size:</strong> ${safe.size}</p><p><strong>12-month priority:</strong><br>${safe.priority}</p><p><strong>Hardest decision:</strong><br>${safe.decision}</p><p><strong>Desired connections:</strong><br>${safe.connections}</p><p><strong>Acquisition source:</strong> ${safe.source}</p>` },
+      subject: `AI Adoption Workshop RSVP — ${values.name}, ${values.company}`,
+      body: { contentType: "HTML", content: `<h2>New RSVP — From AI Ambition to Team Adoption</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Title:</strong> ${safe.title}</p><p><strong>Company:</strong> ${safe.company}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Phone:</strong> ${safe.phone}</p><p><strong>Company size:</strong> ${safe.size}</p><p><strong>Current AI adoption:</strong> ${safe.adoption}</p><p><strong>12-month priority:</strong><br>${safe.priority}</p><p><strong>Hardest decision:</strong><br>${safe.decision}</p><p><strong>Desired connections:</strong><br>${safe.connections}</p><p><strong>Acquisition source:</strong> ${safe.source}</p>` },
       toRecipients: [{ emailAddress: { address: "hello@brandhere.co" } }], replyTo: [{ emailAddress: { address: values.email, name: values.name } }]
     }, saveToSentItems: true })
   });

@@ -1,7 +1,10 @@
 .git
 .git/**
+.gitignore
 .DS_Store
 .assetsignore
+.wrangler
+.wrangler/**
 src
 src/**
 scripts

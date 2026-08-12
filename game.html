@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridge the Gap — A Brand Here Interactive Experiment</title>
+<meta name="description" content="Ideas only create impact when they make it across. Play Bridge the Gap, an AI-assisted interactive experiment by Brand Here.">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bridge the Gap — Brand Here">
+<meta property="og:description" content="Turn insight into impact by bridging the gaps between strategy, capability, adoption and execution.">
+<meta property="og:image" content="https://brandhere.co/images/og-image.png?v=3">
+<meta property="og:url" content="https://brandhere.co/game.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bridge the Gap — Brand Here">
+<meta name="twitter:description" content="Ideas only create impact when they make it across.">
+<meta name="twitter:image" content="https://brandhere.co/images/og-image.png?v=3">
+<link rel="stylesheet" href="css/style.css?v=9">
+</head>
+<body class="game-page">
+
+<header class="site-header game-header">
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="approach.html">Approach</a>
+        <a href="experts.html">Expert Network</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="insights.html">Insights</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Start a Conversation</a>
+      <button class="mobile-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main class="game-main">
+  <section class="game-intro">
+    <div class="wrap game-intro-grid">
+      <div>
+        <div class="eyebrow">Interactive Experiment 02 · Built with AI</div>
+        <h1>Bridge<br>the Gap</h1>
+      </div>
+      <div class="game-intro-copy">
+        <p class="game-thesis">Ideas only create impact when they make it across.</p>
+        <p>Guide the golden idea through the gaps between strategy and execution. Every barrier reflects a real reason transformation stalls.</p>
+        <div class="game-instructions">
+          <span><strong>Desktop</strong> Space or click</span>
+          <span><strong>Mobile</strong> Tap the game</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="game-stage-section">
+    <div class="wrap">
+      <div class="game-shell" id="gameShell">
+        <canvas id="bridgeGame" width="1120" height="630" aria-label="Bridge the Gap game. Press space, click or tap to guide the golden idea through business barriers."></canvas>
+
+        <div class="game-hud" aria-live="polite">
+          <div><span>Impact</span><strong id="gameScore">0</strong></div>
+          <div><span>Best</span><strong id="gameBest">0</strong></div>
+          <div class="game-stage-name"><span>Current capability</span><strong id="gameCapability">Clarity</strong></div>
+        </div>
+
+        <div class="game-overlay active" id="gameStart">
+          <div class="game-overlay-inner">
+            <div class="game-kicker">Current State → Future State</div>
+            <h2>Can your idea<br>make it across?</h2>
+            <p>Build Impact by bridging each business gap.</p>
+            <button class="game-primary" id="gameStartButton" type="button">Start the journey</button>
+          </div>
+        </div>
+
+        <div class="game-overlay" id="gameResult">
+          <div class="game-overlay-inner game-result-inner">
+            <div class="game-kicker" id="gameResultKicker">The idea stopped at</div>
+            <h2 id="gameResultTitle">The Execution Gap</h2>
+            <div class="game-result-score"><span>Impact created</span><strong id="gameResultScore">0</strong></div>
+            <p id="gameResultMessage">Strategy needs ownership, capability and disciplined execution to become impact.</p>
+            <div class="game-result-actions">
+              <button class="game-primary" id="gameRestartButton" type="button">Try again</button>
+              <a class="game-secondary" id="gameServiceLink" href="what-we-do.html">Explore Strategy Consulting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="game-access-note">Motion-sensitive? The game pauses when this tab is not active. No personal data or score is transmitted.</p>
+    </div>
+  </section>
+
+  <section class="section game-meaning reveal">
+    <div class="wrap">
+      <div class="section-label">What the game is teaching</div>
+      <h2>Transformation is a sequence, not a leap.</h2>
+      <div class="game-capability-path">
+        <div><span>01</span><strong>Clarity</strong><p>Choose the problem and direction that matter.</p></div>
+        <div><span>02</span><strong>Strategy</strong><p>Turn ambition into a coherent set of choices.</p></div>
+        <div><span>03</span><strong>Capability</strong><p>Equip people, systems and partners to deliver.</p></div>
+        <div><span>04</span><strong>Adoption</strong><p>Make the new way of working usable and owned.</p></div>
+        <div><span>05</span><strong>Scale</strong><p>Build evidence, improve and expand what works.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="game-experiment reveal">
+    <div class="wrap game-experiment-grid">
+      <div>
+        <div class="section-label">Built with AI. Shaped by judgement.</div>
+        <h2>A playable explanation of Brand Here.</h2>
+      </div>
+      <div>
+        <p>This experiment turns Brand Here's consulting model into an experience. AI accelerated concept exploration, interface copy and code development. Human direction decided what the interaction should teach, how it should feel and what belongs in the final product.</p>
+        <p>That is the broader point: AI can help a business move faster, but judgement is what makes the result relevant.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta reveal">
+    <div class="wrap">
+      <h2>Which gap is holding back your next move?</h2>
+      <a href="contact.html" class="btn-gold">Start a Conversation</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-slogan">Insight to Impact</div>
+    <div>© 2026 Brand Here. Ho Chi Minh City, Vietnam.</div>
+    <div style="margin-top:8px;">
+      <a href="about.html">About</a>·<a href="what-we-do.html">What We Do</a>·<a href="experts.html">Expert Network</a>·<a href="work.html">Work</a>·<a href="game.html">Bridge the Gap</a>·<a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/reveal.js" defer></script>
+<script src="js/game.js" defer></script>
+</body>
+</html>

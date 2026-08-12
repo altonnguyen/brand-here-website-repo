@@ -303,6 +303,20 @@ h1, h2, h3 { font-family: var(--serif); color: var(--navy); }
 .radio-track strong { display: block; color: inherit; font: 400 23px/1.1 var(--serif); }
 .radio-track small { display: block; margin-top: 5px; color: #7F8B9B; font-size: 10px; }
 .radio-track-action { padding-bottom: 3px; border-bottom: 1px solid var(--gold); }
+.radio-lyrics { margin: 0 0 46px; border-top: 1px solid rgba(246,241,230,.2); border-bottom: 1px solid rgba(246,241,230,.2); }
+.radio-lyrics-head { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 0; }
+.radio-lyrics-head strong { display: block; margin-top: 6px; color: var(--paper); font: 400 24px/1.1 var(--serif); }
+.radio-lyrics-label { color: var(--gold-light); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+.radio-lyrics-toggle { padding: 8px 0; color: #AEB9C6; background: none; border: 0; border-bottom: 1px solid var(--gold); font: 500 10px/1 var(--sans); cursor: pointer; }
+.radio-lyrics-body { overflow: hidden; max-height: 520px; padding-bottom: 24px; opacity: 1; transition: max-height .35s ease, opacity .25s ease, padding .35s ease; }
+.radio-lyrics.is-collapsed .radio-lyrics-body { max-height: 0; padding-bottom: 0; opacity: 0; }
+.radio-lyrics-scroll { overflow-y: auto; height: 340px; padding: 126px 8px; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(212,167,44,.5) transparent; }
+.radio-lyric-line { display: block; width: 100%; padding: 9px 0; color: rgba(246,241,230,.28); background: none; border: 0; font: 400 25px/1.2 var(--serif); text-align: left; cursor: pointer; transition: color .25s ease, transform .25s ease; }
+.radio-lyric-line:hover, .radio-lyric-line:focus-visible { color: rgba(246,241,230,.72); outline: 0; }
+.radio-lyric-line.is-near { color: rgba(246,241,230,.55); }
+.radio-lyric-line.is-active { color: var(--gold-light); transform: translateX(10px); }
+.radio-lyrics-note { margin-top: 18px; color: #728093; font-size: 10px; }
+.radio-lyrics-empty { display: grid; height: 340px; place-items: center; color: #8F9CAC; font: 400 24px/1.3 var(--serif); text-align: center; }
 .radio-story-grid, .radio-system-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; }
 .radio-story h2, .radio-system h2 { font-size: clamp(48px,5vw,68px); font-weight: 500; line-height: .95; }
 .radio-story p { color: var(--ink-soft); }
@@ -541,6 +555,10 @@ footer.site-footer a { margin: 0 8px; color: var(--ink-soft); text-decoration: n
   .radio-track strong { font-size: 20px; }
   .radio-track small { max-width: 210px; }
   .radio-formats div { grid-template-columns: 1fr; gap: 7px; }
+  .radio-lyrics-head { align-items: flex-end; }
+  .radio-lyrics-head strong { font-size: 20px; }
+  .radio-lyrics-scroll { height: 300px; padding: 108px 4px; }
+  .radio-lyric-line { font-size: 22px; }
   .game-intro { padding: 66px 0 52px; }
   .game-intro h1 { font-size: 76px; }
   .game-instructions { flex-direction: column; gap: 8px; }

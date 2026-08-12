@@ -80,6 +80,17 @@
           <span id="radioDuration">—:—</span>
         </div>
 
+        <section class="radio-lyrics" id="radioLyrics" aria-label="Synchronized lyrics">
+          <div class="radio-lyrics-head">
+            <div><span class="radio-lyrics-label">Live lyrics</span><strong>Read the meaning as it moves.</strong></div>
+            <button class="radio-lyrics-toggle" id="radioLyricsToggle" type="button" aria-expanded="true" aria-controls="radioLyricsBody">Hide lyrics</button>
+          </div>
+          <div class="radio-lyrics-body" id="radioLyricsBody">
+            <div class="radio-lyrics-scroll" id="radioLyricsScroll" aria-live="off"></div>
+            <p class="radio-lyrics-note" id="radioLyricsNote">Lyrics are synchronized with MASTER A. Select a line to jump to that moment.</p>
+          </div>
+        </section>
+
         <div class="radio-playlist" id="radioPlaylist" aria-label="MAKE IT MATTER playlist"></div>
       </div>
     </div>

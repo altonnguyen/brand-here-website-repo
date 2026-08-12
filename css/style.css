@@ -397,6 +397,30 @@ h1, h2, h3 { font-family: var(--serif); color: var(--navy); }
 .tool-option { padding: 14px; color: var(--navy); background: #FAF8F2; border: 1px solid var(--line); text-align: left; cursor: pointer; }
 .tool-option.selected { border-color: var(--gold); background: #F5EDD6; }
 .tool-privacy { margin-top: 25px; color: #8290A2; font-size: 10px; }
+.tool-next { display: inline-block; margin-top: 28px; padding: 13px 18px; color: var(--navy); background: var(--gold-light); font-size: 10px; font-weight: 600; text-decoration: none; }
+.decision-hero { padding: 110px 0; color: var(--paper); background: var(--navy); }
+.decision-hero .eyebrow { color: var(--gold-light); }
+.decision-hero h1 { max-width: 940px; color: var(--paper); font-size: clamp(62px,8vw,104px); font-weight: 500; line-height: .88; letter-spacing: -.045em; }
+.decision-hero p { max-width: 700px; margin: 32px 0; color: #B7C2CF; font-size: 18px; }
+.decision-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; }
+.decision-list { border-top: 1px solid var(--line); }
+.decision-list > div { display: grid; grid-template-columns: 48px 1fr 1.4fr; gap: 22px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+.decision-list span { color: var(--gold); font-size: 10px; }
+.decision-list strong { font: 500 22px/1.1 var(--serif); }
+.decision-list p { color: var(--ink-soft); font-size: 13px; }
+.decision-fit { padding: 110px 0; background: #EDE5D5; }
+.decision-fit h2 { max-width: 800px; font-size: clamp(45px,5vw,65px); font-weight: 500; line-height: 1; }
+.decision-fit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; margin-top: 50px; background: rgba(12,35,64,.15); }
+.decision-fit-grid p { min-height: 170px; padding: 30px; background: #F4EFE4; font: 400 21px/1.25 var(--serif); }
+.decision-commercial { padding: 110px 0; color: var(--paper); background: #081A31; }
+.decision-commercial .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+.decision-commercial .section-label { color: var(--gold-light); }
+.decision-commercial h2 { color: var(--paper); font-size: 60px; font-weight: 500; }
+.decision-commercial p { margin-bottom: 25px; color: #B7C2CF; }
+.decision-commercial strong { color: var(--paper); }
+.decision-cta-copy { max-width: 650px; margin: 0 auto 28px; color: #AEB9C6; }
+.decision-intake { max-width: 900px; }
+.decision-intro { max-width: 760px; margin-bottom: 45px; color: var(--ink-soft); }
 
 /* Bridge the Gap */
 .game-page { background: #081A31; }
@@ -554,6 +578,8 @@ footer.site-footer a { margin: 0 8px; color: var(--ink-soft); text-decoration: n
   .game-capability-path { grid-template-columns: repeat(3,1fr); }
   .labs-hero-grid, .labs-principle-grid { grid-template-columns: 1fr; gap: 40px; }
   .tool-panel { grid-template-columns: 1fr; }
+  .decision-grid, .decision-commercial .wrap { grid-template-columns: 1fr; gap: 45px; }
+  .decision-fit-grid { grid-template-columns: repeat(2,1fr); }
   .tool-inputs { border-right: 0; border-bottom: 1px solid var(--line); }
   .radio-monogram { min-height: 240px; }
   .final-cta .btn-gold { justify-self: start; }
@@ -638,6 +664,11 @@ footer.site-footer a { margin: 0 8px; color: var(--ink-soft); text-decoration: n
   .lab-card { min-height: 290px; padding: 30px 24px; }
   .tool-inputs, .tool-output { padding: 30px 22px; }
   .tool-metrics { grid-template-columns: 1fr; }
+  .decision-hero { padding: 76px 0; }
+  .decision-hero h1 { font-size: 55px; }
+  .decision-list > div { grid-template-columns: 36px 1fr; }
+  .decision-list p { grid-column: 2; }
+  .decision-fit-grid { grid-template-columns: 1fr; }
   .game-access-note { text-align: left; }
   .final-cta h2 { font-size: 44px; }
   .music-toggle { right: 16px; bottom: 16px; }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Brand Here</title>
+<title>Book a Decision Session — Brand Here</title>
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Contact — Brand Here">
 <meta name="twitter:description" content="Let's talk about where you actually are — not where a deck says you should be.">
     <meta name="twitter:image" content="https://brandhere.co/images/og-image.png?v=3">
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
         <a href="labs.html">Labs</a>
         <a href="insights.html">Insights</a>
       </div>
-      <a href="contact.html" class="nav-cta">Start a Conversation</a>
+      <a href="decision-session.html" class="nav-cta">About the Decision Session</a>
       <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
     </nav>
   </div>
@@ -41,13 +41,15 @@
 
 <section class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Contact</div>
-    <h1>Let's talk about where you actually are — not where a deck says you should be.</h1>
+    <div class="eyebrow">Decision Session</div>
+    <h1>What decision are you facing?</h1>
   </div>
 </section>
 
 <section class="section reveal">
-  <div class="wrap">
+  <div class="wrap decision-intake">
+
+    <p class="decision-intro">Bring one real business decision. We will review the context before responding—so the first conversation can start with the decision, not an introduction.</p>
 
     <p class="contact-info">
       Prefer email? Reach out directly at
@@ -64,18 +66,22 @@
         <input type="text" id="company" name="company">
       </div>
       <div>
-        <label for="email">Email</label>
+        <label for="email">Work email</label>
         <input type="email" id="email" name="email" required>
       </div>
       <div>
-        <label for="message">What are you looking to solve?</label>
-        <textarea id="message" name="message" required></textarea>
+        <label for="message">What decision are you facing?</label>
+        <textarea id="message" name="message" required placeholder="The decision, available options and what makes it difficult…"></textarea>
+      </div>
+      <div>
+        <label for="deadline">When do you need to decide?</label>
+        <input type="text" id="deadline" name="deadline" required placeholder="e.g. Within 30 days">
       </div>
       <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
         <label for="website">Website</label>
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
       </div>
-      <button type="submit" class="btn-gold" id="submitBtn">Send message</button>
+      <button type="submit" class="btn-gold" id="submitBtn">Request a Decision Session</button>
       <p id="formError" style="color:#b3261e; font-size:14px; margin-top:10px; display:none;">
         Something went wrong. Please try again, or email us directly at hello@brandhere.co.
       </p>
@@ -116,7 +122,7 @@
         name: form.elements.name.value,
         company: form.elements.company.value,
         email: form.elements.email.value,
-        message: form.elements.message.value,
+        message: form.elements.message.value + '\n\nDecision timing: ' + form.elements.deadline.value,
         website: form.elements.website.value
       })
     })
@@ -130,9 +136,13 @@
       .catch(function () {
         formError.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send message';
+        submitBtn.textContent = 'Request a Decision Session';
       });
   });
+</script>
+<script>
+  const focus = new URLSearchParams(window.location.search).get('focus');
+  if (focus) document.getElementById('message').placeholder = 'Your ' + focus.replace(/-/g, ' ') + ' result and the decision it raises…';
 </script>
 <script src="js/music-toggle.js" defer></script>
 </body>

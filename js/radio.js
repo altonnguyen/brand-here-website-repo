@@ -11,19 +11,19 @@
   ];
 
   var masterLyrics = [
-    [0, 'It starts with a spark…'], [3.5, 'A reason to believe.'], [7, 'Right here.'],
-    [10, 'Every vision starts in the quiet,'], [13, 'A single spark, a different light.'], [16, 'Questions waiting to become clear,'], [19, 'A future calling, drawing near.'], [22, 'We find the truth beneath the noise,'], [25, 'Turn intention into a voice.'], [28, 'From what you know to what could be,'], [31.5, 'We shape the story people see.'],
-    [35, 'Human insight, imagination,'], [38, 'Purpose into transformation.'], [41, 'When every word and action align,'], [44, 'An idea comes alive.'],
-    [47, 'Bring your vision, make it clear,'], [50, 'The future starts with Brand Here.'], [53, 'More than a name, more than design,'], [56, 'Meaning made to stand the test of time.'], [59, 'Make it human, make it real,'], [62, 'Build a brand the world can feel.'], [65, 'Make it bold, make it sincere—'], [68, 'Make it matter. Brand Here.'],
-    [71, 'Start with why,'], [73, 'Show them how.'], [75, 'Make it matter—'], [77, 'Here and now.'], [79, 'Brand Here.'],
-    [81, 'We listen close and look ahead,'], [84, 'Find the words still left unsaid.'], [87, 'Technology can change the pace,'], [90, 'But human truth must lead the way.'], [93, 'When markets move and signals change,'], [96, 'We turn the complex into strength.'], [99, 'Built for today, prepared to grow,'], [102, 'A brand the future comes to know.'],
-    [105, 'Strategy and imagination,'], [108, 'Moving into transformation.'], [111, 'When every word and action align,'], [114, 'A vision comes alive.'],
-    [117, 'Bring your vision, make it clear,'], [120, 'The future starts with Brand Here.'], [123, 'More than a name, more than design,'], [126, 'Meaning made to stand the test of time.'], [129, 'Make it human, make it real,'], [132, 'Build a brand the world can feel.'], [135, 'Make it bold, make it sincere—'], [138, 'Make it matter. Brand Here.'],
-    [141, 'Not just louder—something true.'], [144, 'Not just different—made for you.'], [147, 'Trends may turn and disappear,'], [150, 'What matters most remains right here.'],
-    [153, 'Your story.'], [155, 'Your purpose.'], [157, 'Your impact.'], [159, 'It starts here.'],
-    [161, 'Bring your vision, make it clear,'], [164, 'Shape the future—Brand Here.'], [167, 'Where human insight and AI align,'], [170, 'Where purpose leads and ideas come alive.'], [173, 'Make it human, make it real,'], [176, 'Build a brand the world can feel.'], [179, 'Make it bold, make it sincere—'], [182, 'Make it matter. Brand Here.'],
-    [185, 'Start with why,'], [187, 'Show them how.'], [189, 'Make it matter—'], [191, 'Here and now.'],
-    [193, 'Your vision.'], [194.5, 'Made visible.'], [196, 'Your meaning.'], [197.5, 'Made memorable.'], [199, 'Brand Here.']
+    [3.3, 'It starts with a spark…'], [7.98, 'A reason to believe.'], [9.52, 'Right here.'],
+    [21.9, 'Every vision starts in the quiet,'], [23.82, 'A single spark, a different light.'], [26.02, 'Questions waiting to become clear,'], [28.08, 'A future calling, drawing near.'], [30.14, 'We find the truth beneath the noise,'], [32.34, 'Turn intention into a voice.'], [34.48, 'From what you know to what could be,'], [36.32, 'We shape the story people see.'],
+    [38.54, 'Human insight, imagination,'], [40.62, 'Purpose into transformation.'], [42.7, 'When every word and action align,'], [44.92, 'An idea comes alive.'],
+    [46.58, 'Bring your vision, make it clear,'], [48.7, 'The future starts with Brand — Here.'], [50.92, 'More than a name, more than design,'], [52.9, 'Meaning made to stand the test of time.'], [55.54, 'Make it human, make it real,'], [57.2, 'Build a brand the world can feel.'], [59.28, 'Make it bold, make it sincere—'], [61.4, 'Make it matter. Brand — Here.'],
+    [63.44, 'Start with why,'], [64.68, 'Show them how.'], [67.56, 'Make it matter, matter, matter—'], [70.04, 'Here and now.'], [71.02, 'Brand — Here.'],
+    [72.26, 'We listen close and look ahead,'], [74.76, 'Find the words still left unsaid.'], [77.02, 'Technology can change the pace,'], [78.92, 'But human truth must lead the way.'], [80.96, 'When markets move and signals change,'], [83.28, 'We turn the complex into strength.'], [85.34, 'Built for today, prepared to grow,'], [87.4, 'A brand the future comes to know.'],
+    [89.6, 'Strategy and imagination,'], [91.56, 'Moving into transformation.'], [93.64, 'When every word and action align,'], [95.92, 'A vision comes alive.'],
+    [97.6, 'Bring your vision, make it clear,'], [99.66, 'The future starts with Brand — Here.'], [101.78, 'More than a name, more than design,'], [103.94, 'Meaning made to stand the test of time.'], [106.52, 'Make it human, make it real,'], [108.16, 'Build a brand the world can feel.'], [110.22, 'Make it bold, make it sincere—'], [112.38, 'Make it matter. Brand — Here.'],
+    [115.22, 'Not just louder—something true.'], [118.68, 'Not just different—made for you.'], [123.42, 'Trends may turn and disappear,'], [127.18, 'What matters most remains right here.'],
+    [133.24, 'Your story.'], [134.94, 'Your purpose.'], [136.96, 'Your impact.'], [139.2, 'It starts here.'],
+    [141.94, 'Bring your vision, make it clear,'], [144.36, 'Shape the future—Brand — Here.'], [150, 'Where human insight and AI align,'], [153.72, 'Where purpose leads and ideas come alive.'], [159.18, 'Make it human, make it real,'], [161.26, 'Build a brand the world can feel.'], [163.38, 'Make it bold, make it sincere—'], [165.42, 'Make it matter. Brand — Here.'],
+    [167.54, 'Start with why,'], [168.76, 'Show them how.'], [170.9, 'Make it matter—'], [173.08, 'Here and now.'],
+    [177.08, 'Your vision.'], [178.46, 'Made visible.'], [180.52, 'Your meaning.'], [183.28, 'Made memorable.'], [187.02, 'Brand — Here.'], [198.74, 'Brand — Here.']
   ];
 
   function init() {

@@ -1,4 +1,5 @@
 (function () {
+  var vi = document.documentElement.lang === 'vi';
   var tracks = [
     { title: 'MAKE IT MATTER · MASTER A', meta: 'Official Brand Here master · Final selected direction', file: 'audio/radio/make-it-matter-brand-here-master-a.mp3' },
     { title: 'Fast Performance', meta: '138 BPM · High-energy performance direction', file: 'audio/radio/make-it-matter-fast-performance.mp3' },
@@ -9,6 +10,19 @@
     { title: 'US–UK Duet · Demo A', meta: '116 BPM · Early duet exploration', file: 'audio/radio/make-it-matter-us-uk-duet-a.mp3' },
     { title: 'US–UK Duet · Demo B', meta: '116 BPM · Alternate early duet exploration', file: 'audio/radio/make-it-matter-us-uk-duet-b.mp3' }
   ];
+  if (vi) {
+    var viTrackText = [
+      ['MAKE IT MATTER · MASTER A', 'Bản hoàn chỉnh chính thức của Brand Here · Phương án được lựa chọn'],
+      ['Trình diễn nhanh', '138 BPM · Định hướng trình diễn giàu năng lượng'],
+      ['Nhóm nam quốc tế', '142 BPM · Định hướng hợp ca tập thể'],
+      ['Nam ca sĩ sân khấu quốc tế', '142 BPM · Định hướng trình diễn quy mô sân vận động'],
+      ['Song ca Mỹ–Anh · Tinh chỉnh A1', '118 BPM · Định hướng song ca tinh chỉnh'],
+      ['Song ca Mỹ–Anh · Tinh chỉnh A2', '118 BPM · Phương án song ca tinh chỉnh khác'],
+      ['Song ca Mỹ–Anh · Bản thử A', '116 BPM · Khám phá song ca ban đầu'],
+      ['Song ca Mỹ–Anh · Bản thử B', '116 BPM · Phương án khám phá song ca ban đầu khác']
+    ];
+    tracks.forEach(function (track, i) { track.title = viTrackText[i][0]; track.meta = viTrackText[i][1]; });
+  }
 
   var masterLyrics = [
     [3.3, 'It starts with a spark…'], [7.98, 'A reason to believe.'], [9.52, 'Right here.'],
@@ -57,10 +71,10 @@
 
     function renderPlaylist() {
       playlist.innerHTML = tracks.map(function (track, i) {
-        return '<button class="radio-track' + (i === index ? ' active' : '') + '" type="button" data-track="' + i + '" aria-label="Play ' + track.title + '">' +
+        return '<button class="radio-track' + (i === index ? ' active' : '') + '" type="button" data-track="' + i + '" aria-label="' + (vi ? 'Phát ' : 'Play ') + track.title + '">' +
           '<span class="radio-track-index">' + String(i + 1).padStart(2, '0') + '</span>' +
           '<span><strong>' + track.title + '</strong><small>' + track.meta + '</small></span>' +
-          '<span class="radio-track-action">Play</span>' +
+          '<span class="radio-track-action">' + (vi ? 'Phát' : 'Play') + '</span>' +
         '</button>';
       }).join('');
     }
@@ -68,14 +82,14 @@
     function renderLyrics() {
       activeLyric = -1;
       if (index !== 0) {
-        lyricsScroll.innerHTML = '<div class="radio-lyrics-empty">Lyrics are available on<br>MAKE IT MATTER · MASTER A.</div>';
-        lyricsNote.textContent = 'Choose MASTER A from the playlist to follow the complete lyrics.';
+        lyricsScroll.innerHTML = '<div class="radio-lyrics-empty">' + (vi ? 'Lời bài hát có trên<br>MAKE IT MATTER · MASTER A.' : 'Lyrics are available on<br>MAKE IT MATTER · MASTER A.') + '</div>';
+        lyricsNote.textContent = vi ? 'Chọn MASTER A trong danh sách phát để theo dõi toàn bộ lời bài hát.' : 'Choose MASTER A from the playlist to follow the complete lyrics.';
         return;
       }
       lyricsScroll.innerHTML = masterLyrics.map(function (line, i) {
         return '<button class="radio-lyric-line" type="button" data-lyric="' + i + '" data-time="' + line[0] + '">' + line[1] + '</button>';
       }).join('');
-      lyricsNote.textContent = 'Lyrics are synchronized with MASTER A. Select a line to jump to that moment.';
+      lyricsNote.textContent = vi ? 'Lời bài hát được đồng bộ với MASTER A. Chọn một dòng để chuyển đến thời điểm tương ứng.' : 'Lyrics are synchronized with MASTER A. Select a line to jump to that moment.';
       updateLyrics(0);
     }
 
@@ -105,13 +119,13 @@
       current.textContent = '0:00';
       duration.textContent = '—:—';
       seek.value = 0;
-      play.setAttribute('aria-label', 'Play ' + track.title);
-      status.textContent = shouldPlay ? 'Loading' : 'Ready to play';
+      play.setAttribute('aria-label', (vi ? 'Phát ' : 'Play ') + track.title);
+      status.textContent = shouldPlay ? (vi ? 'Đang tải' : 'Loading') : (vi ? 'Sẵn sàng phát' : 'Ready to play');
       player.classList.remove('is-playing');
       renderPlaylist();
       renderLyrics();
       if (shouldPlay) {
-        audio.play().catch(function () { status.textContent = 'Ready to play'; });
+        audio.play().catch(function () { status.textContent = vi ? 'Sẵn sàng phát' : 'Ready to play'; });
       }
     }
 
@@ -136,7 +150,7 @@
     });
     lyricsToggle.addEventListener('click', function () {
       var collapsed = lyrics.classList.toggle('is-collapsed');
-      lyricsToggle.textContent = collapsed ? 'Show lyrics' : 'Hide lyrics';
+      lyricsToggle.textContent = collapsed ? (vi ? 'Hiện lời bài hát' : 'Show lyrics') : (vi ? 'Ẩn lời bài hát' : 'Hide lyrics');
       lyricsToggle.setAttribute('aria-expanded', String(!collapsed));
     });
     seek.addEventListener('input', function () {
@@ -151,17 +165,17 @@
     });
     audio.addEventListener('play', function () {
       player.classList.add('is-playing');
-      status.textContent = 'Now playing';
-      play.setAttribute('aria-label', 'Pause ' + tracks[index].title);
+      status.textContent = vi ? 'Đang phát' : 'Now playing';
+      play.setAttribute('aria-label', (vi ? 'Tạm dừng ' : 'Pause ') + tracks[index].title);
       var activeAction = playlist.querySelector('.radio-track.active .radio-track-action');
-      if (activeAction) activeAction.textContent = 'Playing';
+      if (activeAction) activeAction.textContent = vi ? 'Đang phát' : 'Playing';
     });
     audio.addEventListener('pause', function () {
       player.classList.remove('is-playing');
-      if (!audio.ended) status.textContent = audio.currentTime > 0 ? 'Paused' : 'Ready to play';
-      play.setAttribute('aria-label', 'Play ' + tracks[index].title);
+      if (!audio.ended) status.textContent = audio.currentTime > 0 ? (vi ? 'Đã tạm dừng' : 'Paused') : (vi ? 'Sẵn sàng phát' : 'Ready to play');
+      play.setAttribute('aria-label', (vi ? 'Phát ' : 'Play ') + tracks[index].title);
       var activeAction = playlist.querySelector('.radio-track.active .radio-track-action');
-      if (activeAction) activeAction.textContent = 'Play';
+      if (activeAction) activeAction.textContent = vi ? 'Phát' : 'Play';
     });
     audio.addEventListener('ended', function () { loadTrack(index + 1, true); });
 

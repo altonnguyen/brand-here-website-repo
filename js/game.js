@@ -43,7 +43,7 @@
     { name: 'Khoảng cách chiến lược', message: 'Tham vọng cần trở thành một hệ thống lựa chọn nhất quán trước khi cam kết nguồn lực.', service: 'Khám phá Tư vấn chiến lược', href: 'what-we-do.html' },
     { name: 'Khoảng cách năng lực', message: 'Chiến lược chỉ chuyển động khi con người, hệ thống và chuyên gia có thể thực thi.', service: 'Gặp mạng lưới chuyên gia', href: 'experts.html' },
     { name: 'Khoảng cách ứng dụng', message: 'Chuyển đổi thành công khi đội ngũ hiểu, sử dụng và làm chủ cách làm việc mới.', service: 'Khám phá Chuyển đổi AI', href: 'what-we-do.html' },
-    { name: 'Khoảng cách thực thi', message: 'Tiến bộ cần ownership rõ, kỷ luật vận hành và bằng chứng từ thị trường.', service: 'Xem phương pháp', href: 'approach.html' }
+    { name: 'Khoảng cách thực thi', message: 'Tiến bộ cần phân định trách nhiệm rõ ràng, kỷ luật vận hành và bằng chứng từ thị trường.', service: 'Xem phương pháp', href: 'approach.html' }
   ];
 
   try { best = Number(localStorage.getItem('brandHereBridgeBest')) || 0; } catch (e) {}

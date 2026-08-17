@@ -149,6 +149,178 @@ for (const page of [...new Set(['index.html', ...pages, 'about.html', 'what-we-d
   writeFileSync(path, html);
 }
 
+// Final editorial pass: remove avoidable English from the Vietnamese experience
+// while preserving proper names, registered credentials, song lyrics and product names.
+const vietnamesePolish = new Map([
+  ['Một chương mới, không phải một agency mới.', 'Một chương mới, không chỉ là một công ty truyền thông mới.'],
+  ['integrated marketing communications agency', 'công ty truyền thông tiếp thị tích hợp'],
+  ['e-commerce, digital transformation', 'thương mại điện tử, chuyển đổi số'],
+  ['Prototype cục bộ', 'Bản thử nghiệm cục bộ'],
+  ['workshop', 'buổi làm việc chuyên sâu'],
+  ['e-commerce', 'thương mại điện tử'],
+  ['best-practice framework', 'khung phương pháp thực tiễn tốt'],
+  ['để scale và tránh những pilot không bao giờ đi vào production', 'để mở rộng quy mô và tránh những thử nghiệm không bao giờ đi vào vận hành thực tế'],
+  ['unit economics', 'hiệu quả kinh tế trên từng đơn hàng'],
+  ['product listing', 'trang giới thiệu sản phẩm'],
+  ['Decision Map', 'Bản đồ quyết định'],
+  ['Ethics, Compliance &amp; Risk', 'Đạo đức, Tuân thủ &amp; Rủi ro'],
+  ['MedTech, enterprise risk, third-party risk, business continuity, policy implementation, data privacy', 'công nghệ y tế, rủi ro doanh nghiệp, rủi ro bên thứ ba, duy trì hoạt động kinh doanh, triển khai chính sách và bảo vệ dữ liệu cá nhân'],
+  ['accountability, safeguards và controls', 'trách nhiệm giải trình, biện pháp bảo vệ và cơ chế kiểm soát'],
+  ['SME', 'doanh nghiệp vừa và nhỏ'],
+  ['working capital', 'vốn lưu động'],
+  ['Technology Leadership &amp; Digital Platforms', 'Lãnh đạo công nghệ &amp; Nền tảng số'],
+  ['fintech, connected devices, game và enterprise applications', 'công nghệ tài chính, thiết bị kết nối, trò chơi và ứng dụng doanh nghiệp'],
+  ['engineering leadership', 'năng lực lãnh đạo kỹ thuật'],
+  ['delivery risk', 'rủi ro triển khai'],
+  ['production systems', 'hệ thống công nghệ vận hành thực tế'],
+  ['E-commerce &amp; Growth Marketing Lead', 'Trưởng nhóm Thương mại điện tử &amp; Tiếp thị tăng trưởng'],
+  ['full-funnel', 'toàn bộ hành trình chuyển đổi'],
+  ['ride-hailing', 'gọi xe công nghệ'],
+  ['compliance', 'tuân thủ'],
+  ['AI pilot', 'chương trình thử nghiệm AI'],
+  ['AI adoption', 'việc ứng dụng AI'],
+  ['Finance, Medical, Compliance, Regional Leadership', 'Tài chính, Y khoa, Tuân thủ, Lãnh đạo khu vực'],
+  ['market intelligence', 'phân tích thông tin thị trường'],
+  ['scenario planning', 'lập kế hoạch theo kịch bản'],
+  ['AI governance', 'quản trị AI'],
+  ['data privacy', 'bảo vệ dữ liệu và quyền riêng tư'],
+  ['thought leadership', 'nội dung dẫn dắt tư duy'],
+  ['go-to-market', 'tiếp cận và thâm nhập thị trường'],
+  ['use case', 'trường hợp ứng dụng'],
+  ['Decision support', 'Hỗ trợ ra quyết định'],
+  ['narrative', 'câu chuyện định vị'],
+  ['E-commerce', 'Thương mại điện tử'],
+  ['merchandising', 'quản trị danh mục và trưng bày sản phẩm'],
+  ['forecasting', 'dự báo'],
+  ['Case study', 'Câu chuyện dự án'],
+  ['case study', 'dự án tiêu biểu'],
+  ['stress-test', 'kiểm chứng'],
+  ['viết và biên tập website', 'viết và biên tập trang web'],
+  ['concept, storytelling, employer branding', 'ý tưởng, kể chuyện và thương hiệu nhà tuyển dụng'],
+  ['retail activation', 'hoạt động kích hoạt tại điểm bán'],
+  ['xây dựng brief', 'xây dựng đề bài'],
+  ['production trọn gói', 'sản xuất trọn gói'],
+  ['visual storytelling', 'kể chuyện bằng hình ảnh'],
+  ['corporate film', 'phim doanh nghiệp'],
+  ['motion graphics', 'đồ họa chuyển động'],
+  ['creative direction', 'định hướng sáng tạo'],
+  ['hybrid', 'kết hợp'],
+  ['Brand anthem', 'Ca khúc thương hiệu'],
+  ['Creative brief', 'Đề bài sáng tạo'],
+  ['sáng lập agency', 'sáng lập công ty truyền thông'],
+  ['Từng xây agency.', 'Từng xây công ty truyền thông.'],
+  ['phần lớn agency không có', 'phần lớn công ty truyền thông không có'],
+  ['một cơ cấu agency cố định', 'một cơ cấu công ty truyền thông cố định'],
+  ['chương trình thử nghiệm AI không bao giờ đi vào production', 'chương trình thử nghiệm AI không bao giờ đi vào vận hành thực tế'],
+  ['Nhiều pilot hoạt động tốt trong demo', 'Nhiều thử nghiệm hoạt động tốt trong bản trình diễn'],
+  ['Những năm agency', 'Những năm xây dựng công ty truyền thông'],
+  ['Những năm corporate', 'Những năm làm việc trong tập đoàn'],
+  ['judgement về audience, message', 'khả năng đánh giá đối tượng và thông điệp'],
+  ['Founder nên làm gì?', 'Nhà sáng lập nên làm gì?'],
+  ['Phát triển concept, quay phim và storytelling dựa trên tiếng nói thật của nhân viên cho hoạt động employer branding.', 'Phát triển ý tưởng, quay phim và kể chuyện dựa trên tiếng nói thật của nhân viên cho hoạt động xây dựng thương hiệu nhà tuyển dụng.'],
+  ['được dẫn dắt bằng judgement của con người', 'được dẫn dắt bằng khả năng đánh giá của con người'],
+  ['Lựa chọn và trade-off', 'Lựa chọn và đánh đổi'],
+  ['Third-party cost được tách riêng.', 'Chi phí bên thứ ba được tách riêng.'],
+  ['AI · Compliance', 'AI · Tuân thủ'],
+  ['năng lực, adoption và execution', 'năng lực, mức độ ứng dụng và khả năng thực thi'],
+  ['Production trọn gói', 'Sản xuất trọn gói'],
+  ['chi phí đối tác và production đã được phê duyệt', 'chi phí đối tác và sản xuất đã được phê duyệt'],
+  ['quy trình hybrid', 'quy trình kết hợp'],
+  ['nhập prompt rồi đăng', 'nhập câu lệnh rồi đăng'],
+  ['Đạo đức, Compliance và Quản trị rủi ro', 'Đạo đức, Tuân thủ và Quản trị rủi ro'],
+  ['kiểm toán, y tế, MedTech, bán lẻ đến chuỗi cung ứng; bao gồm enterprise risk, third-party risk, điều tra, business continuity, policy implementation và bảo vệ dữ liệu và quyền riêng tư', 'kiểm toán, y tế, công nghệ y tế, bán lẻ đến chuỗi cung ứng; bao gồm rủi ro doanh nghiệp, rủi ro bên thứ ba, điều tra, duy trì hoạt động kinh doanh, triển khai chính sách và bảo vệ dữ liệu cá nhân'],
+  ['Bachelor of Commerce tại RMIT University Vietnam', 'bằng Cử nhân Thương mại tại Đại học RMIT Việt Nam'],
+  ['FP&amp;A, cash-flow dự báo, management reporting, IFRS, kiểm toán, internal control, thuế, treasury, ERP', 'lập kế hoạch và phân tích tài chính (FP&amp;A), dự báo dòng tiền, báo cáo quản trị, IFRS, kiểm toán, kiểm soát nội bộ, thuế, ngân quỹ, ERP'],
+  ['bộ phận finance', 'bộ phận tài chính'],
+  ['Credentials gồm', 'Các chứng chỉ chuyên môn gồm'],
+  ['fintech, hệ thống thanh toán, connected devices, game, enterprise applications', 'công nghệ tài chính, hệ thống thanh toán, thiết bị kết nối, trò chơi và ứng dụng doanh nghiệp'],
+  ['Master of Computer Science', 'bằng Thạc sĩ Khoa học Máy tính'],
+  ['Software Engineering', 'Kỹ thuật Phần mềm'],
+  ['Technical Lead', 'Trưởng nhóm Kỹ thuật'],
+  ['AWS infrastructure, full-stack web platforms, API và CRM', 'hạ tầng AWS, nền tảng web toàn diện, API và hệ thống quản trị quan hệ khách hàng (CRM)'],
+  ['Growth Marketing', 'Tiếp thị tăng trưởng'],
+  ['FMCG, F&amp;B', 'hàng tiêu dùng nhanh (FMCG), thực phẩm và đồ uống (F&amp;B)'],
+  ['The Brand Here Method', 'Phương pháp Brand Here'],
+  ['khung phương pháp thực tiễn tốt lý thuyết', 'một khuôn mẫu lý thuyết được cho là tối ưu']
+  ,['từ agency đến lãnh đạo thương mại tập đoàn', 'từ công ty truyền thông đến lãnh đạo thương mại tập đoàn']
+  ,['aria-label="Play MAKE IT MATTER · MASTER A"', 'aria-label="Phát MAKE IT MATTER · MASTER A"']
+  ,['Decision timing:', 'Thời hạn ra quyết định:']
+  ,['bằng bằng Thạc sĩ', 'bằng Thạc sĩ']
+  ,['trò chơi và ứng dụng doanh nghiệp và tích hợp đối tác', 'trò chơi, ứng dụng doanh nghiệp và tích hợp đối tác']
+  ,['việc ứng dụng AI thất bại', 'Việc ứng dụng AI thất bại']
+  ,['đánh giá đối tượng và thông điệp và lý do', 'đánh giá đối tượng, thông điệp và lý do']
+  ,['Mô hình kinh doanh, tiếp cận và thâm nhập thị trường và mở rộng thị trường', 'Mô hình kinh doanh, chiến lược thâm nhập và mở rộng thị trường']
+  ,['<li>quản trị AI, bảo vệ dữ liệu và quyền riêng tư và chương trình đào tạo</li>', '<li>Quản trị AI, bảo vệ dữ liệu, quyền riêng tư và chương trình đào tạo</li>']
+  ,['nội dung nội dung dẫn dắt tư duy', 'nội dung dẫn dắt tư duy']
+  ,['tốt nghiệp bằng Cử nhân Thương mại', 'có bằng Cử nhân Thương mại']
+  ,['các hệ thống công nghệ vận hành thực tế', 'các hệ thống công nghệ thực tế']
+]);
+
+const allVietnamesePages = ['index.html', 'about.html', 'what-we-do.html', 'approach.html', 'experts.html', 'partners.html', 'labs.html', 'work.html', 'insights.html', 'radio.html', 'game.html', 'alignment-lab.html', 'advisory-lab.html', 'commerce-lab.html', 'decision-session.html', 'contact.html', 'thank-you.html'];
+for (const page of allVietnamesePages) {
+  const path = resolve(root, 'vi', page);
+  let html = readFileSync(path, 'utf8');
+  for (const [source, target] of vietnamesePolish) html = html.split(source).join(target);
+  html = html
+    .replaceAll('initial-mở rộng quy mô', 'initial-scale')
+    .replaceAll('radioLời bài hát', 'radioLyrics')
+    .replaceAll('aria-label="Bridge the Gap game. Press space, click or tap to guide the golden idea through business barriers."', 'aria-label="Trò chơi Bridge the Gap. Nhấn phím cách, nhấp chuột hoặc chạm để dẫn ý tưởng vàng vượt qua các rào cản kinh doanh."')
+    .replaceAll('aria-label="Play MAKE IT MATTER — Brand Here — MASTER A"', 'aria-label="Phát MAKE IT MATTER — Brand Here — MASTER A"')
+    .replaceAll('alt="Alton Nguyen, Founder Brand Here"', 'alt="Alton Nguyen, Nhà sáng lập Brand Here"');
+  writeFileSync(path, html);
+}
+
+const javascriptPolish = {
+  'js/advisory-lab.js': new Map([
+    ['Cố vấn chiến lược e-commerce', 'Cố vấn chiến lược thương mại điện tử'],
+    ['Chuyên gia marketplace và performance', 'Chuyên gia sàn thương mại điện tử và tiếp thị hiệu suất']
+  ]),
+  'js/commerce-lab.js': new Map([
+    ['chi phí hoặc acquisition trước khi mở rộng', 'chi phí hoặc chi phí thu hút khách hàng trước khi mở rộng'],
+    ['Unit economics cơ bản', 'Hiệu quả kinh tế cơ bản'],
+    ['overhead cũng hợp lý', 'chi phí quản lý chung cũng hợp lý'],
+    ['nền tảng, media và fulfilment', 'nền tảng, truyền thông và xử lý đơn hàng'],
+    ['Xác thực claim sản phẩm', 'Xác thực tuyên bố sản phẩm'],
+    ['vận hành live commerce', 'hoạt động bán hàng trực tiếp'],
+    ['đánh giá, fulfilment và hiệu quả tìm kiếm', 'đánh giá, xử lý đơn hàng và hiệu quả tìm kiếm'],
+    ['Lập kế hoạch acquisition, dữ liệu first-party, niềm tin và fulfilment', 'Lập kế hoạch thu hút khách hàng, dữ liệu do doanh nghiệp trực tiếp thu thập, niềm tin và xử lý đơn hàng'],
+    ['chạy pilot có kiểm soát', 'chạy thử nghiệm có kiểm soát'],
+    ['CTA phù hợp từng kênh', 'lời kêu gọi hành động phù hợp từng kênh']
+  ]),
+  'js/vi-runtime.js': new Map([
+    ['Tình huống Compliance', 'Tình huống tuân thủ'],
+    ['unit economics và lựa chọn vào thị trường có đủ sức nâng đỡ một hoạt động e-commerce', 'hiệu quả kinh tế trên từng đơn hàng và lựa chọn vào thị trường có đủ sức nâng đỡ hoạt động thương mại điện tử'],
+    ['Tối ưu listing', 'Tối ưu trang giới thiệu sản phẩm'],
+    ['Tính unit economics', 'Tính hiệu quả từng đơn hàng'],
+    ['Lyrics đồng bộ', 'Lời bài hát đồng bộ'],
+    ['Ẩn lyrics', 'Ẩn lời bài hát'],
+    ['Creative brief', 'Đề bài sáng tạo'],
+    ['chi phí hoặc acquisition trước khi mở rộng', 'chi phí hoặc chi phí thu hút khách hàng trước khi mở rộng'],
+    ['Unit economics cơ bản cho phép thử tăng trưởng, nếu repeat purchase và overhead cũng hợp lý', 'Hiệu quả kinh tế cơ bản cho phép thử tăng trưởng, nếu tỷ lệ mua lại và chi phí quản lý chung cũng hợp lý'],
+    ['Dán headline và phần giới thiệu', 'Dán tiêu đề và phần giới thiệu'],
+    ['Prototype cục bộ', 'Bản thử nghiệm cục bộ'],
+    ['Lãnh đạo sở hữu quá trình adoption', 'Lãnh đạo chịu trách nhiệm về việc ứng dụng'],
+    ['Governance có tính thực tế', 'Quản trị có tính thực tế'],
+    ['các trade-off', 'các đánh đổi'],
+    ['Một core team tập trung', 'Một đội ngũ nòng cốt tập trung'],
+    ['Fulfilment và đóng gói', 'Xử lý đơn hàng và đóng gói'],
+    ['Contribution mỗi đơn', 'Lợi nhuận đóng góp mỗi đơn'],
+    ['Biên contribution', 'Biên lợi nhuận đóng góp'],
+    ['judgement của con người', 'khả năng đánh giá của con người'],
+    ['generative AI', 'AI tạo sinh'],
+    ['Đây không phải prompt rồi đăng', 'Đây không phải nhập câu lệnh rồi đăng'],
+    ['Lyrics được đồng bộ', 'Lời bài hát được đồng bộ'],
+    ['Brand judgement', 'Năng lực đánh giá thương hiệu']
+  ])
+};
+
+for (const [relativePath, replacements] of Object.entries(javascriptPolish)) {
+  const path = resolve(root, relativePath);
+  let source = readFileSync(path, 'utf8');
+  for (const [from, to] of replacements) source = source.split(from).join(to);
+  writeFileSync(path, source);
+}
+
 const homePath = resolve(root, 'index.html');
 writeFileSync(homePath, readFileSync(homePath, 'utf8').replace('href="vi/index.html">VI', 'href="vi/">VI'));
 

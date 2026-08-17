@@ -29,13 +29,21 @@
   var barriers = [];
   var particles = [];
   var capabilityIndex = 0;
-  var capabilities = ['Clarity', 'Strategy', 'Capability', 'Adoption', 'Scale'];
+  var vi = document.documentElement.lang === 'vi';
+  var capabilities = vi ? ['Rõ hướng', 'Chiến lược', 'Năng lực', 'Ứng dụng', 'Mở rộng'] : ['Clarity', 'Strategy', 'Capability', 'Adoption', 'Scale'];
   var gaps = [
     { name: 'The Clarity Gap', message: 'The next move begins by choosing the right problem and direction.', service: 'Explore Strategy Consulting', href: 'what-we-do.html' },
     { name: 'The Strategy Gap', message: 'Ambition needs a coherent set of choices before resources are committed.', service: 'Explore Strategy Consulting', href: 'what-we-do.html' },
     { name: 'The Capability Gap', message: 'Strategy only moves when people, systems and specialist expertise can deliver it.', service: 'Meet the Expert Network', href: 'experts.html' },
     { name: 'The Adoption Gap', message: 'Transformation succeeds when teams understand, use and own the new way of working.', service: 'Explore AI Transformation', href: 'what-we-do.html' },
     { name: 'The Execution Gap', message: 'Progress requires clear ownership, operating discipline and evidence from the market.', service: 'See How We Work', href: 'approach.html' }
+  ];
+  if (vi) gaps = [
+    { name: 'Khoảng cách về sự rõ ràng', message: 'Bước tiếp theo bắt đầu bằng việc chọn đúng vấn đề và hướng đi.', service: 'Khám phá Tư vấn chiến lược', href: 'what-we-do.html' },
+    { name: 'Khoảng cách chiến lược', message: 'Tham vọng cần trở thành một hệ thống lựa chọn nhất quán trước khi cam kết nguồn lực.', service: 'Khám phá Tư vấn chiến lược', href: 'what-we-do.html' },
+    { name: 'Khoảng cách năng lực', message: 'Chiến lược chỉ chuyển động khi con người, hệ thống và chuyên gia có thể thực thi.', service: 'Gặp mạng lưới chuyên gia', href: 'experts.html' },
+    { name: 'Khoảng cách ứng dụng', message: 'Chuyển đổi thành công khi đội ngũ hiểu, sử dụng và làm chủ cách làm việc mới.', service: 'Khám phá Chuyển đổi AI', href: 'what-we-do.html' },
+    { name: 'Khoảng cách thực thi', message: 'Tiến bộ cần ownership rõ, kỷ luật vận hành và bằng chứng từ thị trường.', service: 'Xem phương pháp', href: 'approach.html' }
   ];
 
   try { best = Number(localStorage.getItem('brandHereBridgeBest')) || 0; } catch (e) {}

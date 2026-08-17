@@ -63,6 +63,14 @@
       cost: 'Usually a symptom of a recent reorganisation, an acquisition, or two senior leaders running different operating models without either one being wrong.'
     }
   };
+  if (document.documentElement.lang === 'vi') STATES = {
+    groupthink:{name:'Tư duy nhóm',body:'Mọi người co lại thành một cụm. Bên trong có cảm giác thống nhất, nhưng không ai còn đứng ở rìa để nhìn thấy tín hiệu mới.',cost:'Thất bại chỉ lộ ra khi thị trường thay đổi — và lúc đó không ai ở vị trí nhận ra sớm.'},
+    silo:{name:'Silo',body:'Các nhóm hình thành và bảo vệ không gian riêng. Bên trong từng đơn vị công việc có vẻ trật tự, nhưng nhìn từ toàn hệ thống lại không cộng thành một hướng chung.',cost:'Chi phí nằm ở công việc trùng lặp và những quyết định không ai sở hữu giữa hai phòng ban.'},
+    drift:{name:'Trôi hướng',body:'Mọi người cùng chỉ về một phía, nhưng chưa chắc đó là nơi đáng đi. Alignment truyền cả hướng đúng lẫn hướng sai với tốc độ như nhau.',cost:'Nguy hiểm vì các chỉ số nội bộ có thể vẫn đẹp cho đến khi thị trường chứng minh điều ngược lại.'},
+    noise:{name:'Nhiễu',body:'Ai cũng chuyển động nhưng không ai chuyển động cùng nhau. Đây thường là một tổ chức rất bận, nơi không có hai người mô tả ưu tiên giống nhau.',cost:'Thêm giao tiếp không giải quyết được khi điều cốt lõi vẫn chưa được quyết định.'},
+    coherent:{name:'Nhất quán',body:'Đủ gắn kết để giữ hướng, đủ khoảng cách để người ở rìa nhận tín hiệu mới. Tổ chức đổi hướng mà không tan rã và không phải chờ xin phép.',cost:'Không phải trạng thái cố định; tổ chức phải liên tục tìm lại sự cân bằng khi quy mô thay đổi.'},
+    contested:{name:'Giằng co',body:'Ba lực đang kéo theo những logic không tương thích. Hình dạng tổ chức liên tục thay đổi nhưng không giữ được.',cost:'Thường xuất hiện sau tái cấu trúc, M&A hoặc khi hai lãnh đạo vận hành theo hai mô hình khác nhau.'}
+  };
 
   var PRESETS = {
     silo:       { sep: 88, ali: 22, coh: 40 },

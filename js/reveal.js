@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var nav=document.querySelector('nav');
+  if(nav&&!nav.querySelector('.lang-switch')){
+    var isVi=location.pathname.indexOf('/vi/')>=0, path=location.pathname;
+    var target=isVi?path.replace('/vi/','/'):'/vi/'+(path.split('/').pop()||'index.html');
+    var sw=document.createElement('div'); sw.className='lang-switch';
+    sw.innerHTML=isVi?'<a href="'+target+'">EN</a><strong>VI</strong>':'<strong>EN</strong><a href="'+target+'">VI</a>';
+    var cta=nav.querySelector('.nav-cta'); nav.insertBefore(sw,cta||nav.lastChild);
+  }
   var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) || els.length === 0) {
     els.forEach(function (el) { el.classList.add('visible'); });

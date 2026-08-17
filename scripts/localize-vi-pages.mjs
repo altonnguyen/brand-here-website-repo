@@ -137,10 +137,10 @@ for (const page of pages) {
 const navItems = [
   ['about.html', 'Về chúng tôi'], ['what-we-do.html', 'Dịch vụ'],
   ['approach.html', 'Phương pháp'], ['experts.html', 'Chuyên gia'],
-  ['labs.html', 'Labs'], ['work.html', 'Dự án'], ['insights.html', 'Góc nhìn']
+  ['partners.html', 'Đối tác'], ['labs.html', 'Labs'], ['work.html', 'Dự án'], ['insights.html', 'Góc nhìn']
 ];
 
-for (const page of [...new Set(['index.html', ...pages, 'about.html', 'what-we-do.html', 'approach.html', 'experts.html', 'labs.html', 'work.html', 'insights.html', 'decision-session.html', 'contact.html'])]) {
+for (const page of [...new Set(['index.html', ...pages, 'about.html', 'what-we-do.html', 'approach.html', 'experts.html', 'partners.html', 'labs.html', 'work.html', 'insights.html', 'decision-session.html', 'contact.html'])]) {
   const path = resolve(root, 'vi', page);
   let html = readFileSync(path, 'utf8');
   const links = navItems.map(([href, label]) => `<a${page === href ? ' class="active"' : ''} href="${href}">${label}</a>`).join('');
@@ -151,3 +151,16 @@ for (const page of [...new Set(['index.html', ...pages, 'about.html', 'what-we-d
 
 const homePath = resolve(root, 'index.html');
 writeFileSync(homePath, readFileSync(homePath, 'utf8').replace('href="vi/index.html">VI', 'href="vi/">VI'));
+
+const englishNavItems = [
+  ['about.html', 'About'], ['what-we-do.html', 'What We Do'], ['approach.html', 'Approach'],
+  ['experts.html', 'Experts'], ['partners.html', 'Partners'], ['labs.html', 'Labs'],
+  ['work.html', 'Work'], ['insights.html', 'Insights']
+];
+for (const page of ['index.html', 'about.html', 'what-we-do.html', 'approach.html', 'experts.html', 'partners.html', 'labs.html', 'work.html', 'insights.html', 'radio.html', 'game.html', 'alignment-lab.html', 'advisory-lab.html', 'commerce-lab.html', 'decision-session.html', 'contact.html']) {
+  const path = resolve(root, page);
+  let html = readFileSync(path, 'utf8');
+  const links = englishNavItems.map(([href, label]) => `<a${page === href ? ' class="active"' : ''} href="${href}">${label}</a>`).join('');
+  html = html.replace(/<div class="nav-links" id="navLinks">[\s\S]*?<\/div>/, `<div class="nav-links" id="navLinks">${links}</div>`);
+  writeFileSync(path, html);
+}

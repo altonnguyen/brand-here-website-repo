@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Alignment Lab — Brand Here</title><meta name="description" content="An interactive model of how organisations hold together, fragment or collapse — built on the three forces that govern collective movement."><link rel="canonical" href="https://brandhere.co/alignment-lab.html"><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="css/style.css?v=11">
+<style>
+.align-panel { grid-template-columns: .78fr 1.22fr; }
+.align-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; background: #081A2F; border: 1px solid rgba(246,241,230,.14); cursor: crosshair; }
+.align-stage canvas { display: block; width: 100%; height: 100%; }
+.align-hint { margin-top: 11px; color: #7F8DA0; font-size: 10px; letter-spacing: .05em; }
+.align-state { margin-top: 30px; }
+.align-state .name { color: var(--gold-light); font: 500 40px/1 var(--serif); }
+.align-state .body { margin-top: 14px; color: #C1CAD5; font-size: 13.5px; line-height: 1.72; }
+.align-state .cost { margin-top: 14px; padding-left: 15px; border-left: 1px solid rgba(184,134,11,.5); color: #9FADBD; font-size: 12.5px; line-height: 1.7; }
+.align-presets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 28px; }
+.align-preset { padding: 12px 10px; color: var(--navy); background: #FAF8F2; border: 1px solid var(--line); font: 500 10px/1 var(--sans); letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+.align-preset:hover { border-color: var(--gold); background: #F5EDD6; }
+.align-slider-head { display: flex; justify-content: space-between; align-items: baseline; }
+.align-slider-head b { color: var(--navy); font: 500 13px/1 var(--sans); letter-spacing: 0; text-transform: none; }
+.align-slider-head i { color: var(--gold); font: 500 11px/1 var(--sans); font-style: normal; }
+.align-note { margin-top: 6px; color: #8794A6; font-size: 11px; letter-spacing: 0; text-transform: none; line-height: 1.55; }
+@media (max-width: 900px) {
+  .align-panel { grid-template-columns: 1fr; }
+  .tool-inputs { border-right: 0; border-bottom: 1px solid var(--line); }
+  .tool-inputs, .tool-output { padding: 30px; }
+}
+</style>
+</head>
+<body class="tool-page"><header class="site-header"><div class="wrap"><nav><a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><div class="nav-links" id="navLinks"><a href="what-we-do.html">What We Do</a><a href="experts.html">Expert Network</a><a href="work.html">Work</a><a href="labs.html" class="active">Labs</a><a href="insights.html">Insights</a></div><a href="decision-session.html" class="nav-cta">Book a Decision Session</a><button class="mobile-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></nav></div></header>
+
+<main>
+<section class="tool-hero"><div class="wrap">
+  <div class="eyebrow">Brand Here Labs · Strategy</div>
+  <h1>Alignment is not<br>the goal.</h1>
+  <p>Three forces govern how any group moves together: separation, alignment and cohesion. Every organisation is running some combination of them right now. Most leaders have never seen what their combination actually produces.</p>
+</div></section>
+
+<section class="tool-shell"><div class="wrap">
+<div class="tool-panel active align-panel">
+
+  <div class="tool-inputs">
+    <h2>The three forces</h2>
+    <p class="tool-copy">Adjust the balance and watch what emerges. The two numbers underneath are measured from the field in real time, not from your settings — they are what the balance actually produces.</p>
+
+    <label class="tool-field">
+      <span class="align-slider-head"><b>Separation</b><i id="sepVal">50</i></span>
+      <input type="range" id="sep" min="0" max="100" value="50">
+      <span class="align-note">How much room each person keeps. High separation protects autonomy and prevents collision.</span>
+    </label>
+
+    <label class="tool-field">
+      <span class="align-slider-head"><b>Alignment</b><i id="aliVal">50</i></span>
+      <input type="range" id="ali" min="0" max="100" value="50">
+      <span class="align-note">How strongly each person matches the direction of those nearby. This is what most companies mean by "alignment".</span>
+    </label>
+
+    <label class="tool-field">
+      <span class="align-slider-head"><b>Cohesion</b><i id="cohVal">50</i></span>
+      <input type="range" id="coh" min="0" max="100" value="50">
+      <span class="align-note">How strongly each person is pulled toward the centre of the group. Culture, ritual and shared identity live here.</span>
+    </label>
+
+    <div class="align-presets">
+      <button class="align-preset" data-preset="silo">Silo</button>
+      <button class="align-preset" data-preset="groupthink">Groupthink</button>
+      <button class="align-preset" data-preset="drift">Drift</button>
+      <button class="align-preset" data-preset="coherent">Coherent</button>
+    </div>
+
+    <p class="tool-privacy">A model, not a measurement. It is built to make a trade-off visible, not to score your company.</p>
+  </div>
+
+  <div class="tool-output">
+    <div class="tool-result-label">The field</div>
+    <div class="align-stage" id="stage"><canvas id="flock"></canvas></div>
+    <p class="align-hint" id="hint">Move your cursor across the field. You can influence it. You cannot control it.</p>
+
+    <div class="tool-metrics">
+      <div class="tool-metric"><span>Directional order</span><strong id="mOrder">—</strong></div>
+      <div class="tool-metric"><span>Dispersion</span><strong id="mSpread">—</strong></div>
+    </div>
+
+    <div class="align-state">
+      <div class="tool-result-label">What this produces</div>
+      <div class="name" id="stateName">Coherent</div>
+      <div class="body" id="stateBody">Adjust a force to begin.</div>
+      <div class="cost" id="stateCost"></div>
+    </div>
+
+    <a class="tool-next" href="decision-session.html?focus=alignment">Which state is your organisation in? →</a>
+  </div>
+
+</div>
+</div></section>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="footer-slogan">Insight to Impact</div><div><a href="labs.html">← All Labs</a> · <a href="contact.html">Discuss the result</a></div></div></footer>
+<script src="js/alignment-lab.js" defer></script>
+</body></html>

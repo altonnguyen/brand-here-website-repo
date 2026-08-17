@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8"><base href="../">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bridge the Gap — A Brand Here Interactive Experiment</title>
-<meta name="description" content="Ideas only create impact when they make it across. Play Bridge the Gap, an AI-assisted interactive experiment by Brand Here.">
+<title>Bridge the Gap — Trải nghiệm tương tác của Brand Here</title>
+<meta name="description" content="Trải nghiệm tương tác về khoảng cách giữa chiến lược và thực thi, được Brand Here phát triển với sự hỗ trợ của AI.">
 <link rel="canonical" href="https://brandhere.co/vi/game.html">
+<link rel="alternate" hreflang="en" href="https://brandhere.co/game.html">
+<link rel="alternate" hreflang="vi" href="https://brandhere.co/vi/game.html">
+<link rel="alternate" hreflang="x-default" href="https://brandhere.co/game.html">
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bridge the Gap — Brand Here">
-<meta property="og:description" content="Turn insight into impact by bridging the gaps between strategy, capability, adoption and execution.">
+<meta property="og:title" content="Bridge the Gap — Trải nghiệm tương tác của Brand Here">
+<meta property="og:description" content="Trải nghiệm tương tác về khoảng cách giữa chiến lược và thực thi, được Brand Here phát triển với sự hỗ trợ của AI.">
 <meta property="og:image" content="https://brandhere.co/images/og-image.png?v=3">
 <meta property="og:url" content="https://brandhere.co/vi/game.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bridge the Gap — Brand Here">
-<meta name="twitter:description" content="Ideas only create impact when they make it across.">
+<meta name="twitter:title" content="Bridge the Gap — Trải nghiệm tương tác của Brand Here">
+<meta name="twitter:description" content="Trải nghiệm tương tác về khoảng cách giữa chiến lược và thực thi, được Brand Here phát triển với sự hỗ trợ của AI.">
 <meta name="twitter:image" content="https://brandhere.co/images/og-image.png?v=3">
 <link rel="stylesheet" href="css/style.css?v=11">
 </head>
@@ -25,17 +28,9 @@
   <div class="wrap">
     <nav>
       <a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="about.html">About</a>
-        <a href="what-we-do.html">What We Do</a>
-        <a href="approach.html">Approach</a>
-        <a href="experts.html">Expert Network</a>
-        <a href="work.html">Work</a>
-        <a href="labs.html" class="active">Labs</a>
-        <a href="insights.html">Insights</a>
-      </div>
-      <a href="decision-session.html" class="nav-cta">Book a Decision Session</a>
-      <button class="mobile-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <div class="nav-links" id="navLinks"><a href="about.html">Về chúng tôi</a><a href="what-we-do.html">Dịch vụ</a><a href="approach.html">Phương pháp</a><a href="experts.html">Chuyên gia</a><a href="labs.html">Labs</a><a href="work.html">Dự án</a><a href="insights.html">Góc nhìn</a></div>
+      <a href="decision-session.html" class="nav-cta">Đặt lịch Decision Session</a>
+      <button class="mobile-toggle" aria-label="Mở điều hướng" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
     </nav>
   </div>
 </header>
@@ -44,15 +39,15 @@
   <section class="game-intro">
     <div class="wrap game-intro-grid">
       <div>
-        <div class="eyebrow">Interactive Experiment 02 · Built with AI</div>
-        <h1>Bridge<br>the Gap</h1>
+        <div class="eyebrow">Thử nghiệm tương tác 02 · Được xây dựng với AI</div>
+        <h1>Vượt qua<br>khoảng cách</h1>
       </div>
       <div class="game-intro-copy">
-        <p class="game-thesis">Ideas only create impact when they make it across.</p>
-        <p>Guide the golden idea through the gaps between strategy and execution. Every barrier reflects a real reason transformation stalls.</p>
+        <p class="game-thesis">Ý tưởng chỉ tạo ra tác động khi vượt qua được khoảng cách.</p>
+        <p>Dẫn dắt ý tưởng vàng vượt qua khoảng cách giữa chiến lược và thực thi. Mỗi chướng ngại phản ánh một nguyên nhân thực tế khiến chuyển đổi bị đình trệ.</p>
         <div class="game-instructions">
-          <span><strong>Desktop</strong> Space or click</span>
-          <span><strong>Mobile</strong> Tap the game</span>
+          <span><strong>Máy tính</strong> Phím cách hoặc nhấp chuột</span>
+          <span><strong>Điện thoại</strong> Chạm vào trò chơi</span>
         </div>
       </div>
     </div>
@@ -64,47 +59,47 @@
         <canvas id="bridgeGame" width="1120" height="630" aria-label="Bridge the Gap game. Press space, click or tap to guide the golden idea through business barriers."></canvas>
 
         <div class="game-hud" aria-live="polite">
-          <div><span>Impact</span><strong id="gameScore">0</strong></div>
-          <div><span>Best</span><strong id="gameBest">0</strong></div>
-          <div class="game-stage-name"><span>Current capability</span><strong id="gameCapability">Clarity</strong></div>
+          <div><span>Tác động</span><strong id="gameScore">0</strong></div>
+          <div><span>Cao nhất</span><strong id="gameBest">0</strong></div>
+          <div class="game-stage-name"><span>Năng lực hiện tại</span><strong id="gameCapability">Rõ hướng</strong></div>
         </div>
 
         <div class="game-overlay active" id="gameStart">
           <div class="game-overlay-inner">
-            <div class="game-kicker">Current State → Future State</div>
-            <h2>Can your idea<br>make it across?</h2>
-            <p>Build Impact by bridging each business gap.</p>
-            <button class="game-primary" id="gameStartButton" type="button">Start the journey</button>
+            <div class="game-kicker">Hiện trạng → Tương lai</div>
+            <h2>Liệu ý tưởng của bạn<br>có thể vượt qua?</h2>
+            <p>Tạo tác động bằng cách vượt qua từng khoảng cách trong doanh nghiệp.</p>
+            <button class="game-primary" id="gameStartButton" type="button">Bắt đầu hành trình</button>
           </div>
         </div>
 
         <div class="game-overlay" id="gameResult">
           <div class="game-overlay-inner game-result-inner">
-            <div class="game-kicker" id="gameResultKicker">The idea stopped at</div>
-            <h2 id="gameResultTitle">The Execution Gap</h2>
-            <div class="game-result-score"><span>Impact created</span><strong id="gameResultScore">0</strong></div>
-            <p id="gameResultMessage">Strategy needs ownership, capability and disciplined execution to become impact.</p>
+            <div class="game-kicker" id="gameResultKicker">Ý tưởng đã dừng tại</div>
+            <h2 id="gameResultTitle">Khoảng cách thực thi</h2>
+            <div class="game-result-score"><span>Tác động đã tạo</span><strong id="gameResultScore">0</strong></div>
+            <p id="gameResultMessage">Chiến lược cần người chịu trách nhiệm, năng lực và kỷ luật thực thi để trở thành tác động.</p>
             <div class="game-result-actions">
-              <button class="game-primary" id="gameRestartButton" type="button">Try again</button>
-              <a class="game-secondary" id="gameServiceLink" href="what-we-do.html">Explore Strategy Consulting</a>
+              <button class="game-primary" id="gameRestartButton" type="button">Thử lại</button>
+              <a class="game-secondary" id="gameServiceLink" href="what-we-do.html">Khám phá tư vấn chiến lược</a>
             </div>
           </div>
         </div>
       </div>
-      <p class="game-access-note">Motion-sensitive? The game pauses when this tab is not active. No personal data or score is transmitted.</p>
+      <p class="game-access-note">Nhạy cảm với chuyển động? Trò chơi sẽ dừng khi tab không hoạt động. Không có dữ liệu cá nhân hay điểm số nào được truyền đi.</p>
     </div>
   </section>
 
   <section class="section game-meaning reveal">
     <div class="wrap">
-      <div class="section-label">What the game is teaching</div>
-      <h2>Transformation is a sequence, not a leap.</h2>
+      <div class="section-label">Thông điệp của trò chơi</div>
+      <h2>Chuyển đổi là một chuỗi bước, không phải một cú nhảy.</h2>
       <div class="game-capability-path">
-        <div><span>01</span><strong>Clarity</strong><p>Choose the problem and direction that matter.</p></div>
-        <div><span>02</span><strong>Strategy</strong><p>Turn ambition into a coherent set of choices.</p></div>
-        <div><span>03</span><strong>Capability</strong><p>Equip people, systems and partners to deliver.</p></div>
-        <div><span>04</span><strong>Adoption</strong><p>Make the new way of working usable and owned.</p></div>
-        <div><span>05</span><strong>Scale</strong><p>Build evidence, improve and expand what works.</p></div>
+        <div><span>01</span><strong>Rõ hướng</strong><p>Chọn đúng vấn đề và hướng đi quan trọng.</p></div>
+        <div><span>02</span><strong>Chiến lược</strong><p>Biến tham vọng thành một hệ thống lựa chọn nhất quán.</p></div>
+        <div><span>03</span><strong>Năng lực</strong><p>Trang bị con người, hệ thống và đối tác để thực thi.</p></div>
+        <div><span>04</span><strong>Ứng dụng</strong><p>Biến cách làm mới thành điều có thể sử dụng và được sở hữu.</p></div>
+        <div><span>05</span><strong>Mở rộng</strong><p>Tạo bằng chứng, cải tiến và mở rộng điều hiệu quả.</p></div>
       </div>
     </div>
   </section>
@@ -112,20 +107,20 @@
   <section class="game-experiment reveal">
     <div class="wrap game-experiment-grid">
       <div>
-        <div class="section-label">Built with AI. Shaped by judgement.</div>
-        <h2>A playable explanation of Brand Here.</h2>
+        <div class="section-label">Được xây dựng với AI. Định hình bằng phán đoán.</div>
+        <h2>Một cách tương tác để hiểu Brand Here.</h2>
       </div>
       <div>
-        <p>This experiment turns Brand Here's consulting model into an experience. AI accelerated concept exploration, interface copy and code development. Human direction decided what the interaction should teach, how it should feel and what belongs in the final product.</p>
-        <p>That is the broader point: AI can help a business move faster, but judgement is what makes the result relevant.</p>
+        <p>Thử nghiệm này biến mô hình tư vấn của Brand Here thành một trải nghiệm. AI tăng tốc quá trình khám phá ý tưởng, viết nội dung giao diện và phát triển mã. Con người quyết định trải nghiệm cần truyền tải điều gì, tạo cảm giác ra sao và điều gì thuộc về sản phẩm cuối cùng.</p>
+        <p>Đó cũng là thông điệp lớn hơn: AI có thể giúp doanh nghiệp đi nhanh hơn, nhưng phán đoán mới khiến kết quả trở nên phù hợp.</p>
       </div>
     </div>
   </section>
 
   <section class="final-cta reveal">
     <div class="wrap">
-      <h2>Which gap is holding back your next move?</h2>
-      <a href="decision-session.html" class="btn-gold">Book a Decision Session</a>
+      <h2>Khoảng cách nào đang cản trở bước đi tiếp theo của bạn?</h2>
+      <a href="decision-session.html" class="btn-gold">Đặt lịch Decision Session</a>
     </div>
   </section>
 </main>
@@ -133,9 +128,9 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-slogan">Insight to Impact</div>
-    <div>© 2026 Brand Here. Ho Chi Minh City, Vietnam.</div>
+    <div>© 2026 Brand Here. Thành phố Hồ Chí Minh, Việt Nam.</div>
     <div style="margin-top:8px;">
-      <a href="about.html">About</a>·<a href="what-we-do.html">What We Do</a>·<a href="experts.html">Expert Network</a>·<a href="work.html">Work</a>·<a href="game.html">Bridge the Gap</a>·<a href="contact.html">Contact</a>
+      <a href="about.html">Về chúng tôi</a>·<a href="what-we-do.html">Dịch vụ</a>·<a href="experts.html">Chuyên gia</a>·<a href="work.html">Dự án</a>·<a href="game.html">Bridge the Gap</a>·<a href="contact.html">Liên hệ</a>
     </div>
   </div>
 </footer>

@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8"><base href="../">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Here Radio — AI-assisted Original Music</title>
-<meta name="description" content="Original music developed through brand strategy, human creative direction and generative AI. Listen to MAKE IT MATTER by Brand Here.">
+<title>Brand Here Radio — Âm nhạc nguyên bản có AI hỗ trợ</title>
+<meta name="description" content="Nghe MAKE IT MATTER và khám phá cách Brand Here kết hợp chiến lược thương hiệu, định hướng sáng tạo của con người và AI tạo sinh.">
 <link rel="canonical" href="https://brandhere.co/vi/radio.html">
+<link rel="alternate" hreflang="en" href="https://brandhere.co/radio.html">
+<link rel="alternate" hreflang="vi" href="https://brandhere.co/vi/radio.html">
+<link rel="alternate" hreflang="x-default" href="https://brandhere.co/radio.html">
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <meta property="og:type" content="music.playlist">
-<meta property="og:title" content="Brand Here Radio — MAKE IT MATTER">
-<meta property="og:description" content="What if a brand idea could be heard? Original music developed through human judgement, brand strategy and generative AI.">
+<meta property="og:title" content="Brand Here Radio — Âm nhạc nguyên bản có AI hỗ trợ">
+<meta property="og:description" content="Nghe MAKE IT MATTER và khám phá cách Brand Here kết hợp chiến lược thương hiệu, định hướng sáng tạo của con người và AI tạo sinh.">
 <meta property="og:image" content="https://brandhere.co/images/og-image.png?v=3">
 <meta property="og:url" content="https://brandhere.co/vi/radio.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brand Here Radio — MAKE IT MATTER">
-<meta name="twitter:description" content="Original music developed through human judgement, brand strategy and generative AI.">
+<meta name="twitter:title" content="Brand Here Radio — Âm nhạc nguyên bản có AI hỗ trợ">
+<meta name="twitter:description" content="Nghe MAKE IT MATTER và khám phá cách Brand Here kết hợp chiến lược thương hiệu, định hướng sáng tạo của con người và AI tạo sinh.">
 <meta name="twitter:image" content="https://brandhere.co/images/og-image.png?v=3">
 <link rel="stylesheet" href="css/style.css?v=11">
 </head>
@@ -25,17 +28,9 @@
   <div class="wrap">
     <nav>
       <a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="about.html">About</a>
-        <a href="what-we-do.html">What We Do</a>
-        <a href="approach.html">Approach</a>
-        <a href="experts.html">Expert Network</a>
-        <a href="work.html">Work</a>
-        <a href="labs.html" class="active">Labs</a>
-        <a href="insights.html">Insights</a>
-      </div>
-      <a href="decision-session.html" class="nav-cta">Book a Decision Session</a>
-      <button class="mobile-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <div class="nav-links" id="navLinks"><a href="about.html">Về chúng tôi</a><a href="what-we-do.html">Dịch vụ</a><a href="approach.html">Phương pháp</a><a href="experts.html">Chuyên gia</a><a href="labs.html">Labs</a><a href="work.html">Dự án</a><a href="insights.html">Góc nhìn</a></div>
+      <a href="decision-session.html" class="nav-cta">Đặt lịch Decision Session</a>
+      <button class="mobile-toggle" aria-label="Mở điều hướng" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
     </nav>
   </div>
 </header>
@@ -44,9 +39,9 @@
   <section class="radio-hero">
     <div class="wrap radio-hero-grid">
       <div class="radio-hero-copy">
-        <div class="eyebrow">Brand Here Radio · Sonic Experiment 01</div>
-        <h1>What if a brand idea could be heard?</h1>
-        <p>Original music developed through human judgement, brand strategy and generative AI. Not a prompt-and-publish exercise — a creative system shaped through direction, selection and refinement.</p>
+        <div class="eyebrow">Brand Here Radio · Thử nghiệm âm thanh 01</div>
+        <h1>Nếu một ý tưởng thương hiệu có thể được lắng nghe?</h1>
+        <p>Âm nhạc nguyên bản được phát triển từ năng lực phán đoán của con người, chiến lược thương hiệu và AI tạo sinh. Đây không phải quy trình nhập prompt rồi đăng, mà là một hệ thống sáng tạo được định hướng, tuyển chọn và tinh chỉnh.</p>
       </div>
       <div class="radio-monogram" aria-hidden="true">
         <span>MAKE IT</span>
@@ -62,34 +57,34 @@
         <audio id="radioAudio" preload="metadata"></audio>
 
         <div class="radio-now-playing">
-          <div class="radio-status"><span class="radio-pulse"></span><span id="radioStatus">Ready to play</span></div>
+          <div class="radio-status"><span class="radio-pulse"></span><span id="radioStatus">Sẵn sàng phát</span></div>
           <div class="radio-track-num" id="radioTrackNum">01 / 08</div>
           <h2 id="radioTitle">MAKE IT MATTER · MASTER A</h2>
-          <p id="radioMeta">Official Brand Here master · Final selected direction</p>
+          <p id="radioMeta">Bản master chính thức của Brand Here · Hướng sáng tạo được lựa chọn</p>
         </div>
 
         <div class="radio-controls">
-          <button class="radio-skip" id="radioPrev" type="button" aria-label="Previous track">←</button>
+          <button class="radio-skip" id="radioPrev" type="button" aria-label="Bài trước">←</button>
           <button class="radio-play" id="radioPlay" type="button" aria-label="Play MAKE IT MATTER · MASTER A">
             <span class="radio-play-icon">▶</span><span class="radio-pause-icon">Ⅱ</span>
           </button>
-          <button class="radio-skip" id="radioNext" type="button" aria-label="Next track">→</button>
+          <button class="radio-skip" id="radioNext" type="button" aria-label="Bài tiếp theo">→</button>
         </div>
 
         <div class="radio-timeline">
           <span id="radioCurrent">0:00</span>
-          <input id="radioSeek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Track progress">
+          <input id="radioSeek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Tiến độ bài hát">
           <span id="radioDuration">—:—</span>
         </div>
 
-        <section class="radio-lyrics" id="radioLyrics" aria-label="Synchronized lyrics">
+        <section class="radio-lyrics" id="radioLyrics" aria-label="Lời bài hát đồng bộ">
           <div class="radio-lyrics-head">
-            <div><span class="radio-lyrics-label">Live lyrics</span><strong>Read the meaning as it moves.</strong></div>
-            <button class="radio-lyrics-toggle" id="radioLyricsToggle" type="button" aria-expanded="true" aria-controls="radioLyricsBody">Hide lyrics</button>
+            <div><span class="radio-lyrics-label">Lời bài hát đồng bộ</span><strong>Đọc ý nghĩa theo nhịp bài hát.</strong></div>
+            <button class="radio-lyrics-toggle" id="radioLyricsToggle" type="button" aria-expanded="true" aria-controls="radioLyricsBody">Ẩn lời bài hát</button>
           </div>
           <div class="radio-lyrics-body" id="radioLyricsBody">
             <div class="radio-lyrics-scroll" id="radioLyricsScroll" aria-live="off"></div>
-            <p class="radio-lyrics-note" id="radioLyricsNote">Lyrics are synchronized with MASTER A. Select a line to jump to that moment.</p>
+            <p class="radio-lyrics-note" id="radioLyricsNote">Lời bài hát được đồng bộ với MASTER A. Chọn một dòng để chuyển đến thời điểm tương ứng.</p>
           </div>
         </section>
 
@@ -101,40 +96,40 @@
   <section class="section radio-story reveal">
     <div class="wrap radio-story-grid">
       <div>
-        <div class="section-label">The creative brief</div>
+        <div class="section-label">Đề bài sáng tạo</div>
         <h2>MAKE IT MATTER</h2>
       </div>
       <div>
-        <p class="radio-lead">A brand anthem about moving from possibility to consequence — because ideas only matter when they change something real.</p>
-        <p>The project began with Brand Here's positioning and the tension at the centre of the business: AI can accelerate almost anything, but human judgement decides what deserves to exist. One core song was explored across multiple tempos, vocal structures and performance directions to find the expression with the strongest emotional and strategic fit.</p>
+        <p class="radio-lead">Một bản nhạc thương hiệu kể hành trình từ khả năng đến tác động — bởi ý tưởng chỉ có ý nghĩa khi tạo ra thay đổi thật.</p>
+        <p>Dự án bắt đầu từ định vị của Brand Here và một mâu thuẫn cốt lõi: AI có thể tăng tốc gần như mọi thứ, nhưng phán đoán của con người quyết định điều gì xứng đáng tồn tại. Một bài hát chủ đạo được thử nghiệm qua nhiều nhịp độ, cấu trúc giọng hát và phong cách thể hiện để tìm ra phương án phù hợp nhất về cảm xúc lẫn chiến lược.</p>
       </div>
     </div>
   </section>
 
   <section class="section alt reveal">
     <div class="wrap">
-      <div class="section-label">Human–AI collaboration</div>
-      <h2>AI expanded the possibilities. Brand judgement shaped the result.</h2>
+      <div class="section-label">Hợp tác giữa con người và AI</div>
+      <h2>AI mở rộng khả năng. Phán đoán thương hiệu định hình kết quả.</h2>
       <div class="radio-process">
         <article>
           <span>01</span>
-          <h3>Brand Here defined the idea</h3>
-          <p>Positioning, creative brief, emotional arc and the role the music needed to play in the broader brand system.</p>
+          <h3>Brand Here xác lập ý tưởng</h3>
+          <p>Định vị, đề bài sáng tạo, mạch cảm xúc và vai trò của âm nhạc trong toàn bộ hệ thống thương hiệu.</p>
         </article>
         <article>
           <span>02</span>
-          <h3>Lyrics developed collaboratively</h3>
-          <p>Human-written direction and judgement combined with AI-assisted exploration, rewriting and structural iteration.</p>
+          <h3>Lời bài hát được phát triển cộng tác</h3>
+          <p>Định hướng và phán đoán của con người kết hợp với AI để khám phá, viết lại và thử nghiệm cấu trúc.</p>
         </article>
         <article>
           <span>03</span>
-          <h3>Generative production explored</h3>
-          <p>Music and vocal directions were generated across tempo, arrangement, performance style and voice configuration.</p>
+          <h3>Khám phá sản xuất bằng AI tạo sinh</h3>
+          <p>Các hướng âm nhạc và giọng hát được thử nghiệm qua nhịp độ, phối khí, phong cách thể hiện và cấu hình giọng ca.</p>
         </article>
         <article>
           <span>04</span>
-          <h3>People selected and refined</h3>
-          <p>Outputs were compared, rejected, remixed and shaped into a coherent creative system rather than accepted at first pass.</p>
+          <h3>Con người tuyển chọn và tinh chỉnh</h3>
+          <p>Các phương án được so sánh, loại bỏ, phối lại và định hình thành một hệ thống sáng tạo nhất quán thay vì chấp nhận ngay kết quả đầu tiên.</p>
         </article>
       </div>
     </div>
@@ -143,31 +138,31 @@
   <section class="radio-system reveal">
     <div class="wrap radio-system-grid">
       <div>
-        <div class="section-label">Beyond one song</div>
-        <h2>One idea.<br>Many usable forms.</h2>
+        <div class="section-label">Không chỉ một bài hát</div>
+        <h2>Một ý tưởng.<br>Nhiều hình thức ứng dụng.</h2>
       </div>
       <div class="radio-formats">
-        <div><strong>Full-length masters</strong><span>Brand anthem and performance</span></div>
-        <div><strong>60-second hero cut</strong><span>Brand film and launch content</span></div>
-        <div><strong>30-second social cut</strong><span>Campaign and short-form video</span></div>
-        <div><strong>15-second hook</strong><span>Paid media and content openers</span></div>
-        <div><strong>6-second sonic ident</strong><span>Brand signature and mnemonic</span></div>
+        <div><strong>Bản master đầy đủ</strong><span>Brand anthem và trình diễn</span></div>
+        <div><strong>Phiên bản chủ đạo 60 giây</strong><span>Phim thương hiệu và nội dung ra mắt</span></div>
+        <div><strong>Phiên bản mạng xã hội 30 giây</strong><span>Chiến dịch và video ngắn</span></div>
+        <div><strong>Đoạn hook 15 giây</strong><span>Quảng cáo và mở đầu nội dung</span></div>
+        <div><strong>Dấu hiệu âm thanh 6 giây</strong><span>Chữ ký và gợi nhớ thương hiệu</span></div>
       </div>
     </div>
   </section>
 
   <section class="section reveal">
     <div class="wrap radio-disclosure">
-      <div class="section-label">Creative disclosure</div>
-      <h2>AI-assisted original work</h2>
-      <p>Concept and creative direction by Brand Here. Lyrics developed through human–AI collaboration. Music and vocal production created with generative AI, then selected, refined and shaped through human judgement. The tracks on this page are presented as an experimental Brand Here creative project.</p>
+      <div class="section-label">Công bố phương thức sáng tạo</div>
+      <h2>Tác phẩm nguyên bản có AI hỗ trợ</h2>
+      <p>Ý tưởng và định hướng sáng tạo do Brand Here thực hiện. Lời bài hát được phát triển qua hợp tác giữa con người và AI. Âm nhạc và giọng hát được tạo bằng AI tạo sinh, sau đó được con người tuyển chọn, tinh chỉnh và định hình. Các bản nhạc trên trang là một dự án sáng tạo thử nghiệm của Brand Here.</p>
     </div>
   </section>
 
   <section class="final-cta reveal">
     <div class="wrap">
-      <h2>Ready to make a brand idea people can feel?</h2>
-      <a href="decision-session.html" class="btn-gold">Book a Decision Session</a>
+      <h2>Sẵn sàng tạo một ý tưởng thương hiệu mà mọi người có thể cảm nhận?</h2>
+      <a href="decision-session.html" class="btn-gold">Đặt lịch Decision Session</a>
     </div>
   </section>
 </main>
@@ -175,9 +170,9 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-slogan">Insight to Impact</div>
-    <div>© 2026 Brand Here. Ho Chi Minh City, Vietnam.</div>
+    <div>© 2026 Brand Here. Thành phố Hồ Chí Minh, Việt Nam.</div>
     <div style="margin-top:8px;">
-      <a href="about.html">About</a>·<a href="what-we-do.html">What We Do</a>·<a href="experts.html">Expert Network</a>·<a href="work.html">Work</a>·<a href="radio.html">Brand Here Radio</a>·<a href="contact.html">Contact</a>
+      <a href="about.html">Về chúng tôi</a>·<a href="what-we-do.html">Dịch vụ</a>·<a href="experts.html">Chuyên gia</a>·<a href="work.html">Dự án</a>·<a href="radio.html">Brand Here Radio</a>·<a href="contact.html">Liên hệ</a>
     </div>
   </div>
 </footer>

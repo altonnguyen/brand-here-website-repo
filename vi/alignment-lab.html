@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><base href="../"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Alignment Lab — Brand Here</title><meta name="description" content="An interactive model of how organisations hold together, fragment or collapse — built on the three forces that govern collective movement."><link rel="canonical" href="https://brandhere.co/vi/alignment-lab.html"><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="css/style.css?v=11">
+<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><base href="../"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Alignment Lab — Mô phỏng sự đồng hướng tổ chức</title><meta name="description" content="Khám phá sự đánh đổi giữa khoảng cách, đồng hướng và gắn kết trong tổ chức qua mô phỏng tương tác của Brand Here."><link rel="canonical" href="https://brandhere.co/vi/alignment-lab.html">
+<link rel="alternate" hreflang="en" href="https://brandhere.co/alignment-lab.html">
+<link rel="alternate" hreflang="vi" href="https://brandhere.co/vi/alignment-lab.html">
+<link rel="alternate" hreflang="x-default" href="https://brandhere.co/alignment-lab.html"><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="css/style.css?v=11">
 <style>
 .align-panel { grid-template-columns: .78fr 1.22fr; }
 .align-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; background: #081A2F; border: 1px solid rgba(246,241,230,.14); cursor: crosshair; }
@@ -23,75 +26,75 @@
 }
 </style>
 </head>
-<body class="tool-page"><header class="site-header"><div class="wrap"><nav><a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><div class="nav-links" id="navLinks"><a href="what-we-do.html">What We Do</a><a href="experts.html">Expert Network</a><a href="work.html">Work</a><a href="labs.html" class="active">Labs</a><a href="insights.html">Insights</a></div><a href="decision-session.html" class="nav-cta">Book a Decision Session</a><button class="mobile-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></nav></div></header>
+<body class="tool-page"><header class="site-header"><div class="wrap"><nav><a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><div class="nav-links" id="navLinks"><a href="about.html">Về chúng tôi</a><a href="what-we-do.html">Dịch vụ</a><a href="approach.html">Phương pháp</a><a href="experts.html">Chuyên gia</a><a href="labs.html">Labs</a><a href="work.html">Dự án</a><a href="insights.html">Góc nhìn</a></div><a href="decision-session.html" class="nav-cta">Đặt lịch Decision Session</a><button class="mobile-toggle" aria-label="Mở điều hướng" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></nav></div></header>
 
 <main>
 <section class="tool-hero"><div class="wrap">
-  <div class="eyebrow">Brand Here Labs · Strategy</div>
-  <h1>Alignment is not<br>the goal.</h1>
-  <p>Three forces govern how any group moves together: separation, alignment and cohesion. Every organisation is running some combination of them right now. Most leaders have never seen what their combination actually produces.</p>
+  <div class="eyebrow">Brand Here Labs · Chiến lược</div>
+  <h1>Đồng hướng chưa chắc<br>đã là đích đến.</h1>
+  <p>Ba lực chi phối cách một tập thể chuyển động: khoảng cách, đồng hướng và gắn kết. Mỗi tổ chức đang vận hành bằng một tổ hợp khác nhau, nhưng phần lớn lãnh đạo chưa từng nhìn thấy trạng thái mà tổ hợp đó tạo ra.</p>
 </div></section>
 
 <section class="tool-shell"><div class="wrap">
 <div class="tool-panel active align-panel">
 
   <div class="tool-inputs">
-    <h2>The three forces</h2>
-    <p class="tool-copy">Adjust the balance and watch what emerges. The two numbers underneath are measured from the field in real time, not from your settings — they are what the balance actually produces.</p>
+    <h2>Ba lực tác động</h2>
+    <p class="tool-copy">Điều chỉnh sự cân bằng và quan sát trạng thái xuất hiện. Hai chỉ số bên dưới được đo trực tiếp từ trường chuyển động, phản ánh điều mà tổ hợp lực thực sự tạo ra.</p>
 
     <label class="tool-field">
-      <span class="align-slider-head"><b>Separation</b><i id="sepVal">50</i></span>
+      <span class="align-slider-head"><b>Khoảng cách</b><i id="sepVal">50</i></span>
       <input type="range" id="sep" min="0" max="100" value="50">
-      <span class="align-note">How much room each person keeps. High separation protects autonomy and prevents collision.</span>
+      <span class="align-note">Khoảng không mỗi người giữ lại. Khoảng cách cao bảo vệ tính tự chủ và tránh va chạm.</span>
     </label>
 
     <label class="tool-field">
-      <span class="align-slider-head"><b>Alignment</b><i id="aliVal">50</i></span>
+      <span class="align-slider-head"><b>Đồng hướng</b><i id="aliVal">50</i></span>
       <input type="range" id="ali" min="0" max="100" value="50">
-      <span class="align-note">How strongly each person matches the direction of those nearby. This is what most companies mean by "alignment".</span>
+      <span class="align-note">Mức độ mỗi người điều chỉnh theo hướng của những người xung quanh. Đây là điều phần lớn doanh nghiệp gọi là “alignment”.</span>
     </label>
 
     <label class="tool-field">
-      <span class="align-slider-head"><b>Cohesion</b><i id="cohVal">50</i></span>
+      <span class="align-slider-head"><b>Gắn kết</b><i id="cohVal">50</i></span>
       <input type="range" id="coh" min="0" max="100" value="50">
-      <span class="align-note">How strongly each person is pulled toward the centre of the group. Culture, ritual and shared identity live here.</span>
+      <span class="align-note">Mức độ mỗi người được kéo về trung tâm của tập thể. Văn hóa, nghi thức và bản sắc chung nằm ở đây.</span>
     </label>
 
     <div class="align-presets">
-      <button class="align-preset" data-preset="silo">Silo</button>
-      <button class="align-preset" data-preset="groupthink">Groupthink</button>
-      <button class="align-preset" data-preset="drift">Drift</button>
-      <button class="align-preset" data-preset="coherent">Coherent</button>
+      <button class="align-preset" data-preset="silo">Cát cứ</button>
+      <button class="align-preset" data-preset="groupthink">Tư duy nhóm</button>
+      <button class="align-preset" data-preset="drift">Trôi hướng</button>
+      <button class="align-preset" data-preset="coherent">Nhất quán</button>
     </div>
 
-    <p class="tool-privacy">A model, not a measurement. It is built to make a trade-off visible, not to score your company.</p>
+    <p class="tool-privacy">Đây là mô hình, không phải phép đo. Nó giúp làm rõ sự đánh đổi, không dùng để chấm điểm doanh nghiệp.</p>
   </div>
 
   <div class="tool-output">
-    <div class="tool-result-label">The field</div>
-    <p class="align-field-key">Each mark represents a person responding to the people around them.</p>
+    <div class="tool-result-label">Trường chuyển động</div>
+    <p class="align-field-key">Mỗi dấu chấm đại diện cho một người đang phản ứng với những người xung quanh.</p>
     <div class="align-stage" id="stage"><canvas id="flock"></canvas></div>
-    <p class="align-hint" id="hint">Move your cursor across the field. You can influence it. You cannot control it.</p>
+    <p class="align-hint" id="hint">Di chuyển con trỏ qua trường. Bạn có thể tác động, nhưng không thể kiểm soát hoàn toàn.</p>
 
     <div class="tool-metrics">
-      <div class="tool-metric"><span>Directional order</span><strong id="mOrder">—</strong></div>
-      <div class="tool-metric"><span>Dispersion</span><strong id="mSpread">—</strong></div>
+      <div class="tool-metric"><span>Mức độ đồng hướng</span><strong id="mOrder">—</strong></div>
+      <div class="tool-metric"><span>Độ phân tán</span><strong id="mSpread">—</strong></div>
     </div>
 
     <div class="align-state">
-      <div class="tool-result-label">What this produces</div>
-      <div class="name" id="stateName">Coherent</div>
-      <div class="body" id="stateBody">Adjust a force to begin.</div>
+      <div class="tool-result-label">Trạng thái tạo ra</div>
+      <div class="name" id="stateName">Nhất quán</div>
+      <div class="body" id="stateBody">Điều chỉnh một lực để bắt đầu.</div>
       <div class="cost" id="stateCost"></div>
     </div>
 
-    <a class="tool-next" href="decision-session.html?focus=alignment">Which state is your organisation in? →</a>
+    <a class="tool-next" href="decision-session.html?focus=alignment">Tổ chức của bạn đang ở trạng thái nào? →</a>
   </div>
 
 </div>
 </div></section>
 </main>
 
-<footer class="site-footer"><div class="wrap"><div class="footer-slogan">Insight to Impact</div><div><a href="labs.html">← All Labs</a> · <a href="contact.html">Discuss the result</a></div></div></footer>
+<footer class="site-footer"><div class="wrap"><div class="footer-slogan">Insight to Impact</div><div><a href="labs.html">← Tất cả Labs</a> · <a href="contact.html">Trao đổi về kết quả</a></div></div></footer>
 <script src="js/vi-runtime.js"></script><script src="js/alignment-lab.js?v=2" defer></script>
 </body></html>

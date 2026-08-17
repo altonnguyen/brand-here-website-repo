@@ -104,8 +104,6 @@
         vx: Math.cos(a) * 1.4 * k,
         vy: Math.sin(a) * 1.4 * k,
         w: Math.random() * Math.PI * 2,
-        flap: Math.random() * Math.PI * 2,       /* wingbeat phase */
-        rate: 0.16 + Math.random() * 0.10,       /* wingbeat speed  */
         size: 0.85 + Math.random() * 0.30,       /* a little depth  */
         gold: i % 9 === 0
       });
@@ -207,13 +205,11 @@
 
   /* ---------- render ---------- */
 
-  /* Chevron: a gull silhouette reduced to two swept wings and a notch.
-     L is the half-wingspan in pixels, heading along +x. Only the y values
-     scale with the wingbeat, so the wings foreshorten while the leading
-     point and the depth of the sweep stay put. */
-  function bird(b, L) {
+  /* A still chevron silhouette. Direction and collective movement carry
+     the meaning; a second wingbeat animation would only add visual noise. */
+  function bird(L) {
     var u = L / 56;
-    var f = u * (0.5 + 0.5 * Math.abs(Math.sin(b.flap)));
+    var f = u;
     ctx.beginPath();
     ctx.moveTo(-10 * u, 56 * f);                              // left wingtip
     ctx.quadraticCurveTo(-40 * u, 28 * f, -6 * u, 0);         // trailing edge to the notch
@@ -225,25 +221,10 @@
   }
 
   function draw() {
-    ctx.fillStyle = 'rgba(8,26,47,0.30)';
+    ctx.fillStyle = 'rgba(8,26,47,0.62)';
     ctx.fillRect(0, 0, W, H);
 
     var n = boids.length, i, j, b;
-
-    var mx = 0, my = 0;
-    for (i = 0; i < n; i++) { mx += boids[i].x; my += boids[i].y; }
-    mx /= n; my /= n;
-
-    var rsum = 0;
-    for (i = 0; i < n; i++) rsum += Math.hypot(boids[i].x - mx, boids[i].y - my);
-    var rmean = rsum / n;
-
-    /* the ring is the shape of the group: its centre and its spread */
-    ctx.beginPath();
-    ctx.arc(mx, my, rmean, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(184,134,11,0.26)';
-    ctx.lineWidth = 1;
-    ctx.stroke();
 
     /* who can see whom — the mesh is where the teamwork actually is.
        One batched path so this stays cheap. */
@@ -255,19 +236,26 @@
       ctx.moveTo(boids[i].x, boids[i].y);
       ctx.lineTo(boids[j].x, boids[j].y);
     }
-    ctx.strokeStyle = 'rgba(160,186,214,0.075)';
+    var meshOpacity = {
+      noise: 0.012,
+      drift: 0.030,
+      contested: 0.045,
+      coherent: 0.068,
+      silo: 0.082,
+      groupthink: 0.095
+    }[classify()] || 0.045;
+    ctx.strokeStyle = 'rgba(160,186,214,' + meshOpacity + ')';
     ctx.lineWidth = 0.7;
     ctx.stroke();
 
     var base = 6.5 * k;
     for (i = 0; i < n; i++) {
       b = boids[i];
-      b.flap += b.rate;
       ctx.save();
       ctx.translate(b.x, b.y);
       ctx.rotate(Math.atan2(b.vy, b.vx));
       ctx.fillStyle = b.gold ? 'rgba(212,167,44,0.96)' : 'rgba(246,241,230,0.82)';
-      bird(b, base * b.size);
+      bird(base * b.size);
       ctx.restore();
     }
   }

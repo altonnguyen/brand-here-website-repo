@@ -491,13 +491,15 @@ h1, h2, h3 { font-family: var(--serif); color: var(--navy); }
 .expert-profile-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .expert-profile--governance { order: 1; }
 .expert-profile--finance { order: 2; }
-.expert-profile--technology { order: 3; }
-.expert-profile--commerce { order: 4; }
+.expert-profile--technology-leadership { order: 3; }
+.expert-profile--technology { order: 4; }
+.expert-profile--commerce { order: 5; }
 .expert-profile { display: grid; grid-template-columns: 250px 1fr; gap: 64px; padding: 52px 0; border: 0; border-bottom: 1px solid var(--line); }
 .expert-profile:hover { background: transparent; }
 .expert-profile-portrait { width: 250px; height: 300px; overflow: hidden; border: 1px solid var(--line); }
 .expert-profile-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.03); }
 .expert-profile-portrait--nam img { object-position: 50% 72%; }
+.expert-profile-portrait--dung img { object-position: 73% 50%; }
 .expert-profile-content { max-width: 760px; padding-top: 8px; }
 .expert-role-label { margin-bottom: 12px; color: var(--gold); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
 .expert-profile h3 { margin-bottom: 2px; font-size: 43px; line-height: 1; }

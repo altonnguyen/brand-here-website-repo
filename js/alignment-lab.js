@@ -224,29 +224,7 @@
     ctx.fillStyle = 'rgba(8,26,47,0.62)';
     ctx.fillRect(0, 0, W, H);
 
-    var n = boids.length, i, j, b;
-
-    /* who can see whom — the mesh is where the teamwork actually is.
-       One batched path so this stays cheap. */
-    var LR = 95 * k, LR2 = LR * LR;
-    ctx.beginPath();
-    for (i = 0; i < n; i++) for (j = i + 1; j < n; j++) {
-      var dx = boids[i].x - boids[j].x, dy = boids[i].y - boids[j].y;
-      if (dx * dx + dy * dy > LR2) continue;
-      ctx.moveTo(boids[i].x, boids[i].y);
-      ctx.lineTo(boids[j].x, boids[j].y);
-    }
-    var meshOpacity = {
-      noise: 0.012,
-      drift: 0.030,
-      contested: 0.045,
-      coherent: 0.068,
-      silo: 0.082,
-      groupthink: 0.095
-    }[classify()] || 0.045;
-    ctx.strokeStyle = 'rgba(160,186,214,' + meshOpacity + ')';
-    ctx.lineWidth = 0.7;
-    ctx.stroke();
+    var n = boids.length, i, b;
 
     var base = 6.5 * k;
     for (i = 0; i < n; i++) {

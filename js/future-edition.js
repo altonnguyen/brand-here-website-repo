@@ -6,12 +6,16 @@
   }
 
   var paths={
-    strategy:['Clarify the choices that will shape the next stage of the business.','what-we-do.html','See Strategy Consulting ↗'],
-    ai:['Move from isolated experiments to decisions people can own and use.','advisory-lab.html','Test AI readiness ↗'],
-    trust:['Build governance, safeguards and confidence before risk slows the business.','experts.html','Meet the expert network ↗'],
-    commerce:['Test the economics, channel choices and operating model before scaling.','commerce-lab.html','Open Commerce Lab ↗']
+    strategy:['Clarify the choices that will shape the next stage of the business.','what-we-do.html','Start with Strategy Consulting ↗'],
+    ai:['Move from isolated experiments to decisions people can own and use.','advisory-lab.html','Explore AI Transformation ↗'],
+    trust:['Build governance, safeguards and confidence before risk slows the business.','experts.html','Strengthen Trust & Compliance ↗'],
+    commerce:['Test the economics, channel choices and operating model before scaling.','commerce-lab.html','Test Commerce Growth ↗']
   };
-  document.querySelectorAll('.selector-option').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.selector-option').forEach(function(x){x.classList.remove('active')});button.classList.add('active');var value=paths[button.dataset.path];document.getElementById('pathSentence').textContent=value[0];var link=document.getElementById('pathLink');link.href=value[1];link.textContent=value[2]})});
+  document.querySelectorAll('.selector-option').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.selector-option').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});button.classList.add('active');button.setAttribute('aria-selected','true');var value=paths[button.dataset.path];document.getElementById('pathSentence').textContent=value[0];var link=document.getElementById('pathLink');link.href=value[1];link.textContent=value[2]})});
+  document.querySelectorAll(".selector-option").forEach(function(button){
+    button.addEventListener("pointerenter",function(){if(window.matchMedia("(hover:hover)").matches&&!button.classList.contains("active"))button.click()});
+    button.addEventListener("focus",function(){if(!button.classList.contains("active"))button.click()});
+  });
 
   var field=document.getElementById('decisionField');
   if(field){var ctx=field.getContext('2d'),points=[],w=0,h=0,dpr=1,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

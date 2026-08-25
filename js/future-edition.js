@@ -25,6 +25,10 @@
     addEventListener('resize',size);size();render()
   }
 
+  var exhibits=Array.from(document.querySelectorAll(".exhibition-item")),exhibitTimer;
+  function showExhibit(item,index){var frame=document.querySelector(".exhibition-frame"),visual=document.getElementById("exhibitionVisual");if(!frame||!visual)return;exhibits.forEach(function(x){x.classList.toggle("active",x===item)});frame.classList.add("is-changing");clearTimeout(exhibitTimer);exhibitTimer=setTimeout(function(){visual.className="archive-visual archive-"+item.dataset.tone;document.getElementById("exhibitionMark").textContent=item.dataset.mark;document.getElementById("exhibitionNumber").textContent=String(index+1).padStart(2,"0");document.getElementById("exhibitionCaption").textContent=item.dataset.caption;frame.classList.remove("is-changing")},150)}
+  exhibits.forEach(function(item,index){item.addEventListener("pointerenter",function(){showExhibit(item,index)});item.addEventListener("focus",function(){showExhibit(item,index)})});
+
   var archive=document.getElementById('futureArchive');
   if(archive){var cards=Array.from(archive.querySelectorAll('.archive-card')),current=0,start=0,dragging=false;
     function show(next){current=(next+cards.length)%cards.length;cards.forEach(function(card,i){var raw=i-current;if(raw>cards.length/2)raw-=cards.length;if(raw<-cards.length/2)raw+=cards.length;card.style.setProperty('--offset',raw);card.style.setProperty('--distance',Math.min(2,Math.abs(raw)));card.classList.toggle('active',i===current);card.setAttribute('aria-hidden',i===current?'false':'true')});document.getElementById('archiveCurrent').textContent=String(current+1).padStart(2,'0');document.getElementById('archiveProgress').style.width=((current+1)/cards.length*100)+'%'}

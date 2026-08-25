@@ -5,13 +5,14 @@
     hero.addEventListener('pointermove',disrupt);hero.addEventListener('pointerleave',function(){clearTimeout(idle);idle=setTimeout(function(){hero.classList.add('is-aligned')},450)});idle=setTimeout(function(){hero.classList.add('is-aligned')},1200)
   }
 
+  var portalCopy={strategy:["CHOICE","A coherent set of decisions"],ai:["ADOPTION","Accountable human–AI systems"],trust:["TRUST","Governance that enables growth"],commerce:["GROWTH","Economics before expansion"]};
   var paths={
     strategy:['Clarify the choices that will shape the next stage of the business.','what-we-do.html','Start with Strategy Consulting ↗'],
     ai:['Move from isolated experiments to decisions people can own and use.','advisory-lab.html','Explore AI Transformation ↗'],
     trust:['Build governance, safeguards and confidence before risk slows the business.','experts.html','Strengthen Trust & Compliance ↗'],
     commerce:['Test the economics, channel choices and operating model before scaling.','commerce-lab.html','Test Commerce Growth ↗']
   };
-  document.querySelectorAll('.selector-option').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.selector-option').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});button.classList.add('active');button.setAttribute('aria-selected','true');var value=paths[button.dataset.path];document.getElementById('pathSentence').textContent=value[0];var link=document.getElementById('pathLink');link.href=value[1];link.textContent=value[2]})});
+  document.querySelectorAll('.selector-option').forEach(function(button){button.addEventListener('click',function(){document.querySelectorAll('.selector-option').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});button.classList.add('active');button.setAttribute('aria-selected','true');var value=paths[button.dataset.path];document.getElementById('pathSentence').textContent=value[0];var link=document.getElementById('pathLink');link.href=value[1];link.textContent=value[2];var visual=document.querySelector(".selector-resolution .capability-visual"),decision=portalCopy[button.dataset.path];if(visual){visual.dataset.mode=button.dataset.path;document.getElementById("visualWord").textContent=decision[0];document.getElementById("visualNote").textContent=decision[1]}})});
   document.querySelectorAll(".selector-option").forEach(function(button){
     button.addEventListener("pointerenter",function(){if(window.matchMedia("(hover:hover)").matches&&!button.classList.contains("active"))button.click()});
     button.addEventListener("focus",function(){if(!button.classList.contains("active"))button.click()});

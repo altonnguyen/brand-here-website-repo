@@ -7,7 +7,7 @@
   <title>Brand Here — Homepage Concept</title>
   <meta name="description" content="An interactive homepage concept for Brand Here.">
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/home-concept.css?v=1">
+  <link rel="stylesheet" href="css/home-concept.css?v=1"><link rel="stylesheet" href="css/future-edition.css?v=1">
 </head>
 <body class="concept-page">
   <header class="concept-nav">
@@ -39,6 +39,8 @@
       <div><strong>80+</strong><span>projects</span><strong>50+</strong><span>corporate clients</span><strong>30+</strong><span>brands managed</span><strong>4</strong><span>years above plan</span></div>
     </section>
 
+    <section class="decision-selector" aria-labelledby="selectorTitle"><div class="concept-shell"><p class="concept-kicker">Start with your reality</p><h2 id="selectorTitle">What are you trying to move?</h2><div class="selector-options" role="list"><button class="selector-option active" data-path="strategy"><span>01</span>Strategic direction</button><button class="selector-option" data-path="ai"><span>02</span>AI adoption</button><button class="selector-option" data-path="trust"><span>03</span>Trust &amp; compliance</button><button class="selector-option" data-path="commerce"><span>04</span>Commerce growth</button></div><div class="selector-answer" aria-live="polite"><p id="pathSentence">Clarify the choices that will shape the next stage of the business.</p><a id="pathLink" href="what-we-do.html">See the path forward ↗</a></div></div></section>
+
     <section class="capability-section" id="services">
       <div class="section-intro concept-shell">
         <p class="concept-kicker">Four decision territories</p>
@@ -59,7 +61,7 @@
       </div>
     </section>
 
-    <section class="ai-statement" id="proof">
+    <section class="ai-statement" id="proof"><canvas id="decisionField" aria-hidden="true"></canvas>
       <div class="ai-grid" aria-hidden="true"></div>
       <div class="ai-copy concept-shell">
         <p class="concept-kicker">AI Transformation</p>
@@ -82,12 +84,7 @@
             <li><span>05</span><strong>Deployment</strong><small>A real business, not a demo</small></li>
           </ol>
         </div>
-        <div class="proof-card">
-          <div class="proof-mark">BH</div>
-          <div><p>Human judgement × AI-enabled execution</p><h3>The proof is the experience you are using now.</h3><a href="work.html">View selected work ↗</a></div>
-        </div>
-      </div>
-    </section>
+        <div class="archive-heading"><p class="concept-kicker">Selected work · drag to explore</p><p><span id="archiveCurrent">01</span> / 05</p></div><div class="future-archive" id="futureArchive" tabindex="0" aria-label="Selected Brand Here work. Drag or use arrow keys to explore."><article class="archive-card active" data-index="0"><div class="archive-visual archive-ai"><span>BH</span></div><div class="archive-meta"><span>Brand Here · 2026</span><h3>The company rebuilt with AI</h3><p>Positioning, identity, music, Labs, code and deployment—one human-directed system.</p><a href="work.html">Explore the case ↗</a></div></article><article class="archive-card" data-index="1"><div class="archive-visual archive-aia"><span>AIA</span></div><div class="archive-meta"><span>Corporate communications</span><h3>Six days. Full press attendance.</h3><p>A focused press experience designed and delivered under real operational pressure.</p><a href="work.html">View selected work ↗</a></div></article><article class="archive-card" data-index="2"><div class="archive-visual archive-roche"><span>ROCHE</span></div><div class="archive-meta"><span>Employer brand film</span><h3>Real voices, made visible.</h3><p>An employer story shaped around the people who live the culture every day.</p><a href="work.html">View selected work ↗</a></div></article><article class="archive-card" data-index="3"><div class="archive-visual archive-dragon"><span>10</span></div><div class="archive-meta"><span>Dragon Capital</span><h3>A decade turned into an experience.</h3><p>Programme, stage and stakeholder experience for an important business milestone.</p><a href="work.html">View selected work ↗</a></div></article><article class="archive-card" data-index="4"><div class="archive-visual archive-labs"><span>LABS</span></div><div class="archive-meta"><span>Interactive thinking</span><h3>Do not just read it. Try it.</h3><p>Decision tools that turn Brand Here’s thinking into something people can use.</p><a href="labs.html">Enter the Labs ↗</a></div></article></div><div class="archive-controls"><button id="archivePrev" aria-label="Previous project">←</button><div><i id="archiveProgress"></i></div><button id="archiveNext" aria-label="Next project">→</button></div></div></section>
 
     <section class="decision-cta">
       <div class="concept-shell"><p class="concept-kicker">One real decision</p><h2>Bring us the question<br>that cannot stay unclear.</h2><a href="decision-session.html">Book a Decision Session <span>↗</span></a></div>
@@ -95,6 +92,6 @@
   </main>
 
   <footer class="concept-footer"><a class="concept-logo" href="#top"><span>BRAND</span><em>HERE</em></a><p>Insight to Impact · Ho Chi Minh City, Vietnam</p><a href="index.html">Return to current website</a></footer>
-  <script src="js/home-concept.js" defer></script>
+  <script src="js/home-concept.js" defer></script><script src="js/future-edition.js" defer></script>
 </body>
 </html>

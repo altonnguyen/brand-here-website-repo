@@ -11,5 +11,10 @@
   }
   var copy={strategy:['CHOICE','A coherent set of decisions'],ai:['ADOPTION','Accountable human–AI systems'],brand:['SIGNAL','Experience made visible'],commerce:['GROWTH','Economics before expansion']};
   document.querySelectorAll('.capability').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.capability').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false')});btn.classList.add('active');btn.setAttribute('aria-selected','true');var mode=btn.dataset.mode,visual=document.querySelector('.capability-visual');visual.dataset.mode=mode;document.getElementById('visualWord').textContent=copy[mode][0];document.getElementById('visualNote').textContent=copy[mode][1]})});
+  document.querySelectorAll(".capability").forEach(function(btn){
+    btn.addEventListener("pointerenter",function(){if(window.matchMedia("(hover:hover)").matches&&!btn.classList.contains("active"))btn.click()});
+    btn.addEventListener("focus",function(){if(!btn.classList.contains("active"))btn.click()});
+    btn.addEventListener("click",function(){var visual=document.querySelector(".capability-visual");visual.classList.add("is-changing");window.setTimeout(function(){visual.classList.remove("is-changing")},260)});
+  });
   var steps=Array.from(document.querySelectorAll('.build-track li')),bar=document.querySelector('.build-progress i');steps.forEach(function(step,i){step.addEventListener('mouseenter',function(){steps.forEach(function(x){x.classList.remove('active')});step.classList.add('active');bar.style.width=((i+1)/steps.length*100)+'%'});step.addEventListener('focusin',function(){step.dispatchEvent(new Event('mouseenter'))})});
 })();

@@ -54,6 +54,14 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 - Cards use restrained borders, strong spacing and purposeful hover states.
 - Motion should be slow and atmospheric; respect `prefers-reduced-motion`.
 - Mobile layouts must preserve hierarchy and breathing room rather than merely shrink desktop layouts.
+- On phone viewports, interactive controls, their visual response and the resulting message should remain within one coherent viewing sequence. The homepage decision instrument therefore uses a compact dial and places its 2×2 choices before the response instead of retaining the tall desktop stage.
+
+## Sound
+
+- Background sound is an optional atmospheric layer, never required to understand or navigate the site.
+- Playback must begin only after the visitor activates the visible sound control; do not force autoplay.
+- The approved homepage track is `audio/music.mp3` (`MAKE IT MATTER — US–UK Duet Demo B`) at restrained background volume.
+- The control must remain accessible in English and Vietnamese and respect phone safe-area insets.
 
 ## Content principles
 
@@ -78,6 +86,7 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 - Approved colour record: `BRAND-COLOUR-SYSTEM-CONCEPT-3.md`
 - Live website: `https://brandhere.co/`
 - Approved social-sharing thumbnail: `images/og-concept-3.jpg` (1200 × 630 px)
+- Approved thumbnail art direction: young adult male high-fashion model, ivory tailoring, Carbon field and restrained Signal Red lighting.
 - Approved browser and device icon: `favicon.ico`, `images/favicon-32.png`, `images/favicon-180.png` and `images/favicon-512.png`
 
 ## Change control

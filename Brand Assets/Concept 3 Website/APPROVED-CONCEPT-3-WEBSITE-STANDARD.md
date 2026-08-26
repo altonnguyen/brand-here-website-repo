@@ -77,6 +77,7 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 - Approved logo assets: `Brand Assets/Concept 3 Logo/`
 - Approved colour record: `BRAND-COLOUR-SYSTEM-CONCEPT-3.md`
 - Live website: `https://brandhere.co/`
+- Approved social-sharing thumbnail: `images/og-concept-3.jpg` (1200 × 630 px)
 
 ## Change control
 

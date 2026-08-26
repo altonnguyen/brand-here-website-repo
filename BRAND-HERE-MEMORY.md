@@ -8,6 +8,7 @@
 - Keep all experts visually equal in stature and respect.
 - Vietnamese wording must be native, precise and written for business leaders rather than translated literally.
 - The approved website social thumbnail is `images/og-concept-3.jpg` at 1200 × 630 px, with the message “Human judgement in the age of AI.”
+- The approved browser icon is the Concept 3 `BH` monogram: Carbon `B`, Signal Red `H`, Digital Ivory background.
 
 Canonical records:
 

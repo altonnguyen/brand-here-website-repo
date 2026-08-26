@@ -78,6 +78,7 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 - Approved colour record: `BRAND-COLOUR-SYSTEM-CONCEPT-3.md`
 - Live website: `https://brandhere.co/`
 - Approved social-sharing thumbnail: `images/og-concept-3.jpg` (1200 × 630 px)
+- Approved browser and device icon: `favicon.ico`, `images/favicon-32.png`, `images/favicon-180.png` and `images/favicon-512.png`
 
 ## Change control
 

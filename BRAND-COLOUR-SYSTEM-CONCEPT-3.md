@@ -35,11 +35,15 @@
 
 ## Wordmark applications
 
+- Typography: `BRAND` uses Manrope SemiBold 600; `HERE` uses Italiana Regular 400.
+- Weight relationship: `BRAND` is deliberately stronger; `HERE` is deliberately lighter and distinguished by Signal Red.
 - Light background: `BRAND` in Carbon; `HERE` in Signal Red.
 - Dark or photographic background: `BRAND` in Digital Ivory; `HERE` in Signal Red.
 - One-colour application: all Carbon, all white or blind emboss/deboss.
 - Never set `BRAND` in Signal Red and `HERE` in Carbon; Signal Red belongs to `HERE` as the distinctive brand signal.
 - Keep clear space around the wordmark at least equal to the cap height of the letter `B`.
+
+Approved logo masters are stored in `Brand Assets/Concept 3 Logo/`.
 
 ## Production note
 

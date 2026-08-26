@@ -4,9 +4,9 @@ This folder records the approved Concept 3 wordmark direction.
 
 ## Design decision
 
-- `BRAND` uses a semi-bold modern sans serif to express strategic confidence and operational substance.
-- `HERE` remains refined and lighter in Signal Red, providing the distinctive human and editorial signal.
-- The two words should never use equal weight.
+- The approved Brand Here typography is preserved without redesign.
+- `BRAND` uses the existing Cormorant Garamond SemiBold treatment.
+- `HERE` uses the existing Cormorant Garamond Medium treatment in Signal Red.
 - The wordmark should not be stretched, condensed, outlined or given effects.
 
 ## Files
@@ -18,8 +18,8 @@ This folder records the approved Concept 3 wordmark direction.
 
 ## Typeface
 
-- BRAND: Manrope SemiBold 600.
-- HERE: Italiana Regular 400.
+- BRAND: Cormorant Garamond SemiBold 600.
+- HERE: Cormorant Garamond Medium 500.
 - If producing final outlined artwork for printers, open the SVG with the approved fonts installed and convert the text to vector outlines before release.
 
 ## Colour

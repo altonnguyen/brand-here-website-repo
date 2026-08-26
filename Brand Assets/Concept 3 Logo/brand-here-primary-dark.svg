@@ -2,6 +2,6 @@
   <title id="title">Brand Here primary wordmark on a dark background</title>
   <desc id="desc">BRAND in semi-bold Digital Ivory followed by HERE in refined Signal Red.</desc>
   <rect width="1400" height="320" fill="#2D2926"/>
-  <text x="70" y="208" fill="#F3F0E8" font-family="Manrope, Helvetica Neue, Arial, sans-serif" font-size="150" font-weight="600" letter-spacing="12">BRAND</text>
-  <text x="738" y="205" fill="#E03C31" font-family="Italiana, Didot, Bodoni MT, Georgia, serif" font-size="158" font-weight="400" letter-spacing="7">HERE</text>
+  <text x="70" y="208" fill="#F3F0E8" font-family="Cormorant Garamond, Georgia, serif" font-size="150" font-weight="600" letter-spacing="8">BRAND</text>
+  <text x="700" y="208" fill="#E03C31" font-family="Cormorant Garamond, Georgia, serif" font-size="150" font-weight="500" letter-spacing="8">HERE</text>
 </svg>

@@ -35,8 +35,8 @@
 
 ## Wordmark applications
 
-- Typography: `BRAND` uses Manrope SemiBold 600; `HERE` uses Italiana Regular 400.
-- Weight relationship: `BRAND` is deliberately stronger; `HERE` is deliberately lighter and distinguished by Signal Red.
+- Typography remains the previously approved Brand Here wordmark: `BRAND` uses Cormorant Garamond SemiBold 600; `HERE` uses Cormorant Garamond Medium 500.
+- Concept 3 changes colour only; it does not redesign the approved letterforms or proportions.
 - Light background: `BRAND` in Carbon; `HERE` in Signal Red.
 - Dark or photographic background: `BRAND` in Digital Ivory; `HERE` in Signal Red.
 - One-colour application: all Carbon, all white or blind emboss/deboss.

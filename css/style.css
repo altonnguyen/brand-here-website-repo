@@ -42,8 +42,8 @@ nav { min-height: 84px; display: flex; align-items: center; justify-content: spa
 .logo { display: flex; align-items: baseline; text-decoration: none; letter-spacing: .055em; }
 .logo .brand-word,
 .logo .here-word { font: 500 25px/1 var(--serif); }
-.logo .brand-word { color: var(--navy); font-weight: 600; }
-.logo .here-word { color: var(--gold); margin-left: 7px; }
+.logo .brand-word { color: #2D2926; font-weight: 600; }
+.logo .here-word { color: #E03C31; margin-left: 3px; }
 .nav-links { display: flex; gap: clamp(20px, 2.4vw, 38px); font-size: 12px; letter-spacing: .04em; }
 .nav-links a { color: var(--navy-light); text-decoration: none; position: relative; }
 .nav-links a::after {

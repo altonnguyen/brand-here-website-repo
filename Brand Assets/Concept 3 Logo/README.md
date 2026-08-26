@@ -2,6 +2,8 @@
 
 This folder records the approved Concept 3 wordmark direction.
 
+The binding source of truth is `APPROVED-LOGO-STANDARD.md`. Use that file for all future Brand Here work.
+
 ## Design decision
 
 - The approved Brand Here typography is preserved without redesign.

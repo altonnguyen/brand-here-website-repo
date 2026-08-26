@@ -12,3 +12,24 @@ html[lang="vi"]{--d:'Cormorant Garamond',Georgia,serif;--o:'Manrope',Arial,sans-
 @media(max-width:900px){.nav{grid-template-columns:auto 1fr auto}.nav nav{display:none}.home-lang{justify-self:end}.hero-capabilities{left:3vw;right:3vw;bottom:3%;justify-content:center}.hero-arrow{display:none}.manifesto,.instrument-stage,.human-film{grid-template-columns:1fr}.credentials{grid-template-columns:1fr 1fr}.instrument-stage{gap:60px;padding:70px 0}.dial{width:min(66vw,460px)}.people>header{grid-template-columns:1fr}.people header>a{justify-self:start;margin-top:35px}.people-statement{margin-left:0}.contact-sheet{grid-template-columns:repeat(2,1fr)}.closing{grid-template-columns:1fr}.closing h2,.closing>a{grid-column:1}}
 @media(max-width:600px){.nav{height:65px;padding-inline:20px;grid-template-columns:1fr auto}.nav-cta{display:none}.hero h1{left:20px;top:24%;font-size:55px}.hero-index{left:20px}.hero-note{left:20px;right:auto;bottom:19%;font-size:18px}.hero-capabilities{left:20px;right:20px;bottom:4%;display:grid;grid-template-columns:1fr 1fr;gap:9px}.hero-capabilities strong{grid-column:1/3;margin-bottom:4px}.hero-capabilities span{padding-left:10px}.hero-arrow,.focus-mark{display:none}.hero-film img{object-position:58% 24%}.manifesto,.human-film,.people,.proof{padding:100px 20px}.manifesto>p{font-size:41px}.credentials{padding:0 20px 80px;grid-template-columns:1fr 1fr}.credentials>div{padding-inline:10px}.instrument{padding:75px 20px 30px}.instrument>header span{display:none}.instrument-stage{min-height:680px}.dial{width:82vw}.instrument-copy h2{font-size:50px}.decision-tabs{grid-template-columns:1fr 1fr}.human-film{display:block}.line-frame{height:55vh;margin-bottom:70px}.line-core{gap:10px}.film-copy h2{font-size:52px}.people h2,.proof h2{font-size:64px}.contact-sheet{margin-top:70px;display:block}.contact-sheet article{height:450px;margin-bottom:18px}.proof>header{grid-template-columns:1fr}.proof-grid{display:block}.proof-grid>a{display:block;margin:55px 0!important}.closing{padding:90px 20px}.closing h2{font-size:73px}footer{gap:24px;align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.hero-film img,.line-orbit{animation:none}.contact-sheet img{transition:none}}
+
+/* Concept 3 ambient soundtrack */
+.music-toggle{position:fixed;z-index:40;right:22px;bottom:calc(22px + env(safe-area-inset-bottom));width:52px;height:52px;display:grid;place-items:center;color:var(--k);background:var(--m);border:1px solid #2d29264d;border-radius:50%;box-shadow:0 12px 34px #00000021;cursor:pointer;transition:transform .3s ease,background .3s ease,border-color .3s ease}
+.music-toggle:hover,.music-toggle:focus-visible{transform:translateY(-3px);border-color:var(--r);outline:0}.music-toggle svg{width:17px;height:17px;fill:currentColor}.music-toggle .bars{height:17px;display:none;align-items:flex-end;gap:3px}.music-toggle .bars span{width:2px;background:var(--r);animation:conceptMusicBar .9s ease-in-out infinite}.music-toggle .bars span:nth-child(1){height:45%}.music-toggle .bars span:nth-child(2){height:100%;animation-delay:.18s}.music-toggle .bars span:nth-child(3){height:68%;animation-delay:.36s}.music-toggle.playing .icon-note{display:none}.music-toggle.playing .bars{display:flex}@keyframes conceptMusicBar{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+
+/* Keep the decision instrument, its choices and response in one mobile viewport. */
+@media(max-width:600px){
+  .instrument{padding:68px 20px calc(34px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+  .instrument>header{order:1}.instrument>header p{font-size:8px}
+  .decision-tabs{order:2;margin-top:28px;grid-template-columns:1fr 1fr}
+  .decision-tabs button{min-height:72px;padding:18px 12px;align-items:center;gap:12px}
+  .decision-tabs button.active{padding-left:12px}
+  .instrument-stage{order:3;position:relative;min-height:0;padding:26px 0 12px;display:block}
+  .dial{position:relative;width:172px;margin:0 auto 28px;opacity:.92}
+  .dial>strong{font-size:22px}.dial>span{top:16%;font-size:7px}.dial>i{bottom:15%;font-size:6px}
+  .instrument-copy{position:relative;z-index:1;max-width:none;text-align:left}
+  .instrument-copy>span{font-size:8px}.instrument-copy h2{margin-top:17px;font-size:clamp(39px,11.5vw,48px);line-height:.93}
+  .instrument-copy p{margin-top:22px;font-size:12px;line-height:1.6}.instrument-copy a{margin-top:26px}
+  .music-toggle{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:48px;height:48px}
+}
+@media(prefers-reduced-motion:reduce){.music-toggle .bars span{animation:none}}

@@ -3,5 +3,5 @@
   <desc id="desc">BRAND in semi-bold Digital Ivory followed by HERE in refined Signal Red.</desc>
   <rect width="1400" height="320" fill="#2D2926"/>
   <text x="70" y="208" fill="#F3F0E8" font-family="Cormorant Garamond, Georgia, serif" font-size="150" font-weight="600" letter-spacing="8">BRAND</text>
-  <text x="700" y="208" fill="#E03C31" font-family="Cormorant Garamond, Georgia, serif" font-size="150" font-weight="500" letter-spacing="8">HERE</text>
+  <text x="650" y="208" fill="#E03C31" font-family="Cormorant Garamond, Georgia, serif" font-size="150" font-weight="500" letter-spacing="8">HERE</text>
 </svg>

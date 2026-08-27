@@ -5,6 +5,8 @@
 - Concept 3 is the official website design system for all English and Vietnamese pages.
 - Human judgement remains the central brand idea; AI supports speed and possibility.
 - Use the approved Concept 3 colour, typography, logo, layout and motion standards.
+- Apply the same approved typography across the website, social media, presentations and campaign assets: Italiana for English editorial display; Cormorant Garamond for Vietnamese display and the Brand Here mark; Manrope for body/interface copy; DM Mono for compact English metadata and technical labels.
+- Social and campaign art direction must rotate four visual modes: full-bleed fashion photography, dark editorial fields, sculptural/3D still life, and typography/diagram. Digital Ivory text-only layouts should remain editorial anchors rather than the default, generally no more than about 30% of a campaign sequence.
 - Keep all experts visually equal in stature and respect.
 - Vietnamese wording must be native, precise and written for business leaders rather than translated literally.
 - The approved website social thumbnail is `images/og-concept-3.jpg` at 1200 × 630 px, with the message “Human judgement in the age of AI.”

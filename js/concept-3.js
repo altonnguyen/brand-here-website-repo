@@ -1,1 +1,24 @@
-(function(){var c={direction:['01','DIRECTION','STRATEGY','We need a direction people can actually follow.','Make the choices explicit: where to play, what not to do and what must become true next.','what-we-do.html'],adoption:['02','ADOPTION','AI TRANSFORMATION','We need AI to change value—not just activity.','Turn experiments into useful systems with a human owner, a measurable consequence and a reason to exist.','advisory-lab.html'],trust:['03','TRUST','GOVERNANCE','We need to move without losing confidence.','Make compliance, information safeguards and accountability part of how growth happens.','experts.html'],growth:['04','GROWTH','COMMERCE','We need growth the economics can sustain.','Connect demand, channels, cash flow and operating reality before committing to scale.','commerce-lab.html']},b=document.querySelectorAll('.decision-tabs button'),o=document.querySelector('.dial-orbit');b.forEach(function(x,i){x.onclick=function(){b.forEach(function(y){y.classList.remove('active')});x.classList.add('active');var a=c[x.dataset.decision];dialNumber.textContent=a[0];dialWord.textContent=a[1];decisionTag.textContent=a[2];decisionTitle.textContent=a[3];decisionBody.textContent=a[4];decisionLink.href=a[5];o.style.transform='rotate('+(-18+i*31)+'deg)'}})})();
+(function () {
+  var choices = {
+    value: ['01', 'VALUE', 'AI OPPORTUNITY', 'Where should we actually use AI?', 'Find the few opportunities where better decisions, redesigned work and measurable economics justify action.', 'contact.html?focus=ai-opportunity'],
+    workflow: ['02', 'WORK', 'WORKFLOW REDESIGN', 'Why has AI use barely changed productivity?', 'Move beyond faster individual tasks. Redesign the end-to-end workflow, roles, decisions and measures around the outcome.', 'executive-ai-lab.html'],
+    scale: ['03', 'SCALE', 'TRANSFORMATION', 'How do we move beyond scattered experiments?', 'Build a governed portfolio: prove value quickly, stop weak ideas and scale the few changes the organisation can absorb.', 'what-we-do.html'],
+    governance: ['04', 'TRUST', 'RESPONSIBLE DEPLOYMENT', 'How do we govern AI without slowing innovation?', 'Set practical decision rights, risk tiers, evidence standards and human accountability before deployment becomes fragmented.', 'contact.html?focus=ai-governance']
+  };
+  var buttons = document.querySelectorAll('.decision-tabs button');
+  var orbit = document.querySelector('.dial-orbit');
+  buttons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      buttons.forEach(function (item) { item.classList.remove('active'); });
+      button.classList.add('active');
+      var item = choices[button.dataset.decision];
+      document.getElementById('dialNumber').textContent = item[0];
+      document.getElementById('dialWord').textContent = item[1];
+      document.getElementById('decisionTag').textContent = item[2];
+      document.getElementById('decisionTitle').textContent = item[3];
+      document.getElementById('decisionBody').textContent = item[4];
+      document.getElementById('decisionLink').href = item[5];
+      orbit.style.transform = 'rotate(' + (-18 + index * 31) + 'deg)';
+    });
+  });
+}());

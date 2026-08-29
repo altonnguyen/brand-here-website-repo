@@ -1114,7 +1114,21 @@ footer.site-footer .wrap { display: flex; align-items: center; justify-content: 
 }
 
 @media (max-width: 520px) {
+  html[lang="vi"],html[lang="vi"] body { max-width: 100%; overflow-x: hidden; }
+  html[lang="vi"] .wrap,
+  html[lang="vi"] header.site-header .wrap,
+  html[lang="vi"] .final-cta .wrap { width: calc(100vw - 40px); max-width: calc(100vw - 40px); }
   .expert-profile { grid-template-columns: 1fr; }
   .partner-card,.partner-card:first-child,.partner-card:last-child,.lab-card { padding: 32px 24px; }
   .portrait-frame { height: 430px; }
+  html[lang="vi"] .page-hero h1,
+  html[lang="vi"] .tool-hero h1,
+  html[lang="vi"] .labs-hero h1,
+  html[lang="vi"] .radio-hero h1,
+  html[lang="vi"] .decision-hero h1,
+  html[lang="vi"] .game-intro h1,
+  html[lang="vi"] .section h2,
+  html[lang="vi"] .final-cta h2 { max-width: calc(100vw - 40px); font-size: 46px; line-height: .92; overflow-wrap: break-word; }
+  html[lang="vi"] .page-hero p,
+  html[lang="vi"] .labs-hero p { max-width: calc(100vw - 40px); overflow-wrap: break-word; }
 }

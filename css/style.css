@@ -1200,3 +1200,22 @@ footer.site-footer .wrap { display: flex; align-items: center; justify-content: 
 @media (max-width: 900px) { .lab-preview-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .lab-preview-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .lab-preview-stat-figure { transition: none; } }
+
+/* ---- Section 18: site-wide microinteractions (restrained refinement pass) ----
+   Feedback-only additions to existing controls; no new motion layer.
+   Every rule below responds to a genuine missing hover/focus state. */
+.nav-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+.nav-cta { transition: color .2s ease, border-color .2s ease; }
+.nav-cta:hover, .nav-cta:focus-visible { color: var(--gold); border-color: var(--navy); outline: 0; }
+.nav-cta:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.btn-gold:focus-visible, .game-primary:focus-visible, .tool-button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.partner-card a { transition: color .2s ease, border-color .2s ease; }
+.partner-card a:hover, .partner-card a:focus-visible { color: var(--gold); border-color: var(--navy); }
+.partner-card a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.expert-more { transition: color .2s ease, border-color .2s ease; }
+.expert-toggle:hover .expert-more { color: var(--gold); border-color: var(--navy); }
+footer.site-footer a { transition: color .2s ease; }
+footer.site-footer a:hover, footer.site-footer a:focus-visible { color: var(--gold); }
+@media (prefers-reduced-motion: reduce) {
+  .nav-cta, .partner-card a, .expert-more, footer.site-footer a { transition: none; }
+}

@@ -42,3 +42,11 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial h2,html[lang=
 @media(max-width:780px){html[lang="vi"] .site-header nav{align-items:flex-start;flex-wrap:wrap}html[lang="vi"] .site-header .nav-links{order:4;width:100%;display:flex;flex-wrap:wrap;gap:10px 16px;padding:12px 0;background:var(--ivory)}html[lang="vi"] .site-header .nav-links a{font-size:10px}html[lang="vi"] .site-header{height:auto;min-height:74px;background:var(--ivory)}}
 
 .gap-editorial .hero-index,.adaptation-layer .hero-index,.method-strip .hero-index,.ecosystem .hero-index,.intelligence-preview .hero-index{position:static;margin:0 0 28px}
+
+/* ---- Section 18: site-wide microinteractions (restrained refinement pass) ---- */
+.practice-card a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s ease,opacity .2s ease}
+.practice-card a:hover,.practice-card a:focus-visible{border-color:currentColor;opacity:.75;outline:0}
+.practice-card a:focus-visible{outline:2px solid var(--signal);outline-offset:4px;opacity:1}
+.lab-controls input[type=range],.lab-controls input[type=checkbox]{accent-color:var(--signal)}
+.lab-controls input:focus-visible,.lab-controls select:focus-visible,.lab-controls textarea:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.practice-card a{transition:none}}

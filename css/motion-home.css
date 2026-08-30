@@ -1,0 +1,74 @@
+/* Brand Here — Homepage interactive/motion layer (Concept 3.2 behaviour layer)
+   Adds behaviour on top of the existing Concept 3 design system. Does not
+   redesign typography, colour, grid or spacing. Every rule here degrades to
+   a fully static, fully readable layout when JS does not run or
+   prefers-reduced-motion is set. */
+
+/* ---- Moment 01: Hero differential motion ---- */
+.hero h1 [data-motion]{display:inline-block}
+.hero-arrow[data-motion="action"]{transition:opacity .4s ease, transform .4s ease}
+
+/* ---- Moment 02: Adaptation Gap scroll narrative ---- */
+.gap-distance{margin-top:64px}
+.gap-distance-stage{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:24px;padding:34px 0;border-top:1px solid rgba(45,41,38,.3);border-bottom:1px solid rgba(45,41,38,.3)}
+.gap-node{display:flex;align-items:center;justify-content:center;padding:22px 14px;border:1px solid rgba(45,41,38,.3);font:500 12px/1 "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.gap-node-business{justify-self:end}
+.gap-node-tech{justify-self:start}
+.gap-distance-mid{text-align:center}
+.gap-distance-title{margin:0;font:400 clamp(22px,2.6vw,34px)/1 Italiana,"Cormorant Garamond",serif;color:#e03c31}
+.gap-distance-title:after{content:'';display:block;width:64px;height:2px;margin:16px auto 0;background:#e03c31}
+.gap-bridge{margin-top:18px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:0;list-style:none;font:500 10px/1 "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#6c6660}
+.gap-bridge span{display:inline-flex;align-items:center;gap:14px}
+.gap-bridge span:not(:last-child):after{content:'→';color:#e03c31}
+.gap-distance-resolve{margin:26px 0 0;text-align:center;font:500 13px/1.4 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
+.gap-distance-resolve .arrow{margin:0 10px;color:#e03c31}
+
+/* JS-enhanced (scroll-linked) state — only applied once JS confirms
+   IntersectionObserver + requestAnimationFrame support and the visitor has
+   not requested reduced motion. Without JS this block never applies and the
+   section above renders as a complete, static composition. */
+.gap-distance.gap-distance--live{position:relative;margin-top:0;border:0}
+.gap-distance--live .gap-distance-stage{position:sticky;top:14vh;border:0;background:var(--m,#f3f0e8)}
+.gap-distance--live .gap-node{transition:none}
+.gap-distance--live .gap-distance-title{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.gap-distance--live .gap-distance-title:after{width:var(--rule-width,0);transition:width .2s linear}
+.gap-distance--live.is-title-visible .gap-distance-title{opacity:1;transform:none}
+.gap-distance--live .gap-bridge span{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.gap-distance--live .gap-bridge span.is-in{opacity:1;transform:none}
+.gap-distance--live .gap-distance-resolve{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.gap-distance--live.is-resolved .gap-distance-resolve{opacity:1;transform:none}
+
+/* ---- Moment 03: Evidence story (homepage) ---- */
+.evidence-story{padding:clamp(76px,10vw,150px) clamp(24px,7vw,110px);background:#f3f0e8}
+.evidence-story h2{font-family:Italiana,"Cormorant Garamond",serif;font-weight:400;font-size:clamp(44px,7.5vw,112px);line-height:.92;margin:0 0 50px}
+.evidence-story-list{display:grid;gap:0;border-top:1px solid rgba(45,41,38,.25)}
+.evidence-story-item{display:grid;grid-template-columns:.6fr 1.4fr;gap:40px;padding:38px 0;border-bottom:1px solid rgba(45,41,38,.2);opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.evidence-story-item.is-in{opacity:1;transform:none}
+.evidence-story-item strong{font:400 clamp(48px,6vw,88px)/1 Italiana,"Cormorant Garamond",serif;color:#e03c31}
+.evidence-story-item p{font:500 17px/1.5 Manrope,sans-serif;margin:0 0 10px}
+.evidence-story-item em{font-style:normal;font-family:Italiana,"Cormorant Garamond",serif;font-size:20px;color:#2d2926}
+.evidence-story-item small{display:block;margin-top:14px;font:400 11px/1.4 "DM Mono",monospace;color:#6c6660}
+.evidence-story-item small a{color:#e03c31;text-decoration:none;margin-left:4px}
+.evidence-story-close{margin-top:50px;font:400 clamp(26px,3vw,40px)/1.2 Italiana,"Cormorant Garamond",serif}
+.evidence-story-close strong{color:#e03c31;font-weight:400}
+
+/* ---- Reduced motion: keep everything visually complete, just static ---- */
+@media(prefers-reduced-motion:reduce){
+  .hero h1 [data-motion],.hero-arrow[data-motion="action"]{transform:none!important;opacity:1!important;transition:none!important}
+  .gap-distance--live .gap-distance-stage{position:static;top:auto}
+  .gap-distance--live .gap-node{transform:none!important}
+  .gap-distance--live .gap-distance-title,
+  .gap-distance--live .gap-bridge span,
+  .gap-distance--live .gap-distance-resolve{opacity:1!important;transform:none!important;transition:none!important}
+  .gap-distance--live .gap-distance-title:after{width:64px!important}
+  .evidence-story-item{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* ---- Mobile: vertical progression instead of horizontal spread ---- */
+@media(max-width:760px){
+  .gap-distance-stage{grid-template-columns:1fr;justify-items:center;text-align:center;gap:22px;padding:28px 0}
+  .gap-node-business{justify-self:center}
+  .gap-node-tech{justify-self:center}
+  .gap-bridge{gap:10px 12px}
+  .evidence-story-item{grid-template-columns:1fr;gap:14px}
+}

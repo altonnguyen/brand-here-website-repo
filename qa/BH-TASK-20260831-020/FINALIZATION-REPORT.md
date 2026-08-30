@@ -1,31 +1,46 @@
-# Concept 3.2 Finalization QA
+# Concept 3.2 Final Production and Lock Report
 
 Branch: `concept-3-2-finalization`
+
+Merge: not performed
 
 Deployment: not performed
 Date: 2026-08-31
 
-## Insights
+## Commits
 
-- Reframed EN/VI Insights as a Business Adaptation thought-leadership field rather than a blog index.
-- Added four matching editorial clusters: Business Adaptation; People & Adoption; Market & Brand; Leadership & Judgement.
-- Added the five approved future thesis titles as clearly marked “in development” entry points only.
-- Retained and categorised three existing field notes; no new research claims or case results were created.
+- `1677f42` — Finalize Concept 3.2 editorial architecture and QA.
+- `ea18a03` — Prepare Concept 3.2 production assets and routing.
+- Final lock report — this report-only commit.
 
-## Editorial image interface
+## Files changed in final production prep
 
-A reusable `1200 / 630` responsive slot with neutral absent-asset fallback is prepared for:
+- Cloudflare routing and metadata: `src/index.js`, `wrangler.jsonc`.
+- Production visual governance: `Brand Assets/Concept-3.2/PRODUCTION-VISUAL-GOVERNANCE.md`.
+- Asset-drop manifests: `images/og/README.md`, `images/editorial/README.md`.
+- Thumbnail system: `js/editorial-images.js`, `css/style.css`, EN/VI Labs, Intelligence, Insights and Work pages.
+- Archive policy: `game.html`, `radio.html`, `vi/game.html`, `vi/radio.html`.
+- This report.
 
-- Labs: four diagnostic cards in EN/VI.
-- Intelligence / Research Signals: four diagnostic cards in EN/VI.
-- Insights: five thesis entry points in EN/VI.
-- Work / Case Zero: one Case Zero card in EN/VI.
+## Redirect implementation
 
-No image, SVG or AI-generated placeholder asset was created. Existing photography was not changed.
+The existing Cloudflare Worker and Static Assets binding remain the only routing system. Selective `assets.run_worker_first` paths invoke the current Worker for legacy redirects and page-specific OG processing.
 
-## OG asset manifest
+Permanent 301 redirects:
 
-The current valid `images/og-concept-3.jpg` remains the live OG/Twitter fallback. Machine-readable `brandhere:og-image-target` metadata now records the intended per-page target for EN/VI variants. Production requires these seven files:
+- `/advisory-lab` and `/vi/advisory-lab` → `/labs` and `/vi/labs`.
+- `/alignment-lab` and `/vi/alignment-lab` → `/labs` and `/vi/labs`.
+- `/commerce-lab` and `/vi/commerce-lab` → `/market-brand` and `/vi/market-brand`.
+- `/executive-ai-lab` and `/vi/executive-ai-lab` → `/labs` and `/vi/labs`.
+- `/next-stage` → `/adaptation`; a defensive `/vi/next-stage` rule targets `/vi/adaptation` if that historical URL is requested.
+
+`game`, `radio` and their VI equivalents remain functional, remain absent from the sitemap, and now carry `noindex,follow`.
+
+## OG integration
+
+The Worker checks the Static Assets binding for the mapped page-specific JPG. It rewrites both `og:image` and `twitter:image` only when the response is a valid JPEG. When absent, the current `images/og-concept-3.jpg` metadata is returned unchanged. EN and VI pages share the matching approved page asset.
+
+Missing required OG assets:
 
 - `images/og/home.jpg`
 - `images/og/about.jpg`
@@ -35,44 +50,48 @@ The current valid `images/og-concept-3.jpg` remains the live OG/Twitter fallback
 - `images/og/insights.jpg`
 - `images/og/work.jpg`
 
-Recommended production artwork dimensions: 1200 × 630 px.
+## Thumbnail integration
 
-## Legacy routes
+Labs, Intelligence, Insights and Work / Case Zero have stable 1200:630 slots with governed asset paths. The loader checks assets only as slots approach the viewport, then inserts 1200 × 630 images with lazy loading, asynchronous decoding and EN/VI alt text. Decorative Insights images use empty alt. Missing files keep the intentional no-image state, and the fixed aspect ratio prevents CLS.
 
-All seven routes exist, have no inbound links from current HTML pages, and are absent from `sitemap.xml`.
+Missing editorial artwork:
 
-| Route | Recommendation |
-| --- | --- |
-| `advisory-lab` | 301 to `/labs` |
-| `alignment-lab` | 301 to `/labs` |
-| `commerce-lab` | 301 to `/market-brand` |
-| `executive-ai-lab` | 301 to `/labs` |
-| `next-stage` | 301 to `/adaptation` |
-| `game` | Archive and add `noindex`; no equivalent current destination |
-| `radio` | Archive and add `noindex`; no equivalent current destination |
+- `images/editorial/labs/adoption-gap.jpg`
+- `images/editorial/labs/marketing-model.jpg`
+- `images/editorial/labs/brand-mirror.jpg`
+- `images/editorial/labs/agency-model.jpg`
+- `images/editorial/intelligence/ai-adoption-index.jpg`
+- `images/editorial/intelligence/marketing-adaptation-index.jpg`
+- `images/editorial/intelligence/ai-reputation-intelligence.jpg`
+- `images/editorial/intelligence/agency-model-diagnostic.jpg`
+- `images/editorial/insights/technology-business.jpg`
+- `images/editorial/insights/access-adoption-impact.jpg`
+- `images/editorial/insights/missing-middle.jpg`
+- `images/editorial/insights/agency-faster-marketing-better.jpg`
+- `images/editorial/insights/ai-customer-adviser.jpg`
+- `images/editorial/work/case-zero.jpg`
 
-No route was deleted and no redirect/noindex was implemented in this branch.
+## Sonic result
 
-## Sonic QA
+PASS. Both approved MP3 files remain unchanged and valid. All 24 primary EN/VI pages load `js/sonic.js`. The audited behavior remains silent by default, explicit activation, first-session sting followed by the 40-second cut, later activation of the cut only, one audio element, no loop, no autoplay, stop on hidden tab, and accessible SOUND / ÂM THANH controls.
 
-- Both approved MP3 assets exist and were not modified.
-- Primary EN/VI pages include `js/sonic.js`.
-- Browser interaction verified: silent initial state; explicit action; first activation sting then official cut; later activation official cut only; one audio element; `loop=false`; no autoplay; accessible EN/VI labels.
-- Source audit confirms stop on hidden tab/page exit and no automatic resume.
+## EN/VI content result
 
-## Technical QA
+PASS. Each Insights page contains four governed editorial categories represented across five matching thesis entry points and three published field notes. No full future article or research claim was fabricated. Business Adaptation remains the category; AI remains an enabler. The approved line “Technology can be deployed. Adaptation has to be built.” remains unchanged.
 
-- Existing `scripts/qa-site.py`: PASS across 49 EN/VI pages.
-- HTML parser: balanced markup after editorial-slot integration.
-- `git diff --check`: PASS.
-- Canonical, hreflang, metadata, OG/Twitter fallback, sitemap, local links, duplicate IDs and existing JSON-LD checks: PASS.
-- Reduced-motion rules and keyboard focus states: present; sonic button is a native accessible button.
-- Manual browser inspection: home, adaptation, labs, intelligence, insights, work and about in EN/VI at 1440 × 900 and 390 × 844.
-- Browser results: no broken images, no console warnings/errors, no horizontal overflow after scoped fixes.
+## QA result
+
+- `scripts/qa-site.py`: PASS, 49 pages.
+- Wrangler 4.127.1 `deploy --dry-run`: PASS; no deployment created.
+- Worker unit tests: PASS for EN/VI 301 destinations, query preservation, fallback retention and dual OG/Twitter switching.
+- JavaScript syntax and JSONC parsing: PASS.
+- Browser QA: PASS for 24 primary EN/VI pages at 1440 × 900 and 390 × 844 (48 combinations).
+- No horizontal overflow, broken DOM images, JS console warnings/errors or unexpected sonic activation.
+- Canonical, hreflang, sitemap, Open Graph, Twitter, JSON-LD, duplicate IDs, local links, focus-visible and reduced-motion checks: PASS.
+- Approved audio assets exist and identify as stereo MPEG Layer III, 44.1 kHz.
 
 ## Blockers
 
-- Seven approved production OG artworks are not yet supplied. The generic live fallback remains intentionally active.
-- Final redirect/noindex policy for legacy routes remains a production-routing decision; recommendations are documented above and no destructive action was taken.
+The seven required production OG images and fourteen editorial images listed above have not been supplied. The approved fallback/no-image states remain active. This branch must not be merged or deployed until the final asset drop is integrated and rechecked.
 
-Status: READY FOR CHATGPT FINAL REVIEW
+READY FOR FINAL ASSET DROP

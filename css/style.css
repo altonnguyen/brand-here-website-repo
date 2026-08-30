@@ -1159,6 +1159,35 @@ footer.site-footer .wrap { display: flex; align-items: center; justify-content: 
 .lab-archive-link { font-size: 12px; color: var(--gold); }
 @media (max-width: 600px) { .lab-archive-grid { grid-template-columns: 1fr; } }
 .lead-small { font-size: 14px; color: var(--ink-soft); margin: 8px 0 0; max-width: 46em; }
+
+/* Labs — Research Signals evidence section (Concept 3.2 Adoption Gap evidence) */
+.evidence-headline { margin: 10px 0 4px; }
+.evidence-list { margin-top: 56px; }
+.evidence-item { display: flex; align-items: flex-start; gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.evidence-item:first-child { border-top: 1px solid var(--navy); }
+.evidence-item.visible { opacity: 1; transform: none; }
+.evidence-item:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+.evidence-item:nth-child(even) .evidence-body { text-align: right; }
+.evidence-figure { flex: 0 0 auto; width: 34%; font-family: 'Manrope', sans-serif; font-weight: 600; font-size: clamp(40px, 6vw, 72px); line-height: 1; color: var(--gold); letter-spacing: -.01em; white-space: nowrap; }
+.evidence-body { flex: 1 1 auto; max-width: 46em; }
+.evidence-scope { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); border-radius: 2px; padding: 3px 8px; margin-bottom: 10px; }
+.evidence-statement { margin: 0 0 14px; font-size: 18px; line-height: 1.5; color: var(--navy); }
+.evidence-editorial { margin: 0 0 18px; font-family: var(--serif); font-size: 20px; line-height: 1.4; color: var(--navy); }
+.evidence-source { margin: 0; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .04em; color: var(--ink-soft); }
+.evidence-source a { color: var(--gold); text-decoration: none; margin-left: 4px; }
+.evidence-source a:hover { text-decoration: underline; }
+.evidence-close { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
+.evidence-close h3 { font-size: 26px; line-height: 1.35; margin: 0 0 12px; }
+.evidence-close p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+@media (prefers-reduced-motion: reduce) { .evidence-item { transition: none; opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+  .evidence-item, .evidence-item:nth-child(even) { flex-direction: column; text-align: left; gap: 16px; padding: 32px 0; }
+  .evidence-item:nth-child(even) .evidence-body { text-align: left; }
+  .evidence-figure { width: auto; font-size: clamp(36px, 13vw, 52px); white-space: normal; }
+  .evidence-statement { font-size: 16px; }
+  .evidence-editorial { font-size: 18px; }
+  .evidence-close h3 { font-size: 21px; }
+}
 @media (max-width: 900px) { .lab-preview-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .lab-preview-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .lab-preview-stat-figure { transition: none; } }

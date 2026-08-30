@@ -68,7 +68,8 @@ def main():
             if parts.scheme or ref.startswith(("#", "mailto:", "tel:")): continue
             base = (page.parent / parser.base).resolve() if parser.base else page.parent
             target = (base / parts.path).resolve()
-            if parts.path and not target.exists(): failures.append(f"{page}: broken {tag} {key}={ref}")
+            html_target = Path(f"{target}.html")
+            if parts.path and not target.exists() and not html_target.exists(): failures.append(f"{page}: broken {tag} {key}={ref}")
     if failures:
         print("FAIL")
         print("\n".join(failures))

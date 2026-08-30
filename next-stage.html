@@ -4,11 +4,11 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>From AI Ambition to Team Adoption — RSVP | Brand Here</title>
 <meta name="description" content="Làm sao để AI thực sự đi vào vận hành — từ mong muốn của founder đến năng lực của đội ngũ.">
-<link rel="canonical" href="https://brandhere.co/next-stage.html">
+<link rel="canonical" href="https://brandhere.co/next-stage">
 <meta property="og:title" content="From AI Ambition to Team Adoption — Brand Here">
 <meta property="og:description" content="Giúp từng cấp hiểu vì sao nên dùng AI, AI giúp việc gì, nên dùng công cụ nào và áp dụng theo cách nào.">
 <meta property="og:image" content="https://brandhere.co/images/next-stage-og.png">
-<meta property="og:url" content="https://brandhere.co/next-stage.html">
+<meta property="og:url" content="https://brandhere.co/next-stage">
 <link rel="icon" href="favicon.ico?v=4"><link rel="stylesheet" href="css/style.css?v=16">
 <style>
   .event-page{background:#08182b;color:#f6f1e6;min-height:100vh}.event-page .site-header{background:#08182b;border-color:rgba(246,241,230,.12)}
@@ -25,9 +25,9 @@
   .rsvp-form .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#536174}.rsvp-form .consent input{width:auto;margin-top:5px}.form-note{font-size:13px;color:#536174}.form-error{display:none;color:#a52720;font-size:14px}
   @media(max-width:800px){.event-copy{padding:90px 0}.event-hero{min-height:650px}.rsvp-layout{grid-template-columns:1fr;gap:48px}.rsvp-form{grid-template-columns:1fr}.rsvp-form .full{grid-column:auto}}
 </style>
-</head>
+<link rel="alternate" hreflang="x-default" href="https://brandhere.co/next-stage"><meta property="og:type" content="website"><meta property="og:locale" content="vi_VN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="From AI Ambition to Team Adoption — RSVP | Brand Here"><meta name="twitter:description" content="Làm sao để AI thực sự đi vào vận hành — từ mong muốn của founder đến năng lực của đội ngũ."><meta name="twitter:image" content="https://brandhere.co/images/og-concept-3.jpg?v=1"></head>
 <body class="event-page">
-<header class="site-header"><div class="wrap"><nav><a href="index.html" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><a href="#rsvp" class="nav-cta">Request a Seat</a></nav></div></header>
+<header class="site-header"><div class="wrap"><nav><a href="./" class="logo"><span class="brand-word">BRAND</span><span class="here-word">HERE</span></a><a href="#rsvp" class="nav-cta">Request a Seat</a></nav></div></header>
 <main>
   <section class="event-hero"><div class="wrap"><div class="event-copy">
     <div class="eyebrow">The Next Stage · AI Adoption</div>
@@ -38,7 +38,7 @@
   </div></div></section>
   <section class="rsvp-section" id="rsvp"><div class="wrap rsvp-layout">
     <div class="rsvp-intro"><div class="eyebrow">Invitation-only</div><h2>Đăng ký tham dự</h2><p>Phiên đối thoại dành cho founder và lãnh đạo muốn thu hẹp khoảng cách giữa tham vọng AI và khả năng áp dụng của đội ngũ. Brand Here sẽ xác nhận hồ sơ qua email trước khi giữ chỗ.</p>
-      <div class="partner-lockup"><div class="eyebrow">Venue Partner</div><img src="images/usofa-logo-light-bg.png" alt="Usofa Hub"></div>
+      <div class="partner-lockup"><div class="eyebrow">Venue Partner</div><img src="images/usofa-logo-light-bg.png" alt="Usofa Hub" width="641" height="241"></div>
     </div>
     <form class="rsvp-form" id="rsvpForm" action="/api/rsvp" method="POST">
       <div><label for="name">Họ và tên *</label><input id="name" name="name" required maxlength="120" autocomplete="name"></div>
@@ -62,6 +62,6 @@
 <script>
 const params=new URLSearchParams(location.search);document.getElementById('source').value=[params.get('utm_source'),params.get('utm_medium'),params.get('utm_campaign')].filter(Boolean).join(' / ')||'direct';
 const form=document.getElementById('rsvpForm'),button=document.getElementById('submitBtn'),error=document.getElementById('formError');
-form.addEventListener('submit',async e=>{e.preventDefault();error.style.display='none';button.disabled=true;button.textContent='Đang gửi…';const data=Object.fromEntries(new FormData(form).entries());try{const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(!response.ok)throw new Error();location.href='next-stage-confirmation.html';}catch(_){error.style.display='block';button.disabled=false;button.textContent='Gửi RSVP';}});
+form.addEventListener('submit',async e=>{e.preventDefault();error.style.display='none';button.disabled=true;button.textContent='Đang gửi…';const data=Object.fromEntries(new FormData(form).entries());try{const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(!response.ok)throw new Error();location.href='next-stage-confirmation';}catch(_){error.style.display='block';button.disabled=false;button.textContent='Gửi RSVP';}});
 </script>
 </body></html>

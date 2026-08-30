@@ -22,3 +22,13 @@
     });
   });
 }());
+
+(function () {
+  var menu = document.querySelector('.home-menu');
+  var nav = document.getElementById('homeNav');
+  if (!menu || !nav) return;
+  function closeMenu() { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); }
+  menu.addEventListener('click', function () { var open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); });
+  nav.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeMenu(); });
+}());

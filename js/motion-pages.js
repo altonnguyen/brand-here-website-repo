@@ -114,6 +114,13 @@
     if(!track || !fill || !scope) return;
     var ticking = false;
 
+    function positionTrack(){
+      var header = document.querySelector(".site-header");
+      track.style.top = header ? header.offsetHeight + "px" : "0px";
+    }
+    positionTrack();
+    window.addEventListener("resize", positionTrack);
+
     function update(){
       ticking = false;
       var rect = scope.getBoundingClientRect();

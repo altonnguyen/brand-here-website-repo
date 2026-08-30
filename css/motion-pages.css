@@ -1,0 +1,61 @@
+/* Brand Here — inner-page interactive/motion layer (Concept 3.2 behaviour layer,
+   Phase 4-9). One distinctive, meaningful interaction per page. Every
+   component below is progressive enhancement: the default (no-JS / before
+   enhancement) state already shows complete, readable content — JS only
+   makes it more compact and interactive. Nothing here redesigns typography,
+   colour, grid or spacing; it reuses the existing Concept 3.2 tokens. */
+
+/* ---- Shared: stage picker (People & Business, Intelligence, Partners) ---- */
+.stage-picker{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0;padding:0;list-style:none}
+.stage-pick{padding:10px 16px;border:1px solid rgba(45,41,38,.3);background:none;color:inherit;font:500 12px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.stage-pick:hover{border-color:#e03c31}
+.stage-pick:focus-visible{outline:2px solid #e03c31;outline-offset:2px}
+.stage-section.js-enhanced .stage-pick.is-active{background:#2d2926;border-color:#2d2926;color:#f3f0e8}
+.stage-detail{margin-top:28px}
+.stage-detail-panel{padding:22px 0;border-top:1px solid rgba(45,41,38,.2)}
+.stage-detail-panel h3{font:400 26px/1 Italiana,"Cormorant Garamond",serif;margin:0 0 10px;color:#e03c31}
+.stage-detail-panel p{margin:0;max-width:640px;color:#4a4642}
+.stage-section.js-enhanced .stage-detail-panel{display:none;border-top:0;padding:0}
+.stage-section.js-enhanced .stage-detail-panel.is-active{display:block;padding-top:22px;border-top:1px solid rgba(45,41,38,.2)}
+
+/* ---- Market & Brand: journey toggle ---- */
+.journey-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:34px;font:500 15px/1.3 Manrope,sans-serif}
+.journey-step{padding:10px 16px;border:1px solid rgba(45,41,38,.3);transition:background .35s ease,color .35s ease,border-color .35s ease}
+.journey-row.is-new .journey-step{border-color:#e03c31;color:#e03c31}
+.journey-arrow{color:#6c6660}
+.journey-switch{margin-top:22px;padding:10px 16px;border:1px solid #2d2926;background:none;color:inherit;font:500 12px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.journey-switch:hover{border-color:#e03c31;color:#e03c31}
+.journey-switch:focus-visible{outline:2px solid #e03c31;outline-offset:2px}
+.journey-reveal{margin-top:22px;font:400 24px/1.3 Italiana,"Cormorant Garamond",serif}
+
+/* ---- Adaptation: gap-reveal toggle ---- */
+.gap-reveal-toggle{margin-top:30px;padding:10px 16px;border:1px solid #2d2926;background:none;color:inherit;font:500 12px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.gap-reveal-toggle:hover{border-color:#e03c31;color:#e03c31}
+.gap-reveal-toggle:focus-visible{outline:2px solid #e03c31;outline-offset:2px}
+.gap-reveal-list{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 0;padding:0;list-style:none;font:500 12px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#4a4642}
+.gap-reveal-list span:not(:last-child):after{content:'→';margin:0 12px;color:#e03c31}
+.gap-reveal-section.js-enhanced .gap-reveal-list{display:none}
+.gap-reveal-section.js-enhanced .gap-reveal-list.is-open{display:flex}
+
+/* ---- Experts: problem picker ---- */
+.problem-picker{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0;padding:0;list-style:none}
+.problem-pick{padding:10px 16px;border:1px solid rgba(45,41,38,.3);background:none;color:inherit;font:500 12px/1 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.problem-pick:hover{border-color:#e03c31}
+.problem-pick:focus-visible{outline:2px solid #e03c31;outline-offset:2px}
+.problem-pick.is-active{background:#2d2926;border-color:#2d2926;color:#f3f0e8}
+.problem-picker-hint{margin:16px 0 0;font:400 14px/1.5 Manrope,sans-serif;color:#6c6660}
+.expert-profile{transition:opacity .35s ease}
+.expert-profile.is-dimmed{opacity:.4}
+.expert-profile.is-match{opacity:1}
+.expert-profile.is-match .expert-profile-portrait{outline:2px solid #e03c31;outline-offset:4px}
+
+/* ---- Work: reading-progress indicator ---- */
+.work-progress-track{position:sticky;top:0;z-index:5;height:2px;background:rgba(45,41,38,.12)}
+.work-progress-fill{display:block;height:100%;width:0;background:#e03c31;transition:width .1s linear}
+.work-chapter-label{margin:0 0 18px;font:500 11px/1 "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#e03c31}
+.work-chapter-caption{margin:0 0 34px;font:400 20px/1.4 Italiana,"Cormorant Garamond",serif;color:#4a4642}
+
+/* ---- Reduced motion: no transitions, but everything already visually complete ---- */
+@media(prefers-reduced-motion:reduce){
+  .journey-step,.expert-profile,.work-progress-fill{transition:none!important}
+}

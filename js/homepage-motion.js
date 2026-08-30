@@ -96,7 +96,7 @@
       if (techNode) techNode.style.transform = 'translateY(' + (-arc * 70) + 'px)';
       if (businessNode) businessNode.style.transform = 'translateY(' + (arc * 18) + 'px)';
 
-      el.classList.toggle('is-title-visible', progress > 0.12 && progress < 0.98);
+      el.classList.toggle('is-title-visible', progress > 0.12);
       if (titleEl) {
         titleEl.style.setProperty('--rule-width', Math.round(clamp01((progress - 0.12) / 0.2) * 64) + 'px');
       }

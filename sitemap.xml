@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://brandhere.co/</loc><priority>1.0</priority></url>
+  <url><loc>https://brandhere.co/adaptation.html</loc><priority>0.9</priority></url>
+  <url><loc>https://brandhere.co/people-business.html</loc><priority>0.9</priority></url>
+  <url><loc>https://brandhere.co/market-brand.html</loc><priority>0.9</priority></url>
+  <url><loc>https://brandhere.co/intelligence.html</loc><priority>0.8</priority></url>
   <url><loc>https://brandhere.co/about.html</loc><priority>0.8</priority></url>
   <url><loc>https://brandhere.co/what-we-do.html</loc><priority>0.9</priority></url>
   <url><loc>https://brandhere.co/approach.html</loc><priority>0.8</priority></url>
@@ -19,6 +23,10 @@
   <url><loc>https://brandhere.co/contact.html</loc><priority>0.8</priority></url>
   <url><loc>https://brandhere.co/next-stage.html</loc><priority>0.6</priority></url>
   <url><loc>https://brandhere.co/vi/</loc><priority>0.9</priority></url>
+  <url><loc>https://brandhere.co/vi/adaptation.html</loc><priority>0.8</priority></url>
+  <url><loc>https://brandhere.co/vi/people-business.html</loc><priority>0.8</priority></url>
+  <url><loc>https://brandhere.co/vi/market-brand.html</loc><priority>0.8</priority></url>
+  <url><loc>https://brandhere.co/vi/intelligence.html</loc><priority>0.7</priority></url>
   <url><loc>https://brandhere.co/vi/what-we-do.html</loc><priority>0.8</priority></url>
   <url><loc>https://brandhere.co/vi/experts.html</loc><priority>0.8</priority></url>
   <url><loc>https://brandhere.co/vi/partners.html</loc><priority>0.8</priority></url>

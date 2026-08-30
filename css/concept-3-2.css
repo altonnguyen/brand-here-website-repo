@@ -1,0 +1,42 @@
+:root{--carbon:#2d2926;--signal:#e03c31;--bone:#d6d2c4;--ivory:#f3f0e8}
+.adaptation-band,.gap-editorial,.adaptation-layer,.method-strip,.ecosystem,.intelligence-preview,.commercial-ladder{padding:clamp(76px,10vw,150px) clamp(24px,7vw,110px)}
+.adaptation-band{background:var(--carbon);color:var(--ivory);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:8vw;align-items:end}
+.adaptation-band h2,.gap-editorial h2,.adaptation-layer h2,.ecosystem h2,.intelligence-preview h2{font-family:Italiana,"Cormorant Garamond",serif;font-weight:400;font-size:clamp(44px,7.5vw,112px);line-height:.92;margin:0}
+.adaptation-band p,.ecosystem p,.intelligence-preview p{font:400 clamp(18px,2vw,27px)/1.5 Manrope,sans-serif;max-width:680px}
+.adaptation-band em,.gap-editorial em{color:var(--signal);font-style:normal}
+.gap-editorial{background:var(--ivory)}
+.gap-editorial header{display:grid;grid-template-columns:1fr 1fr;gap:6vw;margin-bottom:70px}
+.tension-list{border-top:1px solid rgba(45,41,38,.35)}
+.tension-list p{display:grid;grid-template-columns:1fr 1fr;gap:4vw;margin:0;padding:25px 0;border-bottom:1px solid rgba(45,41,38,.2);font:500 clamp(18px,2vw,28px)/1.35 Manrope,sans-serif}
+.tension-list span:last-child{color:#6c6660}
+.adaptation-layer{background:var(--bone)}
+.layer-flow{margin-top:70px;display:grid;grid-template-columns:repeat(5,1fr);align-items:stretch}
+.layer-flow article{padding:28px 22px;border:1px solid rgba(45,41,38,.26);min-height:190px}
+.layer-flow article:nth-child(3){background:var(--carbon);color:var(--ivory);transform:translateY(-18px)}
+.layer-flow small,.practice-card small,.method-strip small{font:500 11px/1.3 "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.layer-flow h3{font:400 clamp(25px,3vw,44px)/1 Italiana,"Cormorant Garamond",serif}
+.practice-pair{display:grid;grid-template-columns:1fr 1fr}
+.practice-card{padding:clamp(65px,9vw,130px) clamp(24px,7vw,100px);min-height:620px;background:var(--ivory);color:var(--carbon)}
+.practice-card+ .practice-card{background:var(--carbon);color:var(--ivory)}
+.practice-card h2{font:400 clamp(48px,6.5vw,92px)/.95 Italiana,"Cormorant Garamond",serif;margin:24px 0 46px}
+.practice-card ul{padding:0;list-style:none;border-top:1px solid currentColor}.practice-card li{padding:18px 0;border-bottom:1px solid currentColor;font:500 17px/1.45 Manrope,sans-serif}
+.practice-card a,.adaptation-link{display:inline-block;margin-top:34px;color:inherit;font:600 13px/1.2 Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.method-strip{background:var(--ivory)}
+.method-grid{display:grid;grid-template-columns:repeat(6,1fr);margin-top:55px;border-top:1px solid var(--carbon)}
+.method-grid article{padding:25px 14px;min-height:180px;border-right:1px solid rgba(45,41,38,.25)}
+.method-grid b{display:block;color:var(--signal);font:500 12px "DM Mono",monospace}.method-grid h3{font:400 clamp(23px,2.4vw,38px)/1 Italiana,"Cormorant Garamond",serif}
+.ecosystem{background:var(--carbon);color:var(--ivory);display:grid;grid-template-columns:1fr 1fr;gap:8vw}
+.ecosystem-list{display:grid;gap:0;border-top:1px solid rgba(243,240,232,.35)}.ecosystem-list span{padding:18px 0;border-bottom:1px solid rgba(243,240,232,.22);font:500 16px Manrope,sans-serif}
+.intelligence-preview{background:var(--bone)}
+.intelligence-grid,.lab-grid,.commercial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.intelligence-grid article,.commercial-grid article{border:1px solid rgba(45,41,38,.3);padding:25px;min-height:250px}.intelligence-grid h3,.commercial-grid h3{font:400 30px/1.05 Italiana,"Cormorant Garamond",serif}.status-chip{display:inline-block;margin-top:22px;padding:7px 9px;border:1px solid currentColor;font:500 10px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.commercial-ladder{background:var(--ivory)}.commercial-grid article{min-height:180px}.commercial-grid article:first-child{background:var(--carbon);color:var(--ivory)}
+.page-hero.adaptation-hero{background:var(--carbon);color:var(--ivory)}
+.editorial-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:8vw}.editorial-grid h2{font-size:clamp(42px,6vw,80px);line-height:.98}.editorial-grid .prose{max-width:760px}
+.capability-list{columns:2;column-gap:45px;padding:0;list-style:none}.capability-list li{break-inside:avoid;padding:14px 0;border-bottom:1px solid rgba(45,41,38,.2)}
+.lab-grid{grid-template-columns:repeat(2,1fr)}.adaptation-lab{padding:34px;border:1px solid rgba(45,41,38,.3);background:var(--ivory)}.adaptation-lab h3{font:400 clamp(34px,4vw,54px)/1 Italiana,"Cormorant Garamond",serif}.lab-controls{display:grid;gap:14px;margin-top:30px}.lab-controls label{font:600 12px Manrope,sans-serif}.lab-controls input[type=range],.lab-controls select{width:100%}.lab-result{margin-top:28px;padding:24px;background:var(--carbon);color:var(--ivory);min-height:120px}.lab-result strong{display:block;font:400 35px Italiana,"Cormorant Garamond",serif}.privacy-note{font:500 11px/1.5 "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:900px){.adaptation-band,.gap-editorial header,.ecosystem,.editorial-grid{grid-template-columns:1fr}.layer-flow{grid-template-columns:1fr}.layer-flow article:nth-child(3){transform:none}.practice-pair{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}.intelligence-grid,.commercial-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.adaptation-band,.gap-editorial,.adaptation-layer,.method-strip,.ecosystem,.intelligence-preview,.commercial-ladder{padding:70px 22px}.tension-list p{grid-template-columns:1fr;gap:8px}.method-grid,.intelligence-grid,.lab-grid,.commercial-grid{grid-template-columns:1fr}.practice-card{min-height:0;padding:72px 22px}.capability-list{columns:1}.adaptation-band h2,.gap-editorial h2,.adaptation-layer h2,.ecosystem h2,.intelligence-preview h2{font-size:46px}}
+@media(prefers-reduced-motion:reduce){.layer-flow article:nth-child(3){transform:none}}
+html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial h2,html[lang="vi"] .adaptation-layer h2,html[lang="vi"] .ecosystem h2,html[lang="vi"] .intelligence-preview h2,html[lang="vi"] .layer-flow h3,html[lang="vi"] .practice-card h2,html[lang="vi"] .method-grid h3,html[lang="vi"] .intelligence-grid h3,html[lang="vi"] .commercial-grid h3,html[lang="vi"] .adaptation-lab h3{font-family:"Cormorant Garamond",Georgia,serif}
+@media(max-width:780px){html[lang="vi"] .site-header nav{align-items:flex-start;flex-wrap:wrap}html[lang="vi"] .site-header .nav-links{order:4;width:100%;display:flex;flex-wrap:wrap;gap:10px 16px;padding:12px 0;background:var(--ivory)}html[lang="vi"] .site-header .nav-links a{font-size:10px}html[lang="vi"] .site-header{height:auto;min-height:74px;background:var(--ivory)}}

@@ -14,3 +14,10 @@ package.json
 package-lock.json
 node_modules
 node_modules/**
+Brand Assets
+Brand Assets/**
+BRAND-HERE-MEMORY.md
+qa
+qa/**
+audio/*.wav
+audio/*.aiff

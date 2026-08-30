@@ -7,7 +7,14 @@ Production baseline: `cf2a8e7eff07281aecdb37533c104df5e74a7126`
 
 ## Outcome
 
-Status: FIXES IMPLEMENTED — RELEASE CANDIDATE PREPARATION IN PROGRESS
+Status: DEPLOYED AND VERIFIED
+
+Candidate commit: `336cf71`
+Candidate tree: `878c88fa84d1f866dfcbc686562a68f6465781d2`
+Candidate archive SHA-256: `4ab4ceb7dfff9b6133416e683488349e990dc83ea46e02b2ad76a6d10e78ee96`
+Candidate tag: `concept-3.2-audit-fixes-candidate-20260830`
+Cloudflare version: `fa3dd97d-836f-498f-aeb7-67598ab4622a`
+Production URL: `https://brandhere.co`
 
 The audit found and corrected material issues without changing the approved Concept 3 visual system:
 
@@ -45,12 +52,22 @@ The audit found and corrected material issues without changing the approved Conc
 - Mobile navigation: PASS; keyboard state and accessible labels verified.
 - Browser console warnings/errors on preview: none.
 - Concept 3 compliance: PASS. Palette, approved typography, logo treatment, editorial image and controlled Signal Red use are unchanged.
+- Isolated Wrangler dry-run: PASS; 152 deployable assets discovered.
 
 ## Boundaries
 
-- No production deployment is included in the audit implementation itself.
+- Production deployment was executed only after explicit CEO approval of exact candidate `336cf71`.
 - Full lab Core Web Vitals were not captured because Chrome DevTools MCP was unavailable; this report does not invent CWV values.
 - Contact/RSVP forms were not submitted, so no external communication or personal data was transmitted.
+
+## Post-deployment verification
+
+- Public route smoke test: PASS for homepage, core practices, Labs, About, Contact and Vietnamese routes.
+- Public assets: PASS for Concept 3.2 CSS and homepage JavaScript.
+- Public sitemap: valid XML with extensionless canonical URLs.
+- Public metadata: mobile navigation, Twitter metadata, Open Graph locale and EN/VI strategic sections confirmed.
+- Live mobile viewport: 390 × 844, no horizontal overflow, seven menu destinations available.
+- Live browser console: no warnings or errors.
 
 ## Restore point
 

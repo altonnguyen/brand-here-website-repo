@@ -2,6 +2,7 @@
 
 Status: **Approved / Master standard**  
 Approved date: **26 August 2026**  
+Technical correction: **29 August 2026 — removed the fixed-position gap; the two words now share one continuous wordmark with a 3px optical gap.**  
 Applies from this date forward to the Brand Here website, credentials, presentations, proposals, training materials, certificates and partner-facing assets.
 
 ## Locked decisions
@@ -31,6 +32,7 @@ Applies from this date forward to the Brand Here website, credentials, presentat
 
 - `brand-here-primary-light.svg`
 - `brand-here-primary-dark.svg`
+- `brand-here-primary-dark-transparent.svg`
 - `brand-here-primary-transparent.svg`
 - `brand-here-one-colour.svg`
 

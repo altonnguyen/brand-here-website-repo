@@ -4,6 +4,75 @@ const ALLOWED_ORIGINS = new Set([
   "https://brand-here-website-repo.alton-nguyen-87.workers.dev",
 ]);
 
+const PERMANENT_REDIRECTS = new Map([
+  ["/advisory-lab", "/labs"],
+  ["/alignment-lab", "/labs"],
+  ["/commerce-lab", "/market-brand"],
+  ["/executive-ai-lab", "/labs"],
+  ["/next-stage", "/adaptation"],
+  ["/vi/advisory-lab", "/vi/labs"],
+  ["/vi/alignment-lab", "/vi/labs"],
+  ["/vi/commerce-lab", "/vi/market-brand"],
+  ["/vi/executive-ai-lab", "/vi/labs"],
+  ["/vi/next-stage", "/vi/adaptation"],
+]);
+
+const OG_IMAGE_BY_PAGE = new Map([
+  ["/", "home.jpg"],
+  ["/index.html", "home.jpg"],
+  ["/vi/", "home.jpg"],
+  ["/vi/index.html", "home.jpg"],
+  ["/about", "about.jpg"],
+  ["/about.html", "about.jpg"],
+  ["/vi/about", "about.jpg"],
+  ["/vi/about.html", "about.jpg"],
+  ["/adaptation", "adaptation.jpg"],
+  ["/adaptation.html", "adaptation.jpg"],
+  ["/vi/adaptation", "adaptation.jpg"],
+  ["/vi/adaptation.html", "adaptation.jpg"],
+  ["/labs", "labs.jpg"],
+  ["/labs.html", "labs.jpg"],
+  ["/vi/labs", "labs.jpg"],
+  ["/vi/labs.html", "labs.jpg"],
+  ["/intelligence", "intelligence.jpg"],
+  ["/intelligence.html", "intelligence.jpg"],
+  ["/vi/intelligence", "intelligence.jpg"],
+  ["/vi/intelligence.html", "intelligence.jpg"],
+  ["/insights", "insights.jpg"],
+  ["/insights.html", "insights.jpg"],
+  ["/vi/insights", "insights.jpg"],
+  ["/vi/insights.html", "insights.jpg"],
+  ["/work", "work.jpg"],
+  ["/work.html", "work.jpg"],
+  ["/vi/work", "work.jpg"],
+  ["/vi/work.html", "work.jpg"],
+]);
+
+const withoutHtmlSuffix = (pathname) =>
+  pathname.endsWith(".html") ? pathname.slice(0, -5) : pathname;
+
+async function useProductionOgImage(request, env, filename) {
+  const pageResponse = await env.ASSETS.fetch(request);
+  if (!pageResponse.ok || !pageResponse.headers.get("Content-Type")?.startsWith("text/html")) {
+    return pageResponse;
+  }
+
+  const imageUrl = new URL(`/images/og/${filename}`, request.url);
+  const imageResponse = await env.ASSETS.fetch(new Request(imageUrl, { method: "HEAD" }));
+  if (!imageResponse.ok || !imageResponse.headers.get("Content-Type")?.startsWith("image/jpeg")) {
+    return pageResponse;
+  }
+
+  return new HTMLRewriter()
+    .on('meta[property="og:image"]', {
+      element(element) { element.setAttribute("content", imageUrl.href); },
+    })
+    .on('meta[name="twitter:image"]', {
+      element(element) { element.setAttribute("content", imageUrl.href); },
+    })
+    .transform(pageResponse);
+}
+
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
     status,
@@ -142,6 +211,14 @@ async function handleRsvp(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const canonicalPath = withoutHtmlSuffix(url.pathname);
+
+    const redirectTarget = PERMANENT_REDIRECTS.get(canonicalPath);
+    if (redirectTarget) {
+      const destination = new URL(redirectTarget, url);
+      destination.search = url.search;
+      return Response.redirect(destination.href, 301);
+    }
 
     if (url.pathname === "/api/contact") {
       if (request.method !== "POST") {
@@ -159,6 +236,11 @@ export default {
     if (url.pathname === "/api/rsvp") {
       if (request.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405);
       try { return await handleRsvp(request, env); } catch (error) { console.error("RSVP form error", error); return json({ ok: false, error: "Unable to submit RSVP" }, 500); }
+    }
+
+    const ogFilename = OG_IMAGE_BY_PAGE.get(url.pathname);
+    if (ogFilename && request.method === "GET") {
+      return useProductionOgImage(request, env, ogFilename);
     }
 
     return env.ASSETS.fetch(request);

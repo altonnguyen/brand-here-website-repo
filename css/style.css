@@ -1224,6 +1224,7 @@ footer.site-footer a:hover, footer.site-footer a:focus-visible { color: var(--go
 /* Concept 3.2 editorial artwork interface. Production imagery is supplied separately. */
 .editorial-media-slot { aspect-ratio: 1200 / 630; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); background: var(--c3-bone); }
 .editorial-media-slot img { width: 100%; height: 100%; object-fit: cover; }
+.editorial-media-slot.has-image { border-color: transparent; background: transparent; }
 .editorial-media-slot > span { padding: 20px; font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-align: center; text-transform: uppercase; color: var(--ink-soft); }
 .insight-cluster-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 36px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .insight-cluster { padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }

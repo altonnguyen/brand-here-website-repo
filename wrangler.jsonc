@@ -6,6 +6,34 @@
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": [
+      "/api/*",
+      "/advisory-lab*",
+      "/alignment-lab*",
+      "/commerce-lab*",
+      "/executive-ai-lab*",
+      "/next-stage*",
+      "/vi/advisory-lab*",
+      "/vi/alignment-lab*",
+      "/vi/commerce-lab*",
+      "/vi/executive-ai-lab*",
+      "/vi/next-stage*",
+      "/",
+      "/index.html",
+      "/about*",
+      "/adaptation*",
+      "/labs*",
+      "/intelligence*",
+      "/insights*",
+      "/work*",
+      "/vi/",
+      "/vi/index.html",
+      "/vi/about*",
+      "/vi/adaptation*",
+      "/vi/labs*",
+      "/vi/intelligence*",
+      "/vi/insights*",
+      "/vi/work*"
+    ]
   }
 }

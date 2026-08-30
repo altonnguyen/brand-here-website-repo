@@ -64,4 +64,4 @@ const params=new URLSearchParams(location.search);document.getElementById('sourc
 const form=document.getElementById('rsvpForm'),button=document.getElementById('submitBtn'),error=document.getElementById('formError');
 form.addEventListener('submit',async e=>{e.preventDefault();error.style.display='none';button.disabled=true;button.textContent='Đang gửi…';const data=Object.fromEntries(new FormData(form).entries());try{const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(!response.ok)throw new Error();location.href='next-stage-confirmation';}catch(_){error.style.display='block';button.disabled=false;button.textContent='Gửi RSVP';}});
 </script>
-</body></html>
+<script src="js/back-to-top.js" defer></script></body></html>

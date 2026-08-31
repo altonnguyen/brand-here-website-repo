@@ -99,3 +99,30 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,htm
 @media (max-width:620px){
   .gap-editorial>header h2 .headline-line{white-space:normal}
 }
+
+/* Keep the Lab Preview promise concise and separate its two sentences. */
+.lab-preview h2 .lab-headline-line{
+  display:block;
+  white-space:nowrap;
+}
+
+.lab-preview h2 .lab-headline-line--second{
+  margin-top:.14em;
+}
+
+.lab-preview>div{min-width:0}
+
+@media (min-width:901px){
+  .lab-preview h2{font-size:clamp(50px,3.7vw,68px)}
+}
+
+@media (max-width:900px){
+  .lab-preview{grid-template-columns:minmax(0,1fr)}
+}
+
+@media (max-width:600px){
+  .lab-preview{overflow:hidden}
+  .lab-preview h2{font-size:clamp(38px,10.5vw,48px);line-height:.9}
+  .lab-preview h2 .lab-headline-line{white-space:normal}
+  .lab-preview p{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+}

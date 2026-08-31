@@ -79,7 +79,7 @@ nav { min-height: 84px; display: flex; align-items: center; justify-content: spa
 .lang-switch a:hover { color: var(--gold); }
 .lang-switch strong { color: var(--gold); font-weight: 600; }
 .lang-switch a + strong::before, .lang-switch strong + a::before { content: '/'; margin-right: 7px; color: var(--line-dark); font-weight: 400; }
-.mobile-toggle { display: none; border: 0; background: none; color: var(--navy); font-size: 22px; cursor: pointer; }
+.mobile-toggle { display: none; border: 0; background: none; color: var(--navy); font-family: var(--font-body); font-size: 22px; cursor: pointer; }
 
 /* Type */
 h1, h2, h3 { font-family: var(--serif); color: var(--navy); }

@@ -12,7 +12,7 @@
   style.textContent =
     '#bh-back-to-top{position:fixed;left:22px;bottom:22px;bottom:calc(22px + env(safe-area-inset-bottom));' +
     'width:48px;height:48px;border-radius:50%;border:1px solid rgba(45,41,38,.3);' +
-    'background:#F3F0E8;color:#2D2926;font-size:20px;line-height:1;display:none;' +
+    'background:#F3F0E8;color:#2D2926;font-family:Manrope,Arial,sans-serif;font-size:20px;line-height:1;display:none;' +
     'align-items:center;justify-content:center;cursor:pointer;z-index:40;' +
     'box-shadow:0 12px 34px rgba(0,0,0,.16);opacity:0;transform:translateY(6px);' +
     'transition:opacity .25s ease,transform .25s ease;}' +

@@ -80,3 +80,7 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,htm
   opacity:1;
   -webkit-font-smoothing:auto;
 }
+
+@media (min-width:1025px){
+  .ecosystem h2{font-size:clamp(64px,5.8vw,88px)}
+}

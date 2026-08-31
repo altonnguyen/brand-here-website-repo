@@ -32,7 +32,7 @@
       ".bh-sound-toggle:focus-visible{outline:2px solid #E03C31;outline-offset:3px;}",
       ".bh-sound-toggle .bh-sound-dot{font-size:13px;line-height:1;color:#E03C31;}",
       ".bh-sound-toggle[aria-pressed=\"true\"] .bh-sound-dot{color:#E03C31;}",
-      "@media (max-width:640px){.bh-sound-toggle{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));padding:9px 14px;}}",
+      "@media (max-width:640px){.bh-sound-toggle{top:calc(76px + env(safe-area-inset-top));right:12px;bottom:auto;padding:8px 11px;font-size:9px;}}",
       "@media print{.bh-sound-toggle{display:none;}}"
     ].join("");
     var style = document.createElement("style");

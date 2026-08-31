@@ -18,31 +18,31 @@
 .practice-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .practice-card{min-width:0;padding:clamp(65px,9vw,130px) clamp(24px,7vw,100px);min-height:620px;background:var(--ivory);color:var(--carbon)}
 .practice-card+ .practice-card{background:var(--carbon);color:var(--ivory)}
-.practice-card h2{font:400 clamp(48px,6.5vw,92px)/.95 "Playfair Display",Georgia,serif;margin:24px 0 46px;overflow-wrap:anywhere}
+.practice-card h2{font:400 clamp(44px,5vw,76px)/.95 "Playfair Display",Georgia,serif;margin:24px 0 46px}
 .practice-card ul{padding:0;list-style:none;border-top:1px solid currentColor}.practice-card li{padding:18px 0;border-bottom:1px solid currentColor;font:500 17px/1.45 Manrope,sans-serif}
 .practice-card a,.adaptation-link{display:inline-block;margin-top:34px;color:inherit;font:600 13px/1.2 Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .method-strip{background:var(--ivory)}
 .method-grid{display:grid;grid-template-columns:repeat(6,1fr);margin-top:55px;border-top:1px solid var(--carbon)}
 .method-grid article{padding:25px 14px;min-height:180px;border-right:1px solid rgba(45,41,38,.25)}
 .method-grid b{display:block;color:var(--signal);font:500 12px Manrope,Arial,sans-serif}.method-grid h3,.method-grid h2{font:400 clamp(23px,2.4vw,38px)/1 "Playfair Display",Georgia,serif}
-.ecosystem{background:var(--carbon);color:var(--ivory);display:grid;grid-template-columns:1fr 1fr;gap:8vw}
+.ecosystem{background:var(--carbon);color:var(--ivory);display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:clamp(56px,8vw,130px);align-items:start}
 .ecosystem>*{min-width:0}
 .ecosystem-list{display:grid;gap:0;border-top:1px solid rgba(243,240,232,.35)}.ecosystem-list span{padding:18px 0;border-bottom:1px solid rgba(243,240,232,.22);font:500 16px Manrope,sans-serif}
 .intelligence-preview{background:var(--bone)}
 .intelligence-grid,.lab-grid,.commercial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
-.intelligence-grid article,.commercial-grid article{border:1px solid rgba(45,41,38,.3);padding:25px;min-height:250px}.intelligence-grid h3,.intelligence-grid h2,.commercial-grid h3,.commercial-grid h2{font:400 30px/1.05 "Playfair Display",Georgia,serif}.status-chip{display:inline-block;margin-top:22px;padding:7px 9px;border:1px solid currentColor;font:500 10px Manrope,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.intelligence-grid article,.commercial-grid article{min-width:0;border:1px solid rgba(45,41,38,.3);padding:25px;min-height:250px}.intelligence-grid h3,.intelligence-grid h2,.commercial-grid h3,.commercial-grid h2{font:400 30px/1.05 "Playfair Display",Georgia,serif}.status-chip{display:inline-block;margin-top:22px;padding:7px 9px;border:1px solid currentColor;font:500 10px Manrope,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
 .commercial-ladder{background:var(--ivory)}.commercial-grid article{min-height:180px}.commercial-grid article:first-child{background:var(--carbon);color:var(--ivory)}
 .page-hero.adaptation-hero{background:var(--carbon);color:var(--ivory)}
 .editorial-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:8vw}.editorial-grid h2{font-size:clamp(42px,6vw,80px);line-height:.98}.editorial-grid .prose{max-width:760px}
 .capability-list{columns:2;column-gap:45px;padding:0;list-style:none}.capability-list li{break-inside:avoid;padding:14px 0;border-bottom:1px solid rgba(45,41,38,.2)}
 .lab-grid{grid-template-columns:repeat(2,1fr)}.adaptation-lab{padding:34px;border:1px solid rgba(45,41,38,.3);background:var(--ivory)}.adaptation-lab h3{font:400 clamp(34px,4vw,54px)/1 "Playfair Display",Georgia,serif}.lab-controls{display:grid;gap:14px;margin-top:30px}.lab-controls label{font:600 12px Manrope,sans-serif}.lab-controls input[type=range],.lab-controls select{width:100%}.lab-result{margin-top:28px;padding:24px;background:var(--carbon);color:var(--ivory);min-height:120px}.lab-result strong{display:block;font:400 35px "Playfair Display",Georgia,serif}.privacy-note{font:500 11px/1.5 Manrope,Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
-@media(max-width:900px){.adaptation-band,.gap-editorial header,.ecosystem,.editorial-grid{grid-template-columns:1fr}.layer-flow{grid-template-columns:1fr}.layer-flow article:nth-child(3){transform:none}.practice-pair{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}.intelligence-grid,.commercial-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.adaptation-band,.gap-editorial,.adaptation-layer,.method-strip,.ecosystem,.intelligence-preview,.commercial-ladder{padding:70px 22px}.tension-list p{grid-template-columns:1fr;gap:8px}.method-grid,.intelligence-grid,.lab-grid,.commercial-grid{grid-template-columns:1fr}.practice-card{min-height:0;padding:72px 22px}.capability-list{columns:1}.adaptation-band h2,.gap-editorial h2,.adaptation-layer h2,.ecosystem h2,.intelligence-preview h2{max-width:100%;font-size:46px;overflow-wrap:anywhere}.ecosystem p,.ecosystem-list,.ecosystem-list span{max-width:100%;overflow-wrap:anywhere}}
+@media(max-width:1024px){.ecosystem{grid-template-columns:1fr;gap:46px}.ecosystem h2{max-width:760px}.practice-card h2{font-size:clamp(44px,6.6vw,68px)}}
+@media(max-width:1180px){.adaptation-band,.gap-editorial header,.editorial-grid{grid-template-columns:1fr}.layer-flow{grid-template-columns:1fr}.layer-flow article:nth-child(3){transform:none}.practice-pair{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}.intelligence-grid,.commercial-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.adaptation-band,.gap-editorial,.adaptation-layer,.method-strip,.ecosystem,.intelligence-preview,.commercial-ladder{padding:82px 22px}.tension-list p{grid-template-columns:1fr;gap:8px}.method-grid,.intelligence-grid,.lab-grid,.commercial-grid{grid-template-columns:1fr}.practice-card{min-height:0;padding:82px 22px}.practice-card h2{font-size:clamp(42px,12vw,52px)}.capability-list{columns:1}.adaptation-band h2,.gap-editorial h2,.adaptation-layer h2,.ecosystem h2,.intelligence-preview h2{max-width:100%;font-size:clamp(42px,12vw,52px)}.ecosystem p,.ecosystem-list,.ecosystem-list span{max-width:100%;overflow-wrap:break-word}}
 @media(prefers-reduced-motion:reduce){.layer-flow article:nth-child(3){transform:none}}
 html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial h2,html[lang="vi"] .adaptation-layer h2,html[lang="vi"] .ecosystem h2,html[lang="vi"] .intelligence-preview h2,html[lang="vi"] .layer-flow h2,html[lang="vi"] .layer-flow h3,html[lang="vi"] .practice-card h2,html[lang="vi"] .method-grid h3,html[lang="vi"] .method-grid h2,html[lang="vi"] .intelligence-grid h3,html[lang="vi"] .intelligence-grid h2,html[lang="vi"] .commercial-grid h3,html[lang="vi"] .commercial-grid h2,html[lang="vi"] .adaptation-lab h3,html[lang="vi"] .lab-result strong{font-family:"Playfair Display",Georgia,serif}
-@media(max-width:780px){html[lang="vi"] .site-header nav{align-items:flex-start;flex-wrap:wrap}html[lang="vi"] .site-header .nav-links{order:4;width:100%;display:flex;flex-wrap:wrap;gap:10px 16px;padding:12px 0;background:var(--ivory)}html[lang="vi"] .site-header .nav-links a{font-size:10px}html[lang="vi"] .site-header{height:auto;min-height:74px;background:var(--ivory)}}
 
-.gap-editorial .hero-index,.adaptation-layer .hero-index,.method-strip .hero-index,.ecosystem .hero-index,.intelligence-preview .hero-index{position:static;margin:0 0 28px}
+.gap-editorial .hero-index,.adaptation-layer .hero-index,.method-strip .hero-index,.evidence-story .hero-index,.ecosystem .hero-index,.intelligence-preview .hero-index{position:static;margin:0 0 28px}
 
 /* ---- Section 18: site-wide microinteractions (restrained refinement pass) ---- */
 .practice-card a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s ease,opacity .2s ease}
@@ -55,6 +55,12 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial h2,html[lang=
 /* BH-2026-010: selective major-title casing. */
 .adaptation-band h2,.gap-editorial>header h2,.adaptation-layer>h2,.ecosystem h2,.intelligence-preview h2,.practice-card h2{text-transform:uppercase}
 html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,html[lang="vi"] .adaptation-layer>h2,html[lang="vi"] .ecosystem h2,html[lang="vi"] .intelligence-preview h2,html[lang="vi"] .practice-card h2{line-height:.98;letter-spacing:-.02em}
+
+.adaptation-band h2,.gap-editorial h2,.adaptation-layer h2,.ecosystem h2,.intelligence-preview h2,.practice-card h2,.layer-flow h3,.method-grid h3,.intelligence-grid h3,.commercial-grid h3,.adaptation-lab h2{
+  word-break:normal;
+  overflow-wrap:normal;
+  hyphens:none;
+}
 
 .layer-flow small,.practice-card small,.method-strip small,.intelligence-grid small,.commercial-grid small{
   font-family:Manrope,Arial,sans-serif;

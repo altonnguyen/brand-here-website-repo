@@ -82,5 +82,10 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,htm
 }
 
 @media (min-width:1025px){
-  .ecosystem h2{font-size:clamp(64px,5.8vw,88px)}
+  .ecosystem h2{font-size:clamp(50px,3.8vw,72px)}
+}
+
+@media (min-width:1025px) and (max-width:1280px){
+  .ecosystem{grid-template-columns:1fr;gap:46px}
+  .ecosystem h2{max-width:760px}
 }

@@ -126,3 +126,146 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,htm
   .lab-preview h2 .lab-headline-line{white-space:normal}
   .lab-preview p{max-width:100%;white-space:normal;overflow-wrap:anywhere}
 }
+
+/* Lab Preview: quiet orbital motion with a layered hover response. */
+.lab-orbit{
+  isolation:isolate;
+  cursor:crosshair;
+  transition:border-color .55s ease,box-shadow .55s ease;
+}
+
+.lab-orbit:before{animation:lab-orbit-wide 18s ease-in-out infinite alternate}
+.lab-orbit:after{animation:lab-orbit-tall 22s ease-in-out infinite alternate}
+
+.lab-orbit strong,.lab-orbit span,.lab-orbit i{
+  position:relative;
+  z-index:1;
+  transition:transform .55s cubic-bezier(.2,.75,.2,1),color .4s ease,opacity .4s ease;
+}
+
+.lab-orbit i{animation:lab-orbit-pulse 2.8s ease-in-out infinite}
+
+@media (hover:hover) and (pointer:fine){
+  .lab-orbit:hover{
+    border-color:#2d292688;
+    box-shadow:0 0 0 1px #2d29260f,0 24px 70px #2d292612;
+  }
+
+  .lab-orbit:hover strong{transform:scale(1.12)}
+  .lab-orbit:hover span{color:var(--k);transform:scale(1.28)}
+  .lab-orbit:hover span:first-of-type{transform:translateX(-10px) scale(1.28)}
+  .lab-orbit:hover span:last-of-type{transform:translateX(10px) scale(1.28)}
+  .lab-orbit:hover i{transform:scale(1.65)}
+  .lab-orbit:hover:before{animation-duration:7s}
+  .lab-orbit:hover:after{animation-duration:9s}
+}
+
+@keyframes lab-orbit-wide{
+  from{transform:rotate(-22deg) scale(.98)}
+  to{transform:rotate(-14deg) scale(1.025)}
+}
+
+@keyframes lab-orbit-tall{
+  from{transform:rotate(17deg) scale(1.02)}
+  to{transform:rotate(25deg) scale(.985)}
+}
+
+@keyframes lab-orbit-pulse{
+  0%,100%{box-shadow:0 0 0 0 #ef3b2d00}
+  50%{box-shadow:0 0 0 7px #ef3b2d1f}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .lab-orbit:before,.lab-orbit:after,.lab-orbit i{animation:none}
+  .lab-orbit,.lab-orbit strong,.lab-orbit span,.lab-orbit i{transition:none}
+}
+
+/* Vietnamese editorial line logic: preserve complete meaning units. */
+.journey-headline-line,.market-model-line,.hero-headline-line,.closing-line{
+  display:block;
+}
+
+@media (min-width:821px){
+  html[lang="vi"] .journey-headline{font-size:clamp(64px,6.5vw,106px);line-height:.9}
+  html[lang="vi"] .journey-headline-line,
+  html[lang="vi"] .market-model-line,
+  html[lang="vi"] .hero-headline-line,
+  html[lang="vi"] .closing-line{white-space:nowrap}
+  html[lang="vi"] .market-model-headline{font-size:clamp(58px,5.6vw,94px);line-height:.9}
+  html[lang="vi"] .enterprise-hero .hero-headline-vi{font-size:clamp(58px,6.1vw,98px);line-height:.86}
+  html[lang="vi"] .closing .closing-headline{font-size:clamp(74px,8.6vw,140px);line-height:.82}
+}
+
+@media (max-width:820px){
+  html[lang="vi"] .journey-headline-line,
+  html[lang="vi"] .market-model-line{white-space:normal}
+  html[lang="vi"] .enterprise-hero .hero-headline-vi{font-size:clamp(40px,10.5vw,50px);line-height:.9}
+  html[lang="vi"] .hero-headline-line{white-space:nowrap}
+  html[lang="vi"] .closing .closing-headline{font-size:clamp(40px,10vw,56px);line-height:.86}
+  html[lang="vi"] .closing-line{white-space:nowrap}
+}
+
+/* Make the homepage conversion row unmistakably actionable. */
+.closing>a{
+  cursor:pointer;
+  transition:padding .35s ease,background-color .35s ease,color .35s ease;
+}
+
+.closing-cta-copy small{
+  margin-left:1.4em;
+  font:500 9px/1 var(--o);
+  letter-spacing:.12em;
+  opacity:.74;
+}
+
+.closing>a>span:last-child{transition:transform .35s ease}
+
+@media (hover:hover) and (pointer:fine){
+  .closing>a:hover,.closing>a:focus-visible{padding-inline:18px;background:#2d2926;color:var(--ivory);outline:0}
+  .closing>a:hover>span:last-child,.closing>a:focus-visible>span:last-child{transform:translate(4px,-4px)}
+}
+
+@media (max-width:600px){
+  .closing-cta-copy small{display:block;margin:7px 0 0}
+}
+
+/* Labs: selected decisions and the public-narrative input use Signal Red. */
+.adaptation-lab[data-lab="marketing-model"] select{
+  min-height:44px;
+  padding:8px 12px;
+  border:1px solid rgba(45,41,38,.28);
+  transition:background-color .25s ease,color .25s ease,border-color .25s ease;
+}
+
+.adaptation-lab[data-lab="marketing-model"] select.is-selected{
+  color:var(--ivory);
+  background:var(--signal);
+  border-color:var(--signal);
+}
+
+.adaptation-lab[data-lab="brand-mirror"] .lab-controls label{
+  display:grid;
+  grid-template-columns:minmax(190px,.42fr) minmax(260px,.58fr);
+  gap:20px;
+  align-items:center;
+}
+
+.adaptation-lab[data-lab="brand-mirror"] textarea{
+  width:100%;
+  max-width:500px;
+  min-height:112px;
+  padding:14px 16px;
+  resize:vertical;
+  color:var(--ivory);
+  background:var(--signal);
+  border:1px solid var(--signal);
+  border-radius:0;
+  font:500 15px/1.45 Manrope,Arial,sans-serif;
+}
+
+.adaptation-lab[data-lab="brand-mirror"] textarea::placeholder{color:#f3f0e8bf}
+
+@media (max-width:620px){
+  .adaptation-lab[data-lab="brand-mirror"] .lab-controls label{grid-template-columns:1fr}
+  .adaptation-lab[data-lab="brand-mirror"] textarea{max-width:100%;min-height:104px}
+}

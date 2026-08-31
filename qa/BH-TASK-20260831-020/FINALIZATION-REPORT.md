@@ -13,7 +13,7 @@ Date: 2026-08-31
 - `ea18a03` — Prepare Concept 3.2 production assets and routing.
 - Final lock report — this report-only commit.
 - Final asset-drop prep visual fix — collapse missing media, activate confirmed assets server-side, and correct Labs rhythm.
-- Final thumbnail and typography pass — integrate seven approved page artworks and replace English Italiana with CEO-approved Instrument Serif.
+- `6c9ef3f` — integrate seven approved page artworks and replace English Italiana with CEO-approved Instrument Serif.
 
 ## Files changed in final production prep
 

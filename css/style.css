@@ -1204,6 +1204,28 @@ html[lang="vi"] .decision-hero h1,
 html[lang="vi"] .section > .wrap > h2,
 html[lang="vi"] .editorial-grid > div > h2,
 html[lang="vi"] .final-cta h2 { line-height: .96; letter-spacing: -.02em; }
+
+/* Small editorial labels: crisp Manrope at a real loaded weight. */
+.eyebrow,
+.section-label,
+.game-kicker,
+.lab-archive-eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  mix-blend-mode: normal;
+  filter: none;
+  mask: none;
+  clip-path: none;
+  transform: none;
+  opacity: 1;
+}
 .evidence-source a { color: var(--gold); text-decoration: none; margin-left: 4px; }
 .evidence-source a:hover { text-decoration: underline; }
 .evidence-close { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }

@@ -56,3 +56,22 @@ footer{flex-wrap:wrap;gap:22px 34px}
 footer .footer-signature{color:#858581;font:500 10px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase}
 @media(max-width:600px){.hero h1{right:20px;width:auto;max-width:none;font-size:clamp(52px,14vw,76px);line-height:.88;overflow-wrap:anywhere}.hero h1,.instrument-copy h2,.film-copy h2,.people h2,.proof h2,.closing h2{letter-spacing:-.025em}footer{align-items:flex-start;flex-direction:column}.footer-signature{letter-spacing:.12em}}
 html[lang="vi"] .hero h1,html[lang="vi"] .instrument-copy h2,html[lang="vi"] .film-copy h2,html[lang="vi"] .people h2,html[lang="vi"] .proof h2,html[lang="vi"] .closing h2{line-height:.94;letter-spacing:-.02em}
+
+/* Small editorial labels: crisp Manrope at a real loaded weight. */
+.hero-index{
+  font-family:var(--font-body);
+  font-size:10px;
+  font-style:normal;
+  font-weight:500;
+  line-height:1.35;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  -webkit-text-stroke:0;
+  text-shadow:none;
+  mix-blend-mode:normal;
+  filter:none;
+  mask:none;
+  clip-path:none;
+  transform:none;
+  opacity:1;
+}

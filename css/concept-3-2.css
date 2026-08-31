@@ -55,3 +55,21 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial h2,html[lang=
 /* BH-2026-010: selective major-title casing. */
 .adaptation-band h2,.gap-editorial>header h2,.adaptation-layer>h2,.ecosystem h2,.intelligence-preview h2,.practice-card h2{text-transform:uppercase}
 html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,html[lang="vi"] .adaptation-layer>h2,html[lang="vi"] .ecosystem h2,html[lang="vi"] .intelligence-preview h2,html[lang="vi"] .practice-card h2{line-height:.98;letter-spacing:-.02em}
+
+.layer-flow small,.practice-card small,.method-strip small,.intelligence-grid small,.commercial-grid small{
+  font-family:Manrope,Arial,sans-serif;
+  font-size:10px;
+  font-style:normal;
+  font-weight:500;
+  line-height:1.35;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  -webkit-text-stroke:0;
+  text-shadow:none;
+  mix-blend-mode:normal;
+  filter:none;
+  mask:none;
+  clip-path:none;
+  transform:none;
+  opacity:1;
+}

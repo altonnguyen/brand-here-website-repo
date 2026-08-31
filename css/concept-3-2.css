@@ -89,3 +89,13 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,htm
   .ecosystem{grid-template-columns:1fr;gap:46px}
   .ecosystem h2{max-width:760px}
 }
+
+.gap-editorial>header h2 .headline-line{display:block;white-space:nowrap}
+
+@media (min-width:621px){
+  .gap-editorial>header h2{font-size:clamp(58px,4.2vw,72px)}
+}
+
+@media (max-width:620px){
+  .gap-editorial>header h2 .headline-line{white-space:normal}
+}

@@ -5,18 +5,18 @@ Use approved 1200 × 630 JPG raster assets only. The page slots retain their sta
 Production targets:
 
 - `labs/adoption-gap.jpg`
-- `labs/marketing-model.jpg`
-- `labs/brand-mirror.jpg`
-- `labs/agency-model.jpg`
+- `labs/marketing-model-after-ai.jpg`
+- `labs/ai-brand-mirror.jpg`
+- `labs/agency-model-2030.jpg`
 - `intelligence/ai-adoption-index.jpg`
 - `intelligence/marketing-adaptation-index.jpg`
 - `intelligence/ai-reputation-intelligence.jpg`
 - `intelligence/agency-model-diagnostic.jpg`
-- `insights/technology-business.jpg`
+- `insights/technology-ready-business.jpg`
 - `insights/access-adoption-impact.jpg`
 - `insights/missing-middle.jpg`
 - `insights/agency-faster-marketing-better.jpg`
-- `insights/ai-customer-adviser.jpg`
+- `insights/ai-customer-first-adviser.jpg`
 - `work/case-zero.jpg`
 
 Do not add generated text, a generated logo, SVG artwork, procedural graphics or placeholder AI art.

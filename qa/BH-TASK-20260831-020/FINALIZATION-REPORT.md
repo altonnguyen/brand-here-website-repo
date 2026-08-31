@@ -12,6 +12,7 @@ Date: 2026-08-31
 - `1677f42` — Finalize Concept 3.2 editorial architecture and QA.
 - `ea18a03` — Prepare Concept 3.2 production assets and routing.
 - Final lock report — this report-only commit.
+- Final asset-drop prep visual fix — collapse missing media, activate confirmed assets server-side, and correct Labs rhythm.
 
 ## Files changed in final production prep
 
@@ -52,23 +53,23 @@ Missing required OG assets:
 
 ## Thumbnail integration
 
-Labs, Intelligence, Insights and Work / Case Zero have stable 1200:630 slots with governed asset paths. The loader checks assets only as slots approach the viewport, then inserts 1200 × 630 images with lazy loading, asynchronous decoding and EN/VI alt text. Decorative Insights images use empty alt. Missing files keep the intentional no-image state, and the fixed aspect ratio prevents CLS.
+Labs, Intelligence, Insights and Work / Case Zero use governed 1200:630 media interfaces. Missing optional artwork collapses completely: no box, border, copy, skeleton or reserved space. The Cloudflare Worker checks the declared raster assets and marks only confirmed JPEGs available in the initial HTML response. This reserves the correct aspect ratio before paint; the loader then inserts the image lazily with asynchronous decoding and EN/VI alt text. Decorative Insights images use empty alt. Failures remain silent.
 
 Missing editorial artwork:
 
 - `images/editorial/labs/adoption-gap.jpg`
-- `images/editorial/labs/marketing-model.jpg`
-- `images/editorial/labs/brand-mirror.jpg`
-- `images/editorial/labs/agency-model.jpg`
+- `images/editorial/labs/marketing-model-after-ai.jpg`
+- `images/editorial/labs/ai-brand-mirror.jpg`
+- `images/editorial/labs/agency-model-2030.jpg`
 - `images/editorial/intelligence/ai-adoption-index.jpg`
 - `images/editorial/intelligence/marketing-adaptation-index.jpg`
 - `images/editorial/intelligence/ai-reputation-intelligence.jpg`
 - `images/editorial/intelligence/agency-model-diagnostic.jpg`
-- `images/editorial/insights/technology-business.jpg`
+- `images/editorial/insights/technology-ready-business.jpg`
 - `images/editorial/insights/access-adoption-impact.jpg`
 - `images/editorial/insights/missing-middle.jpg`
 - `images/editorial/insights/agency-faster-marketing-better.jpg`
-- `images/editorial/insights/ai-customer-adviser.jpg`
+- `images/editorial/insights/ai-customer-first-adviser.jpg`
 - `images/editorial/work/case-zero.jpg`
 
 ## Sonic result
@@ -86,7 +87,9 @@ PASS. Each Insights page contains four governed editorial categories represented
 - Worker unit tests: PASS for EN/VI 301 destinations, query preservation, fallback retention and dual OG/Twitter switching.
 - JavaScript syntax and JSONC parsing: PASS.
 - Browser QA: PASS for 24 primary EN/VI pages at 1440 × 900 and 390 × 844 (48 combinations).
-- No horizontal overflow, broken DOM images, JS console warnings/errors or unexpected sonic activation.
+- Visible `EDITORIAL IMAGE RESERVED`: 0. Visible empty media boxes: 0.
+- No horizontal overflow, broken DOM images, missing-image console warnings/errors or unexpected sonic activation.
+- Labs EN/VI visual rhythm: PASS after removing only the inherited older page-hero padding layer; Concept 3.2 hero height and section breathing room remain intact.
 - Canonical, hreflang, sitemap, Open Graph, Twitter, JSON-LD, duplicate IDs, local links, focus-visible and reduced-motion checks: PASS.
 - Approved audio assets exist and identify as stereo MPEG Layer III, 44.1 kHz.
 

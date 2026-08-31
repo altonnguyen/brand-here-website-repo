@@ -48,29 +48,98 @@ const OG_IMAGE_BY_PAGE = new Map([
   ["/vi/work.html", "work.jpg"],
 ]);
 
+const EDITORIAL_IMAGES_BY_PAGE = new Map([
+  ["/labs", [
+    "/images/editorial/labs/adoption-gap.jpg",
+    "/images/editorial/labs/marketing-model-after-ai.jpg",
+    "/images/editorial/labs/ai-brand-mirror.jpg",
+    "/images/editorial/labs/agency-model-2030.jpg",
+  ]],
+  ["/vi/labs", [
+    "/images/editorial/labs/adoption-gap.jpg",
+    "/images/editorial/labs/marketing-model-after-ai.jpg",
+    "/images/editorial/labs/ai-brand-mirror.jpg",
+    "/images/editorial/labs/agency-model-2030.jpg",
+  ]],
+  ["/intelligence", [
+    "/images/editorial/intelligence/ai-adoption-index.jpg",
+    "/images/editorial/intelligence/marketing-adaptation-index.jpg",
+    "/images/editorial/intelligence/ai-reputation-intelligence.jpg",
+    "/images/editorial/intelligence/agency-model-diagnostic.jpg",
+  ]],
+  ["/vi/intelligence", [
+    "/images/editorial/intelligence/ai-adoption-index.jpg",
+    "/images/editorial/intelligence/marketing-adaptation-index.jpg",
+    "/images/editorial/intelligence/ai-reputation-intelligence.jpg",
+    "/images/editorial/intelligence/agency-model-diagnostic.jpg",
+  ]],
+  ["/insights", [
+    "/images/editorial/insights/technology-ready-business.jpg",
+    "/images/editorial/insights/access-adoption-impact.jpg",
+    "/images/editorial/insights/missing-middle.jpg",
+    "/images/editorial/insights/agency-faster-marketing-better.jpg",
+    "/images/editorial/insights/ai-customer-first-adviser.jpg",
+  ]],
+  ["/vi/insights", [
+    "/images/editorial/insights/technology-ready-business.jpg",
+    "/images/editorial/insights/access-adoption-impact.jpg",
+    "/images/editorial/insights/missing-middle.jpg",
+    "/images/editorial/insights/agency-faster-marketing-better.jpg",
+    "/images/editorial/insights/ai-customer-first-adviser.jpg",
+  ]],
+  ["/work", ["/images/editorial/work/case-zero.jpg"]],
+  ["/vi/work", ["/images/editorial/work/case-zero.jpg"]],
+]);
+
 const withoutHtmlSuffix = (pathname) =>
   pathname.endsWith(".html") ? pathname.slice(0, -5) : pathname;
 
-async function useProductionOgImage(request, env, filename) {
+async function enhanceProductionImages(request, env, canonicalPath, ogFilename) {
   const pageResponse = await env.ASSETS.fetch(request);
   if (!pageResponse.ok || !pageResponse.headers.get("Content-Type")?.startsWith("text/html")) {
     return pageResponse;
   }
 
-  const imageUrl = new URL(`/images/og/${filename}`, request.url);
-  const imageResponse = await env.ASSETS.fetch(new Request(imageUrl, { method: "HEAD" }));
-  if (!imageResponse.ok || !imageResponse.headers.get("Content-Type")?.startsWith("image/jpeg")) {
-    return pageResponse;
+  const editorialPaths = EDITORIAL_IMAGES_BY_PAGE.get(canonicalPath) || [];
+  const checks = editorialPaths.map(async (pathname) => {
+    const response = await env.ASSETS.fetch(new Request(new URL(pathname, request.url), { method: "HEAD" }));
+    return response.ok && response.headers.get("Content-Type")?.startsWith("image/jpeg") ? pathname : null;
+  });
+
+  let ogImageUrl = null;
+  if (ogFilename) {
+    const candidate = new URL(`/images/og/${ogFilename}`, request.url);
+    checks.push((async () => {
+      const response = await env.ASSETS.fetch(new Request(candidate, { method: "HEAD" }));
+      if (response.ok && response.headers.get("Content-Type")?.startsWith("image/jpeg")) ogImageUrl = candidate;
+      return null;
+    })());
   }
 
-  return new HTMLRewriter()
-    .on('meta[property="og:image"]', {
-      element(element) { element.setAttribute("content", imageUrl.href); },
-    })
-    .on('meta[name="twitter:image"]', {
-      element(element) { element.setAttribute("content", imageUrl.href); },
-    })
-    .transform(pageResponse);
+  const availableEditorial = new Set((await Promise.all(checks)).filter(Boolean));
+  if (!ogImageUrl && !availableEditorial.size) return pageResponse;
+
+  const rewriter = new HTMLRewriter();
+  if (ogImageUrl) {
+    rewriter
+      .on('meta[property="og:image"]', {
+        element(element) { element.setAttribute("content", ogImageUrl.href); },
+      })
+      .on('meta[name="twitter:image"]', {
+        element(element) { element.setAttribute("content", ogImageUrl.href); },
+      });
+  }
+  if (availableEditorial.size) {
+    rewriter.on('.editorial-media-slot[data-image-src]', {
+      element(element) {
+        const source = element.getAttribute("data-image-src");
+        if (source && availableEditorial.has(new URL(source, request.url).pathname)) {
+          element.setAttribute("data-image-available", "true");
+        }
+      },
+    });
+  }
+  return rewriter.transform(pageResponse);
 }
 
 const json = (data, status = 200) =>
@@ -240,7 +309,7 @@ export default {
 
     const ogFilename = OG_IMAGE_BY_PAGE.get(url.pathname);
     if (ogFilename && request.method === "GET") {
-      return useProductionOgImage(request, env, ogFilename);
+      return enhanceProductionImages(request, env, canonicalPath, ogFilename);
     }
 
     return env.ASSETS.fetch(request);

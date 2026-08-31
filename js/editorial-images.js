@@ -1,9 +1,9 @@
 /* Concept 3.2 production editorial image loader.
-   Empty slots remain stable and neutral until a real raster asset exists. */
+   The Worker marks only confirmed raster assets as available. */
 (function () {
   "use strict";
 
-  var slots = document.querySelectorAll(".editorial-media-slot[data-image-src]");
+  var slots = document.querySelectorAll('.editorial-media-slot[data-image-available="true"]');
   if (!slots.length) return;
 
   function load(slot) {
@@ -13,26 +13,22 @@
     var src = slot.dataset.imageSrc;
     if (!src) return;
 
-    fetch(src, { method: "HEAD", cache: "no-store" })
-      .then(function (response) {
-        if (!response.ok || !(response.headers.get("content-type") || "").startsWith("image/")) return;
-
-        var image = new Image();
-        image.width = 1200;
-        image.height = 630;
-        image.loading = "lazy";
-        image.decoding = "async";
-        image.alt = slot.dataset.imageAlt || "";
-        image.addEventListener("load", function () {
-          slot.replaceChildren(image);
-          slot.classList.add("has-image");
-          if (image.alt) slot.removeAttribute("aria-hidden");
-        }, { once: true });
-        image.src = src;
-      })
-      .catch(function () {
-        // The approved no-image state is intentional until production art arrives.
-      });
+    var image = new Image();
+    image.width = 1200;
+    image.height = 630;
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.alt = slot.dataset.imageAlt || "";
+    image.addEventListener("load", function () {
+      slot.replaceChildren(image);
+      slot.classList.add("has-image");
+      if (image.alt) slot.removeAttribute("aria-hidden");
+    }, { once: true });
+    image.addEventListener("error", function () {
+      slot.removeAttribute("data-image-available");
+      slot.replaceChildren();
+    }, { once: true });
+    image.src = src;
   }
 
   if (!("IntersectionObserver" in window)) {

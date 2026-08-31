@@ -50,7 +50,7 @@ html[lang="vi"]{--d:var(--font-display);--o:var(--font-body)}
 @media(max-width:600px){.nav{grid-template-columns:1fr auto auto;gap:12px}}
 
 /* BH-2026-010: approved wordmark artwork and final typography treatment. */
-.logo{width:140px;height:40px;display:block;flex:0 0 auto;overflow:hidden;background:url('../images/brand-here-wordmark-on-dark.png') center/contain no-repeat;text-indent:-9999px}
+.logo{width:140px;height:40px;display:block;flex:0 0 auto;overflow:hidden;background:url('../images/brand-here-wordmark-on-dark.png') center/contain no-repeat}
 .hero h1,.instrument-copy h2,.film-copy h2,.people h2,.proof h2,.closing h2,.secondary-capabilities>h2{text-transform:uppercase}
 footer{flex-wrap:wrap;gap:22px 34px}
 footer .footer-signature{color:#858581;font:500 10px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase}
@@ -60,11 +60,11 @@ html[lang="vi"] .hero h1,html[lang="vi"] .instrument-copy h2,html[lang="vi"] .fi
 /* Small editorial labels: crisp Manrope at a real loaded weight. */
 .hero-index{
   font-family:var(--font-body);
-  font-size:10px;
+  font-size:12px;
   font-style:normal;
-  font-weight:500;
+  font-weight:600;
   line-height:1.35;
-  letter-spacing:.14em;
+  letter-spacing:.12em;
   text-transform:uppercase;
   -webkit-text-stroke:0;
   text-shadow:none;
@@ -74,4 +74,5 @@ html[lang="vi"] .hero h1,html[lang="vi"] .instrument-copy h2,html[lang="vi"] .fi
   clip-path:none;
   transform:none;
   opacity:1;
+  -webkit-font-smoothing:auto;
 }

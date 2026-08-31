@@ -50,7 +50,6 @@ nav { min-height: 84px; display: flex; align-items: center; justify-content: spa
   overflow: hidden;
   background: url('../images/brand-here-wordmark-on-light.png') center/contain no-repeat;
   text-decoration: none;
-  text-indent: -9999px;
 }
 .nav-links { display: flex; gap: clamp(20px, 2.4vw, 38px); font-size: 12px; letter-spacing: .04em; }
 .nav-links a { color: var(--navy-light); text-decoration: none; position: relative; }
@@ -679,7 +678,6 @@ footer.site-footer a { margin: 0 8px; color: var(--ink-soft); text-decoration: n
 
 @media (max-width: 520px) {
   body { font-size: 15px; }
-  .logo .brand-word, .logo .here-word { font-size: 21px; }
   .nav-cta { display: none; }
   .home-hero h1 { font-size: 44px; }
   .home-hero p { font-size: 15px; }
@@ -1211,11 +1209,11 @@ html[lang="vi"] .final-cta h2 { line-height: .96; letter-spacing: -.02em; }
 .game-kicker,
 .lab-archive-eyebrow {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.35;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   -webkit-text-stroke: 0;
   text-shadow: none;
@@ -1225,6 +1223,7 @@ html[lang="vi"] .final-cta h2 { line-height: .96; letter-spacing: -.02em; }
   clip-path: none;
   transform: none;
   opacity: 1;
+  -webkit-font-smoothing: auto;
 }
 .evidence-source a { color: var(--gold); text-decoration: none; margin-left: 4px; }
 .evidence-source a:hover { text-decoration: underline; }

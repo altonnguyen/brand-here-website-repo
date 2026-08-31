@@ -26,7 +26,7 @@
       ".bh-sound-toggle{position:fixed;z-index:60;right:22px;bottom:calc(22px + env(safe-area-inset-bottom));",
       "display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;",
       "background:#2D2926;color:#F3F0E8;border:1px solid rgba(243,240,232,.28);",
-      "font:600 11px/1 'DM Mono',Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;",
+      "font:600 11px/1 Manrope,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;",
       "cursor:pointer;transition:border-color .2s ease,transform .2s ease;}",
       ".bh-sound-toggle:hover{transform:translateY(-2px);border-color:#E03C31;}",
       ".bh-sound-toggle:focus-visible{outline:2px solid #E03C31;outline-offset:3px;}",

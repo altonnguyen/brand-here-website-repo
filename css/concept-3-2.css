@@ -112,6 +112,29 @@ html[lang="vi"] .adaptation-band h2,html[lang="vi"] .gap-editorial>header h2,htm
 
 .lab-preview>div{min-width:0}
 
+/* Final Art Director rhythm pass: preserve the approved system while giving
+   the long-form homepage a clearer cadence between major editorial ideas. */
+@media (min-width:901px){
+  .gap-editorial,.adaptation-layer,.method-strip,.intelligence-preview,.ecosystem{
+    padding-block:clamp(104px,10.5vw,164px);
+  }
+  .practice-card{padding-block:clamp(104px,10vw,154px)}
+  .adaptation-layer>h2,.intelligence-preview>h2{max-width:1080px}
+  .adaptation-layer>h2{margin-bottom:clamp(58px,6vw,88px)}
+  .intelligence-preview>p{margin-top:clamp(30px,3.2vw,48px)}
+  .intelligence-grid{margin-top:clamp(54px,5.5vw,82px)}
+  .ecosystem>div:last-child>p{margin-top:0;margin-bottom:clamp(36px,4vw,56px)}
+}
+
+@media (max-width:900px){
+  .gap-editorial,.adaptation-layer,.method-strip,.intelligence-preview,.ecosystem{
+    padding-block:clamp(88px,13vw,116px);
+  }
+  .adaptation-layer>h2{margin-bottom:54px}
+  .intelligence-preview>p{margin-top:28px}
+  .intelligence-grid{margin-top:48px}
+}
+
 @media (min-width:901px){
   .lab-preview h2{font-size:clamp(50px,3.7vw,68px)}
 }

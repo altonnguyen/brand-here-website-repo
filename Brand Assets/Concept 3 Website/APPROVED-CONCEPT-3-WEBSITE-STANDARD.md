@@ -38,12 +38,11 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 
 ## Typography
 
-- Editorial display: Instrument Serif for English (approved 31 August 2026 under BH-2026-008).
-- Vietnamese display: Cormorant Garamond for full diacritic support.
-- Brand mark: Cormorant Garamond.
-- Interface and body copy: Manrope.
-- Technical labels and compact English metadata: DM Mono.
-- Vietnamese interface labels may use Manrope when DM Mono would weaken diacritics or readability.
+- Editorial display: Playfair Display 400–500 for English and Vietnamese (approved 31 August 2026 under BH-2026-010).
+- Major editorial titles and statements use selective uppercase treatment with language-specific spacing and line-height QA.
+- Interface, body copy, technical labels and metadata: Manrope.
+- The approved brand mark remains unchanged and must be rendered from real approved artwork, not reconstructed with live typography.
+- Instrument Serif, Cormorant Garamond and DM Mono are not loaded by the active website typography system.
 
 ## Layout and motion
 

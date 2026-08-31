@@ -11,16 +11,16 @@
 /* ---- Moment 02: Adaptation Gap scroll narrative ---- */
 .gap-distance{margin-top:64px}
 .gap-distance-stage{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:24px;padding:34px 0;border-top:1px solid rgba(45,41,38,.3);border-bottom:1px solid rgba(45,41,38,.3)}
-.gap-node{display:flex;align-items:center;justify-content:center;padding:22px 14px;border:1px solid rgba(45,41,38,.3);font:500 12px/1 "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.gap-node{display:flex;align-items:center;justify-content:center;padding:22px 14px;border:1px solid rgba(45,41,38,.3);font:500 12px/1 Manrope,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
 .gap-node-business{justify-self:end}
 .gap-node-tech{justify-self:start}
 .gap-distance-mid{text-align:center}
 .gap-distance-title{margin:0;font:400 clamp(22px,2.6vw,34px)/1 var(--d);color:#e03c31}
 .gap-distance-title:after{content:'';display:block;width:64px;height:2px;margin:16px auto 0;background:#e03c31}
-.gap-bridge{margin-top:18px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:0;list-style:none;font:500 10px/1 "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#6c6660}
+.gap-bridge{margin-top:18px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:0;list-style:none;font:500 10px/1 Manrope,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#6c6660}
 .gap-bridge span{display:inline-flex;align-items:center;gap:14px}
 .gap-bridge span:not(:last-child):after{content:'→';color:#e03c31}
-.gap-distance-resolve{grid-column:1/-1;margin:26px 0 0;text-align:center;font:500 13px/1.4 "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
+.gap-distance-resolve{grid-column:1/-1;margin:26px 0 0;text-align:center;font:500 13px/1.4 Manrope,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
 .gap-distance-resolve .arrow{margin:0 10px;color:#e03c31}
 
 /* JS-enhanced (scroll-linked) state — only applied once JS confirms
@@ -47,7 +47,7 @@
 .evidence-story-item strong{font:400 clamp(48px,6vw,88px)/1 var(--d);color:#e03c31}
 .evidence-story-item p{font:500 17px/1.5 Manrope,sans-serif;margin:0 0 10px}
 .evidence-story-item em{font-style:normal;font-family:var(--d);font-size:20px;color:#2d2926}
-.evidence-story-item small{display:block;margin-top:14px;font:400 11px/1.4 "DM Mono",monospace;color:#6c6660}
+.evidence-story-item small{display:block;margin-top:14px;font:400 11px/1.4 Manrope,Arial,sans-serif;color:#6c6660}
 .evidence-story-item small a{color:#e03c31;text-decoration:none;margin-left:4px}
 .evidence-story-close{margin-top:50px;font:400 clamp(26px,3vw,40px)/1.2 var(--d)}
 .evidence-story-close strong{color:#e03c31;font-weight:400}

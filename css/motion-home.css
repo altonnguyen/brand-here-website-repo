@@ -15,7 +15,7 @@
 .gap-node-business{justify-self:end}
 .gap-node-tech{justify-self:start}
 .gap-distance-mid{text-align:center}
-.gap-distance-title{margin:0;font:400 clamp(22px,2.6vw,34px)/1 Italiana,"Cormorant Garamond",serif;color:#e03c31}
+.gap-distance-title{margin:0;font:400 clamp(22px,2.6vw,34px)/1 var(--d);color:#e03c31}
 .gap-distance-title:after{content:'';display:block;width:64px;height:2px;margin:16px auto 0;background:#e03c31}
 .gap-bridge{margin-top:18px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:0;list-style:none;font:500 10px/1 "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#6c6660}
 .gap-bridge span{display:inline-flex;align-items:center;gap:14px}
@@ -40,16 +40,16 @@
 
 /* ---- Moment 03: Evidence story (homepage) ---- */
 .evidence-story{padding:clamp(76px,10vw,150px) clamp(24px,7vw,110px);background:#f3f0e8}
-.evidence-story h2{font-family:Italiana,"Cormorant Garamond",serif;font-weight:400;font-size:clamp(44px,7.5vw,112px);line-height:.92;margin:0 0 50px}
+.evidence-story h2{font-family:var(--d);font-weight:400;font-size:clamp(44px,7.5vw,112px);line-height:.92;margin:0 0 50px}
 .evidence-story-list{display:grid;gap:0;border-top:1px solid rgba(45,41,38,.25)}
 .evidence-story-item{display:grid;grid-template-columns:.6fr 1.4fr;gap:40px;padding:38px 0;border-bottom:1px solid rgba(45,41,38,.2);opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .evidence-story-item.is-in{opacity:1;transform:none}
-.evidence-story-item strong{font:400 clamp(48px,6vw,88px)/1 Italiana,"Cormorant Garamond",serif;color:#e03c31}
+.evidence-story-item strong{font:400 clamp(48px,6vw,88px)/1 var(--d);color:#e03c31}
 .evidence-story-item p{font:500 17px/1.5 Manrope,sans-serif;margin:0 0 10px}
-.evidence-story-item em{font-style:normal;font-family:Italiana,"Cormorant Garamond",serif;font-size:20px;color:#2d2926}
+.evidence-story-item em{font-style:normal;font-family:var(--d);font-size:20px;color:#2d2926}
 .evidence-story-item small{display:block;margin-top:14px;font:400 11px/1.4 "DM Mono",monospace;color:#6c6660}
 .evidence-story-item small a{color:#e03c31;text-decoration:none;margin-left:4px}
-.evidence-story-close{margin-top:50px;font:400 clamp(26px,3vw,40px)/1.2 Italiana,"Cormorant Garamond",serif}
+.evidence-story-close{margin-top:50px;font:400 clamp(26px,3vw,40px)/1.2 var(--d)}
 .evidence-story-close strong{color:#e03c31;font-weight:400}
 
 /* ---- Reduced motion: keep everything visually complete, just static ---- */

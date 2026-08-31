@@ -6,8 +6,8 @@ Status: internal production reference. This file records the approved implementa
 
 The current Concept 3.2 CSS uses these stacks:
 
-- Display: `'Italiana', Georgia, serif`
-- Vietnamese display fallback: `'Cormorant Garamond', Georgia, serif`
+- English display: `'Instrument Serif', Georgia, serif`
+- Vietnamese display: `'Cormorant Garamond', Georgia, serif` (Instrument Serif does not publish Vietnamese language support)
 - Brand wordmark: `'Cormorant Garamond', Georgia, serif`
 - Sans: `'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
 - Mono/editorial labels: `'DM Mono', monospace`
@@ -35,4 +35,4 @@ Use the matching approved light, dark, transparent or one-colour master from tha
 
 ## AI-image boundary
 
-AI imagery may only be used as background or art-direction material after brand review. The Brand Here logo, wordmark and typography must always be rendered from approved real assets or the approved CSS implementation, never generated inside AI imagery. AI-rendered text is prohibited in production artwork.
+AI imagery may only be used as background or art-direction material after brand review. The Brand Here logo, wordmark and typography must always be rendered from approved real assets or the approved CSS implementation, never generated inside new AI imagery. BH-ASSET-017 is the narrow exception: the CEO explicitly approved those seven supplied composite artworks as final, so they must be used unchanged and must not be treated as permission to generate or redraw future Brand Here typography or logos.

@@ -13,6 +13,7 @@ Date: 2026-08-31
 - `ea18a03` — Prepare Concept 3.2 production assets and routing.
 - Final lock report — this report-only commit.
 - Final asset-drop prep visual fix — collapse missing media, activate confirmed assets server-side, and correct Labs rhythm.
+- Final thumbnail and typography pass — integrate seven approved page artworks and replace English Italiana with CEO-approved Instrument Serif.
 
 ## Files changed in final production prep
 
@@ -41,7 +42,7 @@ Permanent 301 redirects:
 
 The Worker checks the Static Assets binding for the mapped page-specific JPG. It rewrites both `og:image` and `twitter:image` only when the response is a valid JPEG. When absent, the current `images/og-concept-3.jpg` metadata is returned unchanged. EN and VI pages share the matching approved page asset.
 
-Missing required OG assets:
+Installed approved OG assets (1200 × 630 JPG, 88–168 KB):
 
 - `images/og/home.jpg`
 - `images/og/about.jpg`
@@ -52,6 +53,8 @@ Missing required OG assets:
 - `images/og/work.jpg`
 
 ## Thumbnail integration
+
+The seven approved source artworks from `Website/thumbnail/` are mapped as Home `(1)`, About `(3)`, Adaptation `(4)`, Labs `(5)`, Intelligence `(2)`, Insights `(6)` and Work `(7)`. They are published through `images/og/` and centrally mapped in `src/index.js`; the Worker emits the correct EN/VI OG and Twitter metadata only after asset validation. All seven load at their native production dimensions without cropping or stretching.
 
 Labs, Intelligence, Insights and Work / Case Zero use governed 1200:630 media interfaces. Missing optional artwork collapses completely: no box, border, copy, skeleton or reserved space. The Cloudflare Worker checks the declared raster assets and marks only confirmed JPEGs available in the initial HTML response. This reserves the correct aspect ratio before paint; the loader then inserts the image lazily with asynchronous decoding and EN/VI alt text. Decorative Insights images use empty alt. Failures remain silent.
 
@@ -80,13 +83,18 @@ PASS. Both approved MP3 files remain unchanged and valid. All 24 primary EN/VI p
 
 PASS. Each Insights page contains four governed editorial categories represented across five matching thesis entry points and three published field notes. No full future article or research claim was fabricated. Business Adaptation remains the category; AI remains an enabler. The approved line “Technology can be deployed. Adaptation has to be built.” remains unchanged.
 
+## Typography result
+
+PASS. BH-2026-008 replaces Italiana with Instrument Serif for English display/editorial typography. Manrope remains body, navigation and UI. Instrument Serif's published 374-glyph language list excludes Vietnamese, so Vietnamese display typography intentionally remains Cormorant Garamond. Browser inspection confirmed Instrument Serif for English H1, Cormorant Garamond for Vietnamese H1 and Manrope for body/UI with no diacritic or overflow regression.
+
 ## QA result
 
 - `scripts/qa-site.py`: PASS, 49 pages.
 - Wrangler 4.127.1 `deploy --dry-run`: PASS; no deployment created.
 - Worker unit tests: PASS for EN/VI 301 destinations, query preservation, fallback retention and dual OG/Twitter switching.
 - JavaScript syntax and JSONC parsing: PASS.
-- Browser QA: PASS for 24 primary EN/VI pages at 1440 × 900 and 390 × 844 (48 combinations).
+- Browser QA: PASS for the seven main EN/VI pages at 1440 × 900, 768 × 1024 and 390 × 844 (42 combinations), plus the prior 24-page two-viewport pass.
+- All seven production OG images loaded in-browser at exactly 1200 × 630; no console warnings or errors.
 - Visible `EDITORIAL IMAGE RESERVED`: 0. Visible empty media boxes: 0.
 - No horizontal overflow, broken DOM images, missing-image console warnings/errors or unexpected sonic activation.
 - Labs EN/VI visual rhythm: PASS after removing only the inherited older page-hero padding layer; Concept 3.2 hero height and section breathing room remain intact.
@@ -95,6 +103,6 @@ PASS. Each Insights page contains four governed editorial categories represented
 
 ## Blockers
 
-The seven required production OG images and fourteen editorial images listed above have not been supplied. The approved fallback/no-image states remain active. This branch must not be merged or deployed until the final asset drop is integrated and rechecked.
+The seven production OG images are integrated and verified. The fourteen optional editorial card images listed above remain absent; their approved text-only states remain active with no visible placeholder or empty media area. No merge or deployment was performed.
 
 READY FOR FINAL ASSET DROP

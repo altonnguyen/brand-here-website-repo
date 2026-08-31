@@ -38,7 +38,7 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 
 ## Typography
 
-- Editorial display: Italiana for English.
+- Editorial display: Instrument Serif for English (approved 31 August 2026 under BH-2026-008).
 - Vietnamese display: Cormorant Garamond for full diacritic support.
 - Brand mark: Cormorant Garamond.
 - Interface and body copy: Manrope.

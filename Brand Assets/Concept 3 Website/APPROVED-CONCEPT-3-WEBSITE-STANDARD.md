@@ -29,19 +29,17 @@ Signal Red is used deliberately for strategic emphasis, active states and decisi
 
 ## Logo standard
 
-- Typeface: Cormorant Garamond.
-- `BRAND`: SemiBold 600.
-- `HERE`: Medium 500.
-- Letter spacing: `3px` between the two words.
-- Use the approved artwork stored in `Brand Assets/Concept 3 Logo/`.
-- Do not change the typeface, spacing or relative weights without explicit approval.
+- Use BH-ASSET-018, the approved Concept 3.2 Playfair master wordmark stored in `Brand-Assets/Logo/Concept-3.2-Playfair-Master/`.
+- Use the supplied outline artwork; never reconstruct the logo with live text.
+- Preserve its locked kerning, proportions, terminal-circle size and placement.
+- The former Cormorant artwork under `Brand Assets/Concept 3 Logo/` is superseded historical material under BH-2026-013.
 
 ## Typography
 
 - Editorial display: Playfair Display 400–500 for English and Vietnamese (approved 31 August 2026 under BH-2026-010).
 - Major editorial titles and statements use selective uppercase treatment with language-specific spacing and line-height QA.
 - Interface, body copy, technical labels and metadata: Manrope.
-- The approved brand mark remains unchanged and must be rendered from real approved artwork, not reconstructed with live typography.
+- The approved brand mark is BH-ASSET-018 and must be rendered from real approved artwork, not reconstructed with live typography.
 - Instrument Serif, Cormorant Garamond and DM Mono are not loaded by the active website typography system.
 
 ## Layout and motion

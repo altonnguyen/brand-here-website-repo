@@ -1,6 +1,7 @@
 # Brand Here — Approved Logo Standard
 
-Status: **Approved / Master standard**  
+Status: **SUPERSEDED / HISTORICAL APPROVED STANDARD**  
+Superseded: **1 September 2026 by BH-2026-013 and BH-ASSET-018. Preserve; do not use as the current logo master.**  
 Approved date: **26 August 2026**  
 Technical correction: **29 August 2026 — removed the fixed-position gap; the two words now share one continuous wordmark with a 3px optical gap.**  
 Applies from this date forward to the Brand Here website, credentials, presentations, proposals, training materials, certificates and partner-facing assets.

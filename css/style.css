@@ -48,7 +48,7 @@ nav { min-height: 84px; display: flex; align-items: center; justify-content: spa
   display: block;
   flex: 0 0 auto;
   overflow: hidden;
-  background: url('../images/brand-here-wordmark-on-light.png') center/contain no-repeat;
+  background: url('../images/homepage-2026/brand-here-master-color.svg') left center/contain no-repeat;
   text-decoration: none;
 }
 .nav-links { display: flex; gap: clamp(20px, 2.4vw, 38px); font-size: 12px; letter-spacing: .04em; }
@@ -1338,7 +1338,7 @@ body.nav-open { overflow: hidden; }
   width: 140px;
   height: 40px;
   display: block;
-  background: url('../images/brand-here-wordmark-on-dark.png') center/contain no-repeat;
+  background: url('../images/homepage-2026/brand-here-master-white.svg') left center/contain no-repeat;
 }
 .footer-meta,.footer-nav,.footer-language { color: #AAA39B; font: 500 10px/1.5 var(--font-body); letter-spacing: .04em; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }

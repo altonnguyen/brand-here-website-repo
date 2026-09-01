@@ -50,7 +50,7 @@ html[lang="vi"]{--d:var(--font-display);--o:var(--font-body)}
 @media(max-width:600px){.nav{grid-template-columns:1fr auto auto;gap:12px}}
 
 /* BH-2026-010: approved wordmark artwork and final typography treatment. */
-.logo{width:140px;height:40px;display:block;flex:0 0 auto;overflow:hidden;background:url('../images/brand-here-wordmark-on-dark.png') center/contain no-repeat}
+.logo{width:140px;height:40px;display:block;flex:0 0 auto;overflow:hidden;background:url('../images/homepage-2026/brand-here-master-white.svg') center/contain no-repeat}
 .hero h1,.instrument-copy h2,.film-copy h2,.people h2,.proof h2,.closing h2,.secondary-capabilities>h2{text-transform:uppercase}
 footer{flex-wrap:wrap;gap:22px 34px}
 footer .footer-signature{color:#858581;font:500 10px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase}

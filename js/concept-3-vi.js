@@ -11,6 +11,7 @@
 
   if (bar && detailView && numEl && titleEl && bodyEl) {
     var items = bar.querySelectorAll('.method-index-item');
+    var detailTimer;
     items.forEach(function (item) {
       function select() {
         items.forEach(function (btn) {
@@ -21,7 +22,8 @@
         item.setAttribute('aria-selected', 'true');
         
         detailView.style.opacity = '0';
-        setTimeout(function () {
+        window.clearTimeout(detailTimer);
+        detailTimer = window.setTimeout(function () {
           numEl.textContent = item.dataset.step;
           titleEl.textContent = item.dataset.title;
           bodyEl.textContent = item.dataset.desc;
@@ -35,9 +37,10 @@
   var accordion = document.getElementById('methodMobileAccordion');
   if (accordion) {
     var accItems = accordion.querySelectorAll('.method-acc-item');
+    var accBody = accordion.querySelector('.method-acc-body');
     accItems.forEach(function (acc) {
       var header = acc.querySelector('.method-acc-header');
-      if (header) {
+      if (header && accBody) {
         header.addEventListener('click', function () {
           accItems.forEach(function (other) {
             var otherHeader = other.querySelector('.method-acc-header');
@@ -46,9 +49,14 @@
           });
           acc.classList.add('is-open');
           header.setAttribute('aria-expanded', 'true');
+          accBody.style.opacity = '0';
+          acc.appendChild(accBody);
+          accBody.textContent = header.dataset.desc;
+          window.requestAnimationFrame(function () {
+            accBody.style.opacity = '1';
+          });
         });
       }
     });
   }
 }());
-

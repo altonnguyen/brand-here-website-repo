@@ -61,7 +61,6 @@
         }, 150);
       }
       item.addEventListener('click', select);
-      item.addEventListener('mouseenter', select);
     });
   }
 
@@ -72,13 +71,16 @@
       var header = acc.querySelector('.method-acc-header');
       if (header) {
         header.addEventListener('click', function () {
-          var isOpen = acc.classList.contains('is-open');
-          accItems.forEach(function (other) { other.classList.remove('is-open'); });
-          if (!isOpen) acc.classList.add('is-open');
+          accItems.forEach(function (other) {
+            var otherHeader = other.querySelector('.method-acc-header');
+            other.classList.remove('is-open');
+            if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+          });
+          acc.classList.add('is-open');
+          header.setAttribute('aria-expanded', 'true');
         });
       }
     });
   }
 }());
-
 

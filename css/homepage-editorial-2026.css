@@ -1147,3 +1147,125 @@
     max-width: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   13. Final homepage polish - locked Concept 3.2 typography and interaction
+   -------------------------------------------------------------------------- */
+.gap-intro h2,
+.intelligence-content-column h2{
+  font: 400 clamp(64px, 5.8vw, 84px)/0.98 var(--font-display) !important;
+  letter-spacing: -0.035em !important;
+  text-transform: uppercase !important;
+  color: #1d1b19 !important;
+  margin: 0 0 28px !important;
+  max-width: 760px;
+  text-wrap: balance;
+}
+
+.gap-editorial-grid{
+  grid-template-columns: 1fr;
+  gap: 56px;
+}
+
+.gap-intro{
+  max-width: 760px;
+}
+
+.gap-strategic-statement{
+  margin: 56px 0 0;
+  font: 400 clamp(24px, 2.2vw, 32px)/1.08 var(--font-display);
+  letter-spacing: -0.02em;
+  color: #1d1b19;
+  text-transform: uppercase;
+}
+
+.gap-strategic-statement span{
+  color: var(--editorial-red);
+}
+
+.intelligence-content-column h2{
+  font-size: clamp(48px, 4.6vw, 68px) !important;
+}
+
+.gap-intro h2 .text-red,
+.intelligence-content-column h2 .text-red{
+  color: var(--editorial-red) !important;
+}
+
+.closing-preamble{
+  color: rgba(255,255,255,.92) !important;
+  font-size: clamp(24px, 2.2vw, 32px) !important;
+  line-height: 1.12 !important;
+}
+
+.closing-preamble strong,
+.closing-preamble .preamble-gap{
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.method-acc-header{
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  appearance: none;
+}
+
+.method-acc-header:focus-visible{
+  outline: 2px solid var(--editorial-red);
+  outline-offset: 5px;
+}
+
+@media (max-width: 767px){
+  .editorial-section{
+    padding-block: clamp(80px, 24vw, 104px);
+  }
+
+  .editorial-header{
+    margin-bottom: 40px;
+  }
+
+  .editorial-header h2,
+  .gap-intro h2,
+  .intelligence-content-column h2{
+    font: 400 clamp(38px, 11.2vw, 48px)/0.98 var(--font-display) !important;
+    letter-spacing: -0.03em !important;
+    color: #1d1b19 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .ecosystem-header h2{
+    font-size: clamp(34px, 10vw, 42px) !important;
+  }
+
+  .gap-editorial-grid{
+    gap: 40px;
+  }
+
+  .gap-strategic-statement{
+    margin-top: 44px;
+    font-size: clamp(24px, 7.2vw, 30px);
+  }
+
+  .gap-editorial-media img{ object-position: 50% 52%; }
+  .middle-artwork-wrapper img{ object-position: 50% 50%; }
+  .method-artwork-wrapper img{ object-position: 48% 50%; }
+  .numbers-media img{ object-position: 58% 50%; }
+  .intelligence-portrait-media img{ object-position: 64% 50%; }
+  .ecosystem-editorial-media img{ object-position: 50% 46%; }
+  .closing-backdrop img{ object-position: 72% 50%; }
+
+  .method-mobile-accordion{
+    margin-top: 36px;
+  }
+
+  .method-acc-item{
+    padding: 18px 0;
+  }
+
+  .method-acc-body{
+    transition: opacity .2s ease;
+  }
+}

@@ -33,3 +33,20 @@
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeMenu(); });
   window.addEventListener('resize', function () { if (window.innerWidth > 1180) closeMenu(); }, { passive: true });
 }());
+
+(function () {
+  var methodIndex = document.getElementById('methodIndex');
+  if (!methodIndex) return;
+  var steps = methodIndex.querySelectorAll('.method-step');
+  if (!steps.length) return;
+  steps.forEach(function (step) {
+    function activate() {
+      steps.forEach(function (s) { s.classList.remove('is-active'); });
+      step.classList.add('is-active');
+    }
+    step.addEventListener('mouseenter', activate);
+    step.addEventListener('click', activate);
+    step.addEventListener('focus', activate);
+  });
+}());
+

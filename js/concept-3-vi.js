@@ -2,5 +2,51 @@
 
 (function(){var m=document.querySelector('.home-menu'),n=document.getElementById('homeNav');if(!m||!n)return;function c(){n.classList.remove('open');document.body.classList.remove('nav-open');m.setAttribute('aria-expanded','false');m.setAttribute('aria-label','Mở điều hướng')}m.addEventListener('click',function(){var o=n.classList.toggle('open');document.body.classList.toggle('nav-open',o);m.setAttribute('aria-expanded',String(o));m.setAttribute('aria-label',o?'Đóng điều hướng':'Mở điều hướng')});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',c)});document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});window.addEventListener('resize',function(){if(window.innerWidth>1180)c()},{passive:true})}());
 
-(function(){var x=document.getElementById('methodIndex');if(!x)return;var s=x.querySelectorAll('.method-step');if(!s.length)return;s.forEach(function(item){function a(){s.forEach(function(k){k.classList.remove('is-active')});item.classList.add('is-active')}item.addEventListener('mouseenter',a);item.addEventListener('click',a);item.addEventListener('focus',a);})})();
+(function () {
+  var bar = document.getElementById('methodIndexBar');
+  var detailView = document.getElementById('methodDetailView');
+  var numEl = document.getElementById('methodDetailNum');
+  var titleEl = document.getElementById('methodDetailTitle');
+  var bodyEl = document.getElementById('methodDetailBody');
+
+  if (bar && detailView && numEl && titleEl && bodyEl) {
+    var items = bar.querySelectorAll('.method-index-item');
+    items.forEach(function (item) {
+      function select() {
+        items.forEach(function (btn) {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        item.classList.add('is-active');
+        item.setAttribute('aria-selected', 'true');
+        
+        detailView.style.opacity = '0';
+        setTimeout(function () {
+          numEl.textContent = item.dataset.step;
+          titleEl.textContent = item.dataset.title;
+          bodyEl.textContent = item.dataset.desc;
+          detailView.style.opacity = '1';
+        }, 150);
+      }
+      item.addEventListener('click', select);
+      item.addEventListener('mouseenter', select);
+    });
+  }
+
+  var accordion = document.getElementById('methodMobileAccordion');
+  if (accordion) {
+    var accItems = accordion.querySelectorAll('.method-acc-item');
+    accItems.forEach(function (acc) {
+      var header = acc.querySelector('.method-acc-header');
+      if (header) {
+        header.addEventListener('click', function () {
+          var isOpen = acc.classList.contains('is-open');
+          accItems.forEach(function (other) { other.classList.remove('is-open'); });
+          if (!isOpen) acc.classList.add('is-open');
+        });
+      }
+    });
+  }
+}());
+
 

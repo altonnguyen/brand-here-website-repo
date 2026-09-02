@@ -35,18 +35,50 @@
 }());
 
 (function () {
-  var methodIndex = document.getElementById('methodIndex');
-  if (!methodIndex) return;
-  var steps = methodIndex.querySelectorAll('.method-step');
-  if (!steps.length) return;
-  steps.forEach(function (step) {
-    function activate() {
-      steps.forEach(function (s) { s.classList.remove('is-active'); });
-      step.classList.add('is-active');
-    }
-    step.addEventListener('mouseenter', activate);
-    step.addEventListener('click', activate);
-    step.addEventListener('focus', activate);
-  });
+  var bar = document.getElementById('methodIndexBar');
+  var detailView = document.getElementById('methodDetailView');
+  var numEl = document.getElementById('methodDetailNum');
+  var titleEl = document.getElementById('methodDetailTitle');
+  var bodyEl = document.getElementById('methodDetailBody');
+
+  if (bar && detailView && numEl && titleEl && bodyEl) {
+    var items = bar.querySelectorAll('.method-index-item');
+    items.forEach(function (item) {
+      function select() {
+        items.forEach(function (btn) {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+        item.classList.add('is-active');
+        item.setAttribute('aria-selected', 'true');
+        
+        detailView.style.opacity = '0';
+        setTimeout(function () {
+          numEl.textContent = item.dataset.step;
+          titleEl.textContent = item.dataset.title;
+          bodyEl.textContent = item.dataset.desc;
+          detailView.style.opacity = '1';
+        }, 150);
+      }
+      item.addEventListener('click', select);
+      item.addEventListener('mouseenter', select);
+    });
+  }
+
+  var accordion = document.getElementById('methodMobileAccordion');
+  if (accordion) {
+    var accItems = accordion.querySelectorAll('.method-acc-item');
+    accItems.forEach(function (acc) {
+      var header = acc.querySelector('.method-acc-header');
+      if (header) {
+        header.addEventListener('click', function () {
+          var isOpen = acc.classList.contains('is-open');
+          accItems.forEach(function (other) { other.classList.remove('is-open'); });
+          if (!isOpen) acc.classList.add('is-open');
+        });
+      }
+    });
+  }
 }());
+
 

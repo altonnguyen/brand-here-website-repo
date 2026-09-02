@@ -316,10 +316,11 @@
    -------------------------------------------------------------------------- */
 .gap-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
+  padding: clamp(150px, 14vw, 210px) clamp(24px, 7vw, 110px);
 }
 
 .editorial-hero-media{
-  margin: 0 0 clamp(40px, 5vw, 64px);
+  margin: 0 0 clamp(48px, 6vw, 76px);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
@@ -336,33 +337,57 @@
 
 .gap-tensions-editorial{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border-top: 1px solid rgba(45, 41, 38, 0.2);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(32px, 5vw, 72px);
+  border-top: 1px solid rgba(45, 41, 38, 0.18);
+  padding-top: 32px;
+  align-items: start;
 }
 
-.tension-entry{
-  padding: 22px 28px 22px 0;
-  border-bottom: 1px solid rgba(45, 41, 38, 0.1);
+.tension-primary{
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
-.tension-entry:nth-child(even){
-  padding-left: 28px;
-  padding-right: 0;
-  border-left: 1px solid rgba(45, 41, 38, 0.1);
+.tension-primary .tension-cause{
+  font: 500 13px/1.4 var(--font-body);
+  color: #7a746e;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.tension-cause{
-  font: 500 12px/1.4 var(--font-body);
-  color: #8c8680;
+.tension-primary .tension-effect{
+  font: 400 clamp(24px, 2.6vw, 36px)/1.15 var(--font-display);
+  color: var(--editorial-carbon);
+  margin: 0;
 }
 
-.tension-effect{
-  font: 400 clamp(15px, 1.3vw, 19px)/1.35 var(--font-display);
+.tension-secondary-stream{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(45, 41, 38, 0.1);
+}
+
+.tension-sub-line{
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font: 400 13px/1.4 var(--font-body);
+}
+
+.tension-sub-line span{
+  color: #7a746e;
+}
+
+.tension-sub-line em{
+  font-style: normal;
   color: #3b3733;
+  font-weight: 500;
+  text-align: right;
 }
 
 /* --------------------------------------------------------------------------
@@ -370,10 +395,11 @@
    -------------------------------------------------------------------------- */
 .middle-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
+  padding: clamp(140px, 13vw, 200px) clamp(24px, 7vw, 110px);
 }
 
 .editorial-media-contained{
-  margin: 0 0 clamp(40px, 5vw, 64px);
+  margin: 0 0 clamp(44px, 5.5vw, 68px);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
@@ -394,36 +420,30 @@
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(24px, 4vw, 56px);
   border-top: 1px solid rgba(45, 41, 38, 0.15);
-  padding-top: 32px;
+  padding-top: 28px;
 }
 
 .narrative-pillar{
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-.pillar-number{
+.pillar-tag{
   font: 600 11px/1 var(--font-body);
   letter-spacing: 0.12em;
-  color: var(--editorial-red);
+  text-transform: uppercase;
+  color: #7a746e;
 }
 
-.narrative-pillar h3{
-  font: 400 clamp(19px, 1.6vw, 24px)/1.2 var(--font-display);
-  margin: 0;
-  color: var(--editorial-carbon);
+.narrative-pillar--core .pillar-tag{
+  color: var(--editorial-red);
 }
 
 .narrative-pillar p{
-  font: 400 13px/1.6 var(--font-body);
-  color: #66605a;
+  font: 400 13px/1.55 var(--font-body);
+  color: #4a4540;
   margin: 0;
-  max-width: 320px;
-}
-
-.narrative-pillar--core h3{
-  color: var(--editorial-red);
 }
 
 /* --------------------------------------------------------------------------
@@ -431,6 +451,7 @@
    -------------------------------------------------------------------------- */
 .method-editorial-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
+  padding: clamp(150px, 14vw, 210px) clamp(24px, 7vw, 110px);
 }
 
 .method-editorial-layout{
@@ -467,13 +488,15 @@
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 16px;
-  padding: 20px 0;
+  padding: 18px 0;
   border-bottom: 1px solid rgba(45, 41, 38, 0.12);
   cursor: pointer;
+  outline: none;
   transition: padding-left 0.2s ease, border-color 0.2s ease;
 }
 
-.method-step:hover{
+.method-step:hover,
+.method-step:focus-visible{
   padding-left: 6px;
 }
 
@@ -505,7 +528,7 @@
 .method-step.is-active .step-body p,
 .method-step:hover .step-body p{
   display: block;
-  animation: fadeInStep 0.25s ease-out;
+  animation: fadeInStep 0.22s ease-out;
 }
 
 @keyframes fadeInStep{
@@ -518,6 +541,7 @@
    -------------------------------------------------------------------------- */
 .numbers-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
+  padding: clamp(150px, 14vw, 210px) clamp(24px, 7vw, 110px);
 }
 
 .numbers-editorial-layout{
@@ -534,7 +558,7 @@
 }
 
 .number-entry{
-  padding: 30px 0;
+  padding: 34px 0;
   border-bottom: 1px solid rgba(45, 41, 38, 0.15);
   display: grid;
   grid-template-columns: minmax(120px, 160px) 1fr;
@@ -543,7 +567,7 @@
 }
 
 .stat-figure{
-  font: 400 clamp(44px, 5.2vw, 76px)/0.9 var(--font-display);
+  font: 400 clamp(50px, 5.8vw, 82px)/0.88 var(--font-display);
   color: var(--editorial-red);
   letter-spacing: -0.03em;
 }
@@ -568,9 +592,9 @@
 }
 
 .stat-body cite{
-  font: 500 11px/1.4 var(--font-body);
+  font: 500 10px/1.4 var(--font-body);
   font-style: normal;
-  color: #7a746e;
+  color: #8c8680;
   margin-top: 4px;
 }
 
@@ -596,7 +620,7 @@
 }
 
 .numbers-conclusion{
-  margin-top: clamp(36px, 4vw, 56px);
+  margin-top: clamp(40px, 4.5vw, 60px);
   font: 400 clamp(20px, 2.2vw, 32px)/1.25 var(--font-display);
   color: var(--editorial-carbon);
 }
@@ -611,6 +635,7 @@
    -------------------------------------------------------------------------- */
 .intelligence-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
+  padding: clamp(150px, 14vw, 210px) clamp(24px, 7vw, 110px);
 }
 
 .intelligence-editorial-layout{
@@ -657,7 +682,7 @@
   border-top: 1px solid var(--editorial-carbon);
 }
 
-.diag-item{
+.diag-row{
   padding: 16px 0;
   border-bottom: 1px solid rgba(45, 41, 38, 0.1);
   display: flex;
@@ -671,25 +696,18 @@
   letter-spacing: 0.1em;
 }
 
-.diag-text{
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
-  gap: 12px;
-}
-
-.diag-text strong{
-  font: 400 18px/1.2 var(--font-display);
+.diag-name{
+  font: 400 17px/1.2 var(--font-display);
   color: var(--editorial-carbon);
   font-weight: 400;
+  flex: 1;
 }
 
-.diag-text span{
-  font: 500 11px/1 var(--font-body);
-  letter-spacing: 0.08em;
+.diag-status{
+  font: 500 10px/1 var(--font-body);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #7a746e;
+  color: #8c8680;
 }
 
 /* --------------------------------------------------------------------------
@@ -697,6 +715,7 @@
    -------------------------------------------------------------------------- */
 .ecosystem-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
+  padding: clamp(140px, 13vw, 200px) clamp(24px, 7vw, 110px);
 }
 
 .ecosystem-editorial-media{
@@ -734,10 +753,10 @@
 }
 
 /* --------------------------------------------------------------------------
-   09.5. Labs Teaser (Editorial Bridge to Closing CTA)
+   09.5. Labs Teaser (Editorial Bridge to Closing CTA - Reduced Height)
    -------------------------------------------------------------------------- */
 .labs-teaser{
-  padding: clamp(48px, 6vw, 72px) clamp(24px, 7vw, 110px);
+  padding: clamp(36px, 4vw, 56px) clamp(24px, 7vw, 110px);
   background: var(--editorial-ivory);
   border-top: 1px solid rgba(45, 41, 38, 0.08);
 }
@@ -747,7 +766,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
 }
 
 .labs-teaser-copy{
@@ -755,11 +774,12 @@
 }
 
 .labs-teaser-copy .section-label{
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 10px;
 }
 
 .labs-teaser-copy p{
-  font: 400 clamp(18px, 1.8vw, 24px)/1.35 var(--font-display);
+  font: 400 clamp(16px, 1.6vw, 21px)/1.35 var(--font-display);
   color: var(--editorial-carbon);
   margin: 0;
 }
@@ -776,7 +796,7 @@
   background: var(--editorial-red) !important;
   color: var(--editorial-carbon) !important;
   align-items: center !important;
-  padding: clamp(70px, 9vw, 130px) clamp(24px, 7vw, 110px) !important;
+  padding: clamp(80px, 10vw, 140px) clamp(24px, 7vw, 110px) !important;
   overflow: hidden !important;
   isolation: isolate !important;
 }

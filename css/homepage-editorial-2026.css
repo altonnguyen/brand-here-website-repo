@@ -14,7 +14,7 @@
   background: rgba(243, 240, 232, 0.92) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(45, 41, 38, 0.12) !important;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.1) !important;
   color: var(--editorial-carbon) !important;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .site-header--home .nav nav{
-  gap: clamp(14px, 1.8vw, 24px);
+  gap: clamp(16px, 2vw, 28px);
 }
 
 .site-header--home .nav nav a{
@@ -110,7 +110,7 @@
   padding: 8px 12px;
   border-radius: 2px;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .site-header--home .home-menu:hover{
@@ -126,7 +126,7 @@
   letter-spacing: 0.08em;
   padding-bottom: 4px;
   text-decoration: none;
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .site-header--home .nav-cta:hover{
@@ -135,23 +135,96 @@
 }
 
 /* --------------------------------------------------------------------------
-   02. Section 01: Hero (brandhere-home-01-hero.png)
+   02. Global Editorial Architecture & Hierarchy
+   -------------------------------------------------------------------------- */
+.editorial-section{
+  padding: clamp(120px, 12vw, 190px) clamp(24px, 7vw, 110px);
+  background: var(--editorial-ivory);
+  color: var(--editorial-carbon);
+  position: relative;
+}
+
+.editorial-container{
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.section-label{
+  font: 600 11px/1.2 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a746e;
+  margin: 0 0 20px;
+}
+
+.editorial-header{
+  margin-bottom: clamp(48px, 6vw, 76px);
+  max-width: 920px;
+}
+
+.editorial-header h2{
+  font: 400 clamp(38px, 5.2vw, 74px)/0.96 var(--font-display);
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  color: var(--editorial-carbon);
+  text-wrap: balance;
+}
+
+.editorial-header h2 em{
+  font-style: italic;
+  color: var(--editorial-red);
+}
+
+.editorial-summary{
+  font: 400 clamp(16px, 1.4vw, 20px)/1.55 var(--font-body);
+  color: #5c5752;
+  max-width: 620px;
+  margin: 0;
+}
+
+.editorial-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 11px/1.2 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--editorial-carbon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--editorial-red);
+  padding-bottom: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.editorial-link:hover{
+  color: var(--editorial-red);
+  transform: translateX(3px);
+}
+
+.editorial-action{
+  margin-top: clamp(36px, 4vw, 56px);
+}
+
+/* --------------------------------------------------------------------------
+   03. Level A (Immersive): 01 Hero (brandhere-home-01-hero.png)
    -------------------------------------------------------------------------- */
 .enterprise-hero{
   position: relative;
   height: 100svh;
-  min-height: 720px;
-  background: var(--editorial-ivory) !important;
-  color: var(--editorial-carbon) !important;
-  isolation: isolate;
+  min-height: 700px;
+  background: var(--editorial-ivory);
+  color: var(--editorial-carbon);
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(24px, 7vw, 110px);
   overflow: hidden;
+  isolation: isolate;
 }
 
 .enterprise-hero .hero-film{
   position: absolute;
   inset: 0;
   z-index: 1;
-  overflow: hidden;
 }
 
 .enterprise-hero .hero-film img{
@@ -159,499 +232,517 @@
   height: 100%;
   object-fit: cover;
   object-position: 72% center;
-  transition: opacity 0.8s ease;
 }
 
 .enterprise-hero .hero-wash{
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.94) 40%, rgba(243, 240, 232, 0.55) 54%, rgba(243, 240, 232, 0.08) 72%, transparent 100%) !important;
+  background: linear-gradient(90deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.95) 42%, rgba(243, 240, 232, 0.6) 55%, rgba(243, 240, 232, 0.05) 75%, transparent 100%);
   pointer-events: none;
 }
 
-.enterprise-hero h1,
-.enterprise-hero p,
-.enterprise-hero a,
-.enterprise-hero .hero-capabilities,
-.enterprise-hero .hero-index{
+.hero-content{
+  position: relative;
   z-index: 2;
-  color: var(--editorial-carbon) !important;
+  max-width: 680px;
 }
 
-.enterprise-hero h1{
-  font-size: clamp(54px, 7.5vw, 122px);
-  line-height: 0.82;
+.hero-content h1{
+  font: 400 clamp(54px, 7.5vw, 118px)/0.84 var(--font-display);
   letter-spacing: -0.035em;
+  margin: 0 0 28px;
+  color: var(--editorial-carbon);
   text-wrap: balance;
 }
 
-.enterprise-hero h1 em{
-  color: var(--editorial-red) !important;
+.hero-content h1 em{
+  color: var(--editorial-red);
   font-style: italic;
 }
 
-.enterprise-hero .hero-note{
-  padding: 20px 24px;
-  background: rgba(243, 240, 232, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-left: 2px solid var(--editorial-red);
-  font: 400 clamp(16px, 1.7vw, 24px)/1.35 var(--d);
-  max-width: 540px;
+.hero-lead{
+  font: 400 clamp(16px, 1.45vw, 21px)/1.5 var(--font-display);
+  color: #4a4540;
+  max-width: 520px;
+  margin: 0 0 36px;
 }
 
-.hero-capabilities{
-  font: 500 11px/1.4 var(--font-body);
-  letter-spacing: 0.08em;
+.hero-action{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 10px/1.2 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--editorial-carbon);
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid rgba(45, 41, 38, 0.25);
+  border-radius: 2px;
+  background: rgba(243, 240, 232, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
-.hero-capabilities strong{
-  color: var(--editorial-carbon);
-  font-weight: 600;
-}
-
-.hero-capabilities span{
-  color: #6c6660;
-  border-left: 1px solid rgba(45, 41, 38, 0.2);
-  padding-left: 16px;
-}
-
-.hero-arrow{
-  border-color: rgba(45, 41, 38, 0.35);
-  color: var(--editorial-carbon);
-  font-weight: 500;
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
-}
-
-.hero-arrow:hover{
+.hero-action:hover{
   border-color: var(--editorial-red);
   color: var(--editorial-red);
-  transform: translateY(3px);
-  box-shadow: 0 6px 16px rgba(224, 60, 49, 0.12);
-}
-
-.focus-mark{
-  border-color: rgba(45, 41, 38, 0.2);
-}
-
-.focus-mark::before,
-.focus-mark::after{
-  background: rgba(45, 41, 38, 0.16);
-}
-
-.focus-mark span{
-  color: #6c6660;
-  font-weight: 600;
-  font-size: 8px;
+  transform: translateY(2px);
 }
 
 /* --------------------------------------------------------------------------
-   03. Section 02: Adaptation Gap (brandhere-home-02-adaptation-gap.png)
+   04. Level B (Editorial): 02 Adaptation Gap (brandhere-home-02-adaptation-gap.png)
    -------------------------------------------------------------------------- */
-.gap-grid-editorial{
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(36px, 5vw, 68px);
-  align-items: center;
-  margin-bottom: clamp(48px, 6vw, 80px);
-}
-
-.gap-artwork-figure{
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-  border: 1px solid rgba(45, 41, 38, 0.12);
-  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.05);
-}
-
-.gap-artwork-figure img{
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  object-position: center;
-}
-
-.gap-artwork-figure figcaption{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 14px 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font: 600 10px Manrope, sans-serif;
-  background: var(--editorial-ivory);
+.gap-section{
   border-top: 1px solid rgba(45, 41, 38, 0.08);
 }
 
-.gap-artwork-figure figcaption strong{
-  text-align: center;
-  color: var(--editorial-red);
-}
-
-.gap-artwork-figure figcaption span:last-child{
-  text-align: right;
-}
-
-.tension-list p{
-  transition: background-color 0.25s ease, padding-left 0.25s ease;
-  border-radius: 2px;
-}
-
-.tension-list p:hover{
-  background-color: rgba(45, 41, 38, 0.03);
-  padding-inline: 12px;
-}
-
-/* --------------------------------------------------------------------------
-   04. Section 03: Missing Middle (brandhere-home-03-missing-middle.png)
-   -------------------------------------------------------------------------- */
-.layer-artwork-container{
-  width: min(100%, 880px);
-  margin: clamp(32px, 4vw, 56px) auto clamp(24px, 3vw, 40px);
-}
-
-.missing-middle-figure{
-  margin: 0;
+.editorial-hero-media{
+  margin: 0 0 clamp(48px, 6vw, 72px);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
-  border: 1px solid rgba(45, 41, 38, 0.12);
-  box-shadow: 0 14px 40px rgba(45, 41, 38, 0.06);
 }
 
-.missing-middle-figure img{
+.editorial-hero-media img{
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
-.layer-editorial-axis{
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 1.5rem;
-  margin: 2.5rem 0 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font: 600 11px Manrope, sans-serif;
-}
-
-.layer-editorial-axis::before,
-.layer-editorial-axis::after{
-  content: "";
-  height: 1px;
-  background: var(--editorial-bone);
-}
-
-.layer-editorial-axis strong{
-  grid-column: 2;
-  color: var(--editorial-red);
-}
-
-.layer-editorial-axis span{
-  display: none;
-}
-
-.layer-flow{
-  border-top: 1px solid var(--editorial-carbon) !important;
-  border-bottom: 1px solid var(--editorial-carbon) !important;
-}
-
-.layer-flow article{
-  background: rgba(255, 255, 255, 0.45) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.layer-flow article:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(45, 41, 38, 0.06);
-  border-color: rgba(45, 41, 38, 0.45);
-  background: rgba(255, 255, 255, 0.8) !important;
-}
-
-.layer-flow article:nth-child(3){
-  background: var(--editorial-carbon) !important;
-  color: #fff !important;
-  box-shadow: 0 14px 34px rgba(45, 41, 38, 0.18);
-}
-
-.layer-flow article:nth-child(3) small{
-  color: var(--editorial-red) !important;
-}
-
-.layer-flow article:nth-child(3):hover{
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(45, 41, 38, 0.24);
-  background: #201e1c !important;
-}
-
-/* --------------------------------------------------------------------------
-   05. Practices & Section 04: ADAPT Method (brandhere-home-04-adapt-method.png)
-   -------------------------------------------------------------------------- */
-.practice-card a{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
-}
-
-.practice-card a:hover{
-  opacity: 0.85;
-  transform: translateX(4px);
-}
-
-.method-strip{
-  position: relative;
-  overflow: hidden;
-}
-
-.method-split{
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: center;
-  margin-top: clamp(36px, 4vw, 56px);
-}
-
-.method-figure{
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-  border: 1px solid rgba(45, 41, 38, 0.12);
-  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.05);
-}
-
-.method-figure img{
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  object-position: center;
-}
-
-.method-grid{
+.gap-tensions-editorial{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
   border-top: 1px solid var(--editorial-carbon);
-  border-left: 1px solid rgba(45, 41, 38, 0.2);
 }
 
-.method-grid article{
-  background: rgba(255, 255, 255, 0.3);
-  padding: 24px 20px;
-  min-height: 160px;
-  border-right: 1px solid rgba(45, 41, 38, 0.2);
-  border-bottom: 1px solid rgba(45, 41, 38, 0.2);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+.tension-entry{
+  padding: 28px 32px 28px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.method-grid article:hover{
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(45, 41, 38, 0.4);
+.tension-entry:nth-child(even){
+  padding-left: 32px;
+  padding-right: 0;
+  border-left: 1px solid rgba(45, 41, 38, 0.15);
 }
 
-.method-grid article b{
-  transition: transform 0.25s ease;
-  display: block;
-  color: var(--editorial-red);
-  font: 600 12px Manrope, sans-serif;
-  margin-bottom: 8px;
+.tension-cause{
+  font: 500 13px/1.4 var(--font-body);
+  color: #7a746e;
 }
 
-.method-grid article:hover b{
-  transform: scale(1.1);
+.tension-effect{
+  font: 400 clamp(17px, 1.5vw, 22px)/1.35 var(--font-display);
+  color: var(--editorial-carbon);
 }
 
 /* --------------------------------------------------------------------------
-   06. Section 05: Gap in Numbers (brandhere-home-05-gap-in-numbers.png)
+   05. Level B (Editorial): 03 Missing Middle (brandhere-home-03-missing-middle.png)
    -------------------------------------------------------------------------- */
-.evidence-split{
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(36px, 5vw, 64px);
-  align-items: center;
-  margin-top: clamp(32px, 4vw, 48px);
+.middle-section{
+  border-top: 1px solid rgba(45, 41, 38, 0.08);
 }
 
-.evidence-artwork-figure{
-  margin: 0;
+.editorial-media-contained{
+  margin: 0 0 clamp(48px, 6vw, 72px);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
-  border: 1px solid rgba(45, 41, 38, 0.12);
-  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.05);
+  max-width: 1100px;
 }
 
-.evidence-artwork-figure img{
+.editorial-media-contained img{
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
-.evidence-story-item small a{
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.middle-narrative{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  border-top: 1px solid rgba(45, 41, 38, 0.15);
+  padding-top: 36px;
 }
 
-.evidence-story-item small a:hover{
-  opacity: 0.8;
-  transform: translate(2px, -2px);
+.narrative-pillar{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pillar-number{
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  color: var(--editorial-red);
+}
+
+.narrative-pillar h3{
+  font: 400 clamp(20px, 1.8vw, 26px)/1.15 var(--font-display);
+  margin: 0;
+  color: var(--editorial-carbon);
+}
+
+.narrative-pillar p{
+  font: 400 14px/1.6 var(--font-body);
+  color: #5c5752;
+  margin: 0;
+  max-width: 320px;
+}
+
+.narrative-pillar--core h3{
+  color: var(--editorial-red);
 }
 
 /* --------------------------------------------------------------------------
-   07. Section 06: Intelligence (brandhere-home-06-intelligence.png)
+   06. Level C (Structured): 04 ADAPT Method (brandhere-home-04-adapt-method.png)
    -------------------------------------------------------------------------- */
-.intelligence-intro{
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(36px, 4vw, 54px);
+.method-editorial-section{
+  border-top: 1px solid rgba(45, 41, 38, 0.08);
 }
 
-.intelligence-editorial{
-  position: relative;
+.method-editorial-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+.method-media{
+  margin: 0;
+  position: sticky;
+  top: 120px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.method-media img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.method-index{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
+}
+
+.method-step{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.12);
+  transition: padding-left 0.25s ease;
+}
+
+.method-step:hover{
+  padding-left: 8px;
+}
+
+.step-num{
+  font: 600 12px/1.4 var(--font-body);
+  letter-spacing: 0.1em;
+  color: var(--editorial-red);
+}
+
+.step-body h4{
+  font: 400 20px/1.2 var(--font-display);
+  margin: 0 0 6px;
+  color: var(--editorial-carbon);
+}
+
+.step-body p{
+  font: 400 13px/1.55 var(--font-body);
+  color: #66605a;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   07. Level C (Structured): 05 Gap in Numbers (brandhere-home-05-gap-in-numbers.png)
+   -------------------------------------------------------------------------- */
+.numbers-section{
+  border-top: 1px solid rgba(45, 41, 38, 0.08);
+}
+
+.numbers-editorial-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(40px, 6vw, 84px);
+  align-items: center;
+}
+
+.numbers-stream{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
+}
+
+.number-entry{
+  padding: 34px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.15);
+  display: grid;
+  grid-template-columns: minmax(130px, 170px) 1fr;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.stat-figure{
+  font: 400 clamp(48px, 5.5vw, 80px)/0.9 var(--font-display);
+  color: var(--editorial-red);
+  letter-spacing: -0.03em;
+}
+
+.stat-body{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-lead{
+  font: 500 14px/1.5 var(--font-body);
+  color: var(--editorial-carbon);
+  margin: 0;
+}
+
+.stat-takeaway{
+  font: 400 17px/1.35 var(--font-display);
+  font-style: italic;
+  color: #3b3632;
+  margin: 0;
+}
+
+.stat-body cite{
+  font: 500 11px/1.4 var(--font-body);
+  font-style: normal;
+  color: #7a746e;
+  margin-top: 4px;
+}
+
+.stat-body cite a{
+  color: var(--editorial-red);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.numbers-media{
   margin: 0;
   overflow: hidden;
   border-radius: 2px;
-  border: 1px solid rgba(45, 41, 38, 0.12);
-  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.08);
 }
 
-.intelligence-editorial img{
+.numbers-media img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.numbers-conclusion{
+  margin-top: clamp(40px, 5vw, 64px);
+  font: 400 clamp(22px, 2.4vw, 34px)/1.25 var(--font-display);
+  color: var(--editorial-carbon);
+}
+
+.numbers-conclusion strong{
+  color: var(--editorial-red);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   08. Level B (Editorial): 06 Intelligence (brandhere-home-06-intelligence.png)
+   -------------------------------------------------------------------------- */
+.intelligence-section{
+  border-top: 1px solid rgba(45, 41, 38, 0.08);
+}
+
+.intelligence-editorial-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: clamp(40px, 6vw, 84px);
+  align-items: center;
+}
+
+.intelligence-portrait-media{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.intelligence-portrait-media img{
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: 65% center;
+  display: block;
 }
 
-.intelligence-editorial figcaption{
+.intelligence-portrait-media figcaption{
   position: absolute;
-  z-index: 3;
-  left: 1rem;
-  bottom: 1rem;
-  color: #fff;
-  text-transform: uppercase;
+  bottom: 16px;
+  left: 16px;
+  font: 600 10px/1.2 var(--font-body);
   letter-spacing: 0.12em;
-  font: 600 10px Manrope, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
   background: rgba(45, 41, 38, 0.75);
-  padding: 6px 12px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  padding: 6px 12px;
   border-radius: 2px;
 }
 
-.intelligence-grid article{
-  background: rgba(255, 255, 255, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+.intelligence-focus-stream{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
 }
 
-.intelligence-grid article:hover{
-  background: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(45, 41, 38, 0.06);
+.focus-item{
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.intelligence-grid article:hover .status-chip{
-  border-color: var(--editorial-red);
+.focus-tag{
+  font: 600 10px/1.2 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--editorial-red);
 }
 
-/* --------------------------------------------------------------------------
-   08. Section 07: Ecosystem (brandhere-home-07-ecosystem.png)
-   -------------------------------------------------------------------------- */
-.ecosystem-intro-grid{
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(36px, 6vw, 72px);
-  align-items: center;
+.focus-item h3{
+  font: 400 21px/1.2 var(--font-display);
+  margin: 0;
+  color: var(--editorial-carbon);
 }
 
-.ecosystem-artwork-figure{
+.focus-item p{
+  font: 400 13px/1.55 var(--font-body);
+  color: #66605a;
   margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   09. Level B (Editorial): 07 Ecosystem (brandhere-home-07-ecosystem.png)
+   -------------------------------------------------------------------------- */
+.ecosystem-section{
+  border-top: 1px solid rgba(45, 41, 38, 0.08);
+}
+
+.ecosystem-editorial-media{
+  margin: 0 0 clamp(36px, 4vw, 56px);
   position: relative;
   overflow: hidden;
   border-radius: 2px;
-  border: 1px solid rgba(243, 240, 232, 0.15);
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35);
 }
 
-.ecosystem-artwork-figure img{
+.ecosystem-editorial-media img{
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
+  display: block;
+}
+
+.ecosystem-constellation-meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(45, 41, 38, 0.15);
+}
+
+.constellation-nodes{
+  font: 500 12px/1.4 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #66605a;
+  margin: 0;
 }
 
 /* --------------------------------------------------------------------------
-   09. Section 08: Closing CTA (brandhere-home-08-closing-cta.png)
+   10. Level A (Immersive): 08 Closing CTA (brandhere-home-08-closing-cta.png)
    -------------------------------------------------------------------------- */
-.closing--editorial{
+.closing-editorial-finale{
   position: relative;
-  min-height: clamp(540px, 85svh, 840px);
-  overflow: hidden;
+  min-height: clamp(560px, 85svh, 860px);
   background: var(--editorial-red);
   color: var(--editorial-carbon);
   display: flex;
   align-items: center;
-  padding: clamp(60px, 8vw, 120px) clamp(24px, 7vw, 110px);
+  padding: clamp(70px, 9vw, 130px) clamp(24px, 7vw, 110px);
+  overflow: hidden;
   isolation: isolate;
 }
 
-.closing-bg-artwork{
+.closing-backdrop{
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-.closing-bg-artwork img{
+.closing-backdrop img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 80% center;
 }
 
-.closing-content-overlay{
+.closing-inner{
   position: relative;
   z-index: 2;
   max-width: 580px;
 }
 
-.closing-content-overlay p{
+.closing-preamble{
   font: 500 11px/1.6 var(--font-body);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--editorial-carbon);
-  margin-bottom: 24px;
+  margin: 0 0 24px;
 }
 
-.closing-content-overlay h2{
-  font: 400 clamp(54px, 8.5vw, 130px)/0.78 var(--d);
+.closing-inner h2{
+  font: 400 clamp(56px, 8.8vw, 132px)/0.78 var(--font-display);
   letter-spacing: -0.04em;
   color: var(--editorial-carbon);
-  margin-bottom: 36px;
+  margin: 0 0 36px;
   text-transform: uppercase;
 }
 
-.closing-content-overlay h2 em{
+.closing-inner h2 em{
   font-style: italic;
   color: #fff;
 }
 
-.closing-content-overlay a{
+.closing-button{
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -668,12 +759,15 @@
   box-shadow: 0 10px 28px rgba(45, 41, 38, 0.25);
 }
 
-.closing-content-overlay a:hover{
+.closing-button:hover{
   background: #000;
   transform: translateY(-2px);
   box-shadow: 0 14px 34px rgba(45, 41, 38, 0.35);
 }
 
+/* --------------------------------------------------------------------------
+   11. Footer Refinement
+   -------------------------------------------------------------------------- */
 .site-footer--home .footer-nav a,
 .site-footer--home .footer-language a{
   transition: color 0.2s ease;
@@ -685,13 +779,29 @@
 }
 
 /* --------------------------------------------------------------------------
-   10. Responsive Breakpoint QA
+   12. Responsive Breakpoint QA
    -------------------------------------------------------------------------- */
-@media(max-width:1100px){
-  .focus-mark{ display: none !important; }
-}
-
-@media(max-width:900px){
+@media(max-width:960px){
+  .gap-tensions-editorial{
+    grid-template-columns: 1fr;
+  }
+  .tension-entry:nth-child(even){
+    padding-left: 0;
+    border-left: 0;
+  }
+  .middle-narrative{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .method-editorial-layout,
+  .numbers-editorial-layout,
+  .intelligence-editorial-layout{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .method-media{
+    position: static;
+  }
   .site-header--home .nav nav.open{
     position: absolute;
     display: flex;
@@ -705,7 +815,7 @@
     background: rgba(243, 240, 232, 0.98) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(45, 41, 38, 0.12);
+    border-top: 1px solid rgba(45, 41, 38, 0.1);
     box-shadow: 0 16px 40px rgba(45, 41, 38, 0.08);
   }
   .site-header--home .nav nav.open a{
@@ -721,63 +831,45 @@
     color: var(--editorial-red) !important;
     padding-left: 6px;
   }
-
-  .gap-grid-editorial,
-  .method-split,
-  .evidence-split,
-  .intelligence-intro,
-  .ecosystem-intro-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .method-grid{
-    border-left: 0;
-    border-top: 1px solid rgba(45, 41, 38, 0.2);
-  }
-
-  .closing-bg-artwork img{
+  .closing-backdrop img{
     object-position: 85% center;
   }
 }
 
-@media(max-width:780px){
+@media(max-width:720px){
   .enterprise-hero .hero-film img{
     object-position: 78% center;
   }
   .enterprise-hero .hero-wash{
-    background: linear-gradient(180deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.92) 42%, rgba(243, 240, 232, 0.3) 70%, transparent 100%) !important;
+    background: linear-gradient(180deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.94) 45%, rgba(243, 240, 232, 0.25) 75%, transparent 100%) !important;
   }
-  html[lang="vi"] .enterprise-hero .hero-headline-vi{
-    font-size: 38px !important;
-    line-height: 0.91 !important;
-    letter-spacing: -0.045em;
+  html[lang="vi"] .hero-content h1{
+    font-size: clamp(38px, 10vw, 54px) !important;
+    line-height: 0.92 !important;
   }
-  .closing-bg-artwork img{
+  .number-entry{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .closing-backdrop img{
     object-position: 90% center;
   }
-}
-
-@media(max-width:600px){
-  .method-grid{
-    grid-template-columns: 1fr;
-  }
-  .closing-content-overlay{
+  .closing-inner{
     max-width: 100%;
   }
-  .closing-content-overlay a{
+  .closing-button{
     width: 100%;
   }
 }
 
 /* --------------------------------------------------------------------------
-   11. Reduced Motion Support
+   13. Reduced Motion Support
    -------------------------------------------------------------------------- */
 @media(prefers-reduced-motion:reduce){
-  .layer-flow article,
-  .intelligence-grid article,
-  .hero-arrow,
-  .closing-content-overlay a,
-  .method-grid article{
+  .hero-action,
+  .editorial-link,
+  .closing-button,
+  .method-step{
     animation: none !important;
     transition: none !important;
   }

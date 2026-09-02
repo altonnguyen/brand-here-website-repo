@@ -209,87 +209,106 @@
    03. Level A (Immersive): 01 Hero (brandhere-home-01-hero.png)
    -------------------------------------------------------------------------- */
 .enterprise-hero{
-  position: relative;
-  height: 100svh;
-  min-height: 700px;
-  background: var(--editorial-ivory);
-  color: var(--editorial-carbon);
-  display: flex;
-  align-items: center;
-  padding: 0 clamp(24px, 7vw, 110px);
-  overflow: hidden;
-  isolation: isolate;
+  position: relative !important;
+  height: 100svh !important;
+  min-height: 700px !important;
+  background: var(--editorial-ivory) !important;
+  color: var(--editorial-carbon) !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 clamp(24px, 7vw, 110px) !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
 }
 
 .enterprise-hero .hero-film{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
 }
 
 .enterprise-hero .hero-film img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 72% center;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 72% center !important;
+  filter: grayscale(0.08) contrast(1.04) !important;
 }
 
 .enterprise-hero .hero-wash{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(90deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.95) 42%, rgba(243, 240, 232, 0.6) 55%, rgba(243, 240, 232, 0.05) 75%, transparent 100%);
-  pointer-events: none;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: linear-gradient(90deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.95) 42%, rgba(243, 240, 232, 0.6) 55%, rgba(243, 240, 232, 0.05) 75%, transparent 100%) !important;
+  pointer-events: none !important;
 }
 
 .hero-content{
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 680px !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 .hero-content h1{
-  font: 400 clamp(54px, 7.5vw, 118px)/0.84 var(--font-display);
-  letter-spacing: -0.035em;
-  margin: 0 0 28px;
-  color: var(--editorial-carbon);
-  text-wrap: balance;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  max-width: none !important;
+  font: 400 clamp(54px, 7.5vw, 118px)/0.84 var(--font-display) !important;
+  letter-spacing: -0.035em !important;
+  margin: 0 0 28px !important;
+  color: var(--editorial-carbon) !important;
+  text-wrap: balance !important;
 }
 
 .hero-content h1 em{
-  color: var(--editorial-red);
-  font-style: italic;
+  color: var(--editorial-red) !important;
+  font-style: italic !important;
 }
 
 .hero-lead{
-  font: 400 clamp(16px, 1.45vw, 21px)/1.5 var(--font-display);
-  color: #4a4540;
-  max-width: 520px;
-  margin: 0 0 36px;
+  position: static !important;
+  font: 400 clamp(16px, 1.45vw, 21px)/1.5 var(--font-display) !important;
+  color: #4a4540 !important;
+  max-width: 520px !important;
+  margin: 0 0 36px !important;
 }
 
 .hero-action{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font: 600 10px/1.2 var(--font-body);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--editorial-carbon);
-  text-decoration: none;
-  padding: 10px 18px;
-  border: 1px solid rgba(45, 41, 38, 0.25);
-  border-radius: 2px;
-  background: rgba(243, 240, 232, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font: 600 10px/1.2 var(--font-body) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--editorial-carbon) !important;
+  text-decoration: none !important;
+  padding: 12px 22px !important;
+  border: 1px solid rgba(45, 41, 38, 0.25) !important;
+  border-radius: 2px !important;
+  background: rgba(243, 240, 232, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease, background-color 0.25s ease !important;
 }
 
 .hero-action:hover{
-  border-color: var(--editorial-red);
-  color: var(--editorial-red);
-  transform: translateY(2px);
+  border-color: var(--editorial-red) !important;
+  color: var(--editorial-red) !important;
+  background: var(--editorial-ivory) !important;
+  transform: translateY(2px) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -690,79 +709,89 @@
 /* --------------------------------------------------------------------------
    10. Level A (Immersive): 08 Closing CTA (brandhere-home-08-closing-cta.png)
    -------------------------------------------------------------------------- */
-.closing-editorial-finale{
-  position: relative;
-  min-height: clamp(560px, 85svh, 860px);
-  background: var(--editorial-red);
-  color: var(--editorial-carbon);
-  display: flex;
-  align-items: center;
-  padding: clamp(70px, 9vw, 130px) clamp(24px, 7vw, 110px);
-  overflow: hidden;
-  isolation: isolate;
+.closing.closing-editorial-finale{
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+  position: relative !important;
+  min-height: clamp(560px, 85svh, 860px) !important;
+  background: var(--editorial-red) !important;
+  color: var(--editorial-carbon) !important;
+  align-items: center !important;
+  padding: clamp(70px, 9vw, 130px) clamp(24px, 7vw, 110px) !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
 }
 
 .closing-backdrop{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
 }
 
 .closing-backdrop img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 80% center;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 80% center !important;
 }
 
 .closing-inner{
-  position: relative;
-  z-index: 2;
-  max-width: 580px;
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 580px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 .closing-preamble{
-  font: 500 11px/1.6 var(--font-body);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--editorial-carbon);
-  margin: 0 0 24px;
+  position: static !important;
+  font: 500 11px/1.6 var(--font-body) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--editorial-carbon) !important;
+  margin: 0 0 24px !important;
 }
 
 .closing-inner h2{
-  font: 400 clamp(56px, 8.8vw, 132px)/0.78 var(--font-display);
-  letter-spacing: -0.04em;
-  color: var(--editorial-carbon);
-  margin: 0 0 36px;
-  text-transform: uppercase;
+  grid-column: auto !important;
+  position: static !important;
+  font: 400 clamp(56px, 8.8vw, 132px)/0.78 var(--font-display) !important;
+  letter-spacing: -0.04em !important;
+  color: var(--editorial-carbon) !important;
+  margin: 0 0 36px !important;
+  text-transform: uppercase !important;
 }
 
 .closing-inner h2 em{
-  font-style: italic;
-  color: #fff;
+  font-style: italic !important;
+  color: #fff !important;
 }
 
 .closing-button{
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  padding: 16px 28px;
-  background: var(--editorial-carbon);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 2px;
-  font: 600 11px/1 var(--font-body);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 10px 28px rgba(45, 41, 38, 0.25);
+  grid-column: auto !important;
+  position: static !important;
+  display: inline-flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 24px !important;
+  padding: 16px 28px !important;
+  background: var(--editorial-carbon) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 2px !important;
+  font: 600 11px/1 var(--font-body) !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease !important;
+  box-shadow: 0 10px 28px rgba(45, 41, 38, 0.25) !important;
 }
 
 .closing-button:hover{
-  background: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(45, 41, 38, 0.35);
+  background: #000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 34px rgba(45, 41, 38, 0.35) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -860,10 +889,71 @@
   .closing-button{
     width: 100%;
   }
+  .editorial-section{
+    padding: clamp(72px, 12vw, 100px) 20px;
+  }
+  .constellation-nodes{
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+@media(max-width:480px){
+  .site-header--home{
+    padding-inline: 16px !important;
+  }
+  .hero-content h1{
+    font-size: clamp(38px, 10vw, 48px) !important;
+    line-height: 0.9 !important;
+  }
+  .hero-lead{
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+  .editorial-header h2{
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 1.02;
+  }
+  .closing-inner h2{
+    font-size: clamp(42px, 11vw, 56px) !important;
+    line-height: 0.85 !important;
+  }
+  .stat-figure{
+    font-size: 46px;
+  }
+  .tension-entry{
+    padding: 20px 0;
+  }
+  .method-index{
+    border-top: 1px solid var(--editorial-carbon);
+  }
+  .method-step{
+    padding: 20px 0;
+    gap: 16px;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   13. Reduced Motion Support
+   13. Vietnamese Language Specific Typography Refinements
+   -------------------------------------------------------------------------- */
+html[lang="vi"] .hero-content h1,
+html[lang="vi"] .editorial-header h2,
+html[lang="vi"] .closing-inner h2,
+html[lang="vi"] .narrative-pillar h3,
+html[lang="vi"] .method-step h4,
+html[lang="vi"] .focus-item h3{
+  text-wrap: pretty;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.08;
+}
+
+html[lang="vi"] .hero-headline-vi .hero-headline-line{
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   14. Reduced Motion & Accessibility
    -------------------------------------------------------------------------- */
 @media(prefers-reduced-motion:reduce){
   .hero-action,
@@ -874,4 +964,5 @@
     transition: none !important;
   }
 }
+
 

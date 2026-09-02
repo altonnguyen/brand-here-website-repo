@@ -137,6 +137,11 @@
 /* --------------------------------------------------------------------------
    02. Global Layout & Spacing Spec
    -------------------------------------------------------------------------- */
+.text-red{
+  color: var(--editorial-red) !important;
+  font-style: normal;
+}
+
 .editorial-section{
   padding: 160px 64px;
   background: var(--editorial-ivory);
@@ -150,28 +155,30 @@
 }
 
 .section-label{
-  font: 600 11px/1.2 var(--font-body);
-  letter-spacing: 0.14em;
+  font: 600 12px/1.2 var(--font-body);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #7a746e;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
 
 .editorial-header{
   margin-bottom: 48px;
-  max-width: 840px;
+  max-width: 860px;
 }
 
 .editorial-header h2{
-  font: 400 clamp(36px, 4.8vw, 68px)/0.98 var(--font-display);
+  font: 400 clamp(42px, 5.2vw, 76px)/0.96 var(--font-display);
   letter-spacing: -0.03em;
+  text-transform: uppercase;
   margin: 0 0 24px;
-  color: var(--editorial-carbon);
+  color: #1d1b19;
   text-wrap: balance;
 }
 
+.editorial-header h2 .text-red,
 .editorial-header h2 em{
-  font-style: italic;
+  font-style: normal;
   color: var(--editorial-red);
 }
 
@@ -186,7 +193,7 @@
   font: 600 12px/1.2 var(--font-body);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--editorial-carbon);
+  color: #1d1b19;
   text-decoration: none;
   border-bottom: 1px solid var(--editorial-red);
   padding-bottom: 4px;
@@ -266,9 +273,10 @@
 
 .hero.enterprise-hero h1,
 .hero h1{
-  font: 400 clamp(44px, 5.5vw, 76px)/0.94 var(--font-display) !important;
+  font: 400 clamp(48px, 6vw, 84px)/0.92 var(--font-display) !important;
   letter-spacing: -0.035em !important;
-  color: var(--editorial-carbon) !important;
+  text-transform: uppercase !important;
+  color: #1d1b19 !important;
   margin: 0 0 24px !important;
   text-wrap: balance !important;
   position: static !important;
@@ -280,14 +288,15 @@
   font-weight: 400;
 }
 
+.hero-content h1 .text-red,
 .hero-content h1 em{
-  font-style: italic;
+  font-style: normal;
   color: var(--editorial-red);
 }
 
 .hero-lead{
-  font: 400 clamp(16px, 1.4vw, 19px)/1.5 var(--font-body);
-  color: #4a4540;
+  font: 400 clamp(16px, 1.4vw, 20px)/1.5 var(--font-body);
+  color: #3b3733;
   margin: 0 0 36px;
 }
 
@@ -298,7 +307,7 @@
   font: 600 12px/1.2 var(--font-body);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--editorial-carbon);
+  color: #1d1b19;
   text-decoration: none;
   border-bottom: 1px solid var(--editorial-red);
   padding-bottom: 4px;
@@ -368,20 +377,25 @@
 .tension-primary{
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .tension-primary .tension-cause{
-  font: 600 11px/1.4 var(--font-body);
+  font: 600 12px/1.4 var(--font-body);
   color: #7a746e;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
 .tension-primary .tension-effect{
-  font: 400 clamp(24px, 2.4vw, 34px)/1.15 var(--font-display);
-  color: var(--editorial-carbon);
+  font: 400 clamp(28px, 2.8vw, 40px)/1.08 var(--font-display);
+  text-transform: uppercase;
+  color: #1d1b19;
   margin: 0;
+}
+
+.tension-primary .tension-effect .text-red{
+  color: var(--editorial-red);
 }
 
 .tension-secondary-stream{
@@ -391,13 +405,13 @@
 }
 
 .tension-sub-line{
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px solid rgba(45, 41, 38, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  font: 400 13px/1.4 var(--font-body);
+  font: 400 14px/1.4 var(--font-body);
 }
 
 .tension-sub-line span{
@@ -901,50 +915,71 @@
 .closing-inner{
   position: relative;
   z-index: 3;
-  width: 44%;
-  max-width: 520px;
+  width: 48%;
+  max-width: 580px;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
 .closing-preamble{
-  font: 500 13px/1.5 var(--font-body);
-  letter-spacing: 0.08em;
+  font: 500 clamp(20px, 2.2vw, 28px)/1.25 var(--font-body);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--editorial-carbon);
-  opacity: 0.85;
+  color: #1d1b19;
+  opacity: 0.95;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.closing-preamble span{
+  color: #1d1b19;
+  font-weight: 500;
+}
+
+.closing-preamble strong{
+  color: #1d1b19;
+  font-weight: 800;
+}
+
+.closing-preamble .preamble-gap{
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .closing-inner h2{
-  font: 400 clamp(44px, 5.5vw, 76px)/0.92 var(--font-display) !important;
+  font: 400 clamp(52px, 6.2vw, 86px)/0.9 var(--font-display) !important;
   letter-spacing: -0.035em !important;
-  color: var(--editorial-carbon) !important;
+  color: #ffffff !important;
   margin: 0 !important;
-  text-transform: none !important;
+  text-transform: uppercase !important;
 }
 
-.closing-inner h2 em{
-  font-style: italic;
-  font-weight: 400;
+.closing-inner h2 span,
+.closing-inner h2 .cta-highlight{
+  display: inline;
+  color: #ffffff;
+  font-style: normal;
 }
 
 .closing-button{
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--editorial-carbon);
+  background: #1d1b19;
   color: var(--editorial-ivory);
-  padding: 16px 28px;
+  padding: 18px 32px;
   font: 600 12px/1.2 var(--font-body);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 2px;
   align-self: flex-start;
-  margin-top: 12px;
+  margin-top: 8px;
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 

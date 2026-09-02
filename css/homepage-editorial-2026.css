@@ -433,8 +433,27 @@
 }
 
 .middle-header{
-  max-width: 620px;
+  max-width: 980px;
   margin-bottom: 0;
+}
+
+.middle-secondary-statement{
+  margin: 0 0 18px;
+  max-width: 880px;
+  font: 400 clamp(32px, 3.5vw, 50px)/1.04 var(--font-display);
+  letter-spacing: -0.025em;
+  color: #1d1b19;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.middle-ownership-statement{
+  margin: 0;
+  max-width: 760px;
+  font: 650 clamp(15px, 1.45vw, 19px)/1.4 var(--font-body);
+  letter-spacing: 0.045em;
+  color: var(--editorial-carbon);
+  text-transform: uppercase;
 }
 
 .middle-artwork-wrapper{
@@ -684,15 +703,18 @@
   display: block;
 }
 
-.numbers-conclusion{
+.numbers-interpretation{
   margin-top: clamp(40px, 4.5vw, 60px);
-  font: 400 clamp(20px, 2.2vw, 32px)/1.25 var(--font-display);
-  color: var(--editorial-carbon);
+  max-width: 980px;
+  font: 400 clamp(32px, 3.8vw, 54px)/1.04 var(--font-display);
+  letter-spacing: -0.025em;
+  color: #1d1b19;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
-.numbers-conclusion strong{
+.numbers-interpretation .text-red{
   color: var(--editorial-red);
-  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------
@@ -783,7 +805,16 @@
 }
 
 .ecosystem-header{
-  max-width: 600px;
+  max-width: 960px;
+}
+
+.ecosystem-ownership{
+  margin: 28px 0 0;
+  max-width: 760px;
+  font: 650 clamp(15px, 1.45vw, 19px)/1.4 var(--font-body);
+  letter-spacing: 0.045em;
+  color: var(--editorial-carbon);
+  text-transform: uppercase;
 }
 
 .ecosystem-editorial-media{
@@ -1171,15 +1202,17 @@
   max-width: 760px;
 }
 
-.gap-strategic-statement{
-  margin: 56px 0 0;
-  font: 400 clamp(24px, 2.2vw, 32px)/1.08 var(--font-display);
+.gap-investment-statement{
+  margin: 0 0 24px;
+  max-width: 920px;
+  font: 400 clamp(32px, 3.4vw, 44px)/1.06 var(--font-display);
   letter-spacing: -0.02em;
   color: #1d1b19;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 
-.gap-strategic-statement span{
+.gap-investment-statement .text-red{
   color: var(--editorial-red);
 }
 
@@ -1244,9 +1277,19 @@
     gap: 40px;
   }
 
-  .gap-strategic-statement{
-    margin-top: 44px;
-    font-size: clamp(24px, 7.2vw, 30px);
+  .gap-investment-statement{
+    margin-bottom: 22px;
+    font-size: clamp(27px, 8vw, 34px);
+  }
+
+  .middle-secondary-statement,
+  .numbers-interpretation{
+    font-size: clamp(27px, 8vw, 34px);
+  }
+
+  .middle-ownership-statement,
+  .ecosystem-ownership{
+    font-size: 14px;
   }
 
   .gap-editorial-media img{ object-position: 50% 52%; }

@@ -135,17 +135,22 @@
 }
 
 /* --------------------------------------------------------------------------
-   02. Enterprise Hero Polish
+   02. Section 01: Hero (brandhere-home-01-hero.png)
    -------------------------------------------------------------------------- */
 .enterprise-hero{
+  position: relative;
+  height: 100svh;
+  min-height: 720px;
   background: var(--editorial-ivory) !important;
   color: var(--editorial-carbon) !important;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .enterprise-hero .hero-film{
-  inset: 0 0 0 45% !important;
-  opacity: 1 !important;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -153,17 +158,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 54%;
-  filter: grayscale(1) contrast(1.08);
+  object-position: 72% center;
+  transition: opacity 0.8s ease;
 }
 
 .enterprise-hero .hero-wash{
-  background: linear-gradient(90deg, var(--editorial-ivory) 0 43%, rgba(243, 240, 232, 0.92) 51%, rgba(243, 240, 232, 0.18) 73%, transparent 100%) !important;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.94) 40%, rgba(243, 240, 232, 0.55) 54%, rgba(243, 240, 232, 0.08) 72%, transparent 100%) !important;
+  pointer-events: none;
 }
 
 .enterprise-hero h1,
 .enterprise-hero p,
-.enterprise-hero a{
+.enterprise-hero a,
+.enterprise-hero .hero-capabilities,
+.enterprise-hero .hero-index{
   z-index: 2;
   color: var(--editorial-carbon) !important;
 }
@@ -182,7 +193,7 @@
 
 .enterprise-hero .hero-note{
   padding: 20px 24px;
-  background: rgba(243, 240, 232, 0.85);
+  background: rgba(243, 240, 232, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-left: 2px solid var(--editorial-red);
@@ -239,90 +250,50 @@
 }
 
 /* --------------------------------------------------------------------------
-   03. Section 01: The Adaptation Gap Visual & Tension
+   03. Section 02: Adaptation Gap (brandhere-home-02-adaptation-gap.png)
    -------------------------------------------------------------------------- */
-.editorial-gap-visual{
+.gap-grid-editorial{
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(36px, 5vw, 68px);
+  align-items: center;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.gap-artwork-figure{
+  margin: 0;
   position: relative;
-  min-height: 430px;
-  margin: clamp(2rem, 5vw, 5rem) 0 0;
   overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(45, 41, 38, 0.12);
   border-radius: 2px;
-  box-shadow: 0 10px 30px rgba(45, 41, 38, 0.04);
+  border: 1px solid rgba(45, 41, 38, 0.12);
+  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.05);
 }
 
-.gap-plane{
-  position: absolute;
-  top: 0;
-  bottom: 56px;
-  width: 46%;
-  background: linear-gradient(145deg, #fff 0%, #ddd 66%, #aaa 100%);
-  transition: clip-path 0.4s ease;
+.gap-artwork-figure img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
 }
 
-.gap-plane--left{
-  left: 0;
-  clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
-}
-
-.gap-plane--right{
-  right: 0;
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-  background: linear-gradient(215deg, #fff, #d9d9d9 67%, #999);
-}
-
-.gap-human{
-  position: absolute;
-  left: 50%;
-  bottom: 54px;
-  width: 12px;
-  height: 70px;
-  background: #111;
-  transform: translateX(-50%);
-  border-radius: 50% 50% 10% 10%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.gap-human::before{
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #111;
-  left: -3px;
-  top: -15px;
-}
-
-.gap-signal{
-  position: absolute;
-  left: 50%;
-  top: 12%;
-  bottom: 56px;
-  width: 1px;
-  background: var(--editorial-red);
-}
-
-.editorial-gap-visual figcaption{
-  position: absolute;
-  inset: auto 0 0;
+.gap-artwork-figure figcaption{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 18px 24px;
+  padding: 14px 20px;
   text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font: 600 11px Manrope, sans-serif;
-  background: #fff;
+  letter-spacing: 0.12em;
+  font: 600 10px Manrope, sans-serif;
+  background: var(--editorial-ivory);
   border-top: 1px solid rgba(45, 41, 38, 0.08);
 }
 
-.editorial-gap-visual figcaption strong{
+.gap-artwork-figure figcaption strong{
   text-align: center;
   color: var(--editorial-red);
 }
 
-.editorial-gap-visual figcaption span:last-child{
+.gap-artwork-figure figcaption span:last-child{
   text-align: right;
 }
 
@@ -337,8 +308,30 @@
 }
 
 /* --------------------------------------------------------------------------
-   04. Section 02: Missing Middle / Adaptation Layer Cards
+   04. Section 03: Missing Middle (brandhere-home-03-missing-middle.png)
    -------------------------------------------------------------------------- */
+.layer-artwork-container{
+  width: min(100%, 880px);
+  margin: clamp(32px, 4vw, 56px) auto clamp(24px, 3vw, 40px);
+}
+
+.missing-middle-figure{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid rgba(45, 41, 38, 0.12);
+  box-shadow: 0 14px 40px rgba(45, 41, 38, 0.06);
+}
+
+.missing-middle-figure img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+}
+
 .layer-editorial-axis{
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -400,7 +393,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   05. Practices & Method
+   05. Practices & Section 04: ADAPT Method (brandhere-home-04-adapt-method.png)
    -------------------------------------------------------------------------- */
 .practice-card a{
   display: inline-flex;
@@ -419,27 +412,45 @@
   overflow: hidden;
 }
 
-.method-signal{
+.method-split{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  position: absolute;
-  inset: 1rem 2vw auto;
-  pointer-events: none;
-  font: 400 clamp(7rem, 18vw, 18rem)/0.8 'Playfair Display', serif;
-  color: rgba(45, 41, 38, 0.035);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  margin-top: clamp(36px, 4vw, 56px);
 }
 
-.method-signal span{
-  text-align: center;
+.method-figure{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid rgba(45, 41, 38, 0.12);
+  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.05);
+}
+
+.method-figure img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
 }
 
 .method-grid{
-  position: relative;
-  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--editorial-carbon);
+  border-left: 1px solid rgba(45, 41, 38, 0.2);
 }
 
 .method-grid article{
   background: rgba(255, 255, 255, 0.3);
+  padding: 24px 20px;
+  min-height: 160px;
+  border-right: 1px solid rgba(45, 41, 38, 0.2);
+  border-bottom: 1px solid rgba(45, 41, 38, 0.2);
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -450,16 +461,44 @@
 
 .method-grid article b{
   transition: transform 0.25s ease;
+  display: block;
+  color: var(--editorial-red);
+  font: 600 12px Manrope, sans-serif;
+  margin-bottom: 8px;
 }
 
 .method-grid article:hover b{
   transform: scale(1.1);
-  display: inline-block;
 }
 
 /* --------------------------------------------------------------------------
-   06. Evidence, Intelligence & Ecosystem
+   06. Section 05: Gap in Numbers (brandhere-home-05-gap-in-numbers.png)
    -------------------------------------------------------------------------- */
+.evidence-split{
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.evidence-artwork-figure{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid rgba(45, 41, 38, 0.12);
+  box-shadow: 0 12px 34px rgba(45, 41, 38, 0.05);
+}
+
+.evidence-artwork-figure img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+}
+
 .evidence-story-item small a{
   display: inline-block;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -470,51 +509,32 @@
   transform: translate(2px, -2px);
 }
 
+/* --------------------------------------------------------------------------
+   07. Section 06: Intelligence (brandhere-home-06-intelligence.png)
+   -------------------------------------------------------------------------- */
 .intelligence-intro{
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
-  gap: clamp(2rem, 6vw, 7rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(32px, 5vw, 64px);
   align-items: end;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(36px, 4vw, 54px);
 }
 
 .intelligence-editorial{
   position: relative;
   margin: 0;
-  min-height: 500px;
   overflow: hidden;
-  background: #111;
   border-radius: 2px;
+  border: 1px solid rgba(45, 41, 38, 0.12);
   box-shadow: 0 12px 34px rgba(45, 41, 38, 0.08);
 }
 
 .intelligence-editorial img{
   width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
-  object-position: center 30%;
-  filter: grayscale(1);
-}
-
-.intelligence-editorial::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 76% 24%, rgba(224, 60, 49, 0.8) 0 2px, transparent 3px) 0 0/18px 18px;
-  mask-image: linear-gradient(90deg, transparent 32%, #000);
-  -webkit-mask-image: linear-gradient(90deg, transparent 32%, #000);
-}
-
-.intelligence-signal{
-  position: absolute;
-  right: 9%;
-  top: 0;
-  width: 2px;
-  height: 46%;
-  background: var(--editorial-red);
-  z-index: 2;
+  object-position: 65% center;
 }
 
 .intelligence-editorial figcaption{
@@ -526,6 +546,11 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font: 600 10px Manrope, sans-serif;
+  background: rgba(45, 41, 38, 0.75);
+  padding: 6px 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 2px;
 }
 
 .intelligence-grid article{
@@ -544,85 +569,109 @@
   color: var(--editorial-red);
 }
 
-.ecosystem{
+/* --------------------------------------------------------------------------
+   08. Section 07: Ecosystem (brandhere-home-07-ecosystem.png)
+   -------------------------------------------------------------------------- */
+.ecosystem-intro-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(36px, 6vw, 72px);
+  align-items: center;
+}
+
+.ecosystem-artwork-figure{
+  margin: 0;
   position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid rgba(243, 240, 232, 0.15);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35);
 }
 
-.ecosystem-visual{
-  position: relative;
-  width: min(560px, 80vw);
-  aspect-ratio: 1;
-  margin: 3rem auto;
-  border: 1px solid var(--editorial-bone);
-  border-radius: 50%;
-  background: repeating-radial-gradient(circle, transparent 0 45px, rgba(45, 41, 38, 0.08) 46px 47px);
-  animation: orbitalBreathe 16s ease-in-out infinite alternate;
-}
-
-.ecosystem-visual i{
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--editorial-red);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 24px rgba(224, 60, 49, 0.35);
-}
-
-.ecosystem-visual span{
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--editorial-carbon);
-  transition: transform 0.4s ease;
-}
-
-.ecosystem-visual span:nth-of-type(1){ left: 18%; top: 28%; }
-.ecosystem-visual span:nth-of-type(2){ right: 20%; top: 18%; }
-.ecosystem-visual span:nth-of-type(3){ right: 13%; bottom: 25%; }
-.ecosystem-visual span:nth-of-type(4){ left: 22%; bottom: 14%; }
-.ecosystem-visual span:nth-of-type(5){ left: 48%; top: 10%; }
-
-@keyframes orbitalBreathe{
-  from{ transform: scale(0.98); }
-  to{ transform: scale(1.02); }
+.ecosystem-artwork-figure img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* --------------------------------------------------------------------------
-   07. Closing Conversion Section & Footer
+   09. Section 08: Closing CTA (brandhere-home-08-closing-cta.png)
    -------------------------------------------------------------------------- */
-.closing-section,
-.closing-cta{
-  background: var(--editorial-red) !important;
-  color: var(--editorial-carbon) !important;
+.closing--editorial{
+  position: relative;
+  min-height: clamp(540px, 85svh, 840px);
+  overflow: hidden;
+  background: var(--editorial-red);
+  color: var(--editorial-carbon);
+  display: flex;
+  align-items: center;
+  padding: clamp(60px, 8vw, 120px) clamp(24px, 7vw, 110px);
+  isolation: isolate;
 }
 
-.closing-section *,
-.closing-cta *{
-  color: var(--editorial-carbon) !important;
+.closing-bg-artwork{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
-.closing-section a,
-.closing-cta a{
-  background: var(--editorial-carbon) !important;
-  color: #fff !important;
-  border-color: var(--editorial-carbon) !important;
+.closing-bg-artwork img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% center;
 }
 
-.closing>a{
-  transition: padding 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+.closing-content-overlay{
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
 }
 
-.closing>a:hover{
-  background: var(--editorial-carbon) !important;
-  color: var(--editorial-ivory) !important;
+.closing-content-overlay p{
+  font: 500 11px/1.6 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--editorial-carbon);
+  margin-bottom: 24px;
 }
 
-.closing>a:hover span:last-child{
-  transform: translate(4px, -4px);
+.closing-content-overlay h2{
+  font: 400 clamp(54px, 8.5vw, 130px)/0.78 var(--d);
+  letter-spacing: -0.04em;
+  color: var(--editorial-carbon);
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+
+.closing-content-overlay h2 em{
+  font-style: italic;
+  color: #fff;
+}
+
+.closing-content-overlay a{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 28px;
+  background: var(--editorial-carbon);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2px;
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 28px rgba(45, 41, 38, 0.25);
+}
+
+.closing-content-overlay a:hover{
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(45, 41, 38, 0.35);
 }
 
 .site-footer--home .footer-nav a,
@@ -636,7 +685,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   08. Responsive Refinements
+   10. Responsive Breakpoint QA
    -------------------------------------------------------------------------- */
 @media(max-width:1100px){
   .focus-mark{ display: none !important; }
@@ -672,51 +721,65 @@
     color: var(--editorial-red) !important;
     padding-left: 6px;
   }
+
+  .gap-grid-editorial,
+  .method-split,
+  .evidence-split,
+  .intelligence-intro,
+  .ecosystem-intro-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .method-grid{
+    border-left: 0;
+    border-top: 1px solid rgba(45, 41, 38, 0.2);
+  }
+
+  .closing-bg-artwork img{
+    object-position: 85% center;
+  }
 }
 
 @media(max-width:780px){
-  .enterprise-hero .hero-film{
-    inset: 42% 0 0 22% !important;
+  .enterprise-hero .hero-film img{
+    object-position: 78% center;
   }
   .enterprise-hero .hero-wash{
-    background: linear-gradient(180deg, var(--editorial-ivory) 0 40%, rgba(243, 240, 232, 0.84) 58%, rgba(243, 240, 232, 0.15) 100%) !important;
+    background: linear-gradient(180deg, var(--editorial-ivory) 0%, rgba(243, 240, 232, 0.92) 42%, rgba(243, 240, 232, 0.3) 70%, transparent 100%) !important;
   }
   html[lang="vi"] .enterprise-hero .hero-headline-vi{
     font-size: 38px !important;
     line-height: 0.91 !important;
     letter-spacing: -0.045em;
   }
-  .editorial-gap-visual{
-    min-height: 310px;
+  .closing-bg-artwork img{
+    object-position: 90% center;
   }
-  .intelligence-intro{
+}
+
+@media(max-width:600px){
+  .method-grid{
     grid-template-columns: 1fr;
   }
-  .intelligence-editorial{
-    min-height: 420px;
+  .closing-content-overlay{
+    max-width: 100%;
   }
-  .method-signal{
-    font-size: 28vw;
-  }
-  .ecosystem-visual{
-    width: 88vw;
+  .closing-content-overlay a{
+    width: 100%;
   }
 }
 
 /* --------------------------------------------------------------------------
-   09. Reduced Motion Support
+   11. Reduced Motion Support
    -------------------------------------------------------------------------- */
 @media(prefers-reduced-motion:reduce){
-  .editorial-gap-visual *,
-  .ecosystem-visual,
-  .ecosystem-visual *{
-    animation: none !important;
-    transition: none !important;
-  }
   .layer-flow article,
   .intelligence-grid article,
   .hero-arrow,
-  .closing>a{
+  .closing-content-overlay a,
+  .method-grid article{
+    animation: none !important;
     transition: none !important;
   }
 }
+

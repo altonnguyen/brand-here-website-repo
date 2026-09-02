@@ -8,6 +8,80 @@
 }
 
 /* --------------------------------------------------------------------------
+   14. V4 micro-signature motifs — editorial punctuation only
+   -------------------------------------------------------------------------- */
+.signature-motif{
+  --signature-dot: 6px;
+  --signature-gap: 15px;
+  position: relative;
+  z-index: 2;
+  height: 0;
+  pointer-events: none;
+}
+
+.signature-motif__inner,
+.signature-motif__dots{
+  display: flex;
+  align-items: center;
+}
+
+.signature-motif__inner{
+  position: absolute;
+  top: clamp(46px, 4vw, 60px);
+  left: 50%;
+  gap: var(--signature-gap);
+  transform: translateX(-50%);
+}
+
+.signature-motif i{
+  display: block;
+  width: var(--signature-dot);
+  height: var(--signature-dot);
+  flex: 0 0 var(--signature-dot);
+  border-radius: 50%;
+  background: rgba(29, 27, 25, 0.72);
+}
+
+.signature-motif i.is-signal{
+  background: var(--editorial-red);
+}
+
+.signature-motif--transition .signature-motif__inner{
+  gap: 12px;
+}
+
+.signature-motif__dots{
+  gap: 12px;
+}
+
+.signature-motif--transition b{
+  display: block;
+  width: 42px;
+  height: 1px;
+  background: rgba(29, 27, 25, 0.26);
+}
+
+@media (max-width: 767px){
+  .signature-motif{
+    --signature-dot: 5px;
+    --signature-gap: 11px;
+  }
+
+  .signature-motif__inner{
+    top: 30px;
+  }
+
+  .signature-motif--transition .signature-motif__inner,
+  .signature-motif__dots{
+    gap: 10px;
+  }
+
+  .signature-motif--transition b{
+    width: 28px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    01. Global Header & Master Logo
    -------------------------------------------------------------------------- */
 .site-header{

@@ -84,7 +84,12 @@
 /* --------------------------------------------------------------------------
    01. Global Header & Master Logo
    -------------------------------------------------------------------------- */
-.site-header{
+.site-header,
+header.site-header--home,
+.nav.site-header{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
   background: rgba(243, 240, 232, 0.94) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);

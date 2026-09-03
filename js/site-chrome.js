@@ -1,5 +1,5 @@
 (function () {
-  var header = document.querySelector('header.site-header--inner');
+  var header = document.querySelector('header.site-header');
   if (!header) return;
 
   var toggle = header.querySelector('.mobile-toggle');

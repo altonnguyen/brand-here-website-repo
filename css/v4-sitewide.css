@@ -500,6 +500,14 @@ input:focus, select:focus, textarea:focus,
   color: var(--v4-ivory) !important;
 }
 
+/* The legacy layout places CTA children in a two-column grid. V4 closing
+   statements are a single editorial thought, so keep their label, headline
+   and action in one readable column. */
+.final-cta .wrap {
+  display: block !important;
+  width: min(100% - clamp(48px, 8vw, 112px), 1280px) !important;
+}
+
 .final-cta .wrap::before {
   content: "THE NEXT MOVE";
   display: block;
@@ -527,7 +535,7 @@ html[lang="vi"] .final-cta .wrap::before {
 }
 
 .final-cta h2 {
-  max-width: 950px !important;
+  max-width: 1000px !important;
   margin: 0 0 clamp(32px, 4vw, 48px) !important;
   font: 400 clamp(46px, 6vw, 72px)/0.98 "Playfair Display", Georgia, serif !important;
   letter-spacing: -0.035em !important;

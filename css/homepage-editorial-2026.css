@@ -646,8 +646,8 @@ header.site-header--home,
 
 .halo-core{
   position: absolute;
-  left: 50%;
-  top: 46.8%;
+  left: 49.3%;
+  top: 50.4%;
   width: 140px;
   height: 140px;
   transform: translate(-50%, -50%);
@@ -659,8 +659,8 @@ header.site-header--home,
 
 .halo-ring{
   position: absolute;
-  left: 50%;
-  top: 46.8%;
+  left: 49.3%;
+  top: 50.4%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 1px solid rgba(224, 60, 49, 0.28);
@@ -721,7 +721,6 @@ header.site-header--home,
 
 .middle-hotspot{
   position: absolute;
-  top: 46.8%;
   transform: translate(-50%, -50%);
   background: transparent;
   border: 0;
@@ -734,9 +733,9 @@ header.site-header--home,
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hotspot--capability{ left: 20%; }
-.hotspot--adaptation{ left: 50%; }
-.hotspot--reality{ left: 80%; }
+.hotspot--capability{ left: 19.5%; top: 48.0%; }
+.hotspot--adaptation{ left: 49.3%; top: 50.4%; }
+.hotspot--reality{ left: 79.5%; top: 48.0%; }
 
 .hotspot-pin{
   position: relative;

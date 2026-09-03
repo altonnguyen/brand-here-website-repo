@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 
 :root {
-  --navy: #2D2926;
-  --navy-light: #403A35;
+  --navy: #1D1B19;
+  --navy-light: #2D2926;
   --gold: #E03C31;
   --gold-light: #E65A50;
   --ivory: #F3F0E8;
-  --ivory-deep: #D6D2C4;
+  --ivory-deep: #EAE6DC;
   --paper: #F3F0E8;
-  --ink-soft: #6C6660;
-  --line: rgba(45, 41, 38, 0.18);
+  --ink-soft: #2D2926;
+  --line: rgba(29, 27, 25, 0.16);
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --serif: var(--font-display);

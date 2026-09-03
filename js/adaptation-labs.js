@@ -15,8 +15,8 @@
       entry.type='button';entry.className='lab-index-entry';entry.setAttribute('aria-expanded','false');entry.setAttribute('aria-controls',panelId);entry.textContent=vi?'Mở thử nghiệm ↗':'Open experiment ↗';
       entry.addEventListener('click',function(){
         var open=entry.getAttribute('aria-expanded')==='true';
-        root.querySelectorAll('.lab-index-entry[aria-expanded="true"]').forEach(function(other){if(other!==entry){other.setAttribute('aria-expanded','false');other.textContent=vi?'Mở thử nghiệm ↗':'Open experiment ↗';var otherPanel=document.getElementById(other.getAttribute('aria-controls'));if(otherPanel)otherPanel.hidden=true;}});
-        entry.setAttribute('aria-expanded',String(!open));entry.textContent=!open?(vi?'Đóng thử nghiệm −':'Close experiment −'):(vi?'Mở thử nghiệm ↗':'Open experiment ↗');panel.hidden=open;
+        root.querySelectorAll('.lab-index-entry[aria-expanded="true"]').forEach(function(other){if(other!==entry){other.setAttribute('aria-expanded','false');other.textContent=vi?'Mở thử nghiệm ↗':'Open experiment ↗';var otherPanel=document.getElementById(other.getAttribute('aria-controls'));if(otherPanel){otherPanel.hidden=true;var otherLab=otherPanel.closest('.adaptation-lab');if(otherLab)otherLab.classList.remove('is-expanded');}}});
+        entry.setAttribute('aria-expanded',String(!open));entry.textContent=!open?(vi?'Đóng thử nghiệm −':'Close experiment −'):(vi?'Mở thử nghiệm ↗':'Open experiment ↗');panel.hidden=open;lab.classList.toggle('is-expanded',!open);
       });
       content.appendChild(entry);content.appendChild(panel);
     });

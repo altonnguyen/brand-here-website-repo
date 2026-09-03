@@ -1277,7 +1277,7 @@ header.site-header--home,
 }
 
 .labs-teaser-copy{
-  max-width: 620px;
+  max-width: 850px;
 }
 
 .labs-teaser-copy .section-label{
@@ -1286,7 +1286,7 @@ header.site-header--home,
 }
 
 .labs-teaser-copy p{
-  font: 400 clamp(17px, 1.8vw, 22px)/1.35 var(--font-display);
+  font: 400 clamp(30px, 3vw, 48px)/1.08 var(--font-display);
   color: var(--editorial-carbon);
   margin: 0 0 8px;
 }

@@ -244,6 +244,17 @@ p, li, dd, span {
   border-color: var(--v4-line) !important;
 }
 
+/* The paired practices rely on one deliberate tonal shift. Restore the dark
+   second panel so its existing label, description and link remain legible. */
+.practice-pair .practice-card:nth-child(2) {
+  background: var(--v4-carbon) !important;
+  color: var(--v4-ivory) !important;
+}
+
+.practice-pair .practice-card:nth-child(2) :is(h2, h3, p, small, a) {
+  color: var(--v4-ivory) !important;
+}
+
 .practice-pair {
   background: var(--v4-ivory) !important;
 }
@@ -829,6 +840,115 @@ main[data-adaptation-labs] .adaptation-lab .editorial-media-slot {
 
 main[data-adaptation-labs] .adaptation-lab h2 {
   font-size: clamp(32px, 3vw, 44px) !important;
+}
+
+/* A launched experiment becomes an editorial full-width instrument. The
+   closed index remains three-up; controls never inherit a narrow card column. */
+main[data-adaptation-labs] .adaptation-lab.is-expanded {
+  grid-column: 1 / -1 !important;
+}
+
+main[data-adaptation-labs] .lab-index-entry {
+  appearance: none;
+  display: inline-block;
+  margin-top: 24px;
+  padding: 0 0 5px;
+  color: var(--v4-carbon);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--v4-red);
+  border-radius: 0;
+  font: 600 11px/1.25 'Manrope', Arial, sans-serif;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+main[data-adaptation-labs] .lab-index-entry:focus-visible {
+  outline: 2px solid var(--v4-red);
+  outline-offset: 5px;
+}
+
+main[data-adaptation-labs] .adaptation-lab[data-lab="brand-mirror"] textarea {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: none !important;
+  color: var(--v4-ivory) !important;
+  background: var(--v4-red) !important;
+  border-color: var(--v4-red) !important;
+}
+
+main[data-adaptation-labs] .adaptation-lab[data-lab="brand-mirror"] textarea::placeholder {
+  color: rgba(243, 240, 232, 0.78) !important;
+  opacity: 1;
+}
+
+main[data-adaptation-labs] .privacy-section .wrap.prose {
+  max-width: 1320px;
+  margin-inline: auto;
+}
+
+main[data-adaptation-labs] .privacy-section .privacy-note {
+  max-width: none;
+  margin-left: 0;
+}
+
+@media (min-width: 1600px) {
+  main[data-adaptation-labs] .privacy-section .privacy-note {
+    white-space: nowrap;
+  }
+}
+
+/* Adaptation page: keep the reveal as a calm editorial index. Fixed grid
+   columns replace the unstable arrow sentence that wrapped 4 + 2. */
+[data-gap-reveal-section] .gap-reveal-toggle {
+  margin-top: 32px;
+  padding: 0 0 6px;
+  color: var(--v4-carbon);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--v4-red);
+  border-radius: 0;
+  font: 600 11px/1.25 'Manrope', Arial, sans-serif;
+  letter-spacing: 0.09em;
+}
+
+[data-gap-reveal-section] .gap-reveal-list,
+[data-gap-reveal-section].js-enhanced .gap-reveal-list.is-open {
+  counter-reset: adapt-step;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 28px;
+  padding: 0;
+  border-top: 1px solid var(--v4-line-strong);
+}
+
+[data-gap-reveal-section] .gap-reveal-list li {
+  counter-increment: adapt-step;
+  min-width: 0;
+  padding: 18px 18px 18px 0;
+  border-bottom: 1px solid var(--v4-line-strong);
+}
+
+[data-gap-reveal-section] .gap-reveal-list li::before {
+  content: '0' counter(adapt-step);
+  display: block;
+  margin-bottom: 8px;
+  color: var(--v4-red);
+  font-size: 10px;
+}
+
+[data-gap-reveal-section] .gap-reveal-list li::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  [data-gap-reveal-section] .gap-reveal-list,
+  [data-gap-reveal-section].js-enhanced .gap-reveal-list.is-open {
+    grid-template-columns: 1fr;
+  }
 }
 
 .field-notes .insight-article,

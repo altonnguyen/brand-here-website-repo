@@ -25,7 +25,7 @@
   .rsvp-form .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#536174}.rsvp-form .consent input{width:auto;margin-top:5px}.form-note{font-size:13px;color:#536174}.form-error{display:none;color:#a52720;font-size:14px}
   @media(max-width:800px){.event-copy{padding:90px 0}.event-hero{min-height:650px}.rsvp-layout{grid-template-columns:1fr;gap:48px}.rsvp-form{grid-template-columns:1fr}.rsvp-form .full{grid-column:auto}}
 </style>
-<link rel="alternate" hreflang="x-default" href="https://brandhere.co/next-stage"><meta property="og:type" content="website"><meta property="og:locale" content="vi_VN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="From AI Ambition to Team Adoption — RSVP | Brand Here"><meta name="twitter:description" content="Làm sao để AI thực sự đi vào vận hành — từ mong muốn của founder đến năng lực của đội ngũ."><meta name="twitter:image" content="https://brandhere.co/images/og-concept-3.jpg?v=1"><link rel="stylesheet" href="css/v4-sitewide.css?v=8"></head>
+<link rel="alternate" hreflang="x-default" href="https://brandhere.co/next-stage"><meta property="og:type" content="website"><meta property="og:locale" content="vi_VN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="From AI Ambition to Team Adoption — RSVP | Brand Here"><meta name="twitter:description" content="Làm sao để AI thực sự đi vào vận hành — từ mong muốn của founder đến năng lực của đội ngũ."><meta name="twitter:image" content="https://brandhere.co/images/og-concept-3.jpg?v=1"><link rel="stylesheet" href="css/v4-sitewide.css?v=9"></head>
 <body class="event-page">
 <header class="site-header"><div class="wrap"><nav><a href="./" class="logo" aria-label="Brand Here"></a><a href="#rsvp" class="nav-cta">Request a Seat</a></nav></div></header>
 <main>
@@ -64,4 +64,4 @@ const params=new URLSearchParams(location.search);document.getElementById('sourc
 const form=document.getElementById('rsvpForm'),button=document.getElementById('submitBtn'),error=document.getElementById('formError');
 form.addEventListener('submit',async e=>{e.preventDefault();error.style.display='none';button.disabled=true;button.textContent='Đang gửi…';const data=Object.fromEntries(new FormData(form).entries());try{const response=await fetch(form.action,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});if(!response.ok)throw new Error();location.href='next-stage-confirmation';}catch(_){error.style.display='block';button.disabled=false;button.textContent='Gửi RSVP';}});
 </script>
-<script src="js/back-to-top.js?v=2" defer></script><script src="js/sonic.js?v=3" defer></script></body></html>
+<script src="js/back-to-top.js?v=2" defer></script><script src="js/sonic.js?v=4" defer></script></body></html>

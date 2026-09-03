@@ -647,3 +647,246 @@ html[lang="vi"] .final-cta .wrap::before {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* 12. V4 Internal-page correction — compact rhythm, intentional surfaces */
+.page-hero {
+  padding: clamp(84px, 7vw, 112px) 0 clamp(72px, 6vw, 96px) !important;
+}
+
+.page-hero h1 {
+  font-size: clamp(52px, 6vw, 82px) !important;
+}
+
+.page-hero .wrap::after {
+  margin-top: clamp(38px, 4vw, 52px) !important;
+}
+
+.section {
+  padding: clamp(68px, 6vw, 96px) 0 !important;
+}
+
+.adaptation-band,
+.gap-editorial,
+.adaptation-layer,
+.method-strip,
+.ecosystem,
+.intelligence-preview,
+.commercial-ladder,
+.network-thesis,
+.academy-bridge,
+.partner-trust,
+.decision-commercial,
+.decision-fit,
+.radio-system,
+.game-experiment {
+  padding-block: clamp(68px, 6vw, 96px) !important;
+}
+
+main[data-adaptation-labs] > .section {
+  padding-block: clamp(68px, 6vw, 96px) !important;
+}
+
+.practice-card {
+  min-height: 0 !important;
+  padding-block: clamp(64px, 6vw, 92px) !important;
+}
+
+.adapt-offering-list article,
+.case-card {
+  padding-block: clamp(42px, 4vw, 64px) !important;
+}
+
+.final-cta {
+  min-height: 0 !important;
+  padding: clamp(76px, 7vw, 108px) 0 !important;
+}
+
+/* Light cards sit on the warm bone field; dark cards retain deliberate contrast. */
+.intelligence-grid article,
+.commercial-grid article,
+.adaptation-lab,
+.lab-card,
+.partner-card,
+.value-path,
+.decision-fit-grid p {
+  background: var(--v4-ivory) !important;
+  border-color: var(--v4-line-strong) !important;
+}
+
+.intelligence-grid article,
+.commercial-grid article {
+  min-height: 0 !important;
+  padding: clamp(24px, 2.5vw, 36px) !important;
+}
+
+.commercial-grid article:first-child,
+.lab-card:nth-child(3n+1),
+.insight-cluster--featured,
+.network-thesis,
+.decision-commercial,
+.radio-system,
+.game-experiment {
+  background: var(--v4-carbon) !important;
+  color: var(--v4-ivory) !important;
+}
+
+.commercial-grid article:first-child :is(h2, h3, h4, p, small, span),
+.lab-card:nth-child(3n+1) :is(h2, h3, h4, p, small, span),
+.insight-cluster--featured :is(h2, h3, h4, p, small),
+.network-thesis :is(h1, h2, h3, h4, p, blockquote, span),
+.decision-commercial :is(h1, h2, h3, h4, p, blockquote, span),
+.radio-system :is(h1, h2, h3, h4, p, blockquote, span),
+.game-experiment :is(h1, h2, h3, h4, p, blockquote, span) {
+  color: var(--v4-ivory) !important;
+}
+
+.network-thesis-copy p,
+.decision-commercial p,
+.radio-system p,
+.game-experiment p,
+.insight-cluster--featured p {
+  color: rgba(243, 240, 232, 0.78) !important;
+}
+
+/* Editorial pathways: equal cells without the legacy double-height feature block. */
+.insight-cluster-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  background: var(--v4-line-strong) !important;
+  border: 0 !important;
+}
+
+.insight-cluster,
+.insight-cluster--featured,
+.insight-cluster:nth-child(4),
+.insight-cluster:nth-child(5) {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  min-height: 0 !important;
+  padding: clamp(30px, 3vw, 44px) !important;
+  background-color: var(--v4-ivory) !important;
+  border: 0 !important;
+}
+
+.insight-cluster--featured {
+  background-color: var(--v4-carbon) !important;
+}
+
+.insight-cluster--featured h2,
+.insight-cluster h2 {
+  font-size: clamp(30px, 3vw, 44px) !important;
+}
+
+.insight-cluster .editorial-media-slot[data-image-available="true"],
+.intelligence-grid .editorial-media-slot[data-image-available="true"] {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 0 28px !important;
+}
+
+.field-notes .insight-article,
+.field-notes .insight-article:nth-of-type(3) {
+  max-width: 860px !important;
+  margin-left: 0 !important;
+  padding-block: clamp(46px, 5vw, 70px) !important;
+}
+
+/* Expert network: equal portrait scale and a stable, non-alternating grid. */
+.expert-profile-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  background: var(--v4-line-strong) !important;
+  border: 1px solid var(--v4-line-strong) !important;
+}
+
+.expert-profile {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+  min-width: 0 !important;
+  padding: clamp(28px, 3vw, 42px) !important;
+  background: var(--v4-ivory) !important;
+  border: 0 !important;
+}
+
+.expert-profile:nth-child(even) .expert-profile-portrait {
+  order: initial !important;
+}
+
+.expert-profile:nth-child(even) .expert-profile-content {
+  margin-left: 0 !important;
+}
+
+.expert-profile-portrait,
+.expert-profile-portrait--nam,
+.expert-profile-portrait--dung {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  background: var(--v4-bone) !important;
+}
+
+.expert-profile-portrait img,
+.expert-profile-portrait--nam img,
+.expert-profile-portrait--dung img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.expert-profile h3 {
+  font-size: clamp(38px, 4vw, 56px) !important;
+}
+
+.expert-profile-content {
+  max-width: none !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .insight-cluster-grid,
+  .expert-profile-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    padding: 72px 0 64px !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(38px, 10vw, 52px) !important;
+  }
+
+  .section,
+  .adaptation-band,
+  .gap-editorial,
+  .adaptation-layer,
+  .method-strip,
+  .ecosystem,
+  .intelligence-preview,
+  .commercial-ladder,
+  .network-thesis,
+  .academy-bridge,
+  .partner-trust,
+  main[data-adaptation-labs] > .section {
+    padding-block: 58px !important;
+  }
+
+  .final-cta {
+    padding: 68px 0 76px !important;
+  }
+
+  .expert-profile {
+    padding: 24px !important;
+  }
+
+  .expert-profile-portrait,
+  .expert-profile-portrait--nam,
+  .expert-profile-portrait--dung {
+    aspect-ratio: 1 / 1 !important;
+  }
+}

@@ -30,6 +30,7 @@
       "cursor:pointer;transition:border-color .2s ease,transform .2s ease;}",
       ".bh-sound-toggle:hover{transform:translateY(-2px);border-color:#E03C31;}",
       ".bh-sound-toggle:focus-visible{outline:2px solid #E03C31;outline-offset:3px;}",
+      ".bh-sound-toggle>span:not(.bh-sound-dot){color:#F3F0E8!important;opacity:1!important;}",
       ".bh-sound-toggle .bh-sound-dot{font-size:13px;line-height:1;color:#E03C31;}",
       ".bh-sound-toggle[aria-pressed=\"true\"] .bh-sound-dot{color:#E03C31;}",
       "@media (max-width:640px){.bh-sound-toggle{top:calc(76px + env(safe-area-inset-top));right:12px;bottom:auto;padding:8px 11px;font-size:9px;}}",

@@ -719,6 +719,11 @@ main[data-adaptation-labs] > .section {
   padding: clamp(24px, 2.5vw, 36px) !important;
 }
 
+/* Intelligence artwork is too low-contrast to earn its vertical footprint. */
+.intelligence-grid .editorial-media-slot {
+  display: none !important;
+}
+
 .commercial-grid article:first-child,
 .lab-card:nth-child(3n+1),
 .insight-cluster--featured,
@@ -750,7 +755,7 @@ main[data-adaptation-labs] > .section {
 
 /* Editorial pathways: equal cells without the legacy double-height feature block. */
 .insight-cluster-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 1px !important;
   background: var(--v4-line-strong) !important;
   border: 0 !important;
@@ -784,6 +789,48 @@ main[data-adaptation-labs] > .section {
   margin: 0 0 28px !important;
 }
 
+.insight-cluster .editorial-media-slot {
+  display: none !important;
+}
+
+/* The current Work case uses text evidence; its low-contrast media slot only
+   delays the case content below the fold. */
+.work-page .case-card--flagship .editorial-media-slot {
+  display: none !important;
+}
+
+/* Labs follow the same three-column editorial cadence as Experts/Insights. */
+main[data-adaptation-labs] .lab-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  background: var(--v4-line-strong) !important;
+}
+
+main[data-adaptation-labs] .lab-grid::before {
+  content: none !important;
+  display: none !important;
+}
+
+main[data-adaptation-labs] .lab-group-heading {
+  grid-column: 1 / -1 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 0 28px !important;
+}
+
+main[data-adaptation-labs] .lab-group-heading--more {
+  display: none !important;
+}
+
+main[data-adaptation-labs] .adaptation-lab .editorial-media-slot {
+  display: none !important;
+}
+
+main[data-adaptation-labs] .adaptation-lab h2 {
+  font-size: clamp(32px, 3vw, 44px) !important;
+}
+
 .field-notes .insight-article,
 .field-notes .insight-article:nth-of-type(3) {
   max-width: 860px !important;
@@ -794,7 +841,7 @@ main[data-adaptation-labs] > .section {
 /* Expert network: equal portrait scale and a stable, non-alternating grid. */
 .expert-profile-list {
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 1px !important;
   background: var(--v4-line-strong) !important;
   border: 1px solid var(--v4-line-strong) !important;
@@ -837,7 +884,8 @@ main[data-adaptation-labs] > .section {
 }
 
 .expert-profile h3 {
-  font-size: clamp(38px, 4vw, 56px) !important;
+  font-size: clamp(32px, 3vw, 46px) !important;
+  overflow-wrap: anywhere !important;
 }
 
 .expert-profile-content {
@@ -845,9 +893,18 @@ main[data-adaptation-labs] > .section {
   padding-top: 0 !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
   .insight-cluster-grid,
-  .expert-profile-list {
+  .expert-profile-list,
+  main[data-adaptation-labs] .lab-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .insight-cluster-grid,
+  .expert-profile-list,
+  main[data-adaptation-labs] .lab-grid {
     grid-template-columns: 1fr !important;
   }
 }

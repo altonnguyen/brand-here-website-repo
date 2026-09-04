@@ -181,7 +181,7 @@ h1, h2, h3, h4, h5,
 .adaptation-lab h2,
 .practice-card h2,
 .service-index-heading,
-.legacy-index h3,
+.work-card-title,
 .expert-card h2,
 .expert-card h3 {
   font-family: "Playfair Display", Georgia, serif !important;
@@ -209,7 +209,6 @@ p, li, dd, span {
 .insight-cluster p,
 .expert-card p,
 .adaptation-lab p,
-.legacy-index p,
 .editorial-index span,
 .adapt-offering-list p,
 .case-evidence dd,
@@ -356,30 +355,98 @@ p, li, dd, span {
   line-height: 1.65 !important;
 }
 
-.legacy-index {
-  margin-top: 60px !important;
-  border-top: 1px solid var(--v4-line) !important;
-}
-
-.legacy-index article {
+/* 06. Work Archive Grid & Card Architecture */
+.work-archive-grid {
   display: grid !important;
-  grid-template-columns: 160px minmax(220px, 0.7fr) 1fr !important;
-  gap: clamp(28px, 5vw, 72px) !important;
-  padding: 34px 0 !important;
-  border-bottom: 1px solid var(--v4-line) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(24px, 2.5vw, 32px) !important;
+  margin-top: 40px !important;
+  border-top: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.legacy-index h3 {
+@media (max-width: 1100px) {
+  .work-archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .work-archive-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+.work-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: clamp(26px, 2.4vw, 34px) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid var(--v4-line) !important;
+  border-radius: 2px !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.work-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(45, 41, 38, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.work-card-header {
+  margin-bottom: 20px !important;
+}
+
+.work-card-client {
+  font: 600 10.5px/1.2 var(--font-body) !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--v4-red) !important;
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+.work-card-title {
   margin: 0 !important;
-  font: 400 clamp(24px, 2.5vw, 34px)/1.08 "Playfair Display", Georgia, serif !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(21px, 1.65vw, 26px) !important;
+  line-height: 1.2 !important;
   color: var(--v4-carbon) !important;
+  letter-spacing: -0.025em !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
-.legacy-index p {
-  margin: 0 !important;
-  color: #242220 !important;
-  line-height: 1.65 !important;
+.work-card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(45, 41, 38, 0.08) !important;
+  margin-top: auto !important;
 }
+
+.work-card-body p {
+  margin: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #4a453f !important;
+}
+
+.work-card-body p strong {
+  color: var(--v4-carbon) !important;
+  font-weight: 600 !important;
+}
+
+
 
 /* 07. Insights Hub & Cluster Grid */
 .insight-cluster-grid {
@@ -629,10 +696,6 @@ html[lang="vi"] .final-cta .wrap::before {
   }
   .case-evidence {
     grid-template-columns: 1fr !important;
-  }
-  .legacy-index article {
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
   }
   .final-cta {
     padding: 90px 0 100px !important;

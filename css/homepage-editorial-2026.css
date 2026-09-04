@@ -1756,3 +1756,813 @@ header.site-header--home,
     color: var(--editorial-ivory) !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   14. Executive Conversion V2 Section Styles
+   -------------------------------------------------------------------------- */
+
+/* Hero subnav & actions */
+.hero-actions-group {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero-subnav {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 500 11px/1.2 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a746e;
+}
+
+.hero-subnav a {
+  color: var(--editorial-carbon);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.2);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-subnav a:hover {
+  color: var(--editorial-red);
+  border-color: var(--editorial-red);
+}
+
+/* Section 02 - Executive Recognition stream */
+.recognition-stream {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recognition-stream p {
+  font: 400 clamp(15px, 1.25vw, 17px)/1.55 var(--font-body);
+  color: #4a453f;
+  margin: 0;
+}
+
+.recognition-stream p.recognition-pivot {
+  font: 500 clamp(17px, 1.35vw, 19px)/1.4 var(--font-display);
+  color: var(--editorial-red);
+  margin: 12px 0 6px;
+  text-transform: uppercase;
+}
+
+/* Section 03 - Tensions Grid */
+.tensions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.tension-card {
+  padding: 32px 28px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(45, 41, 38, 0.1);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tension-card:hover {
+  border-color: var(--editorial-red);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.tension-tag {
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+}
+
+.tension-card h3 {
+  font: 400 clamp(16px, 1.3vw, 19px)/1.45 var(--font-display);
+  color: var(--editorial-carbon);
+  margin: 0;
+  font-weight: 400;
+}
+
+.tensions-closing-thought {
+  margin-top: 40px;
+  font: 400 clamp(18px, 1.6vw, 24px)/1.35 var(--font-display);
+  font-style: italic;
+  color: #5c5752;
+  text-align: center;
+}
+
+/* Section 04 - Marketing Pain Layout */
+.marketing-pain-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+}
+
+.marketing-pain-subhead {
+  font: 400 clamp(24px, 2.5vw, 36px)/1.12 var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--editorial-carbon);
+  text-transform: uppercase;
+  margin: 16px 0 0;
+}
+
+.marketing-pain-stream {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
+}
+
+.pain-line {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.1);
+  font: 400 clamp(15px, 1.25vw, 18px)/1.5 var(--font-body);
+  color: #3b3733;
+}
+
+.pain-line span {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--editorial-red);
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.marketing-pain-insight {
+  margin-top: 32px;
+  padding: 24px;
+  background: rgba(29, 27, 25, 0.04);
+  border-left: 2px solid var(--editorial-red);
+}
+
+.marketing-pain-insight p {
+  font: 400 15px/1.55 var(--font-body);
+  color: #3b3733;
+  margin: 0 0 8px;
+}
+
+.marketing-pain-insight .insight-highlight {
+  font: 500 clamp(17px, 1.4vw, 20px)/1.35 var(--font-display);
+  color: #1d1b19;
+  margin: 0;
+}
+
+/* Section 05 - Brand Here Philosophy */
+.philosophy-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 5vw, 72px);
+  align-items: start;
+  margin-top: 36px;
+}
+
+.philosophy-steps-stream {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
+}
+
+.phil-step {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.1);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font: 400 14px/1.55 var(--font-body);
+  color: #4a453f;
+}
+
+.phil-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--editorial-red);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.phil-step strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1b19;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.philosophy-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.philosophy-narrative p {
+  font: 400 clamp(15px, 1.25vw, 17px)/1.65 var(--font-body);
+  color: #4a453f;
+  margin: 0;
+}
+
+.philosophy-narrative .narrative-lead {
+  font: 400 clamp(20px, 1.8vw, 26px)/1.3 var(--font-display);
+  color: #1d1b19;
+}
+
+.philosophy-narrative .narrative-closing {
+  font: 500 clamp(16px, 1.3vw, 18px)/1.4 var(--font-display);
+  color: var(--editorial-red);
+  border-top: 1px solid rgba(45, 41, 38, 0.12);
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+/* Section 06 - Missing Middle contrast list */
+.middle-contrast-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 40px;
+  margin-top: 48px;
+  border-top: 1px solid rgba(45, 41, 38, 0.12);
+  padding-top: 24px;
+}
+
+.contrast-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.08);
+  font: 400 14px/1.4 var(--font-body);
+}
+
+.contrast-row span {
+  color: #7a746e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+}
+
+.contrast-row em {
+  font-family: var(--font-display);
+  font-style: normal;
+  color: #1d1b19;
+  font-size: 16px;
+}
+
+/* Section 07 - Point of View */
+.pov-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 5vw, 72px);
+  align-items: start;
+}
+
+.pov-stream {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
+}
+
+.pov-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.1);
+  font: 400 15px/1.4 var(--font-body);
+  color: #5c5752;
+}
+
+.pov-takeaway {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pov-takeaway p {
+  font: 400 clamp(15px, 1.25vw, 17px)/1.6 var(--font-body);
+  color: #4a453f;
+  margin: 0;
+}
+
+.pov-takeaway .pov-highlight {
+  font: 400 clamp(20px, 1.8vw, 26px)/1.3 var(--font-display);
+  color: #1d1b19;
+}
+
+.pov-takeaway .pov-conclusion {
+  font: 600 14px/1.2 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+  margin-top: 8px;
+}
+
+/* Section 08 - Two Ways to Create Change (Dual Territories) */
+.territories-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3.5vw, 48px);
+  margin-top: 48px;
+}
+
+.territory-card {
+  padding: 40px 36px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(45, 41, 38, 0.12);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.territory-card:hover {
+  border-color: var(--editorial-red);
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.territory-badge {
+  font: 600 10px/1 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+}
+
+.territory-card h3 {
+  font: 400 clamp(28px, 2.6vw, 38px)/1.05 var(--font-display);
+  letter-spacing: -0.02em;
+  color: #1d1b19;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.territory-mantra {
+  font: 600 12px/1.35 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+  margin: 0;
+}
+
+.territory-desc {
+  font: 400 14px/1.6 var(--font-body);
+  color: #4a453f;
+  margin: 0;
+}
+
+.territory-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(45, 41, 38, 0.08);
+}
+
+.territory-tags span {
+  font: 500 11px/1.2 var(--font-body);
+  padding: 5px 10px;
+  background: rgba(45, 41, 38, 0.05);
+  border-radius: 2px;
+  color: #2d2926;
+  letter-spacing: 0.02em;
+}
+
+.territory-link {
+  font: 600 11px/1.2 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1d1b19;
+  text-decoration: none;
+  border-bottom: 1px solid var(--editorial-red);
+  padding-bottom: 3px;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: auto;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.territory-link:hover {
+  color: var(--editorial-red);
+  transform: translateX(3px);
+}
+
+.territories-bridge {
+  margin-top: 48px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(45, 41, 38, 0.15);
+  border-bottom: 1px solid rgba(45, 41, 38, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font: 600 13px/1 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1d1b19;
+}
+
+.territories-bridge i {
+  font-style: normal;
+  color: var(--editorial-red);
+  font-weight: 400;
+}
+
+/* Section 09 - Heritage & Evolution */
+.heritage-body {
+  font: 400 clamp(15px, 1.25vw, 17px)/1.65 var(--font-body);
+  color: #4a453f;
+  margin: 0 0 16px;
+}
+
+.heritage-anchor {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(29, 27, 25, 0.04);
+  border-left: 2px solid var(--editorial-red);
+}
+
+.heritage-anchor .anchor-line-1 {
+  font: 600 12px/1.3 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+  margin: 0 0 6px;
+}
+
+.heritage-anchor .anchor-line-2 {
+  font: 400 clamp(17px, 1.4vw, 21px)/1.3 var(--font-display);
+  text-transform: uppercase;
+  color: #1d1b19;
+  margin: 0;
+}
+
+.heritage-milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.milestone-block {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(45, 41, 38, 0.1);
+  border-radius: 2px;
+}
+
+.milestone-block--current {
+  border-color: var(--editorial-red);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.milestone-year {
+  font: 600 12px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.milestone-block h4 {
+  font: 400 clamp(20px, 1.8vw, 24px)/1.2 var(--font-display);
+  color: #1d1b19;
+  margin: 0 0 8px;
+}
+
+.milestone-block p {
+  font: 400 14px/1.55 var(--font-body);
+  color: #5c5752;
+  margin: 0;
+}
+
+/* Section 10 - Proof of Marketing Heritage */
+.marketing-disciplines-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.12);
+}
+
+.discipline-tag {
+  font: 500 12px/1.2 var(--font-body);
+  letter-spacing: 0.04em;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(45, 41, 38, 0.1);
+  border-radius: 2px;
+  color: #1d1b19;
+}
+
+.client-collaborations {
+  margin-top: 36px;
+}
+
+.client-collaborations-label {
+  font: 600 11px/1.2 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a746e;
+  margin: 0 0 16px;
+}
+
+.client-names-stream {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+}
+
+.client-names-stream span {
+  font: 400 clamp(18px, 1.8vw, 24px)/1.2 var(--font-display);
+  color: #2d2926;
+  letter-spacing: -0.01em;
+}
+
+/* Section 11 - Proof of Evolution (Commercial Pulse) */
+.pulse-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3.5vw, 40px);
+  margin-top: 48px;
+}
+
+.pulse-stat-card {
+  padding: 36px 28px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(45, 41, 38, 0.12);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pulse-number {
+  font: 400 clamp(48px, 5.2vw, 76px)/0.9 var(--font-display);
+  letter-spacing: -0.03em;
+  color: var(--editorial-red);
+}
+
+.pulse-label {
+  font: 600 12px/1.3 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1d1b19;
+}
+
+.pulse-sub {
+  font: 400 13px/1.5 var(--font-body);
+  color: #66605a;
+  margin: 0;
+}
+
+.pulse-narrative-card {
+  margin-top: 36px;
+  padding: 32px 36px;
+  background: rgba(29, 27, 25, 0.04);
+  border-left: 3px solid var(--editorial-red);
+}
+
+.pulse-narrative-body {
+  font: 400 clamp(15px, 1.3vw, 18px)/1.6 var(--font-body);
+  color: #3b3733;
+  margin: 0 0 16px;
+}
+
+.pulse-closing-statement {
+  font: 400 clamp(17px, 1.5vw, 22px)/1.3 var(--font-display);
+  text-transform: uppercase;
+  color: #1d1b19;
+  margin: 0;
+}
+
+/* Section 12 - ADAPT 4 Phases */
+.adapt-four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.adapt-phase-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(45, 41, 38, 0.1);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.adapt-phase-card:hover {
+  border-color: var(--editorial-red);
+  background: #fff;
+}
+
+.phase-code {
+  font: 600 10px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--editorial-red);
+}
+
+.adapt-phase-card h3 {
+  font: 400 20px/1.15 var(--font-display);
+  color: #1d1b19;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.adapt-phase-card p {
+  font: 400 13px/1.55 var(--font-body);
+  color: #5c5752;
+  margin: 0;
+}
+
+.adapt-progression-bar {
+  margin-top: 36px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(45, 41, 38, 0.15);
+  border-bottom: 1px solid rgba(45, 41, 38, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a746e;
+}
+
+.adapt-progression-bar span {
+  color: #1d1b19;
+}
+
+/* Section 13 - Life Sciences */
+.life-sciences-triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.triad-item {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(45, 41, 38, 0.1);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.triad-num {
+  font: 600 10px/1 var(--font-body);
+  color: var(--editorial-red);
+  letter-spacing: 0.1em;
+}
+
+.triad-item p {
+  font: 400 clamp(15px, 1.25vw, 18px)/1.35 var(--font-display);
+  text-transform: uppercase;
+  color: #1d1b19;
+  margin: 0;
+}
+
+.life-sciences-intersection {
+  margin-top: 40px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(45, 41, 38, 0.12);
+}
+
+.intersection-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  font: 600 12px/1.4 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1d1b19;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.1);
+}
+
+.intersection-tags i {
+  font-style: normal;
+  color: var(--editorial-red);
+}
+
+.intersection-body {
+  font: 400 clamp(15px, 1.25vw, 17px)/1.65 var(--font-body);
+  color: #4a453f;
+  margin: 20px 0 0;
+}
+
+/* Section 14 - Why Brand Here */
+.why-questions-stream {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--editorial-carbon);
+  margin-top: 36px;
+}
+
+.why-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(45, 41, 38, 0.1);
+  align-items: baseline;
+}
+
+.why-standard {
+  font: 400 14px/1.5 var(--font-body);
+  color: #7a746e;
+}
+
+.why-standard em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  color: #5c5752;
+}
+
+.why-brandhere {
+  font: 400 14px/1.5 var(--font-body);
+  color: var(--editorial-red);
+}
+
+.why-brandhere strong {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: #1d1b19;
+  font-weight: 400;
+  display: block;
+  margin-top: 4px;
+}
+
+.why-closing-principle {
+  margin-top: 36px;
+  font: 400 clamp(18px, 1.6vw, 24px)/1.35 var(--font-display);
+  font-style: italic;
+  color: #3b3733;
+  text-align: center;
+}
+
+/* Section 15 - Closing Lead Copy */
+.closing-lead-copy {
+  font: 400 clamp(15px, 1.3vw, 18px)/1.55 var(--font-body);
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+}
+
+/* Responsive adjustments for conversion V2 */
+@media (max-width: 1023px) {
+  .tensions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .adapt-four-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pulse-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .tensions-grid {
+    grid-template-columns: 1fr;
+  }
+  .marketing-pain-layout,
+  .philosophy-content-grid,
+  .pov-layout,
+  .territories-dual-grid,
+  .life-sciences-triad,
+  .adapt-four-grid,
+  .pulse-stats-grid,
+  .middle-contrast-list {
+    grid-template-columns: 1fr;
+  }
+  .why-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .hero-actions-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

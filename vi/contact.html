@@ -40,9 +40,9 @@
 <main>
 <section class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Liên hệ / Tiếp nhận bài toán</div>
-    <h1>Hãy đưa bài toán cho chúng tôi. Câu trả lời sẽ theo sau.</h1>
-    <p class="lead">Hãy chia sẻ một thách thức kinh doanh thực tế — ngoài thị trường, ở thương hiệu, hay bên trong vận hành tổ chức. Chúng tôi nghiên cứu bối cảnh trước khi phản hồi để cuộc trao đổi bắt đầu từ thực chất.</p>
+    <div class="eyebrow">LIÊN HỆ &amp; TRAO ĐỔI</div>
+    <h1>HÃY ĐƯA BÀI TOÁN CHO CHÚNG TÔI.</h1>
+    <p class="lead">Bạn không cần phải biết trước mình cần một chiến dịch, một chiến lược mới, một quy trình làm việc tốt hơn hay một giải pháp AI. Hãy bắt đầu từ những gì chưa vận hành hiệu quả. Chúng tôi sẽ giúp bạn xác định điều gì thực sự cần thay đổi.</p>
   </div>
 </section>
 
@@ -72,18 +72,29 @@
         <input type="email" id="email" name="email" required placeholder="email@company.com">
       </div>
       <div>
-        <label for="message">Bài toán kinh doanh hiện tại là gì?</label>
-        <textarea id="message" name="message" required placeholder="Mô tả thay đổi, nơi doanh nghiệp đang gặp điểm nghẽn (ngoài thị trường hay bên trong tổ chức) và những giải pháp đã từng thử nghiệm…"></textarea>
+        <label for="focusArea">Trọng tâm bài toán</label>
+        <select id="focusArea" name="focusArea" style="width:100%; padding:14px 16px; font:400 14px/1.4 var(--font-body); background:var(--v4-bone); border:1px solid var(--v4-line); border-radius:2px; color:var(--v4-carbon); margin-top:6px;">
+          <option value="brand-marketing">Bài toán Thương hiệu &amp; Marketing</option>
+          <option value="growth">Bài toán Tăng trưởng</option>
+          <option value="commercial">Bài toán Thương mại &amp; Bán hàng</option>
+          <option value="business-adaptation">Bài toán Thích ứng Doanh nghiệp</option>
+          <option value="life-sciences">Bài toán Ngành Khoa học Đời sống / Dược phẩm</option>
+          <option value="other">Bài toán kinh doanh khác</option>
+        </select>
       </div>
       <div>
-        <label for="deadline">Khi nào cần ra quyết định hoặc thấy kết quả?</label>
+        <label for="deadline">Khi nào cần ra quyết định?</label>
         <input type="text" id="deadline" name="deadline" required placeholder="e.g. Trong vòng 30 ngày, Quý tới">
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label for="message">Bài toán kinh doanh hiện tại là gì?</label>
+        <textarea id="message" name="message" required placeholder="Mô tả thay đổi, nơi doanh nghiệp đang gặp điểm nghẽn (ngoài thị trường hay bên trong tổ chức) và những giải pháp đã từng thử nghiệm…"></textarea>
       </div>
       <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
         <label for="website">Website</label>
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
       </div>
-      <button type="submit" class="btn-gold" id="submitBtn">Gửi thách thức của bạn →</button>
+      <button type="submit" class="btn-gold" id="submitBtn">Thảo luận về bài toán →</button>
       <p id="formError" style="color:#b3261e; font-size:14px; margin-top:10px; display:none;">
         Đã có lỗi xảy ra. Vui lòng thử lại hoặc gửi email trực tiếp tới hello@brandhere.co.
       </p>

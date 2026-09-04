@@ -41,9 +41,9 @@
 <main>
 <section class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">Contact / Problem Intake</div>
-    <h1>Bring us the problem. The answer follows.</h1>
-    <p class="lead">Bring one real commercial or organisational challenge. We review the business context before responding — so our first conversation begins with substance, not an agency pitch.</p>
+    <div class="eyebrow">CONTACT &amp; CONVERSATION</div>
+    <h1>BRING US THE PROBLEM.</h1>
+    <p class="lead">You don't need to know whether you need a campaign, a new strategy, a better workflow, or an AI solution. Start with what's not working. We'll help you understand what needs to change.</p>
   </div>
 </section>
 
@@ -73,18 +73,29 @@
         <input type="email" id="email" name="email" required placeholder="name@company.com">
       </div>
       <div>
-        <label for="message">What is the business problem?</label>
-        <textarea id="message" name="message" required placeholder="Describe what is changing, where the business is getting stuck (in the market or inside the organisation), and what you have already tried…"></textarea>
+        <label for="focusArea">Challenge Focus</label>
+        <select id="focusArea" name="focusArea" style="width:100%; padding:14px 16px; font:400 14px/1.4 var(--font-body); background:var(--v4-bone); border:1px solid var(--v4-line); border-radius:2px; color:var(--v4-carbon); margin-top:6px;">
+          <option value="brand-marketing">Brand &amp; Marketing challenge</option>
+          <option value="growth">Growth challenge</option>
+          <option value="commercial">Commercial challenge</option>
+          <option value="business-adaptation">Business adaptation challenge</option>
+          <option value="life-sciences">Life Sciences challenge</option>
+          <option value="other">Other business problem</option>
+        </select>
       </div>
       <div>
-        <label for="deadline">When do you need to decide or see progress?</label>
+        <label for="deadline">When do you need to decide?</label>
         <input type="text" id="deadline" name="deadline" required placeholder="e.g. Within 30 days, Next quarter">
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label for="message">What is the business problem?</label>
+        <textarea id="message" name="message" required placeholder="Describe what is changing, where the business is getting stuck (in the market or inside the organisation), and what you have already tried…"></textarea>
       </div>
       <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
         <label for="website">Website</label>
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
       </div>
-      <button type="submit" class="btn-gold" id="submitBtn">Submit your challenge →</button>
+      <button type="submit" class="btn-gold" id="submitBtn">Discuss the problem →</button>
       <p id="formError" style="color:#b3261e; font-size:14px; margin-top:10px; display:none;">
         Something went wrong. Please try again, or email us directly at hello@brandhere.co.
       </p>

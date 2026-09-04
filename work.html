@@ -59,17 +59,25 @@
       <div class="eyebrow">PORTFOLIO &amp; PROOF</div>
       <h1>FROM MARKET CHANGE<br><span class="text-red">TO BUSINESS CHANGE.</span></h1>
       <p class="lead">A decade of marketing depth. Now extended into deeper business adaptation. We solve the business problem first; the output follows.</p>
+      
+      <!-- CATEGORY FILTER -->
+      <div class="work-filters" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:36px;" role="tablist" aria-label="Filter case studies">
+        <button type="button" class="work-filter-btn is-active" data-filter="all" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-carbon); background:var(--v4-carbon); color:#ffffff; cursor:pointer; border-radius:2px; transition:all 0.2s ease;">ALL</button>
+        <button type="button" class="work-filter-btn" data-filter="brand-marketing" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-line); background:rgba(255,255,255,0.6); color:var(--v4-carbon); cursor:pointer; border-radius:2px; transition:all 0.2s ease;">BRAND &amp; MARKETING</button>
+        <button type="button" class="work-filter-btn" data-filter="adaptation" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-line); background:rgba(255,255,255,0.6); color:var(--v4-carbon); cursor:pointer; border-radius:2px; transition:all 0.2s ease;">BUSINESS ADAPTATION</button>
+        <button type="button" class="work-filter-btn" data-filter="life-sciences" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-line); background:rgba(255,255,255,0.6); color:var(--v4-carbon); cursor:pointer; border-radius:2px; transition:all 0.2s ease;">LIFE SCIENCES</button>
+      </div>
     </div>
   </section>
 
   <!-- BUSINESS CHANGE / COMMERCIAL ADAPTATION -->
-  <section class="section">
+  <section class="section" data-category-section="adaptation life-sciences">
     <div class="wrap">
       <div class="section-label">Territory 02 / Business Change</div>
       <h2>COMMERCIAL &amp; OPERATIONAL<br><span class="text-red">ADAPTATION.</span></h2>
       <p class="section-intro">Closing the gap between high-level strategy, data systems, and day-to-day commercial execution.</p>
 
-      <article class="case-card case-card--flagship" style="margin-top:32px; padding:36px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+      <article class="case-card case-card--flagship" data-work-item="adaptation life-sciences" style="margin-top:32px; padding:36px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
         <span class="case-tag" style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:12px;">CASE STUDY · REGULATED LIFE SCIENCES &amp; HEALTHCARE</span>
         <h3 style="font:400 clamp(24px, 2.5vw, 32px)/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 24px;">Commercial Pulse: Enterprise Sales Data Reconciliation</h3>
         
@@ -96,7 +104,7 @@
   </section>
 
   <!-- MARKET CHANGE / BRAND & MARKETING -->
-  <section class="section alt">
+  <section class="section alt" data-category-section="brand-marketing">
     <div class="wrap">
       <div class="section-label">Territory 01 / Market Change</div>
       <h2>BRAND &amp; MARKETING<br><span class="text-red">EXECUTION ARCHIVE.</span></h2>
@@ -104,42 +112,42 @@
 
       <div class="legacy-index" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:36px;">
         
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">AIA Vietnam</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Great Place to Work Media Programme</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Problem &amp; Role:</strong> Transform HR certification into high-credibility public and industry narrative.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Outcome:</strong> 6-day media immersion programme with 100% tier-1 press attendance and sustained editorial coverage.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing life-sciences" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Roche Diagnostics</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Corporate Culture &amp; Employer Brand Film</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Problem &amp; Role:</strong> Connect clinical diagnostic precision with authentic employee purpose in healthcare.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Outcome:</strong> Multi-format documentary film series featuring authentic staff stories used across internal culture initiatives.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Dragon Capital</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">10th Anniversary Milestone Experience</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Problem &amp; Role:</strong> Orchestrate an institutional-grade celebration for key international and regional investors.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Outcome:</strong> End-to-end event narrative, VIP guest journey, stage direction, and bespoke anniversary collateral.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Nestlé Vietnam</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Brand Activation &amp; Consumer Engagement</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Problem &amp; Role:</strong> Execute high-touch consumer activations ensuring strict compliance with global FMCG brand guidelines.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Outcome:</strong> Nationwide experiential rollouts, retail engagement booths, and measurable consumer trial.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Western Sydney University</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">International MBA Recruitment Programme</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Problem &amp; Role:</strong> Differentiate a world-class degree program in a saturated regional education market.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Outcome:</strong> Multi-channel campaign and media outreach driving qualified student inquiries and cohort enrolment.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Corporate &amp; Enterprise</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Brand Strategy &amp; Identity Archives</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Problem &amp; Role:</strong> Full identity development, brand guidelines, and collateral design across multiple sectors.</p>
@@ -187,5 +195,49 @@
 <script src="js/site-chrome.js?v=1" defer></script>
 <script src="js/back-to-top.js?v=2" defer></script>
 <script src="js/sonic.js?v=4" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.work-filter-btn');
+  const sections = document.querySelectorAll('[data-category-section]');
+  const items = document.querySelectorAll('[data-work-item]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('is-active');
+        b.style.background = 'rgba(255,255,255,0.6)';
+        b.style.color = 'var(--v4-carbon)';
+        b.style.borderColor = 'var(--v4-line)';
+      });
+      btn.classList.add('is-active');
+      btn.style.background = 'var(--v4-carbon)';
+      btn.style.color = '#ffffff';
+      btn.style.borderColor = 'var(--v4-carbon)';
+
+      const filter = btn.dataset.filter;
+
+      if (filter === 'all') {
+        sections.forEach(s => s.style.display = '');
+        items.forEach(it => it.style.display = '');
+      } else {
+        sections.forEach(s => {
+          const sCats = s.dataset.categorySection || '';
+          if (sCats.includes(filter)) {
+            s.style.display = '';
+          } else {
+            // Check if any items inside match
+            const matchingInside = s.querySelectorAll(`[data-work-item*="${filter}"]`);
+            s.style.display = matchingInside.length > 0 ? '' : 'none';
+          }
+        });
+        items.forEach(it => {
+          const itCats = it.dataset.workItem || '';
+          it.style.display = itCats.includes(filter) ? '' : 'none';
+        });
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

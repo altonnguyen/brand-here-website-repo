@@ -59,17 +59,25 @@
       <div class="eyebrow">DANH MỤC DỰ ÁN &amp; MINH CHỨNG</div>
       <h1>TỪ THAY ĐỔI THỊ TRƯỜNG<br><span class="text-red">ĐẾN CHUYỂN DỊCH VẬN HÀNH.</span></h1>
       <p class="lead">Một thập kỷ kinh nghiệm marketing chuyên sâu. Nay mở rộng sang thích ứng vận hành và chuyển đổi thương mại. Chúng tôi giải quyết bài toán cốt lõi trước; giải pháp sẽ theo sau.</p>
+      
+      <!-- CATEGORY FILTER -->
+      <div class="work-filters" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:36px;" role="tablist" aria-label="Lọc dự án">
+        <button type="button" class="work-filter-btn is-active" data-filter="all" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-carbon); background:var(--v4-carbon); color:#ffffff; cursor:pointer; border-radius:2px; transition:all 0.2s ease;">TẤT CẢ</button>
+        <button type="button" class="work-filter-btn" data-filter="brand-marketing" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-line); background:rgba(255,255,255,0.6); color:var(--v4-carbon); cursor:pointer; border-radius:2px; transition:all 0.2s ease;">THƯƠNG HIỆU &amp; MARKETING</button>
+        <button type="button" class="work-filter-btn" data-filter="adaptation" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-line); background:rgba(255,255,255,0.6); color:var(--v4-carbon); cursor:pointer; border-radius:2px; transition:all 0.2s ease;">THÍCH ỨNG DOANH NGHIỆP</button>
+        <button type="button" class="work-filter-btn" data-filter="life-sciences" style="padding:10px 18px; font:600 11px/1 var(--font-body); letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--v4-line); background:rgba(255,255,255,0.6); color:var(--v4-carbon); cursor:pointer; border-radius:2px; transition:all 0.2s ease;">Y TẾ &amp; LIFE SCIENCES</button>
+      </div>
     </div>
   </section>
 
   <!-- BUSINESS CHANGE / COMMERCIAL ADAPTATION -->
-  <section class="section">
+  <section class="section" data-category-section="adaptation life-sciences">
     <div class="wrap">
       <div class="section-label">Vùng năng lực 02 / Chuyển dịch Vận hành</div>
       <h2>THÍCH ỨNG THƯƠNG MẠI<br><span class="text-red">&amp; VẬN HÀNH DOANH NGHIỆP.</span></h2>
       <p class="section-intro">Thu hẹp khoảng cách giữa định hướng chiến lược cấp cao, hệ thống dữ liệu và thực thi thương mại hàng ngày.</p>
 
-      <article class="case-card case-card--flagship" style="margin-top:32px; padding:36px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+      <article class="case-card case-card--flagship" data-work-item="adaptation life-sciences" style="margin-top:32px; padding:36px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
         <span class="case-tag" style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:12px;">NGHIÊN CỨU TÌNH HUỐNG · Y TẾ &amp; CHĂM SÓC SỨC KHOẺ</span>
         <h3 style="font:400 clamp(24px, 2.5vw, 32px)/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 24px;">Commercial Pulse: Đối soát Dữ liệu Bán hàng Quy mô Doanh nghiệp</h3>
         
@@ -96,7 +104,7 @@
   </section>
 
   <!-- MARKET CHANGE / BRAND & MARKETING -->
-  <section class="section alt">
+  <section class="section alt" data-category-section="brand-marketing">
     <div class="wrap">
       <div class="section-label">Vùng năng lực 01 / Thay đổi Thị trường</div>
       <h2>KHO LƯU TRỮ THỰC THI<br><span class="text-red">THƯƠNG HIỆU &amp; MARKETING.</span></h2>
@@ -104,42 +112,42 @@
 
       <div class="legacy-index" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:36px;">
         
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">AIA Vietnam</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Chương trình Truyền thông Great Place to Work</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Bài toán &amp; Vai trò:</strong> Chuyển hoá chứng chỉ nhân sự thành câu chuyện truyền thông uy tín trên các cơ quan báo chí hàng đầu.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Kết quả:</strong> Chuỗi chương trình truyền thông chuyên sâu 6 ngày với 100% báo đài trọng điểm tham dự và đưa tin.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing life-sciences" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Roche Diagnostics</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Phim Văn hoá &amp; Thương hiệu Nhà tuyển dụng</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Bài toán &amp; Vai trò:</strong> Kết nối sự chuẩn xác trong y tế với sứ mệnh nhân văn của đội ngũ nhân sự.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Kết quả:</strong> Chuỗi phim tư liệu chân thực từ tiếng nói nhân viên, tạo sự gắn kết bền chặt trong các hoạt động văn hoá nội bộ.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Dragon Capital</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Trải nghiệm Cột mốc Kỷ niệm 10 Năm</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Bài toán &amp; Vai trò:</strong> Tổ chức sự kiện tri ân cấp cao dành cho các định chế tài chính và nhà đầu tư quốc tế.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Kết quả:</strong> Trọn vẹn mạch chuyện sự kiện, hành trình khách mời VIP, dàn dựng sân khấu và ấn phẩm kỷ niệm độc bản.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Nestlé Vietnam</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Kích hoạt Thương hiệu &amp; Tiếp cận Người tiêu dùng</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Bài toán &amp; Vai trò:</strong> Triển khai các điểm tiếp xúc trực tiếp với người tiêu dùng đảm bảo quy chuẩn thương hiệu toàn cầu khắt khe.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Kết quả:</strong> Chuỗi hoạt động trải nghiệm đa tỉnh thành, gian hàng tương tác và tỷ lệ dùng thử sản phẩm đo lường minh bạch.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Western Sydney University</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Chương trình Tuyển sinh Thạc sĩ Quốc tế</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Bài toán &amp; Vai trò:</strong> Tạo khác biệt cho chương trình đào tạo quốc tế tại thị trường giáo dục sau đại học đầy cạnh tranh.</p>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0;"><strong>Kết quả:</strong> Chiến dịch truyền thông tích hợp thúc đẩy lượng hồ sơ quan tâm và số lượng học viên nhập học đạt chuẩn.</p>
         </article>
 
-        <article style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
+        <article data-work-item="brand-marketing" style="padding:28px 24px; background:rgba(255,255,255,0.7); border:1px solid var(--v4-line); border-radius:2px;">
           <span style="font:600 10px/1 var(--font-body); letter-spacing:0.14em; text-transform:uppercase; color:var(--v4-red); display:block; margin-bottom:8px;">Doanh nghiệp &amp; Tập đoàn</span>
           <h3 style="font:400 20px/1.2 var(--font-display); color:var(--v4-carbon); margin:0 0 12px;">Hệ thống Nhận diện &amp; Chiến lược Thương hiệu</h3>
           <p style="font:400 13px/1.6 var(--font-body); color:#4a453f; margin:0 0 12px;"><strong>Bài toán &amp; Vai trò:</strong> Xây dựng hệ thống nhận diện hoàn chỉnh, quy chuẩn thương hiệu và tài liệu truyền thông đa ngành.</p>
@@ -187,5 +195,48 @@
 <script src="../js/site-chrome.js?v=1" defer></script>
 <script src="../js/back-to-top.js?v=2" defer></script>
 <script src="../js/sonic.js?v=4" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.work-filter-btn');
+  const sections = document.querySelectorAll('[data-category-section]');
+  const items = document.querySelectorAll('[data-work-item]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('is-active');
+        b.style.background = 'rgba(255,255,255,0.6)';
+        b.style.color = 'var(--v4-carbon)';
+        b.style.borderColor = 'var(--v4-line)';
+      });
+      btn.classList.add('is-active');
+      btn.style.background = 'var(--v4-carbon)';
+      btn.style.color = '#ffffff';
+      btn.style.borderColor = 'var(--v4-carbon)';
+
+      const filter = btn.dataset.filter;
+
+      if (filter === 'all') {
+        sections.forEach(s => s.style.display = '');
+        items.forEach(it => it.style.display = '');
+      } else {
+        sections.forEach(s => {
+          const sCats = s.dataset.categorySection || '';
+          if (sCats.includes(filter)) {
+            s.style.display = '';
+          } else {
+            const matchingInside = s.querySelectorAll(`[data-work-item*="${filter}"]`);
+            s.style.display = matchingInside.length > 0 ? '' : 'none';
+          }
+        });
+        items.forEach(it => {
+          const itCats = it.dataset.workItem || '';
+          it.style.display = itCats.includes(filter) ? '' : 'none';
+        });
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

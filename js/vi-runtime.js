@@ -28,7 +28,7 @@
     var h = a.getAttribute('href');
     if (!h || h.charAt(0) === '#' || h.indexOf('http') === 0 || h.indexOf('mailto:') === 0) return;
     var parts = h.split('?'), file = parts[0];
-    var translated = ['index.html','about.html','what-we-do.html','approach.html','experts.html','partners.html','work.html','labs.html','insights.html','radio.html','game.html','alignment-lab.html','advisory-lab.html','commerce-lab.html','decision-session.html','contact.html'];
+    var translated = ['index.html','what-we-do.html','approach.html','experts.html','partners.html','work.html','labs.html','insights.html','radio.html','game.html','alignment-lab.html','advisory-lab.html','commerce-lab.html','decision-session.html','contact.html'];
     if (translated.indexOf(file) >= 0) a.setAttribute('href', 'vi/' + file + (parts[1] ? '?' + parts[1] : ''));
   });
   var nav = document.querySelector('nav');

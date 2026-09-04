@@ -5,11 +5,13 @@ const ALLOWED_ORIGINS = new Set([
 ]);
 
 const PERMANENT_REDIRECTS = new Map([
+  ["/about", "/experts"],
   ["/advisory-lab", "/labs"],
   ["/alignment-lab", "/labs"],
   ["/commerce-lab", "/market-brand"],
   ["/executive-ai-lab", "/labs"],
   ["/next-stage", "/adaptation"],
+  ["/vi/about", "/vi/experts"],
   ["/vi/advisory-lab", "/vi/labs"],
   ["/vi/alignment-lab", "/vi/labs"],
   ["/vi/commerce-lab", "/vi/market-brand"],
@@ -22,10 +24,6 @@ const OG_IMAGE_BY_PAGE = new Map([
   ["/index.html", "home.jpg"],
   ["/vi/", "home.jpg"],
   ["/vi/index.html", "home.jpg"],
-  ["/about", "about.jpg"],
-  ["/about.html", "about.jpg"],
-  ["/vi/about", "about.jpg"],
-  ["/vi/about.html", "about.jpg"],
   ["/adaptation", "adaptation.jpg"],
   ["/adaptation.html", "adaptation.jpg"],
   ["/vi/adaptation", "adaptation.jpg"],

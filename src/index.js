@@ -46,6 +46,14 @@ const OG_IMAGE_BY_PAGE = new Map([
   ["/work.html", "work.jpg"],
   ["/vi/work", "work.jpg"],
   ["/vi/work.html", "work.jpg"],
+  ["/people-business", "adaptation.jpg"],
+  ["/people-business.html", "adaptation.jpg"],
+  ["/vi/people-business", "adaptation.jpg"],
+  ["/vi/people-business.html", "adaptation.jpg"],
+  ["/life-sciences", "adaptation.jpg"],
+  ["/life-sciences.html", "adaptation.jpg"],
+  ["/vi/life-sciences", "adaptation.jpg"],
+  ["/vi/life-sciences.html", "adaptation.jpg"],
 ]);
 
 const EDITORIAL_IMAGES_BY_PAGE = new Map([

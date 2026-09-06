@@ -92,24 +92,8 @@
       audio.play().catch(function () { stop(); });
     }
 
-    function playSignatureMoment() {
-      // First activation this browser session: sonic sting, then the immersive cut.
-      // Never repeats on later toggles or page navigations within the same session.
-      audio.src = STING_SRC;
-      var chained = false;
-      audio.addEventListener("ended", function onStingEnd() {
-        audio.removeEventListener("ended", onStingEnd);
-        if (state === "playing" && !chained) {
-          chained = true;
-          try { sessionStorage.setItem(STING_SESSION_KEY, "1"); } catch (e) {}
-          playCut();
-        }
-      });
-      audio.play().catch(function () { stop(); });
-    }
-
     audio.addEventListener("ended", function () {
-      if (audio.src.indexOf("brand-here-official-sound-40s") !== -1) stop();
+      stop();
     });
 
     btn.addEventListener("click", function () {
@@ -119,13 +103,7 @@
       }
       state = "playing";
       setPlayingUI(true);
-      var stingPlayed = false;
-      try { stingPlayed = sessionStorage.getItem(STING_SESSION_KEY) === "1"; } catch (e) {}
-      if (stingPlayed) {
-        playCut();
-      } else {
-        playSignatureMoment();
-      }
+      playCut();
     });
 
     // Silence on tab hide — the brand's sound is never a background loop.

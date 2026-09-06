@@ -2,10 +2,11 @@
 
 ## Current approved direction
 
-- Concept 3 is the official website design system for all English and Vietnamese pages.
+- Concept 3.2 / V4 is the official website design system for all English and Vietnamese pages (confirmed 04 September 2026; supersedes Concept 3 approved 26 August 2026).
 - Human judgement remains the central brand idea; AI supports speed and possibility.
-- Use the approved Concept 3 colour, typography, logo, layout and motion standards.
-- Apply the same approved typography across the website, social media, presentations and campaign assets: Italiana for English editorial display; Cormorant Garamond for Vietnamese display and the Brand Here mark; Manrope for body/interface copy; DM Mono for compact English metadata and technical labels.
+- Use the approved V4 colour, typography, logo, layout and motion standards. Colour system is unchanged from Concept 3.
+- CORRECTION (04 September 2026): the Brand Here wordmark itself changed at V4. Per the approved master logo standard (decision BH-2026-013, approved 01 September 2026, in `Brand-Assets/Logo/V4/APPROVED-LOGO-STANDARD.md`), the current master is `BRAND HERE` set in Playfair Display Regular 400, uppercase, converted to vector outlines, with an independent red terminal dot (`#FF120D`) after the wordmark — not the split-colour "BRANDHERE" Cormorant Garamond wordmark (BRAND SemiBold / HERE Medium) described in the Concept 3 brand doc. The Cormorant wordmark is explicitly superseded and must not be used as the current master. Always use the supplied master artwork (SVG/PDF/PNG in `Brand-Assets/Logo/V4/`) — never retype the wordmark as live text.
+- Apply the same approved typography across the website, social media, presentations and campaign assets: Playfair Display for English editorial display (replaces Italiana as of V4, confirmed 04 September 2026) and for the Brand Here wordmark itself (replaces Cormorant Garamond in the logo as of V4, decision BH-2026-013); Cormorant Garamond remains for Vietnamese display headings only; Manrope for body/interface copy; DM Mono for compact English metadata and technical labels.
 - Social and campaign art direction must rotate four visual modes: full-bleed fashion photography, dark editorial fields, sculptural/3D still life, and typography/diagram. Digital Ivory text-only layouts should remain editorial anchors rather than the default, generally no more than about 30% of a campaign sequence.
 - Keep all experts visually equal in stature and respect.
 - Vietnamese wording must be native, precise and written for business leaders rather than translated literally.
@@ -20,5 +21,7 @@ Canonical records:
 - `Brand Assets/Concept 3 Website/APPROVED-CONCEPT-3-WEBSITE-STANDARD.md`
 - `Brand Assets/Concept 3 Logo/APPROVED-LOGO-STANDARD.md`
 - `BRAND-COLOUR-SYSTEM-CONCEPT-3.md`
+- `Brand-Assets/Brand-Guidelines/V4/` (Concept 3.2 / V4 guideline source — typography update: Playfair Display replaces Italiana)
+- `Brand-Assets/Logo/V4/APPROVED-LOGO-STANDARD.md` and `Brand-Assets/Logo/V4/MANIFEST.json` (approved master logo construction and file checksums — decision BH-2026-013)
 
-Last confirmed: 26 August 2026.
+Last confirmed: 04 September 2026 (typography update to V4). Colour system last confirmed 26 August 2026 (unchanged).

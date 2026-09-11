@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var relevance = {
     technology: vi ? 'Phù hợp khi chiến lược phải trở thành công nghệ an toàn, ổn định và có thể mở rộng.' : 'Relevant when strategy must become secure, dependable technology that can scale.',
     commerce: vi ? 'Phù hợp khi chiến lược thị trường phải chuyển thành vận hành nền tảng và doanh thu thực.' : 'Relevant when market strategy must become platform execution and real revenue.',
+    'data-intelligence': vi ? 'Phù hợp khi quyết định cần dữ liệu đáng tin cậy, phân tích định lượng và đánh giá phương án rõ ràng.' : 'Relevant when decisions need reliable data, quantitative analysis and clear evaluation of alternatives.',
     'commercial-execution': vi ? 'Phù hợp khi chiến lược cần trở thành hoạt động thực địa có kỷ luật, độ phủ và khả năng đo lường.' : 'Relevant when strategy must become disciplined, scalable and measurable field execution.',
     governance: vi ? 'Phù hợp khi thay đổi cần trách nhiệm rõ ràng, bảo vệ thông tin và kiểm soát thực tế.' : 'Relevant when change needs clear accountability, information safeguards and practical controls.',
     finance: vi ? 'Phù hợp khi tăng trưởng cần số liệu minh bạch, dòng tiền bền vững và khả năng chịu thẩm định.' : 'Relevant when growth needs transparent numbers, resilient cash flow and investment readiness.',

@@ -1064,6 +1064,47 @@ main[data-adaptation-labs] .privacy-section .privacy-note {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  object-position: 50% 45% !important;
+  transition: transform 420ms cubic-bezier(.2,.7,.2,1) !important;
+}
+
+/* Portrait art direction: keep faces at a comparable visual scale without altering source files. */
+.expert-profile--lead .expert-profile-portrait img {
+  object-position: 50% 60% !important;
+}
+
+.expert-profile--commerce .expert-profile-portrait img {
+  object-position: 50% 95% !important;
+  transform: scale(1.45) !important;
+  transform-origin: 50% 38% !important;
+}
+
+.expert-profile--governance .expert-profile-portrait img {
+  object-position: 50% 44% !important;
+  transform: scale(1.12) !important;
+  transform-origin: 50% 38% !important;
+}
+
+.expert-profile--finance .expert-profile-portrait img {
+  object-position: 50% 87% !important;
+  transform: scale(1.5) !important;
+  transform-origin: 50% 38% !important;
+}
+
+.expert-profile--data-intelligence .expert-profile-portrait img {
+  object-position: 50% 46% !important;
+}
+
+.expert-profile--commercial-execution .expert-profile-portrait img {
+  object-position: 50% 32% !important;
+  transform: scale(1.35) !important;
+  transform-origin: 50% 38% !important;
+}
+
+.expert-profile--technology-leadership .expert-profile-portrait img {
+  object-position: 100% 50% !important;
+  transform: scale(1.7) !important;
+  transform-origin: 58% 34% !important;
 }
 
 .expert-profile h3 {

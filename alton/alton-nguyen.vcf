@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Brand Here//Alton Nguyen vCard//EN
+N:Nguyen;Alton;;;
+FN:ALTON NGUYEN
+ORG:Brand Here
+TITLE:Founder & Managing Director
+TEL;TYPE=CELL,VOICE:+84767459331
+EMAIL;TYPE=INTERNET,WORK:alton@brandhere.co
+URL:https://brandhere.co
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/nguyenanhtuan278
+ADR;TYPE=WORK:;;;Ho Chi Minh City;;;Vietnam
+NOTE:Brand & Marketing × Business Adaptation
+END:VCARD

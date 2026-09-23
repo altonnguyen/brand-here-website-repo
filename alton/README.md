@@ -1,35 +1,11 @@
-# Alton Nguyen — Digital Namecard Production
+# Alton Nguyen — digital namecard
 
-## Live target
+Production route: https://brandhere.co/alton/
 
-- Digital card: `https://brandhere.co/alton/`
-- Downloadable vCard: `https://brandhere.co/alton/alton-nguyen.vcf`
-- NFC payload: `https://brandhere.co/alton/`
+- `index.html` references the existing master wordmark at `../images/homepage-2026/brand-here-master-color.svg` and uses Playfair Display + Manrope.
+- `alton-nguyen.vcf` is the full downloadable contact, including the LinkedIn field and descriptor.
+- `qr-vcard-direct.svg` is a standard QR containing a compact vCard with name, company, role, mobile, email, website and city. `qr-vcard-direct.png` is its raster companion. The QR is self contained; no redirect service is involved.
+- `Alton-Nguyen-Brand-Here-Share-1080x1920.png` is the static share asset. The Share button invokes the native share sheet when file sharing is supported and falls back to downloading the PNG.
+- Physical NFC tags should contain a single NDEF URL record: `https://brandhere.co/alton/`.
 
-## Contact source of truth
-
-- Name: ALTON NGUYEN
-- Organization: Brand Here
-- Title: Founder & Managing Director
-- Mobile: +84 767 459 331
-- Email: alton@brandhere.co
-- Website: https://brandhere.co
-- LinkedIn: https://www.linkedin.com/in/nguyenanhtuan278
-- Location: Ho Chi Minh City, Vietnam
-- Descriptor: BRAND & MARKETING × BUSINESS ADAPTATION
-
-## Production behavior
-
-The on-card QR embeds the vCard payload directly, so scanning can resolve the contact without depending on a redirect or QR service. The page also provides a downloadable `.vcf` and a Share Namecard action that renders a 1080 × 1920 PNG in the browser using the current Brand Here master SVG and approved Playfair Display + Manrope typography.
-
-For iPhone-to-iPhone sharing, import the vCard into Contacts, make it the owner's My Card, and use Apple NameDrop. NameDrop always requires the receiving user to confirm the exchange; a website or Wallet pass cannot silently save a contact by touching two phones.
-
-For a physical NFC card/tag, write a standard NDEF URL record containing `https://brandhere.co/alton/`. This keeps the NFC payload updateable because future contact changes can be made on the page without reprogramming the tag.
-
-## Apple Wallet
-
-An installable Apple Wallet `.pkpass` must be signed with a valid Apple Pass Type ID certificate and its private key. Do not publish an unsigned or self-signed pass as production. The Wallet pass can be added after Brand Here has an Apple Developer Pass Type identifier and signing workflow; it should point back to the same `/alton/` contact source.
-
-## Brand governance
-
-Use `../images/homepage-2026/brand-here-master-color.svg` as the wordmark source. Do not redraw the logo. Current type system: Playfair Display for display/editorial typography and Manrope for body/UI. Do not use retired taglines on this card.
+After each deployment, check the exact live assets, scan the page and share image QR, import the VCF on iPhone and Android, and verify native sharing in installed apps. Apple Wallet requires a Pass Type ID certificate and its private signing key before a valid `.pkpass` can be shipped.
